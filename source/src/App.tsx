@@ -26,7 +26,7 @@ export default function App() {
       <footer className="theme-dark border-t border-white/10 bg-[#0A1322] py-10">
         <div className="wrap flex flex-wrap items-center justify-between gap-6">
           <Logo />
-          <nav className="flex flex-wrap gap-5 text-[13px] text-mist">{nav.map((n) => <a key={n.href} href={n.href} className="hover:text-sun">{n.label}</a>)}</nav>
+          <nav className="flex flex-wrap gap-5 text-[13px] text-mist">{nav.map((n) => <a key={n.label} href={n.href} className="hover:text-sun">{n.label}</a>)}</nav>
           <p className="text-[12px] text-mist-3">© 2026 Five Splash Infotech Pvt. Ltd.</p>
         </div>
       </footer>

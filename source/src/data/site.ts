@@ -204,10 +204,30 @@ export const pathways = [
   { id: 'partner', label: 'Partnerships', ask: 'What kind of partnership?', options: ['Technology', 'AI data alliance', 'Impact / ESG', 'Reseller'], email: 'partnerships@fivesdigital.com' },
 ];
 
-export const nav = [
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'CX & AI' },
-  { href: '#industries', label: 'Industries' },
-  { href: '#people', label: 'Our People' },
-  { href: '#footprint', label: 'Footprint' },
+/** Header menu — same items as the reference design; dropdowns mirror the live fivesdigital.com menu. */
+export type NavItem = { label: string; href: string; children?: { label: string; href: string }[] };
+export const nav: NavItem[] = [
+  { label: 'About Us', href: '#about', children: [
+    { label: 'Legacy', href: 'https://fivesdigital.com/legacy/' }, { label: 'Partnerships', href: 'https://fivesdigital.com/partnerships/' },
+    { label: 'Awards & Certifications', href: 'https://fivesdigital.com/awards/' }, { label: 'Value Proposition', href: 'https://fivesdigital.com/value-proposition/' },
+    { label: 'Infrastructure', href: 'https://fivesdigital.com/infrastructure/' } ] },
+  { label: 'CX', href: '#services', children: [
+    { label: 'Customer Engagement', href: 'https://fivesdigital.com/cx/offerings/customer-engagement/' }, { label: 'Revenue Cycle Management', href: 'https://fivesdigital.com/cx/offerings/revenue-cycle-management/' },
+    { label: 'BPM Services', href: 'https://fivesdigital.com/cx/offerings/bpm-services/' }, { label: 'Enterprise Technology', href: 'https://fivesdigital.com/cx/offerings/enterprise-technology/' },
+    { label: 'Case Studies', href: 'https://fivesdigital.com/case-study/' } ] },
+  { label: 'AI in CX', href: '#services', children: [
+    { label: 'Voice AI', href: 'https://fivesdigital.com/ai-in-cx/offerings/voice-ai/' }, { label: 'Chat AI', href: 'https://fivesdigital.com/ai-in-cx/offerings/chat-ai/' },
+    { label: 'Analytics & Insights', href: 'https://fivesdigital.com/ai-in-cx/offerings/analytics-and-insights/' }, { label: 'AI-Assist', href: 'https://fivesdigital.com/ai-in-cx/offerings/ai-assist/' } ] },
+  { label: 'AI & Data Services', href: '#services', children: [
+    { label: 'Gen AI Model Training', href: 'https://fivesdigital.com/ai-data-services/offerings/gen-ai-model-training/' }, { label: 'LLM Fine Tuning', href: 'https://fivesdigital.com/ai-data-services/offerings/llm-fine-tuning/' },
+    { label: 'AI Alignment', href: 'https://fivesdigital.com/ai-data-services/offerings/ai-alignment/' }, { label: 'Annotation Services', href: 'https://fivesdigital.com/ai-data-services/offerings/annotation-services/' },
+    { label: 'NLP for Transcription', href: 'https://fivesdigital.com/ai-data-services/offerings/nlp-for-transcription/' }, { label: 'Content Moderation', href: 'https://fivesdigital.com/ai-data-services/offerings/content-moderation-services/' } ] },
+  { label: 'Industries', href: '#industries', children: [
+    { label: 'E-Commerce & Retail', href: 'https://fivesdigital.com/cx/industries/e-commerce-retail/' }, { label: 'Healthcare', href: 'https://fivesdigital.com/cx/industries/healthcare/' },
+    { label: 'BFSI', href: 'https://fivesdigital.com/cx/industries/bfsi/' }, { label: 'New Age Startups', href: 'https://fivesdigital.com/cx/industries/fast-growth-startups/' },
+    { label: 'Travel, Logistics & Hospitality', href: 'https://fivesdigital.com/cx/industries/travel-tech/' }, { label: 'Utilities & Environment', href: 'https://fivesdigital.com/cx/industries/utilities-environmental-services/' } ] },
+  { label: 'Our People', href: '#people', children: [
+    { label: 'Leadership', href: 'https://fivesdigital.com/leaderships/' }, { label: 'Career', href: 'https://fivesdigital.com/careers/' },
+    { label: 'Life at FiveS', href: 'https://fivesdigital.com/life-at-fives/' }, { label: 'Events', href: 'https://fivesdigital.com/events/' }, { label: 'Coffee Chat', href: 'https://fivesdigital.com/coffee-chat/' } ] },
+  { label: 'Contact Us', href: '#contact' },
 ];
