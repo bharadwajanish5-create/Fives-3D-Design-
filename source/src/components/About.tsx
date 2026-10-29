@@ -1,4 +1,5 @@
-import { recognitions, whoWeAre } from '../data/site';
+import { whoWeAre } from '../data/site';
+import LogoStrip from './LogoStrip';
 import { useCountUp } from '../lib/hooks';
 
 function Fact({ value, suffix, label, note, i }: { value: number; suffix: string; label: string; note: string; i: number }) {
@@ -34,15 +35,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mt-20 overflow-hidden border-y border-fg/10 bg-surface2 py-5" style={{ maskImage: 'linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)', WebkitMaskImage: 'linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)' }}>
-        <div className="ticker flex w-max gap-10">
-          {[...recognitions, ...recognitions].map((r, i) => (
-            <span key={i} className="flex items-center gap-3 whitespace-nowrap text-[14px] font-semibold text-fg/80">
-              <i className="h-1.5 w-1.5 rotate-45 bg-sun" />{r}
-            </span>
-          ))}
-        </div>
-      </div>
+      <LogoStrip />
     </section>
   );
 }

@@ -40,17 +40,39 @@ export const whoWeAre = {
   ],
 };
 
-/** Recognitions ticker — taken from fivesdigital.com/legacy. */
-export const recognitions = [
-  'Everest Group CXM PEAK Matrix — Major Contender 2025',
-  'ISO 27001:2022 Information Security',
-  'ISO 9001:2015 Quality Management',
-  'NASSCOM SME Inspire — Delivery Excellence in BPM',
-  'NASSCOM SME Inspire — Best HR Practices',
-  'Everest Group — Impact Sourcing Specialist',
-  'IAOP — Company to Watch',
-  'WeConnect International — Certified',
-  'Global Impact Sourcing Coalition',
+/** Recognitions — logos taken from fivesdigital.com/legacy (files in src/assets/logos). */
+export const awardLogos = [
+  { file: '10-iaop-impact-sourcing-champion.webp', name: "IAOP – Impact Sourcing Champion" },
+  { file: '11-everest-group-cxm-peak-matrix-aspirant.webp', name: "Everest Group CXM PEAK Matrix – Aspirant" },
+  { file: '12-iaop-company-to-watch.webp', name: "IAOP – Company to Watch" },
+  { file: '13-everest-group-cxm-peak-matrix-major-cont.webp', name: "Everest Group CXM PEAK Matrix - Major Contender" },
+  { file: '14-everest-group-data-annotation-labelling-.webp', name: "Everest Group Data Annotation & Labelling PEAK Matrix – Major Contender" },
+  { file: '15-nasscom-sme-inspire-award-delivery-excel.webp', name: "NASSCOM SME Inspire Award – Delivery Excellence" },
+  { file: '16-nasscom-excellence-in-delivery-inclusion.webp', name: "NASSCOM Excellence in Delivery & Inclusion" },
+  { file: '17-nasscom-dei-champions.webp', name: "NASSCOM DEI Champions" },
+  { file: '18-nasscom-sme-inspire-award-outstanding-hr.webp', name: "NASSCOM SME Inspire Award – Outstanding HR Practices" },
+  { file: '19-global-impact-sourcing-coalition.webp', name: "Global Impact Sourcing Coalition" },
+  { file: '20-asia-outsourcing-leadership-awards-socia.webp', name: "Asia Outsourcing Leadership Awards – Social Change Agent" },
+  { file: '21-nsic-national-small-scale-industries-cor.webp', name: "NSIC – National Small Scale Industries Corporation Certified" },
+  { file: '22-iaop-recognition.webp', name: "IAOP Recognition" },
+  { file: '23-iso-27001-2022-information-security-mana.webp', name: "ISO 27001:2022 – Information Security Management" },
+  { file: '24-iso-9001-2015-quality-management.webp', name: "ISO 9001:2015 – Quality Management" },
+  { file: '25-woman-owned-certified.webp', name: "Woman-Owned Certified" },
+];
+
+export const partnerLogos = [
+  { file: '26-avaya.webp', name: "Avaya" },
+  { file: '32-kapture.webp', name: "Kapture" },
+  { file: '33-ozonetel.webp', name: "Ozonetel" },
+  { file: '34-genesys.webp', name: "GENESYS" },
+  { file: '35-freshworks.webp', name: "Freshworks" },
+  { file: '37-zendesk.webp', name: "Zendesk" },
+  { file: '41-superb-ai.webp', name: "Superb AI" },
+  { file: '43-kofax.webp', name: "Kofax" },
+  { file: '44-haptik.webp', name: "Haptik" },
+  { file: '47-ui-path.webp', name: "Ui Path" },
+  { file: '51-yellow-ai.webp', name: "Yellow.ai" },
+  { file: '40-taskmonk.webp', name: "Taskmonk" },
 ];
 
 /** Comprehensive BPM services — each service has its own scripted agent. */
