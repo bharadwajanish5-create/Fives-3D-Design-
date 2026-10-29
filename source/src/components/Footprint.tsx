@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { geoNaturalEarth1 } from 'd3-geo';
+import { geoNaturalEarth1, geoMercator } from 'd3-geo';
 import dots from '../data/mapDots.json';
 import { locations, type Location } from '../data/site';
 
@@ -10,7 +10,10 @@ export default function Footprint() {
   const proj = useMemo(() => geoNaturalEarth1().fitSize([W, H], { type: 'MultiPoint', coordinates: [[-168, -55], [178, 76], [0, 76], [0, -55]] } as any), []);
   const P = (lon: number, lat: number) => proj([lon, lat]) as [number, number];
   const world = useMemo(() => (dots.world as number[][]).map(([lo, la]) => P(lo, la)), [proj]);
-  const india = useMemo(() => (dots.india as number[][]).map(([lo, la]) => P(lo, la)), [proj]);
+  // India gets its own north-up Mercator so it isn't sheared by the world projection, anchored where it sits on the world map
+  const projIn = useMemo(() => geoMercator().center([82.5, 22.5]).scale(proj.scale() * 1.0).translate(proj([82.5, 22.5]) as [number, number]), [proj]);
+  const PI = (lon: number, lat: number) => projIn([lon, lat]) as [number, number];
+  const india = useMemo(() => (dots.india as number[][]).map(([lo, la]) => PI(lo, la)), [projIn]);
   const indiaBox = useMemo(() => {
     const xs = india.map((p) => p[0]), ys = india.map((p) => p[1]);
     const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
@@ -38,13 +41,14 @@ export default function Footprint() {
   const hovered = locations.find((l) => l.name === hover);
   const clusterHover = hover === '__india';
 
-  const Pin = ({ l, flagship }: { l: Location; flagship?: boolean }) => {
-    const [x, y] = P(l.lon, l.lat);
+  const Pin = ({ l, flagship, i = 0 }: { l: Location; flagship?: boolean; i?: number }) => {
+    const [x, y] = (l.region === 'india' && view === 'india' ? PI : P)(l.lon, l.lat);
     const r = (flagship ? 7 : 5.5) / k;
     const col = l.region === 'india' ? '#FACC2C' : '#2F8FDB';
     return (
       <g onMouseEnter={() => setHover(l.name)} onMouseLeave={() => setHover(null)} onClick={() => setHover(l.name)} style={{ cursor: 'pointer' }}>
-        <circle cx={x} cy={y} r={r * 1.4} fill={col} opacity={0.35} className="pulse-ring" />
+        <circle cx={x} cy={y} r={r * 4.2} fill={l.region === 'india' ? 'url(#glowY)' : 'url(#glowB)'} className="pulse-glow" style={{ animationDelay: `${(i * 0.55) % 2.6}s` }} />
+        <circle cx={x} cy={y} r={r * 4.2} fill={l.region === 'india' ? 'url(#glowY)' : 'url(#glowB)'} className="pulse-glow" style={{ animationDelay: `${((i * 0.55) % 2.6) + 1.3}s` }} />
         <circle cx={x} cy={y} r={r} fill={col} stroke="#0F1B2D" strokeWidth={2 / k} />
         <circle cx={x} cy={y} r={r * 3} fill="transparent" />
       </g>
@@ -71,10 +75,14 @@ export default function Footprint() {
           <div className="relative min-w-[720px] overflow-hidden rounded-[28px] border border-fg/10 bg-surface2 sm:min-w-0" style={{ boxShadow: '0 30px 70px rgba(15,27,45,.10)' }}>
             <div className="relative w-full" style={{ aspectRatio: `${W} / ${H}` }}>
               <svg viewBox={`${vb.x} ${vb.y} ${vb.w} ${vb.h}`} className="absolute inset-0 h-full w-full" role="img" aria-label="Map of FiveS delivery locations">
+                <defs>
+                  <radialGradient id="glowY"><stop offset="0" stopColor="#FACC2C" stopOpacity="0.85" /><stop offset="0.55" stopColor="#FACC2C" stopOpacity="0.28" /><stop offset="1" stopColor="#FACC2C" stopOpacity="0" /></radialGradient>
+                  <radialGradient id="glowB"><stop offset="0" stopColor="#2F8FDB" stopOpacity="0.85" /><stop offset="0.55" stopColor="#2F8FDB" stopOpacity="0.28" /><stop offset="1" stopColor="#2F8FDB" stopOpacity="0" /></radialGradient>
+                </defs>
                 <g opacity={1 - z * 0.85}>
                   {world.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={1.9} fill="#C3CEDC" />)}
                 </g>
-                <g opacity={0.25 + z * 0.75}>
+                <g opacity={Math.min(1, z * 1.8)}>
                   {india.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={0.75} fill={z > 0.5 ? '#8FA3BD' : '#AFBDCF'} />)}
                 </g>
                 {/* arcs from Udaipur */}
@@ -86,26 +94,27 @@ export default function Footprint() {
                     return <path key={l.name} d={`M${origin[0]},${origin[1]} Q${mx},${my} ${x},${y}`} fill="none" stroke={on ? '#E9A800' : '#0F1B2D'} strokeOpacity={on ? 0.95 : 0.3} strokeWidth={on ? 1.8 : 1.1} className="dash-flow" />;
                   })}
                 </g>
-                {view === 'world' && intl.map((l) => <Pin key={l.name} l={l} />)}
+                {view === 'world' && intl.map((l, i) => <Pin key={l.name} l={l} i={i} />)}
                 {view === 'world' && z < 0.2 && (
                   <g onMouseEnter={() => setHover('__india')} onMouseLeave={() => setHover(null)} onClick={() => go('india')} style={{ cursor: 'pointer' }}>
-                    <circle cx={origin[0] + 6} cy={origin[1] + 14} r={22} fill="#FACC2C" opacity={0.18} className="pulse-ring" />
+                    <circle cx={origin[0] + 6} cy={origin[1] + 14} r={44} fill="url(#glowY)" className="pulse-glow" />
+                    <circle cx={origin[0] + 6} cy={origin[1] + 14} r={44} fill="url(#glowY)" className="pulse-glow" style={{ animationDelay: '1.3s' }} />
                     <circle cx={origin[0] + 6} cy={origin[1] + 14} r={13} fill="#FACC2C" stroke="#070D18" strokeWidth={2} />
                     <text x={origin[0] + 6} y={origin[1] + 18.5} textAnchor="middle" fontSize="13" fontWeight="800" fill="#070D18" style={{ fontFamily: 'Inter, sans-serif' }}>7</text>
                   </g>
                 )}
-                {view === 'india' && z > 0.6 && hubs.map((l) => <Pin key={l.name} l={l} flagship={l.flagship} />)}
+                {view === 'india' && z > 0.6 && hubs.map((l, i) => <Pin key={l.name} l={l} flagship={l.flagship} i={i} />)}
               </svg>
 
               {/* labels for India hubs */}
               {view === 'india' && z > 0.6 && hubs.map((l) => {
-                const [x, y] = P(l.lon, l.lat);
+                const [x, y] = PI(l.lon, l.lat);
                 return <span key={l.name} className="pointer-events-none absolute -translate-y-1/2 pl-4 text-[12px] font-bold text-fg" style={pct(x, y)}>{l.name}</span>;
               })}
 
               {/* tooltip */}
               {(hovered || clusterHover) && (() => {
-                const [x, y] = hovered ? P(hovered.lon, hovered.lat) : [origin[0] + 6, origin[1] + 14];
+                const [x, y] = hovered ? (hovered.region === 'india' && view === 'india' ? PI : P)(hovered.lon, hovered.lat) : [origin[0] + 6, origin[1] + 14];
                 const pos = pct(x, y);
                 const right = parseFloat(pos.left) > 62;
                 return (

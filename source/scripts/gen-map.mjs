@@ -17,7 +17,11 @@ function grid(step, lonMin, lonMax, latMin, latMax) {
 const world = grid(2.2, -170, 180, -56, 78);
 const india = feats.find(f => f.properties.name === 'India');
 const ind = [];
-for (let lat = 36; lat >= 6; lat -= 0.55) for (let lon = 67; lon <= 98; lon += 0.55)
-  if (geoContains(india, [lon, lat])) ind.push([+lon.toFixed(2), +lat.toFixed(2)]);
+// square grid in Mercator space so the India map is north-up, undistorted and evenly dotted
+const D = 0.55 * Math.PI / 180, my = (la) => Math.log(Math.tan(Math.PI / 4 + (la * Math.PI / 180) / 2));
+for (let y = my(36); y >= my(6); y -= D) {
+  const lat = (2 * Math.atan(Math.exp(y)) - Math.PI / 2) * 180 / Math.PI;
+  for (let lon = 67; lon <= 98; lon += 0.55) if (geoContains(india, [lon, lat])) ind.push([+lon.toFixed(3), +lat.toFixed(3)]);
+}
 writeFileSync(new URL('../src/data/mapDots.json', import.meta.url), JSON.stringify({ world, india: ind }));
 console.log('world', world.length, 'india', ind.length);
