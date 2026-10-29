@@ -46,6 +46,7 @@ export default function Contact() {
     });
   };
 
+  const [agent, setAgent] = useState({ name: 'Sahaya', role: 'FiveS intake agent' });
   const start = (pathId?: string) => {
     setOpen(true);
     setMsgs([]); setStep('pathway'); setLead({ pathway: '', interest: '', name: '', email: '', company: '', message: '' });
@@ -53,8 +54,10 @@ export default function Contact() {
       const p = pathways.find((x) => x.id === pathId)!;
       setLead((l) => ({ ...l, pathway: p.label }));
       setMsgs([{ from: 'user', text: p.label }]);
-      agentSay(['Hi, I’m Sahaya from FiveS. Great, let’s get you to the right team.', p.ask], 'interest');
+      setAgent({ name: p.agent, role: `${p.role} · FiveS` });
+      agentSay([`Hi, I’m ${p.agent} from the FiveS ${p.role.toLowerCase()}.`, p.ask], 'interest');
     } else {
+      setAgent({ name: 'Sahaya', role: 'FiveS intake agent' });
       agentSay(['Hi, I’m Sahaya from FiveS.', 'I’ll take a few details and pass them to the right team. What brings you here?'], 'pathway');
     }
   };
@@ -64,9 +67,14 @@ export default function Contact() {
 
   const choosePath = (id: string) => {
     const p = pathways.find((x) => x.id === id)!;
-    user(p.label); setLead((l) => ({ ...l, pathway: p.label })); setStep('interest');
-    agentSay([p.ask], 'interest');
+    user(p.label); setLead((l) => ({ ...l, pathway: p.label }));
+    setTyping(true);
+    window.setTimeout(() => {
+      setMsgs((m) => [...m, { from: 'agent', text: `Connecting you to ${p.agent} from our ${p.role.toLowerCase()}…` }]);
+      window.setTimeout(() => { setAgent({ name: p.agent, role: `${p.role} · FiveS` }); agentSay([`Hi, ${p.agent} here.`, p.ask], 'interest'); }, 700);
+    }, 600);
   };
+
   const chooseInterest = (o: string) => { user(o); setLead((l) => ({ ...l, interest: o })); agentSay(['Got it. What’s your name?'], 'name'); };
 
   const submitText = (e: React.FormEvent) => {
@@ -104,15 +112,15 @@ export default function Contact() {
       <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(700px 500px at 20% 40%, rgba(250,204,44,.14), transparent 65%)' }} />
       <div className="wrap relative grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div className="min-w-0">
-          <p className="eyebrow">Start your transformation</p>
-          <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Skip the form. <em className="accent">Talk to Sahaya.</em></h2>
-          <p className="mt-5 max-w-[460px] text-[16px] leading-relaxed text-muted">Our intake agent takes your details in under a minute and routes them to sales, careers or partnerships.</p>
+          <p className="eyebrow">Talk to us</p>
+          <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Start your transformation with <em className="accent">FiveS</em></h2>
+          <p className="mt-5 max-w-[460px] text-[16px] leading-relaxed text-muted">Pick a pathway and the right FiveS agent will take your details in under a minute: Arjun for solutions, Meera for careers, Kabir for partnerships.</p>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
             {pathways.map((p) => (
               <button key={p.id} onClick={() => start(p.id)} className="group rounded-2xl border border-fg/12 bg-fg/[0.03] p-4 text-left transition hover:-translate-y-1 hover:border-sun/70">
                 <span className="block text-[15px] font-bold">{p.label}</span>
                 <span className="mt-1 block select-all break-all font-mono text-[11px] text-muted2">{p.email}</span>
-                <span className="mt-3 block text-[13px] font-semibold text-acc">Start →</span>
+                <span className="mt-3 block text-[13px] font-semibold text-acc">Talk to {p.agent} →</span>
               </button>
             ))}
           </div>
@@ -131,8 +139,8 @@ export default function Contact() {
                   <span className="flex h-4 items-center gap-[2px]">{[8, 14, 10, 16, 9].map((h, i) => <i key={i} className={typing ? 'wave-bar' : ''} style={{ width: 2.5, height: h, background: '#070D18', borderRadius: 2, animationDelay: `${i * 0.1}s` }} />)}</span>
                 </span>
                 <div className="flex-1">
-                  <p className="text-[15px] font-bold">Sahaya</p>
-                  <p className="text-[12px] text-muted2">FiveS intake agent · {typing ? 'typing…' : 'online'}</p>
+                  <p className="text-[15px] font-bold">{agent.name}</p>
+                  <p className="text-[12px] text-muted2">{agent.role} · {typing ? 'typing…' : 'online'}</p>
                 </div>
                 <button onClick={() => start()} className="rounded-full border border-fg/15 px-3 py-1.5 text-[12px] text-muted hover:bg-fg/10">Restart</button>
               </div>
@@ -168,7 +176,7 @@ export default function Contact() {
                   </form>
                 )}
                 {error && <p className="mt-2 text-[12.5px] text-ember">{error}</p>}
-                {(typing || step === 'review' || step === 'done') && !error && <p className="text-center font-mono text-[11px] text-muted3">{step === 'done' ? 'Conversation complete' : 'Sahaya is guiding you'}</p>}
+                {(typing || step === 'review' || step === 'done') && !error && <p className="text-center font-mono text-[11px] text-muted3">{step === 'done' ? 'Conversation complete' : `${agent.name} is guiding you`}</p>}
               </div>
             </div>
           )}

@@ -21,7 +21,6 @@ export default function Footprint() {
   const [vb, setVb] = useState({ x: 0, y: 0, w: W, h: H });
   const [view, setView] = useState<'world' | 'india'>('world');
   const [hover, setHover] = useState<string | null>(null);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const box = useRef({ ...vb });
 
   const go = (v: 'world' | 'india') => {
@@ -67,11 +66,8 @@ export default function Footprint() {
           </div>
         </div>
 
-        <div className="-mx-4 mt-12 overflow-x-auto px-4 pb-6 sm:mx-0 sm:overflow-visible sm:px-0" style={{ perspective: '1600px' }}
-          onPointerMove={(e) => { const r = e.currentTarget.getBoundingClientRect(); setTilt({ x: ((e.clientY - r.top) / r.height - 0.5) * -6, y: ((e.clientX - r.left) / r.width - 0.5) * 8 }); }}
-          onPointerLeave={() => setTilt({ x: 0, y: 0 })}>
-          <div className="relative min-w-[720px] overflow-hidden rounded-[28px] border border-fg/10 bg-surface2 transition-transform sm:min-w-0 duration-300 ease-out"
-            style={{ transform: `rotateX(${8 + tilt.x}deg) rotateY(${tilt.y}deg)`, transformOrigin: 'center 60%', boxShadow: '0 40px 90px rgba(15,27,45,.14)' }}>
+        <div className="-mx-4 mt-12 overflow-x-auto px-4 pb-2 sm:mx-0 sm:overflow-visible sm:px-0">
+          <div className="relative min-w-[720px] overflow-hidden rounded-[28px] border border-fg/10 bg-surface2 sm:min-w-0" style={{ boxShadow: '0 30px 70px rgba(15,27,45,.10)' }}>
             <div className="relative w-full" style={{ aspectRatio: `${W} / ${H}` }}>
               <svg viewBox={`${vb.x} ${vb.y} ${vb.w} ${vb.h}`} className="absolute inset-0 h-full w-full" role="img" aria-label="Map of FiveS delivery locations">
                 <g opacity={1 - z * 0.85}>

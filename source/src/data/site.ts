@@ -16,17 +16,21 @@ export type Metric = {
   detail: string;
   shape: 'wave' | 'bubble' | 'gem' | 'coin' | 'parcel' | 'loop';
   color: string;
+  /** shown in the hero orbit (keep to 4) */
+  featured?: boolean;
 };
 
 /** Hero — live operations counters (rendered as 3D objects orbiting the core). */
 export const heroMetrics: Metric[] = [
-  { id: 'voice', value: 15, suffix: ' Mn', label: 'Voice conversations', detail: 'Inbound and outbound calls handled across 13+ Indian languages.', shape: 'wave', color: '#FACC2C' },
-  { id: 'chats', value: 20, suffix: ' Mn', label: 'Active chats', detail: 'Chat, email and social threads resolved by AI-assisted specialists.', shape: 'bubble', color: '#7CC6FF' },
-  { id: 'quality', value: 95, suffix: '%', label: 'Quality score', detail: 'Audited interaction quality across every live programme.', shape: 'gem', color: '#3DDC97' },
+  { featured: true, id: 'voice', value: 15, suffix: ' Mn', label: 'Voice conversations', detail: 'Inbound and outbound calls handled across 13+ Indian languages.', shape: 'wave', color: '#FACC2C' },
+  { featured: true, id: 'chats', value: 20, suffix: ' Mn', label: 'Active chats', detail: 'Chat, email and social threads resolved by AI-assisted specialists.', shape: 'bubble', color: '#7CC6FF' },
+  { featured: true, id: 'quality', value: 95, suffix: '%', label: 'Quality score', detail: 'Audited interaction quality across every live programme.', shape: 'gem', color: '#3DDC97' },
   { id: 'loans', value: 1, suffix: ' Mn', label: 'Personal-loan leads handled', detail: 'Lead qualification and follow-up for lending partners.', shape: 'coin', color: '#FFD76A' },
   { id: 'ndr', value: 50, suffix: 'K', label: 'NDR completions', detail: 'Non-delivery reports closed out with customers for logistics brands.', shape: 'parcel', color: '#FF9A5C' },
-  { id: 'returns', value: 1, suffix: ' Mn', label: 'Shopping-cart returns', detail: 'Return requests verified and processed for e-commerce clients.', shape: 'loop', color: '#C3A6FF' },
+  { featured: true, id: 'returns', value: 1, suffix: ' Mn', label: 'Shopping-cart returns', detail: 'Return requests verified and processed for e-commerce clients.', shape: 'loop', color: '#C3A6FF' },
 ];
+
+export const heroFeatured = () => heroMetrics.filter((m) => m.featured).slice(0, 4);
 
 /** Who we are — headline facts. */
 export const whoWeAre = {
@@ -83,7 +87,7 @@ export type Service = {
   kicker: string;
   desc: string;
   metrics: { num: string; lbl: string }[];
-  agent: { name: string; role: string; hue: string; opener: string[]; replies: { q: string; a: string[] }[] };
+  agent: { name: string; role: string; hue: string; mode: 'call' | 'chat'; action: string; hint: string; opener: string[]; replies: { q: string; a: string[] }[] };
 };
 
 export const services: Service[] = [
@@ -94,8 +98,8 @@ export const services: Service[] = [
     desc: 'Multilingual specialists backed by real-time speech analytics and sentiment monitoring, working from Tier-2 and Tier-3 language hubs.',
     metrics: [{ num: '94%', lbl: 'First-contact resolution' }, { num: '13+', lbl: 'Indian languages' }, { num: '<30s', lbl: 'Average speed of answer' }],
     agent: {
-      name: 'Vani', role: 'Voice CX agent', hue: '#FACC2C',
-      opener: ['Namaste! I’m Vani, I look after voice programmes.', 'Want to hear how a call flows through our floor?'],
+      name: 'Vani', role: 'Voice CX agent', hue: '#FACC2C', mode: 'call', action: 'Call Vani', hint: 'Double-click to call',
+      opener: ['Namaste! You’re through to Vani, FiveS voice support.', 'Ask me anything about how our voice programmes run.'],
       replies: [
         { q: 'Which languages?', a: ['Hindi, Marathi, Tamil, Telugu, Kannada, Bengali, Gujarati and more — 13+ in total.', 'Calls are routed to a native speaker based on the caller’s first words.'] },
         { q: 'How fast do you scale?', a: ['Pre-vetted talent pools let us add 500+ specialists in about 72 hours for festive peaks.'] },
@@ -110,7 +114,7 @@ export const services: Service[] = [
     desc: 'Asynchronous speed with conversational precision. AI triages intent, specialists resolve with context intact.',
     metrics: [{ num: '<45s', lbl: 'First response time' }, { num: '98.8%', lbl: 'SLA adherence' }, { num: '4.8/5', lbl: 'Digital CSAT' }],
     agent: {
-      name: 'Kavya', role: 'Chat & email agent', hue: '#7CC6FF',
+      name: 'Kavya', role: 'Chat & email agent', hue: '#7CC6FF', mode: 'chat', action: 'Chat with Kavya', hint: 'Double-click to chat',
       opener: ['Hi, I’m Kavya. I run chat, email and social queues.', 'Ask me anything about digital support.'],
       replies: [
         { q: 'Which channels?', a: ['Web chat, WhatsApp, email, in-app and social DMs, all in one queue.'] },
@@ -126,7 +130,7 @@ export const services: Service[] = [
     desc: 'Domain-specific RLHF, red teaming, hallucination audits and cultural-alignment datasets for foundation models.',
     metrics: [{ num: '99.8%', lbl: 'RLHF consensus score' }, { num: '500+', lbl: 'Domain experts' }, { num: '100%', lbl: 'Clean-room delivery' }],
     agent: {
-      name: 'Atlas', role: 'Model-training lead', hue: '#3DDC97',
+      name: 'Atlas', role: 'Model-training lead', hue: '#3DDC97', mode: 'chat', action: 'Ask Atlas about RLHF', hint: 'Double-click to ask',
       opener: ['I’m Atlas. I coordinate RLHF and evaluation teams.', 'Curious how human feedback shapes a model?'],
       replies: [
         { q: 'What is RLHF here?', a: ['Experts rank and rewrite model answers. Those preferences train a reward model that steers the LLM.'] },
@@ -142,7 +146,7 @@ export const services: Service[] = [
     desc: 'Pixel-level segmentation, 3D LiDAR point-cloud labelling, audio tagging and multi-tier QA for AI pipelines.',
     metrics: [{ num: '99.9%', lbl: 'Bounding-box precision' }, { num: '10M+', lbl: 'Labels per month' }, { num: 'Zero', lbl: 'Data leakage' }],
     agent: {
-      name: 'Lumi', role: 'Annotation QA lead', hue: '#C3A6FF',
+      name: 'Lumi', role: 'Annotation QA lead', hue: '#C3A6FF', mode: 'chat', action: 'Ask Lumi about labelling', hint: 'Double-click to ask',
       opener: ['Hey, I’m Lumi. I check every label before it ships.', 'Pick a topic and I’ll walk you through it.'],
       replies: [
         { q: 'What do you label?', a: ['Images, video, 3D LiDAR, text and audio — bounding boxes, polygons, segmentation, transcripts.'] },
@@ -199,9 +203,9 @@ export const locations: Location[] = [
 
 /** Contact pathways — used by the intake agent. */
 export const pathways = [
-  { id: 'sales', label: 'Enterprise services', ask: 'Which service are you exploring?', options: ['Voice CX', 'Chat & email', 'Gen AI training', 'Annotation', 'Not sure yet'], email: 'sales@fivesdigital.com' },
-  { id: 'careers', label: 'Careers', ask: 'Which kind of role interests you?', options: ['Customer support', 'AI data / annotation', 'Team lead', 'Corporate'], email: 'careers@fivesdigital.com' },
-  { id: 'partner', label: 'Partnerships', ask: 'What kind of partnership?', options: ['Technology', 'AI data alliance', 'Impact / ESG', 'Reseller'], email: 'partnerships@fivesdigital.com' },
+  { id: 'sales', agent: 'Arjun', role: 'Solutions team', label: 'Enterprise services', ask: 'Which service are you exploring?', options: ['Voice CX', 'Chat & email', 'Gen AI training', 'Annotation', 'Not sure yet'], email: 'sales@fivesdigital.com' },
+  { id: 'careers', agent: 'Meera', role: 'Talent team', label: 'Careers', ask: 'Which kind of role interests you?', options: ['Customer support', 'AI data / annotation', 'Team lead', 'Corporate'], email: 'careers@fivesdigital.com' },
+  { id: 'partner', agent: 'Kabir', role: 'Alliances team', label: 'Partnerships', ask: 'What kind of partnership?', options: ['Technology', 'AI data alliance', 'Impact / ESG', 'Reseller'], email: 'partnerships@fivesdigital.com' },
 ];
 
 /** Header menu — same items as the reference design; dropdowns mirror the live fivesdigital.com menu. */

@@ -1,87 +1,91 @@
-import { lazy, Suspense, useState } from 'react';
-import { heroMetrics } from '../data/site';
-import { useCountUp, useInView } from '../lib/hooks';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { heroFeatured } from '../data/site';
+import { useCountUp, useInView, prefersReducedMotion } from '../lib/hooks';
 
 const HeroScene = lazy(() => import('../three/HeroScene'));
+const metrics = heroFeatured();
 
 function BigNumber({ value, suffix, color }: { value: number; suffix: string; color: string }) {
-  const ref = useCountUp(value, { trigger: value + suffix, duration: 1.1 });
+  const ref = useCountUp(value, { trigger: value + suffix, duration: 0.9 });
   return (
-    <div className="h-display text-[54px] sm:text-[71px] tabular-nums" style={{ color }}>
-      <span ref={ref}>{value}</span>
-      <span className="text-[0.55em]">{suffix}</span>
+    <span className="h-display text-[44px] leading-none tabular-nums sm:text-[52px]" style={{ color }}>
+      <span ref={ref}>{value}</span><span className="text-[0.55em]">{suffix}</span>
+    </span>
+  );
+}
+
+/** Compact two-row card: row 1 = selected metric, row 2 = the other three. */
+function MetricCard({ active, onPick }: { active: number; onPick: (i: number) => void }) {
+  const m = metrics[active];
+  return (
+    <div className="w-full max-w-[460px] overflow-hidden rounded-[22px] border border-fg/15 bg-surface/75 shadow-[0_30px_80px_rgba(0,0,0,.45)] backdrop-blur-xl">
+      <div key={m.id} className="flex items-center gap-5 border-b border-fg/10 p-5" style={{ animation: 'cardIn .45s ease' }}>
+        <div className="relative grid h-[76px] w-[76px] shrink-0 place-items-center rounded-2xl" style={{ background: `radial-gradient(circle at 30% 25%, #fff8, ${m.color} 55%, ${m.color}99)`, boxShadow: `0 12px 30px ${m.color}55` }}>
+          <span className="absolute inset-0 rounded-2xl border border-white/40" />
+          <span className="flex flex-col items-center gap-1 text-[10px] font-bold uppercase tracking-[0.1em] text-ink"><i className="h-2 w-2 animate-pulse rounded-full bg-ink" />Live</span>
+        </div>
+        <div className="min-w-0">
+          <BigNumber value={m.value} suffix={m.suffix} color={m.color} />
+          <p className="mt-1 text-[16px] font-semibold text-fg">{m.label}</p>
+          <p className="mt-1 text-[13px] leading-snug text-muted">{m.detail}</p>
+        </div>
+      </div>
+      <div className="grid grid-cols-3">
+        {metrics.map((x, i) => i === active ? null : (
+          <button key={x.id} onClick={() => onPick(i)} className="group min-w-0 border-r border-fg/10 px-4 py-3.5 text-left transition last:border-r-0 hover:bg-fg/[0.05]">
+            <span className="flex items-center gap-2"><i className="h-2 w-2 shrink-0 rounded-full" style={{ background: x.color }} /><b className="text-[16px] tabular-nums text-fg">{x.value}{x.suffix}</b></span>
+            <span className="mt-0.5 block truncate text-[12px] text-muted2 group-hover:text-fg">{x.label}</span>
+          </button>
+        ))}
+      </div>
+      <style>{'@keyframes cardIn{from{opacity:.2;transform:translateY(6px)}to{opacity:1;transform:none}}'}</style>
     </div>
   );
 }
 
 export default function Hero() {
-  const [active, setActive] = useState<number | null>(null);
+  const [active, setActive] = useState(0);
+  const [touched, setTouched] = useState(false);
   const { ref, inView } = useInView<HTMLDivElement>();
-  const m = active !== null ? heroMetrics[active] : null;
+  const timer = useRef<number>();
+
+  // gently cycle through the four metrics until the visitor picks one
+  useEffect(() => {
+    if (touched || !inView || prefersReducedMotion()) return;
+    timer.current = window.setInterval(() => setActive((a) => (a + 1) % metrics.length), 4500);
+    return () => clearInterval(timer.current);
+  }, [touched, inView]);
+
+  const pick = (i: number | null) => { if (i === null) return; setTouched(true); setActive(i); };
 
   return (
-    <section id="top" className="theme-dark relative overflow-hidden pb-10 pt-28 md:pt-32" style={{ background: 'linear-gradient(165deg, #1B2D47 0%, #0F1B2D 62%, #0A1322 100%)' }}>
+    <section id="top" className="theme-dark relative overflow-hidden pb-12 pt-28 md:pt-28" style={{ background: 'linear-gradient(165deg, #1B2D47 0%, #0F1B2D 62%, #0A1322 100%)' }}>
       <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(900px 600px at 75% 35%, rgba(250,204,44,.24), transparent 60%), radial-gradient(700px 500px at 5% 100%, rgba(124,198,255,.10), transparent 60%)' }} />
       <div className="grain" />
-      <div className="wrap relative grid grid-cols-1 items-center gap-6 lg:grid-cols-[1fr_1.15fr]">
+      <div className="wrap relative grid grid-cols-1 items-center gap-6 lg:grid-cols-[0.95fr_1.2fr]">
         <div className="relative z-10 min-w-0">
           <p className="eyebrow mb-6">Human-led · AI-backed CX since 2009</p>
-          <h1 className="h-display text-[39px] sm:text-[60px] lg:text-[74px]">
-            Scalable CX that <em className="accent">grows</em> with your business.
+          <h1 className="h-display text-[39px] sm:text-[58px] lg:text-[68px]">
+            Scalable CX solutions that <em className="accent">grow</em> with your business.
           </h1>
           <p className="mt-6 max-w-[520px] text-[17px] leading-relaxed text-muted">
-            Customer experience, digital operations and AI data services, delivered from 9+ cities with measurable speed and social impact.
+            Human-led, AI-backed customer experience and digital operations delivered across global markets with measurable speed and social impact.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <a href="#contact" className="btn-sun">Talk to our team</a>
-            <a href="#services" className="btn-ghost">Explore services</a>
+            <a href="#services" className="btn-ghost">See our work</a>
           </div>
         </div>
 
-        <div ref={ref} className="relative min-w-0 h-[420px] sm:h-[540px] lg:h-[620px]">
-          <Suspense fallback={<div className="absolute inset-0 grid place-items-center"><div className="h-48 w-48 rounded-full bg-sun/80 blur-[2px]" /></div>}>
-            <HeroScene metrics={heroMetrics} active={active} onSelect={setActive} running={inView} />
-          </Suspense>
-          <p className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.14em] text-muted2">
-            {active === null ? 'Click an object to open its number' : 'Click empty space to release'}
-          </p>
-        </div>
-      </div>
-
-      {/* live counters — selector + detail */}
-      <div className="wrap relative mt-4">
-        <div className="grid overflow-hidden rounded-[28px] border border-fg/10 bg-surface2/80 backdrop-blur lg:grid-cols-[1.1fr_1fr]">
-          <div className="min-w-0 border-b border-fg/10 p-6 sm:p-8 lg:border-b-0 lg:border-r">
-            <div className="flex items-center justify-between gap-4">
-              <p className="eyebrow">Live operations</p>
-              <span className="flex items-center gap-2 font-mono text-[11px] text-muted2"><i className="h-2 w-2 animate-pulse rounded-full bg-leaf" /> Updated from programme data</span>
-            </div>
-            {m ? (
-              <div className="mt-4">
-                <BigNumber value={m.value} suffix={m.suffix} color={m.color} />
-                <p className="mt-1 text-[20px] font-semibold">{m.label}</p>
-                <p className="mt-2 max-w-[440px] text-[15px] leading-relaxed text-muted">{m.detail}</p>
-              </div>
-            ) : (
-              <div className="mt-4">
-                <div className="h-display text-[37px] sm:text-[47px] text-fg">Six numbers, <em className="accent">one</em> operation.</div>
-                <p className="mt-3 max-w-[440px] text-[15px] leading-relaxed text-muted">Each object in orbit is a live programme. Pick one in the scene or from the list to bring its number forward.</p>
-              </div>
-            )}
+        <div className="relative min-w-0">
+          <div ref={ref} className="relative h-[360px] sm:h-[460px] lg:h-[520px]">
+            <Suspense fallback={<div className="absolute inset-0 grid place-items-center"><div className="h-48 w-48 rounded-full bg-sun/80 blur-[2px]" /></div>}>
+              <HeroScene metrics={metrics} active={active} onSelect={pick} running={inView} />
+            </Suspense>
+            <p className="pointer-events-none absolute left-1/2 top-2 -translate-x-1/2 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.14em] text-muted2">Click an object in orbit</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3">
-            {heroMetrics.map((x, i) => (
-              <button
-                key={x.id}
-                onClick={() => setActive(active === i ? null : i)}
-                aria-pressed={active === i}
-                className={`group relative min-w-0 border-b border-r border-fg/10 p-4 text-left transition sm:p-5 ${active === i ? 'bg-fg/[0.06]' : 'hover:bg-fg/[0.03]'}`}
-              >
-                <span className="absolute left-0 top-0 h-full w-[3px] transition" style={{ background: active === i ? x.color : 'transparent' }} />
-                <span className="block font-mono text-[22px] font-bold tabular-nums" style={{ color: x.color }}>{x.value}{x.suffix}</span>
-                <span className="mt-1 block text-[13px] leading-snug text-muted">{x.label}</span>
-              </button>
-            ))}
+          <div className="relative z-[40] -mt-6 flex justify-center lg:-mt-10 lg:justify-end">
+            <MetricCard active={active} onPick={pick} />
           </div>
         </div>
       </div>

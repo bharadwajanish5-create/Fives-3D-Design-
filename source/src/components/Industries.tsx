@@ -56,9 +56,9 @@ export default function Industries() {
                       <li key={b} className="flex items-center gap-3 text-[15px]"><i className="h-1.5 w-1.5 rotate-45 bg-sun" />{b}</li>
                     ))}
                   </ul>
-                  <div className="relative flex items-end justify-between">
-                    <span className="h-display text-[40px] text-acc">{d.kpi}</span>
-                    <span className="text-[13px] font-semibold text-acc">See case study →</span>
+                  <div className="relative flex items-center justify-between border-t border-fg/10 pt-4">
+                    <span className="text-[12px] font-semibold uppercase tracking-[0.1em] text-muted2">{d.back.length} services</span>
+                    <span className="inline-flex items-center gap-2 rounded-full bg-sun px-4 py-2 text-[13px] font-bold text-ink">Explore industry →</span>
                   </div>
                 </div>
               </button>

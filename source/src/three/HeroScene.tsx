@@ -99,7 +99,7 @@ function Orbiter({ m, i, n, active, hovered, setHovered, onSelect }: { m: Metric
   useFrame(({ clock }, dt) => {
     const g = ref.current;
     if (!g) return;
-    const target = isActive ? 1.45 : hovered === i ? 1.18 : dim ? 0.82 : 1;
+    const target = isActive ? 1.18 : hovered === i ? 1.18 : dim ? 0.82 : 1;
     const s = THREE.MathUtils.damp(g.scale.x, target, 6, dt);
     g.scale.setScalar(s);
     g.rotation.y += dt * (isActive ? 1.1 : 0.45);
@@ -151,7 +151,7 @@ function Rig({ metrics, active, onSelect }: Omit<Props, 'running'>) {
     state.camera.lookAt(0, 0, 0);
   });
   return (
-    <group scale={k}>
+    <group scale={k * 0.92} position={[0, 0.45, 0]}>
       <Core />
       <group rotation={[0.28, 0, 0.06]}>
         <group ref={ring}>

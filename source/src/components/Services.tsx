@@ -34,11 +34,15 @@ function Visual({ id, hue }: { id: string; hue: string }) {
   }
   if (id === 'genai') {
     return (
-      <div className="grid h-full w-full content-center gap-3 bg-gradient-to-br from-ink-3 to-ink p-6">
-        <p className="font-mono text-[11px] text-muted2">PROMPT · “Explain EMI to a first-time borrower in Hindi”</p>
-        {[['A', 'Uses simple Hindi, gives a worked example, flags late-fee risk.', true], ['B', 'Mixes English jargon, skips the example, no risk note.', false]].map(([k, t, win]) => (
-          <div key={k as string} className="rounded-2xl border p-4" style={{ borderColor: win ? hue : 'rgba(255,255,255,.12)', background: win ? `${hue}14` : 'transparent' }}>
-            <div className="flex items-center justify-between"><b className="font-mono text-[13px]">Response {k as string}</b>{win ? <span className="rounded-full px-2 py-0.5 text-[11px] font-bold text-ink" style={{ background: hue }}>Preferred by 4/5 raters</span> : <span className="text-[11px] text-muted3">Rejected</span>}</div>
+      <div className="grid h-full w-full content-center gap-3 bg-gradient-to-br from-ink-3 to-ink p-6 sm:p-8">
+        <div>
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em]" style={{ color: hue }}>How RLHF works</p>
+          <p className="mt-1 max-w-[46ch] text-[13px] leading-snug text-muted">The model writes two answers to the same prompt. Our raters compare them, and the one they prefer is used to train the model.</p>
+        </div>
+        <div className="rounded-xl border border-fg/10 bg-fg/[0.04] px-4 py-2.5 text-[13px]"><span className="text-muted2">Prompt · </span>Explain EMI to a first-time borrower in Hindi</div>
+        {[['A', 'Uses simple Hindi, gives a worked example and flags late-fee risk.', true], ['B', 'Mixes English jargon, skips the example and misses the risk note.', false]].map(([k, t, win]) => (
+          <div key={k as string} className="rounded-2xl border p-4 transition" style={{ borderColor: win ? hue : 'rgba(255,255,255,.12)', background: win ? `${hue}14` : 'transparent', opacity: win ? 1 : 0.75 }}>
+            <div className="flex items-center justify-between gap-3"><b className="text-[13px]">Answer {k as string}</b>{win ? <span className="rounded-full px-2 py-0.5 text-[11px] font-bold text-ink" style={{ background: hue }}>Chosen by 4 of 5 raters</span> : <span className="rounded-full border border-fg/15 px-2 py-0.5 text-[11px] text-muted2">Not chosen</span>}</div>
             <p className="mt-2 text-[13px] text-muted">{t as string}</p>
           </div>
         ))}
@@ -69,10 +73,10 @@ export default function Services() {
       <div className="wrap">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-[640px]">
-            <p className="eyebrow">Comprehensive BPM services</p>
-            <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Four services. <em className="accent">Four agents</em> ready to talk.</h2>
+            <p className="eyebrow">Core capabilities</p>
+            <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Comprehensive <em className="accent">BPM Services</em></h2>
           </div>
-          <p className="max-w-[360px] text-[15px] leading-relaxed text-muted">Every service has its own agent. Hover the stage, then double-click or tap the agent to start a conversation.</p>
+          <p className="max-w-[360px] text-[15px] leading-relaxed text-muted">Every service has its own agent. Hover the stage, then double-click or tap the agent to call or chat.</p>
         </div>
 
         <div className="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-4" role="tablist">
@@ -108,7 +112,7 @@ export default function Services() {
             </div>
             <button onClick={() => setChat(true)} className="mt-8 flex items-center gap-3 rounded-full border border-fg/15 py-2 pl-2 pr-5 transition hover:border-fg/40">
               <AgentAvatar name={s.agent.name} hue={s.agent.hue} size={36} talking={peek && !chat} />
-              <span className="text-[14px] font-semibold">Chat with {s.agent.name}</span>
+              <span className="flex items-center gap-2 text-[14px] font-semibold">{s.agent.mode === 'call' ? <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg> : <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>}{s.agent.action}</span>
             </button>
           </div>
 
@@ -119,7 +123,7 @@ export default function Services() {
               <button onClick={() => setChat(true)}
                 className={`theme-dark absolute right-5 top-5 flex items-center gap-3 rounded-full bg-surface/85 py-2 pl-2 pr-4 backdrop-blur transition-all duration-500 ${peek ? 'translate-y-0 opacity-100' : 'lg:-translate-y-3 lg:opacity-0'}`}>
                 <AgentAvatar name={s.agent.name} hue={s.agent.hue} size={34} talking />
-                <span className="text-left"><span className="block text-[13px] font-bold">Hi, I’m {s.agent.name}</span><span className="block text-[11px] text-muted2">Double-click to chat</span></span>
+                <span className="text-left"><span className="block text-[13px] font-bold">Hi, I’m {s.agent.name}</span><span className="block text-[11px] text-muted2">{s.agent.hint}</span></span>
               </button>
             )}
             {chat && (

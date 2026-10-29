@@ -1,5 +1,5 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Environment, Lightformer, MeshDistortMaterial, Sparkles, Html, Float } from '@react-three/drei';
+import { Environment, Lightformer, MeshDistortMaterial, Sparkles, Float } from '@react-three/drei';
 import { useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { elements } from '../data/site';
@@ -59,22 +59,23 @@ function Item({ i, active, onSelect }: { i: number; active: number; onSelect: (i
   const [hover, setHover] = useState(false);
   const { viewport } = useThree();
   const n = elements.length;
-  const spread = Math.min(viewport.width * 0.86, 9);
-  const x = (i - (n - 1) / 2) * (spread / (n - 1 || 1));
+  // evenly spaced columns so HTML labels below the canvas line up (grid-cols-5)
+  const col = viewport.width / n;
+  const x = (i - (n - 1) / 2) * col;
   const isA = active === i;
   useFrame((_, dt) => {
     if (!g.current) return;
-    const s = THREE.MathUtils.damp(g.current.scale.x, isA ? 1.35 : hover ? 1.1 : 0.85, 6, dt);
+    const s = THREE.MathUtils.damp(g.current.scale.x, isA ? 1.2 : hover ? 1.08 : 0.82, 6, dt);
     g.current.scale.setScalar(s);
-    g.current.position.y = THREE.MathUtils.damp(g.current.position.y, isA ? 0.35 : 0, 5, dt);
+    g.current.position.y = THREE.MathUtils.damp(g.current.position.y, isA ? 0.12 : 0, 5, dt);
     g.current.rotation.y += dt * (isA ? 0.8 : 0.3);
   });
   const Shape = Shapes[i];
   const el = elements[i];
-  const k = Math.min(1, viewport.width / 9.5);
+  const k = Math.min(viewport.height / 2.2, col / 1.7);
   return (
     <group position={[x, 0, 0]}>
-      <Float speed={1.4} floatIntensity={0.35} rotationIntensity={0.2}>
+      <Float speed={1.4} floatIntensity={0.15} rotationIntensity={0.2}>
         <group ref={g} scale={k}
           onPointerOver={(e) => { e.stopPropagation(); setHover(true); document.body.style.cursor = 'pointer'; }}
           onPointerOut={() => { setHover(false); document.body.style.cursor = ''; }}
@@ -83,18 +84,13 @@ function Item({ i, active, onSelect }: { i: number; active: number; onSelect: (i
           <mesh visible={false}><sphereGeometry args={[0.85, 8, 8]} /></mesh>
         </group>
       </Float>
-      <Html center position={[0, -1.15, 0]} style={{ pointerEvents: 'none' }} zIndexRange={[10, 0]}>
-        <div className="whitespace-nowrap text-center">
-          <div className="h-display text-[18px] sm:text-[24px]" style={{ color: '#0F1B2D', opacity: isA || hover ? 1 : 0.55 }}>{el.name}</div>
-        </div>
-      </Html>
     </group>
   );
 }
 
 export default function ElementsScene({ active, onSelect, running }: Props) {
   return (
-    <Canvas camera={{ position: [0, 0.4, 7], fov: 40 }} dpr={[1, 1.75]} gl={{ alpha: true, antialias: true }} frameloop={running ? 'always' : 'never'} aria-label="The five elements: Earth, Water, Air, Fire, Space">
+    <Canvas camera={{ position: [0, 0, 6], fov: 26 }} dpr={[1, 1.75]} gl={{ alpha: true, antialias: true }} frameloop={running ? 'always' : 'never'} aria-label="The five elements: Earth, Water, Air, Fire, Space">
       <ambientLight intensity={0.45} />
       <directionalLight position={[3, 5, 4]} intensity={1.6} />
       <pointLight position={[0, -2, 3]} intensity={20} color="#FACC2C" />
