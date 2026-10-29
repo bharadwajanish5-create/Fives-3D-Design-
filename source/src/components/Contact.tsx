@@ -112,9 +112,8 @@ export default function Contact() {
       <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(700px 500px at 20% 40%, rgba(250,204,44,.14), transparent 65%)' }} />
       <div className="wrap relative grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div className="min-w-0">
-          <p className="eyebrow">Talk to us</p>
-          <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Start your transformation with <em className="accent">FiveS</em></h2>
-          <p className="mt-5 max-w-[460px] text-[16px] leading-relaxed text-muted">Pick a pathway and the right FiveS agent will take your details in under a minute: Arjun for solutions, Meera for careers, Kabir for partnerships.</p>
+          <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Start Your Transformation With <em className="accent">FiveS</em></h2>
+          <p className="mt-5 max-w-[460px] text-[16px] leading-relaxed text-muted">Choose your pathway below to connect directly with the appropriate leadership team.</p>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
             {pathways.map((p) => (
               <button key={p.id} onClick={() => start(p.id)} className="group rounded-2xl border border-fg/12 bg-fg/[0.03] p-4 text-left transition hover:-translate-y-1 hover:border-sun/70">

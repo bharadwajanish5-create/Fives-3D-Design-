@@ -37,9 +37,9 @@ export default function Philosophy() {
       <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(700px 420px at 30% 60%, rgba(250,204,44,.10), transparent 70%), radial-gradient(600px 400px at 80% 30%, rgba(124,198,255,.08), transparent 70%)' }} />
       <div className="wrap relative">
         <div className="max-w-[720px]">
-          <p className="eyebrow">Delivery philosophy</p>
+          <p className="eyebrow">Delivery Philosophy</p>
           <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Human <em className="accent">Intelligence</em></h2>
-          <p className="mt-4 max-w-[560px] text-[16px] leading-relaxed text-muted">Engineered for operational rigour, cost resilience and continuous service enhancement.</p>
+          <p className="mt-4 max-w-[560px] text-[16px] leading-relaxed text-muted">Engineered for operational rigor, cost resilience, and continuous service enhancement.</p>
         </div>
 
         <div className="relative mt-10 grid items-center gap-10 lg:grid-cols-[1.15fr_1fr]">

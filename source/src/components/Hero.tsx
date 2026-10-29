@@ -64,7 +64,6 @@ export default function Hero() {
       <div className="grain" />
       <div className="wrap relative grid grid-cols-1 items-center gap-6 lg:grid-cols-[0.95fr_1.2fr]">
         <div className="relative z-10 min-w-0">
-          <p className="eyebrow mb-6">Human-led · AI-backed CX since 2009</p>
           <h1 className="h-display text-[39px] sm:text-[58px] lg:text-[68px]">
             Scalable CX solutions that <em className="accent">grow</em> with your business.
           </h1>

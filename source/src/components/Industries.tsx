@@ -17,10 +17,10 @@ export default function Industries() {
       <div className="wrap">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-[640px]">
-            <p className="eyebrow">Industry practices</p>
-            <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Domain depth across <em className="accent">six</em> verticals.</h2>
+            <p className="eyebrow">Industry Practices</p>
+            <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Domain Expertise Across <em className="accent">Verticals</em></h2>
           </div>
-          <p className="max-w-[340px] text-[15px] leading-relaxed text-[#4A566B]">Hover or tap a card to turn it over and see what we run for that industry.</p>
+          <div className="max-w-[380px]"><p className="text-[15.5px] leading-relaxed text-muted">Specialized workflows tailored to compliance, speed, and unit economics.</p><p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-muted2">Hover or tap a card to turn it over</p></div>
         </div>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

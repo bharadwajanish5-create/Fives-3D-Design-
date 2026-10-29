@@ -73,10 +73,10 @@ export default function Services() {
       <div className="wrap">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-[640px]">
-            <p className="eyebrow">Core capabilities</p>
+            <p className="eyebrow">Core Capabilities</p>
             <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Comprehensive <em className="accent">BPM Services</em></h2>
           </div>
-          <p className="max-w-[360px] text-[15px] leading-relaxed text-muted">Every service has its own agent. Hover the stage, then double-click or tap the agent to call or chat.</p>
+          <div className="max-w-[420px]"><p className="text-[15.5px] leading-relaxed text-muted">Delivering end-to-end customer experience, voice, non-voice digital triage, and human-led data annotation workflows.</p><p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-muted2">Double-click a service to call or chat with its agent</p></div>
         </div>
 
         <div className="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-4" role="tablist">

@@ -56,8 +56,9 @@ export default function Footprint() {
       <div className="wrap">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-[640px]">
-            <p className="eyebrow">Delivery footprint</p>
-            <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">7 hubs in India. <em className="accent">6 desks</em> across the world.</h2>
+            <p className="eyebrow">Global Infrastructure</p>
+            <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Delivery <em className="accent">Footprint</em></h2>
+            <p className="mt-4 text-[15.5px] leading-relaxed text-muted">Connected global delivery hubs serving Tier-1 clients across India, Europe, USA, and the Middle East.</p>
           </div>
           <div className="flex gap-2 rounded-full border border-fg/15 p-1">
             {(['world', 'india'] as const).map((v) => (

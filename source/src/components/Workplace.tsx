@@ -26,10 +26,10 @@ export default function Workplace() {
       <div className="wrap">
         <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-end">
           <div>
-            <p className="eyebrow">Our workplace</p>
+            <p className="eyebrow">Our Workplace</p>
             <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Inclusion driven <em className="accent">People approach</em></h2>
           </div>
-          <p className="max-w-[460px] text-[15px] leading-relaxed text-muted">Our name comes from the five elements of life: Earth, Water, Air, Fire and Space. Each one stands for how we hire, include and grow people.</p>
+          <div className="max-w-[480px]"><p className="text-[15.5px] leading-relaxed text-muted">We believe that scalable enterprise execution and progressive social impact are mutually reinforcing. Our workforce model proves that expanding access creates higher operational retention and unmatched dedication.</p><p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-muted2">Our name comes from the five elements. Pick one below</p></div>
         </div>
 
         <div className="mt-12 grid overflow-hidden rounded-[28px] border border-fg/10 bg-surface shadow-[0_24px_60px_rgba(15,27,45,.08)] lg:grid-cols-[1fr_1.05fr]">
