@@ -235,3 +235,32 @@ export const nav: NavItem[] = [
     { label: 'Life at FiveS', href: 'https://fivesdigital.com/life-at-fives/' }, { label: 'Events', href: 'https://fivesdigital.com/events/' }, { label: 'Coffee Chat', href: 'https://fivesdigital.com/coffee-chat/' } ] },
   { label: 'Contact Us', href: '#contact' },
 ];
+
+/** Client outcomes band — wording from the reference design. */
+export const outcomes = [
+  { value: 60, suffix: '%', label: 'Enterprise clients expand scope within 12 months', kind: 'ring' as const },
+  { value: 84, suffix: '%', label: 'Annual Client Retention', kind: 'ring' as const },
+  { value: 3.8, suffix: 'X', label: 'First Year Client ROI', kind: 'bars' as const },
+];
+
+/** Case studies — wording from the reference design. */
+export const caseStudies = [
+  {
+    industry: 'E-Commerce & D2C',
+    kpi: '-58% WISMO • 4.8/5 CSAT',
+    quote: 'FiveS Digital scaled our peak festive support by 450+ specialists in under 5 days, cutting average response time to under 45 seconds while protecting CSAT.',
+    author: 'VP of Customer Operations',
+    org: 'Leading Indian D2C Retail Brand',
+    initials: 'VP',
+    tags: ['72-Hour Rapid Onboarding', 'Omnichannel Voice & Chat', 'Zero SLA Breach'],
+  },
+  {
+    industry: 'Fintech & Banking',
+    kpi: '+65% Throughput • 99.8% Pass',
+    quote: 'Deploying FiveS Digital’s multilingual Video-KYC and merchant fraud review reduced our customer onboarding backlog from 48 hours to under 3 hours.',
+    author: 'Head of Risk & Compliance',
+    org: 'Global Neo-Banking Platform',
+    initials: 'RC',
+    tags: ['24/7 Video KYC Pods', 'ISO 27001 Clean Rooms', 'Fraud Alert Triaging'],
+  },
+];

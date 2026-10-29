@@ -4,6 +4,8 @@ import About from './components/About';
 import Services from './components/Services';
 import Industries from './components/Industries';
 import Philosophy from './components/Philosophy';
+import Outcomes from './components/Outcomes';
+import CaseStudies from './components/CaseStudies';
 import Workplace from './components/Workplace';
 import Footprint from './components/Footprint';
 import Contact from './components/Contact';
@@ -18,6 +20,8 @@ export default function App() {
         <About />
         <Services />
         <Industries />
+        <Outcomes />
+        <CaseStudies />
         <Philosophy />
         <Workplace />
         <Footprint />
