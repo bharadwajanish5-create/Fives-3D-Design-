@@ -29,7 +29,7 @@ export default function Workplace() {
             <p className="eyebrow">Our Workplace</p>
             <h2 className="h-display mt-5 text-[40px] sm:whitespace-nowrap sm:text-[clamp(34px,4.2vw,54px)]">Inclusion driven <em className="accent">People approach</em></h2>
           </div>
-          <div className="max-w-[480px]"><p className="text-[15.5px] leading-relaxed text-muted">We believe that scalable enterprise execution and progressive social impact are mutually reinforcing. Our workforce model proves that expanding access creates higher operational retention and unmatched dedication.</p><p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-muted2">Our name comes from the five elements. Pick one below</p></div>
+          <div className="lg:pb-3"><p className="whitespace-nowrap text-[12px] font-semibold uppercase tracking-[0.12em] text-muted2">Our name comes from the five elements. Pick one below</p></div>
         </div>
 
         <div className="mt-12 grid overflow-hidden rounded-[28px] border border-fg/10 bg-surface shadow-[0_24px_60px_rgba(15,27,45,.08)] lg:grid-cols-[1fr_1.05fr]">
