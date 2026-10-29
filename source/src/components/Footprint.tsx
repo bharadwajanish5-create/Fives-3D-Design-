@@ -58,7 +58,7 @@ export default function Footprint() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-[640px]">
             <p className="eyebrow">Delivery footprint</p>
-            <h2 className="h-display mt-5 text-[48px] sm:text-[64px]">7 hubs in India. <em className="accent">6 desks</em> across the world.</h2>
+            <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">7 hubs in India. <em className="accent">6 desks</em> across the world.</h2>
           </div>
           <div className="flex gap-2 rounded-full border border-fg/15 p-1">
             {(['world', 'india'] as const).map((v) => (
@@ -94,7 +94,7 @@ export default function Footprint() {
                   <g onMouseEnter={() => setHover('__india')} onMouseLeave={() => setHover(null)} onClick={() => go('india')} style={{ cursor: 'pointer' }}>
                     <circle cx={origin[0] + 6} cy={origin[1] + 14} r={22} fill="#FACC2C" opacity={0.18} className="pulse-ring" />
                     <circle cx={origin[0] + 6} cy={origin[1] + 14} r={13} fill="#FACC2C" stroke="#070D18" strokeWidth={2} />
-                    <text x={origin[0] + 6} y={origin[1] + 18.5} textAnchor="middle" fontSize="13" fontWeight="800" fill="#070D18" style={{ fontFamily: 'JetBrains Mono, monospace' }}>7</text>
+                    <text x={origin[0] + 6} y={origin[1] + 18.5} textAnchor="middle" fontSize="13" fontWeight="800" fill="#070D18" style={{ fontFamily: 'Inter, sans-serif' }}>7</text>
                   </g>
                 )}
                 {view === 'india' && z > 0.6 && hubs.map((l) => <Pin key={l.name} l={l} flagship={l.flagship} />)}
@@ -116,14 +116,14 @@ export default function Footprint() {
                     style={{ ...pos, transform: `translate(${right ? '-100%' : '-12%'}, calc(-100% - 18px))` }}>
                     {hovered ? (
                       <>
-                        <p className="font-mono text-[10px] uppercase tracking-[0.18em]" style={{ color: hovered.region === 'india' ? '#FACC2C' : '#7CC6FF' }}>{hovered.region === 'india' ? 'India hub' : 'International desk'}</p>
+                        <p className="font-mono text-[10px] uppercase tracking-[0.12em]" style={{ color: hovered.region === 'india' ? '#FACC2C' : '#7CC6FF' }}>{hovered.region === 'india' ? 'India hub' : 'International desk'}</p>
                         <p className="mt-1 text-[17px] font-bold">{hovered.name}</p>
                         <p className="text-[13px] font-semibold text-fg/85">{hovered.role}</p>
                         <p className="mt-2 text-[12.5px] leading-snug text-muted">{hovered.detail}</p>
                       </>
                     ) : (
                       <>
-                        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-acc">India · 7 delivery centres</p>
+                        <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-acc">India · 7 delivery centres</p>
                         <p className="mt-2 text-[12.5px] leading-snug text-muted">{hubs.map((h) => h.name).join(' · ')}</p>
                         <p className="mt-2 text-[12px] font-bold text-acc">Click to zoom in →</p>
                       </>

@@ -70,7 +70,7 @@ export default function Services() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-[640px]">
             <p className="eyebrow">Comprehensive BPM services</p>
-            <h2 className="h-display mt-5 text-[48px] sm:text-[64px]">Four services. <em className="accent">Four agents</em> ready to talk.</h2>
+            <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Four services. <em className="accent">Four agents</em> ready to talk.</h2>
           </div>
           <p className="max-w-[360px] text-[15px] leading-relaxed text-muted">Every service has its own agent. Hover the stage, then double-click or tap the agent to start a conversation.</p>
         </div>
@@ -96,7 +96,7 @@ export default function Services() {
         >
           <div className="min-w-0 p-7 sm:p-10">
             <span className="chip border-transparent text-ink" style={{ background: s.agent.hue }}>{s.kicker}</span>
-            <h3 className="h-display mt-5 text-[40px] sm:text-[48px]">{s.title}</h3>
+            <h3 className="h-display mt-5 text-[34px] sm:text-[40px]">{s.title}</h3>
             <p className="mt-4 max-w-[52ch] text-[16px] leading-relaxed text-muted">{s.desc}</p>
             <div className="mt-8 grid grid-cols-3 gap-3">
               {s.metrics.map((m) => (

@@ -85,7 +85,7 @@ function Item({ i, active, onSelect }: { i: number; active: number; onSelect: (i
       </Float>
       <Html center position={[0, -1.15, 0]} style={{ pointerEvents: 'none' }} zIndexRange={[10, 0]}>
         <div className="whitespace-nowrap text-center">
-          <div className="h-display text-[22px] sm:text-[28px]" style={{ color: '#0F1B2D', opacity: isA || hover ? 1 : 0.55 }}>{el.name}</div>
+          <div className="h-display text-[18px] sm:text-[24px]" style={{ color: '#0F1B2D', opacity: isA || hover ? 1 : 0.55 }}>{el.name}</div>
         </div>
       </Html>
     </group>

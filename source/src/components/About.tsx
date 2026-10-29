@@ -6,7 +6,7 @@ function Fact({ value, suffix, label, note, i }: { value: number; suffix: string
   return (
     <div className="group relative min-w-0 border-t border-fg/10 pt-6" style={{ perspective: '800px' }}>
       <span className="font-mono text-[11px] text-muted3">0{i + 1}</span>
-      <div className="h-display mt-2 text-[54px] text-fg tabular-nums transition duration-500 group-hover:text-acc text-fg sm:text-[88px]" style={{ transformOrigin: 'left bottom' }}>
+      <div className="h-display mt-2 text-[45px] text-fg tabular-nums transition duration-500 group-hover:text-acc text-fg sm:text-[74px]" style={{ transformOrigin: 'left bottom' }}>
         <span ref={ref}>{value}</span><span className="text-sun">{suffix}</span>
       </div>
       <p className="mt-1 text-[17px] font-semibold">{label}</p>
@@ -22,7 +22,7 @@ export default function About() {
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="eyebrow">Who we are</p>
-            <h2 className="h-display mt-5 text-[48px] sm:text-[64px]">Purpose-led <em className="accent">BPM</em>, built in Udaipur, run worldwide.</h2>
+            <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Purpose-led <em className="accent">BPM</em>, built in Udaipur, run worldwide.</h2>
           </div>
           <div className="min-w-0 self-end">
             <p className="text-[21px] font-semibold leading-snug text-fg">{whoWeAre.lead}</p>

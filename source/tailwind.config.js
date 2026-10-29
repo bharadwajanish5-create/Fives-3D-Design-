@@ -21,9 +21,11 @@ export default {
         leaf: '#3DDC97',
       },
       fontFamily: {
-        display: ['"Instrument Serif"', 'Georgia', 'serif'],
-        sans: ['"Hanken Grotesk"', 'system-ui', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        // fivesdigital.com brand fonts: PT Serif (headings, copy) + Inter (UI, labels, numbers)
+        display: ['"PT Serif"', 'Georgia', 'serif'],
+        serif: ['"PT Serif"', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+        mono: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },

@@ -33,7 +33,7 @@ export default function Philosophy() {
       <div className="wrap relative">
         <div className="max-w-[720px]">
           <p className="eyebrow">Delivery philosophy</p>
-          <h2 className="h-display mt-5 text-[48px] sm:text-[64px]">AI for speed. <em className="accent">Human intelligence</em> for judgement.</h2>
+          <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">AI for speed. <em className="accent">Human intelligence</em> for judgement.</h2>
         </div>
 
         <div ref={stage} className="relative mt-14 grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
@@ -48,8 +48,8 @@ export default function Philosophy() {
                 >
                   <span>
                     <span className="block font-mono text-[34px] font-bold tabular-nums">{b.metric}</span>
-                    <span className="h-display mt-1 block text-[26px] leading-[1.05]">{b.title}</span>
-                    <span className={`mt-3 block font-mono text-[10px] uppercase tracking-[0.18em] ${active === i ? 'text-ink/70' : 'text-muted2'}`}>{active === i ? 'Open' : 'Tap to open'}</span>
+                    <span className="h-display mt-1 block text-[22px] leading-[1.05]">{b.title}</span>
+                    <span className={`mt-3 block font-mono text-[10px] uppercase tracking-[0.12em] ${active === i ? 'text-ink/70' : 'text-muted2'}`}>{active === i ? 'Open' : 'Tap to open'}</span>
                   </span>
                 </button>
               </div>
@@ -60,7 +60,7 @@ export default function Philosophy() {
             {p ? (
               <div key={p.id}>
                 <p className="eyebrow">{p.tag}</p>
-                <h3 className="h-display mt-4 text-[40px] leading-[1.02]">{p.title}</h3>
+                <h3 className="h-display mt-4 text-[34px] leading-[1.02]">{p.title}</h3>
                 <p className="mt-4 text-[16px] leading-relaxed text-muted">{p.body}</p>
                 <ul className="mt-6 grid gap-2.5">
                   {p.points.map((x) => <li key={x} className="flex items-center gap-3 rounded-xl border border-fg/10 px-4 py-3 text-[14px]"><span className="grid h-5 w-5 place-items-center rounded-full bg-sun text-[11px] font-bold text-ink">✓</span>{x}</li>)}
@@ -70,7 +70,7 @@ export default function Philosophy() {
             ) : (
               <div>
                 <p className="eyebrow">How we deliver</p>
-                <h3 className="h-display mt-4 text-[36px] leading-[1.05]">Three habits behind every programme.</h3>
+                <h3 className="h-display mt-4 text-[30px] leading-[1.05]">Three habits behind every programme.</h3>
                 <ul className="mt-6 grid gap-3">
                   {philosophy.map((x, i) => (
                     <li key={x.id}><button onClick={() => setActive(i)} className="flex w-full items-center justify-between gap-4 border-t border-fg/10 pt-3 text-left text-[15px] hover:text-acc"><span>{x.title}</span><span className="font-mono text-[13px] text-muted2">{x.metric}</span></button></li>

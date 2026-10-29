@@ -105,7 +105,7 @@ export default function Contact() {
       <div className="wrap relative grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div className="min-w-0">
           <p className="eyebrow">Start your transformation</p>
-          <h2 className="h-display mt-5 text-[48px] sm:text-[64px]">Skip the form. <em className="accent">Talk to Sahaya.</em></h2>
+          <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Skip the form. <em className="accent">Talk to Sahaya.</em></h2>
           <p className="mt-5 max-w-[460px] text-[16px] leading-relaxed text-muted">Our intake agent takes your details in under a minute and routes them to sales, careers or partnerships.</p>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
             {pathways.map((p) => (

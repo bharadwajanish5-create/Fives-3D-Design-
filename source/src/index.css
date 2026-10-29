@@ -32,7 +32,7 @@
 }
 :root { color-scheme: dark; }
 html { scroll-behavior: smooth; }
-body { background: #0F1B2D; color: #fff; font-family: "Hanken Grotesk", system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body { background: #0F1B2D; color: #fff; font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: #0F1B2D; }
 .accent { font-style: italic; color: rgb(var(--hl-fg)); background: var(--hl-bg); padding: 0 .08em; border-radius: .08em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 h1, h2, h3 { text-wrap: balance; }
@@ -42,8 +42,8 @@ h1, h2, h3 { text-wrap: balance; }
 @layer components {
   .wrap { @apply mx-auto w-full max-w-[1240px]; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
   @media (min-width: 768px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
-  .eyebrow { @apply font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-acc; }
-  .h-display { @apply font-display font-normal leading-[0.98] tracking-[-0.01em]; }
+  .eyebrow { @apply font-sans text-[12px] font-bold uppercase tracking-[0.14em] text-acc; }
+  .h-display { @apply font-display font-normal leading-[1.08] tracking-[-0.02em]; }
   .chip { @apply inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-[13px] font-semibold transition; }
   .btn-sun { @apply inline-flex items-center justify-center gap-2 rounded-full bg-sun px-6 py-3.5 text-[15px] font-bold text-ink transition hover:-translate-y-0.5 hover:bg-sun-deep; }
   .btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-full border border-fg/30 px-6 py-3.5 text-[15px] font-semibold text-fg transition hover:border-fg/60 hover:bg-fg/5; }

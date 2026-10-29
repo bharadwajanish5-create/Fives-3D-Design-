@@ -7,7 +7,7 @@ const HeroScene = lazy(() => import('../three/HeroScene'));
 function BigNumber({ value, suffix, color }: { value: number; suffix: string; color: string }) {
   const ref = useCountUp(value, { trigger: value + suffix, duration: 1.1 });
   return (
-    <div className="h-display text-[64px] sm:text-[84px] tabular-nums" style={{ color }}>
+    <div className="h-display text-[54px] sm:text-[71px] tabular-nums" style={{ color }}>
       <span ref={ref}>{value}</span>
       <span className="text-[0.55em]">{suffix}</span>
     </div>
@@ -26,7 +26,7 @@ export default function Hero() {
       <div className="wrap relative grid grid-cols-1 items-center gap-6 lg:grid-cols-[1fr_1.15fr]">
         <div className="relative z-10 min-w-0">
           <p className="eyebrow mb-6">Human-led · AI-backed CX since 2009</p>
-          <h1 className="h-display text-[46px] sm:text-[72px] lg:text-[88px]">
+          <h1 className="h-display text-[39px] sm:text-[60px] lg:text-[74px]">
             Scalable CX that <em className="accent">grows</em> with your business.
           </h1>
           <p className="mt-6 max-w-[520px] text-[17px] leading-relaxed text-muted">
@@ -42,7 +42,7 @@ export default function Hero() {
           <Suspense fallback={<div className="absolute inset-0 grid place-items-center"><div className="h-48 w-48 rounded-full bg-sun/80 blur-[2px]" /></div>}>
             <HeroScene metrics={heroMetrics} active={active} onSelect={setActive} running={inView} />
           </Suspense>
-          <p className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.2em] text-muted2">
+          <p className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.14em] text-muted2">
             {active === null ? 'Click an object to open its number' : 'Click empty space to release'}
           </p>
         </div>
@@ -64,7 +64,7 @@ export default function Hero() {
               </div>
             ) : (
               <div className="mt-4">
-                <div className="h-display text-[44px] sm:text-[56px] text-fg">Six numbers, <em className="accent">one</em> operation.</div>
+                <div className="h-display text-[37px] sm:text-[47px] text-fg">Six numbers, <em className="accent">one</em> operation.</div>
                 <p className="mt-3 max-w-[440px] text-[15px] leading-relaxed text-muted">Each object in orbit is a live programme. Pick one in the scene or from the list to bring its number forward.</p>
               </div>
             )}

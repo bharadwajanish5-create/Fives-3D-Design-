@@ -18,7 +18,7 @@ export default function Industries() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-[640px]">
             <p className="eyebrow">Industry practices</p>
-            <h2 className="h-display mt-5 text-[48px] sm:text-[64px]">Domain depth across <em className="accent">six</em> verticals.</h2>
+            <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Domain depth across <em className="accent">six</em> verticals.</h2>
           </div>
           <p className="max-w-[340px] text-[15px] leading-relaxed text-[#4A566B]">Hover or tap a card to turn it over and see what we run for that industry.</p>
         </div>
@@ -36,7 +36,7 @@ export default function Industries() {
                     <span className="font-mono text-[11px] text-[#7A8599]">0{i + 1} / 06</span>
                   </div>
                   <div>
-                    <h3 className="h-display text-[34px] leading-[1.02]">{d.title}</h3>
+                    <h3 className="h-display text-[29px] leading-[1.02]">{d.title}</h3>
                     <p className="mt-2 text-[15px] text-[#4A566B]">{d.front}</p>
                   </div>
                   <div className="flex items-center justify-between border-t border-[#E3E8EF] pt-4">
@@ -49,7 +49,7 @@ export default function Industries() {
                   <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-sun/90 blur-[1px]" />
                   <div className="relative">
                     <p className="eyebrow">What we run</p>
-                    <h3 className="h-display mt-3 text-[30px] leading-[1.02]">{d.title}</h3>
+                    <h3 className="h-display mt-3 text-[25px] leading-[1.02]">{d.title}</h3>
                   </div>
                   <ul className="relative grid gap-2.5">
                     {d.back.map((b) => (
@@ -57,7 +57,7 @@ export default function Industries() {
                     ))}
                   </ul>
                   <div className="relative flex items-end justify-between">
-                    <span className="h-display text-[48px] text-acc">{d.kpi}</span>
+                    <span className="h-display text-[40px] text-acc">{d.kpi}</span>
                     <span className="text-[13px] font-semibold text-acc">See case study →</span>
                   </div>
                 </div>
