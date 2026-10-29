@@ -1,0 +1,191 @@
+/**
+ * ------------------------------------------------------------------
+ *  FiveS Digital — single source of truth for homepage content.
+ *  Every number and label on the page reads from here, so wiring the
+ *  site to a CMS / WordPress REST endpoint later means replacing these
+ *  exports with fetched data of the same shape.
+ *  Items marked `confirm: true` are placeholders awaiting client sign-off.
+ * ------------------------------------------------------------------
+ */
+
+export type Metric = {
+  id: string;
+  value: number;
+  suffix: string;
+  label: string;
+  detail: string;
+  shape: 'wave' | 'bubble' | 'gem' | 'coin' | 'parcel' | 'loop';
+  color: string;
+};
+
+/** Hero — live operations counters (rendered as 3D objects orbiting the core). */
+export const heroMetrics: Metric[] = [
+  { id: 'voice', value: 15, suffix: ' Mn', label: 'Voice conversations', detail: 'Inbound and outbound calls handled across 13+ Indian languages.', shape: 'wave', color: '#FACC2C' },
+  { id: 'chats', value: 20, suffix: ' Mn', label: 'Active chats', detail: 'Chat, email and social threads resolved by AI-assisted specialists.', shape: 'bubble', color: '#7CC6FF' },
+  { id: 'quality', value: 95, suffix: '%', label: 'Quality score', detail: 'Audited interaction quality across every live programme.', shape: 'gem', color: '#3DDC97' },
+  { id: 'loans', value: 1, suffix: ' Mn', label: 'Personal-loan leads handled', detail: 'Lead qualification and follow-up for lending partners.', shape: 'coin', color: '#FFD76A' },
+  { id: 'ndr', value: 50, suffix: 'K', label: 'NDR completions', detail: 'Non-delivery reports closed out with customers for logistics brands.', shape: 'parcel', color: '#FF9A5C' },
+  { id: 'returns', value: 1, suffix: ' Mn', label: 'Shopping-cart returns', detail: 'Return requests verified and processed for e-commerce clients.', shape: 'loop', color: '#C3A6FF' },
+];
+
+/** Who we are — headline facts. */
+export const whoWeAre = {
+  lead: 'We blend technology and human intelligence to run customer experience and data operations for brands across India, Europe, the USA and the Middle East.',
+  body: 'FiveS began in 2009 in Udaipur with a 12-member team. Today it is home to Asia’s first diversity-focused BPM delivery centre in Navi Mumbai, where scale meets social impact.',
+  facts: [
+    { value: 16, suffix: '+', label: 'Years in CX', note: 'Since 2009, Udaipur' },
+    { value: 7, suffix: '', label: 'Countries', note: 'India, USA, Malta, Belgium, Ghana, Kenya, Philippines' },
+    { value: 100, suffix: '+', label: 'Brands served', note: 'Placeholder — confirm with FiveS', confirm: true },
+    { value: 3000, suffix: '+', label: 'People', note: 'Team strength since 2023' },
+  ],
+};
+
+/** Recognitions ticker — taken from fivesdigital.com/legacy. */
+export const recognitions = [
+  'Everest Group CXM PEAK Matrix — Major Contender 2025',
+  'ISO 27001:2022 Information Security',
+  'ISO 9001:2015 Quality Management',
+  'NASSCOM SME Inspire — Delivery Excellence in BPM',
+  'NASSCOM SME Inspire — Best HR Practices',
+  'Everest Group — Impact Sourcing Specialist',
+  'IAOP — Company to Watch',
+  'WeConnect International — Certified',
+  'Global Impact Sourcing Coalition',
+];
+
+/** Comprehensive BPM services — each service has its own scripted agent. */
+export type AgentStep = { from: 'agent' | 'user'; text: string };
+export type Service = {
+  id: string;
+  title: string;
+  kicker: string;
+  desc: string;
+  metrics: { num: string; lbl: string }[];
+  agent: { name: string; role: string; hue: string; opener: string[]; replies: { q: string; a: string[] }[] };
+};
+
+export const services: Service[] = [
+  {
+    id: 'voice',
+    title: 'Customer Service Voice',
+    kicker: 'Inbound & outbound',
+    desc: 'Multilingual specialists backed by real-time speech analytics and sentiment monitoring, working from Tier-2 and Tier-3 language hubs.',
+    metrics: [{ num: '94%', lbl: 'First-contact resolution' }, { num: '13+', lbl: 'Indian languages' }, { num: '<30s', lbl: 'Average speed of answer' }],
+    agent: {
+      name: 'Vani', role: 'Voice CX agent', hue: '#FACC2C',
+      opener: ['Namaste! I’m Vani, I look after voice programmes.', 'Want to hear how a call flows through our floor?'],
+      replies: [
+        { q: 'Which languages?', a: ['Hindi, Marathi, Tamil, Telugu, Kannada, Bengali, Gujarati and more — 13+ in total.', 'Calls are routed to a native speaker based on the caller’s first words.'] },
+        { q: 'How fast do you scale?', a: ['Pre-vetted talent pools let us add 500+ specialists in about 72 hours for festive peaks.'] },
+        { q: 'Where does AI help?', a: ['Live sentiment flags, auto call summaries and an agent-assist panel that suggests the next best answer.'] },
+      ],
+    },
+  },
+  {
+    id: 'nonvoice',
+    title: 'Customer Service Non-Voice',
+    kicker: 'Chat · email · social',
+    desc: 'Asynchronous speed with conversational precision. AI triages intent, specialists resolve with context intact.',
+    metrics: [{ num: '<45s', lbl: 'First response time' }, { num: '98.8%', lbl: 'SLA adherence' }, { num: '4.8/5', lbl: 'Digital CSAT' }],
+    agent: {
+      name: 'Kavya', role: 'Chat & email agent', hue: '#7CC6FF',
+      opener: ['Hi, I’m Kavya. I run chat, email and social queues.', 'Ask me anything about digital support.'],
+      replies: [
+        { q: 'Which channels?', a: ['Web chat, WhatsApp, email, in-app and social DMs, all in one queue.'] },
+        { q: 'Bot or human?', a: ['Both. The bot handles routine intents; anything emotional or complex is handed to a person with the full thread attached.'] },
+        { q: 'Which CRMs?', a: ['Salesforce, Zendesk, Freshdesk, Zoho and custom ERPs — we work inside your tools.'] },
+      ],
+    },
+  },
+  {
+    id: 'genai',
+    title: 'Gen AI Model Training',
+    kicker: 'RLHF · red teaming',
+    desc: 'Domain-specific RLHF, red teaming, hallucination audits and cultural-alignment datasets for foundation models.',
+    metrics: [{ num: '99.8%', lbl: 'RLHF consensus score' }, { num: '500+', lbl: 'Domain experts' }, { num: '100%', lbl: 'Clean-room delivery' }],
+    agent: {
+      name: 'Atlas', role: 'Model-training lead', hue: '#3DDC97',
+      opener: ['I’m Atlas. I coordinate RLHF and evaluation teams.', 'Curious how human feedback shapes a model?'],
+      replies: [
+        { q: 'What is RLHF here?', a: ['Experts rank and rewrite model answers. Those preferences train a reward model that steers the LLM.'] },
+        { q: 'Red teaming?', a: ['Trained testers probe for unsafe, biased or false outputs in English and Indic languages, then log them for fixes.'] },
+        { q: 'Data security?', a: ['Work runs in ISO 27001:2022 clean rooms with no personal devices on the floor.'] },
+      ],
+    },
+  },
+  {
+    id: 'annotation',
+    title: 'Annotation Services',
+    kicker: 'Vision · NLP · audio',
+    desc: 'Pixel-level segmentation, 3D LiDAR point-cloud labelling, audio tagging and multi-tier QA for AI pipelines.',
+    metrics: [{ num: '99.9%', lbl: 'Bounding-box precision' }, { num: '10M+', lbl: 'Labels per month' }, { num: 'Zero', lbl: 'Data leakage' }],
+    agent: {
+      name: 'Lumi', role: 'Annotation QA lead', hue: '#C3A6FF',
+      opener: ['Hey, I’m Lumi. I check every label before it ships.', 'Pick a topic and I’ll walk you through it.'],
+      replies: [
+        { q: 'What do you label?', a: ['Images, video, 3D LiDAR, text and audio — bounding boxes, polygons, segmentation, transcripts.'] },
+        { q: 'How is QA done?', a: ['Three tiers: annotator, peer reviewer, then a QA lead sample. Disagreements go back for consensus.'] },
+        { q: 'Which industries?', a: ['Autonomous vehicles, e-commerce, logistics, healthcare AI, agriculture and urban planning.'] },
+      ],
+    },
+  },
+];
+
+/** Industries — flip cards. */
+export const industries = [
+  { title: 'E-Commerce & D2C', icon: 'cart', front: 'WISMO, returns and festive surges.', kpi: '<4 hrs', kpiLbl: 'Return turnaround', back: ['WISMO resolution', 'Returns verification', 'Catalogue moderation', 'Festive surge scaling'] },
+  { title: 'Fintech & Banking', icon: 'shield', front: 'KYC, fraud and disputes.', kpi: '99.2%', kpiLbl: 'KYC pass rate', back: ['Video KYC verification', 'Fraud alert triage', 'Merchant onboarding', 'Dispute handling'] },
+  { title: 'HealthTech & Insurance', icon: 'pulse', front: 'Patients, claims and providers.', kpi: '100%', kpiLbl: 'Compliance audits passed', back: ['Appointment coordination', 'Cashless claims parsing', 'Doctor credentialing', 'Revenue cycle support'] },
+  { title: 'EdTech & Media', icon: 'cap', front: 'Learners, exams and content.', kpi: '4.8/5', kpiLbl: 'CSAT score', back: ['Learner doubt resolution', 'Live exam proctoring', 'Multilingual moderation', 'Subscription support'] },
+  { title: 'Logistics & Supply Chain', icon: 'truck', front: 'Last mile, NDR and POD.', kpi: '99.7%', kpiLbl: 'Delivery SLA', back: ['Last-mile driver dispatch', 'NDR follow-up', 'Exception escalation', 'POD audits'] },
+  { title: 'AI & Autonomous Tech', icon: 'chip', front: 'Data that trains models.', kpi: '99.9%', kpiLbl: 'Label quality', back: ['3D LiDAR labelling', 'Computer-vision boxes', 'RLHF evaluations', 'Red teaming'] },
+];
+
+/** Delivery philosophy — bubbles. */
+export const philosophy = [
+  { id: 'auto', title: 'Automate the routine', tag: 'Voice AI · bots · RPA', metric: '60%', metricLbl: 'routine queries automated', body: 'Conversational voice AI, automated triage and RPA resolve high-frequency queries instantly.', points: ['Voice AI and smart chatbots', 'Intent and sentiment triage', 'Live CRM sync'] },
+  { id: 'human', title: 'Humans for the hard parts', tag: 'Empathy in the loop', metric: '88%', metricLbl: 'first-contact resolution', body: 'Emotional, financial or multi-step cases move to certified specialists with the full context attached.', points: ['Warm bot-to-human handover', 'Native speakers, 15+ languages', 'Escalation management'] },
+  { id: 'learn', title: 'Always learning', tag: 'LEAP & RiSE academies', metric: '99.4%', metricLbl: 'quality accuracy SLA', body: 'Our LEAP and RiSE academies, plus automated speech analytics, keep quality sampling and upskilling continuous.', points: ['100% interaction auditing', 'Structured mentorship', 'ISO 27001 process rigour'] },
+];
+
+/** Our workplace — the five elements behind the FiveS name. */
+export const elements = [
+  { id: 'earth', name: 'Earth', value: 'Grounded in Tier-2 India', stat: '35%', statLbl: 'of our people come from Tier-2 cities', body: 'We hire where talent lives. Regional hubs in Udaipur, Hubballi and Jamshedpur open careers close to home and keep retention high.', color: '#C9A26B' },
+  { id: 'water', name: 'Water', value: 'Inclusion that flows', stat: '5%', statLbl: 'of the workforce are persons with disabilities', body: 'Adaptive workstations, accessible software and equal career paths. Navi Mumbai is Asia’s first diversity-focused BPM centre.', color: '#4FB3FF' },
+  { id: 'air', name: 'Air', value: 'Room for every voice', stat: '50%', statLbl: 'workforce diversity, 40% in leadership', body: 'An equitable floor where leadership reflects the people it leads.', color: '#BFE6FF' },
+  { id: 'fire', name: 'Fire', value: 'The drive to grow', stat: 'LEAP', statLbl: '& RiSE learning academies', body: 'Continuous development keeps every specialist ready for what’s next, from first call to team lead.', color: '#FF7A45' },
+  { id: 'space', name: 'Space', value: 'Values we live by', stat: 'CATER', statLbl: 'Competent · Accountable · Trustworthy · Engaged · Reliable', body: 'Perform with empathy, solve for repeatable success, do the right thing, own the outcome, and win together.', color: '#FACC2C' },
+];
+
+/** Delivery footprint — lon/lat pins for the map. */
+export type Location = { name: string; region: 'india' | 'intl'; lon: number; lat: number; role: string; detail: string; flagship?: boolean };
+export const locations: Location[] = [
+  { name: 'Udaipur', region: 'india', lon: 73.71, lat: 24.58, role: 'Central enterprise hub', detail: 'Where FiveS began in 2009 with a 12-member team.', flagship: true },
+  { name: 'Navi Mumbai', region: 'india', lon: 73.03, lat: 19.03, role: 'Diversity-focused BPM centre', detail: 'Asia’s first diversity-focused delivery centre, opened 2023.' },
+  { name: 'Noida', region: 'india', lon: 77.39, lat: 28.54, role: 'Delivery centre', detail: 'Voice and non-voice CX programmes for North India.' },
+  { name: 'Hubballi', region: 'india', lon: 75.12, lat: 15.36, role: 'Tier-2 delivery centre', detail: 'Kannada and South Indian language support.' },
+  { name: 'Jamshedpur', region: 'india', lon: 86.2, lat: 22.8, role: 'Tier-2 delivery centre', detail: 'Eastern language hub for voice programmes.' },
+  { name: 'Hyderabad', region: 'india', lon: 78.49, lat: 17.39, role: 'Delivery centre', detail: 'AI data, annotation and digital CX.' },
+  { name: 'Bengaluru', region: 'india', lon: 77.59, lat: 12.97, role: 'Delivery centre', detail: 'Tech partnerships and AI services.' },
+  { name: 'New Jersey', region: 'intl', lon: -74.41, lat: 40.06, role: 'US desk', detail: 'Client partnerships for North America.' },
+  { name: 'Brussels', region: 'intl', lon: 4.35, lat: 50.85, role: 'Europe desk', detail: 'EU client engagement and GDPR-aligned delivery.' },
+  { name: 'Malta', region: 'intl', lon: 14.38, lat: 35.94, role: 'Mediterranean desk', detail: 'Multilingual support for European brands.' },
+  { name: 'Ghana', region: 'intl', lon: -0.19, lat: 5.6, role: 'West Africa desk', detail: 'Impact-sourcing delivery in Accra.' },
+  { name: 'Kenya', region: 'intl', lon: 36.82, lat: -1.29, role: 'East Africa desk', detail: 'English and Swahili CX from Nairobi.' },
+  { name: 'Philippines', region: 'intl', lon: 120.98, lat: 14.6, role: 'South-East Asia desk', detail: 'Follow-the-sun coverage for global clients.' },
+];
+
+/** Contact pathways — used by the intake agent. */
+export const pathways = [
+  { id: 'sales', label: 'Enterprise services', ask: 'Which service are you exploring?', options: ['Voice CX', 'Chat & email', 'Gen AI training', 'Annotation', 'Not sure yet'], email: 'sales@fivesdigital.com' },
+  { id: 'careers', label: 'Careers', ask: 'Which kind of role interests you?', options: ['Customer support', 'AI data / annotation', 'Team lead', 'Corporate'], email: 'careers@fivesdigital.com' },
+  { id: 'partner', label: 'Partnerships', ask: 'What kind of partnership?', options: ['Technology', 'AI data alliance', 'Impact / ESG', 'Reseller'], email: 'partnerships@fivesdigital.com' },
+];
+
+export const nav = [
+  { href: '#about', label: 'About' },
+  { href: '#services', label: 'CX & AI' },
+  { href: '#industries', label: 'Industries' },
+  { href: '#people', label: 'Our People' },
+  { href: '#footprint', label: 'Footprint' },
+];

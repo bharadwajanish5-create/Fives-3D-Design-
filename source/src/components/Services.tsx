@@ -1,0 +1,135 @@
+import { useRef, useState } from 'react';
+import { services } from '../data/site';
+import AgentChat, { AgentAvatar } from './AgentChat';
+import voiceImg from '../assets/voice_cx.jpg';
+import peopleImg from '../assets/inclusive_workplace.jpg';
+
+function Visual({ id, hue }: { id: string; hue: string }) {
+  if (id === 'voice') {
+    return (
+      <div className="relative h-full w-full">
+        <img src={voiceImg} alt="Voice specialist on a live call" className="h-full w-full object-cover" />
+        <div className="absolute bottom-4 left-4 flex items-center gap-3 rounded-2xl bg-surface/80 px-4 py-3 backdrop-blur">
+          <div className="flex h-7 items-end gap-[3px]">
+            {Array.from({ length: 14 }).map((_, i) => <span key={i} className="wave-bar w-[3px] rounded-full" style={{ height: 28, background: hue, animationDelay: `${(i % 5) * 0.12}s` }} />)}
+          </div>
+          <div><p className="text-[12px] font-bold">Live call · Marathi</p><p className="text-[11px] text-leaf">Sentiment: positive</p></div>
+        </div>
+      </div>
+    );
+  }
+  if (id === 'nonvoice') {
+    const rows = [['WhatsApp', 'Where is my order #4821?', 'Bot resolved · 12s'], ['Email', 'Refund not received yet', 'Routed to specialist'], ['Web chat', 'Change delivery address', 'Bot resolved · 20s'], ['Instagram DM', 'Product arrived damaged', 'Specialist · priority']];
+    return (
+      <div className="flex h-full w-full flex-col justify-center gap-3 bg-gradient-to-br from-ink-3 to-ink p-6">
+        {rows.map(([ch, q, s], i) => (
+          <div key={i} className="flex items-center gap-3 rounded-2xl border border-fg/10 bg-surface/70 p-3" style={{ transform: `translateX(${i % 2 ? 18 : 0}px)` }}>
+            <span className="rounded-lg px-2 py-1 font-mono text-[10px] font-bold text-ink" style={{ background: hue }}>{ch}</span>
+            <span className="min-w-0 flex-1 truncate text-[13px]">{q}</span>
+            <span className={`whitespace-nowrap text-[11px] ${s.startsWith('Bot') ? 'text-leaf' : 'text-acc'}`}>{s}</span>
+          </div>
+        ))}
+      </div>
+    );
+  }
+  if (id === 'genai') {
+    return (
+      <div className="grid h-full w-full content-center gap-3 bg-gradient-to-br from-ink-3 to-ink p-6">
+        <p className="font-mono text-[11px] text-muted2">PROMPT · “Explain EMI to a first-time borrower in Hindi”</p>
+        {[['A', 'Uses simple Hindi, gives a worked example, flags late-fee risk.', true], ['B', 'Mixes English jargon, skips the example, no risk note.', false]].map(([k, t, win]) => (
+          <div key={k as string} className="rounded-2xl border p-4" style={{ borderColor: win ? hue : 'rgba(255,255,255,.12)', background: win ? `${hue}14` : 'transparent' }}>
+            <div className="flex items-center justify-between"><b className="font-mono text-[13px]">Response {k as string}</b>{win ? <span className="rounded-full px-2 py-0.5 text-[11px] font-bold text-ink" style={{ background: hue }}>Preferred by 4/5 raters</span> : <span className="text-[11px] text-muted3">Rejected</span>}</div>
+            <p className="mt-2 text-[13px] text-muted">{t as string}</p>
+          </div>
+        ))}
+      </div>
+    );
+  }
+  return (
+    <div className="relative h-full w-full">
+      <img src={peopleImg} alt="Office scene used as an annotation sample" className="h-full w-full object-cover" />
+      {[[3, 33, 26, 60, 'person 0.98'], [70, 42, 28, 56, 'person 0.97'], [51, 52, 16, 22, 'laptop 0.95'], [46, 17, 14, 40, 'person 0.96']].map(([l, t, w, h, lb], i) => (
+        <div key={i} className="absolute border-2" style={{ left: `${l}%`, top: `${t}%`, width: `${w}%`, height: `${h}%`, borderColor: hue }}>
+          <span className="absolute -top-5 left-[-2px] whitespace-nowrap px-1.5 font-mono text-[10px] font-bold text-ink" style={{ background: hue }}>{lb as string}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default function Services() {
+  const [tab, setTab] = useState(0);
+  const [chat, setChat] = useState(false);
+  const [peek, setPeek] = useState(false);
+  const peekTimer = useRef<number>();
+  const s = services[tab];
+
+  return (
+    <section id="services" className="theme-light relative bg-surface2 py-24 md:py-32">
+      <div className="wrap">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-[640px]">
+            <p className="eyebrow">Comprehensive BPM services</p>
+            <h2 className="h-display mt-5 text-[48px] sm:text-[64px]">Four services. <em className="accent">Four agents</em> ready to talk.</h2>
+          </div>
+          <p className="max-w-[360px] text-[15px] leading-relaxed text-muted">Every service has its own agent. Hover the stage, then double-click or tap the agent to start a conversation.</p>
+        </div>
+
+        <div className="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-4" role="tablist">
+          {services.map((x, i) => (
+            <button key={x.id} role="tab" aria-selected={tab === i} onClick={() => { setTab(i); setChat(false); }}
+              className={`flex items-center gap-3 rounded-2xl border p-3 text-left transition ${tab === i ? 'border-ink bg-ink text-white shadow-[0_10px_24px_rgba(15,27,45,.18)] [&_*]:!text-white' : 'border-fg/10 bg-surface hover:border-sun'}`}>
+              <AgentAvatar name={x.agent.name} hue={x.agent.hue} size={36} />
+              <span className="min-w-0">
+                <span className="block font-mono text-[10px] uppercase tracking-[0.16em] text-muted2">{x.kicker}</span>
+                <span className="block text-[14px] font-bold leading-tight">{x.title}</span>
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <div
+          className="relative mt-4 grid overflow-hidden rounded-[28px] border border-fg/10 bg-surface shadow-[0_24px_60px_rgba(15,27,45,.08)] lg:grid-cols-[1fr_1.1fr]"
+          onMouseEnter={() => { peekTimer.current = window.setTimeout(() => setPeek(true), 350); }}
+          onMouseLeave={() => { clearTimeout(peekTimer.current); setPeek(false); }}
+          onDoubleClick={() => setChat(true)}
+        >
+          <div className="min-w-0 p-7 sm:p-10">
+            <span className="chip border-transparent text-ink" style={{ background: s.agent.hue }}>{s.kicker}</span>
+            <h3 className="h-display mt-5 text-[40px] sm:text-[48px]">{s.title}</h3>
+            <p className="mt-4 max-w-[52ch] text-[16px] leading-relaxed text-muted">{s.desc}</p>
+            <div className="mt-8 grid grid-cols-3 gap-3">
+              {s.metrics.map((m) => (
+                <div key={m.lbl} className="min-w-0 rounded-2xl border border-fg/10 bg-surface2 p-4">
+                  <p className="font-mono text-[22px] font-bold tabular-nums text-fg sm:text-[26px]">{m.num}</p><span className="mt-2 block h-[3px] w-8 rounded-full" style={{ background: s.agent.hue }} />
+                  <p className="mt-1 text-[12px] leading-snug text-muted2">{m.lbl}</p>
+                </div>
+              ))}
+            </div>
+            <button onClick={() => setChat(true)} className="mt-8 flex items-center gap-3 rounded-full border border-fg/15 py-2 pl-2 pr-5 transition hover:border-fg/40">
+              <AgentAvatar name={s.agent.name} hue={s.agent.hue} size={36} talking={peek && !chat} />
+              <span className="text-[14px] font-semibold">Chat with {s.agent.name}</span>
+            </button>
+          </div>
+
+          <div className="theme-dark relative min-h-[380px] overflow-hidden bg-surface lg:min-h-[480px]">
+            <Visual id={s.id} hue={s.agent.hue} />
+            {/* peeking agent */}
+            {!chat && (
+              <button onClick={() => setChat(true)}
+                className={`theme-dark absolute right-5 top-5 flex items-center gap-3 rounded-full bg-surface/85 py-2 pl-2 pr-4 backdrop-blur transition-all duration-500 ${peek ? 'translate-y-0 opacity-100' : 'lg:-translate-y-3 lg:opacity-0'}`}>
+                <AgentAvatar name={s.agent.name} hue={s.agent.hue} size={34} talking />
+                <span className="text-left"><span className="block text-[13px] font-bold">Hi, I’m {s.agent.name}</span><span className="block text-[11px] text-muted2">Double-click to chat</span></span>
+              </button>
+            )}
+            {chat && (
+              <div className="absolute inset-3 sm:inset-auto sm:bottom-4 sm:right-4 sm:top-4 sm:w-[360px]">
+                <AgentChat service={s} onClose={() => setChat(false)} />
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
