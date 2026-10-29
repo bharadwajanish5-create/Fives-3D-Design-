@@ -72,20 +72,20 @@ export default function Services() {
     <section id="services" className="theme-light relative bg-surface2 py-24 md:py-32">
       <div className="wrap">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-[640px]">
+          <div>
             <p className="eyebrow">Core Capabilities</p>
-            <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Comprehensive <em className="accent">BPM Services</em></h2>
+            <h2 className="h-display mt-5 text-[40px] leading-[1.12] sm:whitespace-nowrap sm:text-[54px]">Comprehensive <em className="accent">BPM Services</em></h2>
           </div>
-          <div className="max-w-[420px]"><p className="text-[15.5px] leading-relaxed text-muted">Delivering end-to-end customer experience, voice, non-voice digital triage, and human-led data annotation workflows.</p><p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-muted2">Double-click a service to call or chat with its agent</p></div>
+          <div className="max-w-[440px]"><p className="text-[15.5px] leading-relaxed text-muted">Delivering end-to-end customer experience, voice, non-voice digital triage, and human-led data annotation workflows.</p><p className="mt-3 inline-flex items-center gap-2 rounded-full border border-fg/10 bg-surface px-3 py-1.5 text-[12px] font-semibold text-fg"><span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sun opacity-75" /><span className="relative inline-flex h-2 w-2 rounded-full bg-sun" /></span>Pick a service, then call or chat with its agent</p></div>
         </div>
 
         <div className="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-4" role="tablist">
           {services.map((x, i) => (
             <button key={x.id} role="tab" aria-selected={tab === i} onClick={() => { setTab(i); setChat(false); }}
-              className={`flex items-center gap-3 rounded-2xl border p-3 text-left transition ${tab === i ? 'border-ink bg-ink text-white shadow-[0_10px_24px_rgba(15,27,45,.18)] [&_*]:!text-white' : 'border-fg/10 bg-surface hover:border-sun'}`}>
+              className={`flex items-center gap-3 rounded-2xl border p-3 text-left transition duration-300 hover:-translate-y-0.5 ${tab === i ? '-translate-y-0.5 border-ink bg-ink text-white shadow-[0_16px_30px_rgba(15,27,45,.28)] [&_*]:!text-white' : 'border-fg/10 bg-surface hover:border-sun hover:shadow-[0_12px_24px_rgba(15,27,45,.10)]'}`}>
               <AgentAvatar name={x.agent.name} hue={x.agent.hue} size={36} />
               <span className="min-w-0">
-                <span className="block font-mono text-[10px] uppercase tracking-[0.16em] text-muted2">{x.kicker}</span>
+                <span className="block font-mono text-[11px] uppercase tracking-[0.14em] text-muted">{x.kicker}</span>
                 <span className="block text-[14px] font-bold leading-tight">{x.title}</span>
               </span>
             </button>
