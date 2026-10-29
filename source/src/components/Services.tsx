@@ -71,12 +71,12 @@ export default function Services() {
   return (
     <section id="services" className="theme-light relative bg-surface2 py-24 md:py-32">
       <div className="wrap">
-        <div className="flex flex-wrap items-end justify-between gap-6">
+        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-6">
           <div>
             <p className="eyebrow">Core Capabilities</p>
             <h2 className="h-display mt-5 text-[40px] leading-[1.12] sm:whitespace-nowrap sm:text-[54px]">Comprehensive <em className="accent">BPM Services</em></h2>
           </div>
-          <div className="max-w-[440px]"><p className="text-[15.5px] leading-relaxed text-muted">Delivering end-to-end customer experience, voice, non-voice digital triage, and human-led data annotation workflows.</p><p className="mt-3 inline-flex items-center gap-2 rounded-full border border-fg/10 bg-surface px-3 py-1.5 text-[12px] font-semibold text-fg"><span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sun opacity-75" /><span className="relative inline-flex h-2 w-2 rounded-full bg-sun" /></span>Pick a service, then call or chat with its agent</p></div>
+          <div className="max-w-[470px]"><p className="text-[15.5px] leading-relaxed text-muted">Delivering end-to-end customer experience, voice, non-voice digital triage, and human-led data annotation workflows.</p><p className="mt-3 inline-flex items-center gap-2 rounded-full border border-fg/10 bg-surface px-3 py-1.5 text-[12px] font-semibold text-fg"><span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sun opacity-75" /><span className="relative inline-flex h-2 w-2 rounded-full bg-sun" /></span>Pick a service, then call or chat with its agent</p></div>
         </div>
 
         <div className="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-4" role="tablist">
