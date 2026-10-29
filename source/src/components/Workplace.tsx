@@ -27,7 +27,7 @@ export default function Workplace() {
         <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-end">
           <div>
             <p className="eyebrow">Our Workplace</p>
-            <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Inclusion driven <em className="accent">People approach</em></h2>
+            <h2 className="h-display mt-5 text-[40px] sm:whitespace-nowrap sm:text-[clamp(34px,4.2vw,54px)]">Inclusion driven <em className="accent">People approach</em></h2>
           </div>
           <div className="max-w-[480px]"><p className="text-[15.5px] leading-relaxed text-muted">We believe that scalable enterprise execution and progressive social impact are mutually reinforcing. Our workforce model proves that expanding access creates higher operational retention and unmatched dedication.</p><p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-muted2">Our name comes from the five elements. Pick one below</p></div>
         </div>

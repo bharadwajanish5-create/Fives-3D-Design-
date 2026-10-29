@@ -38,7 +38,7 @@ export default function Philosophy() {
       <div className="wrap relative">
         <div className="max-w-[720px]">
           <p className="eyebrow">Delivery Philosophy</p>
-          <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Human <em className="accent">Intelligence</em></h2>
+          <h2 className="h-display mt-5 text-[40px] sm:whitespace-nowrap sm:text-[clamp(34px,4.2vw,54px)]">Human <em className="accent">Intelligence</em></h2>
           <p className="mt-4 max-w-[560px] text-[16px] leading-relaxed text-muted">Engineered for operational rigor, cost resilience, and continuous service enhancement.</p>
         </div>
 

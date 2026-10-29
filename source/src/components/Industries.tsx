@@ -16,9 +16,9 @@ export default function Industries() {
     <section id="industries" className="theme-light relative bg-surface py-24 md:py-32">
       <div className="wrap">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-[640px]">
+          <div>
             <p className="eyebrow">Industry Practices</p>
-            <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Domain Expertise Across <em className="accent">Verticals</em></h2>
+            <h2 className="h-display mt-5 text-[40px] sm:whitespace-nowrap sm:text-[clamp(34px,4.2vw,54px)]">Domain Expertise Across <em className="accent">Verticals</em></h2>
           </div>
           <div className="max-w-[380px]"><p className="text-[15.5px] leading-relaxed text-muted">Specialized workflows tailored to compliance, speed, and unit economics.</p><p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-muted2">Hover or tap a card to turn it over</p></div>
         </div>

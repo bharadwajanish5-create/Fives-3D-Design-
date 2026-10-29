@@ -28,7 +28,7 @@ export default function CaseStudies() {
     <section id="case-studies" className="theme-light relative bg-surface2 py-24 md:py-28">
       <div className="wrap">
         <p className="eyebrow">Verified Enterprise Impact</p>
-        <h2 className="h-display mt-5 text-[40px] sm:text-[54px]">Real Outcomes for <em className="accent">Global Brands</em></h2>
+        <h2 className="h-display mt-5 text-[40px] sm:whitespace-nowrap sm:text-[clamp(34px,4.2vw,54px)]">Real Outcomes for <em className="accent">Global Brands</em></h2>
         <p className="mt-4 max-w-[640px] text-[15.5px] leading-relaxed text-muted">Tangible operational turnarounds delivered for high-growth unicorns and Fortune 500 enterprises.</p>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
