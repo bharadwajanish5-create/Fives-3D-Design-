@@ -108,24 +108,26 @@ export default function Contact() {
   const placeholder: Partial<Record<Step, string>> = { name: 'Your full name', email: 'name@company.com', company: lead.pathway === 'Careers' ? 'City' : 'Company name', message: 'Optional note' };
 
   return (
-    <section id="contact" className="theme-dark relative overflow-hidden py-24 md:py-32" style={{ background: 'linear-gradient(135deg, #0A1322 0%, #0F1B2D 55%, #16253B 100%)' }}>
+    <section id="contact" className="theme-dark relative overflow-hidden py-[70px]" style={{ background: 'linear-gradient(135deg, #0A1322 0%, #0F1B2D 55%, #16253B 100%)' }}>
       <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(700px 500px at 20% 40%, rgba(250,204,44,.14), transparent 65%)' }} />
-      <div className="wrap relative grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <h2 className="sec-title lg:col-span-2 lg:-mb-4">Start Your Transformation With <em className="accent">FiveS</em></h2>
-        <div className="min-w-0 lg:self-start">
+      <div className="wrap relative grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-x-12 lg:gap-y-8">
+        <h2 className="sec-title lg:col-span-2">Start Your Transformation With <em className="accent">FiveS</em></h2>
+        <div className={`min-w-0 ${open ? 'lg:self-start' : ''}`}>
           <p className="mt-0 max-w-[460px] text-[16px] leading-relaxed text-muted">Choose your pathway below to connect directly with the appropriate leadership team.</p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+          <div className="mt-7 grid gap-3">
             {pathways.map((p) => (
-              <button key={p.id} onClick={() => start(p.id)} className="group rounded-2xl border border-fg/12 bg-fg/[0.03] p-4 text-left transition hover:-translate-y-1 hover:border-sun/70">
-                <span className="block text-[15px] font-bold">{p.label}</span>
-                <span className="mt-1 block select-all break-all font-mono text-[11px] text-muted2">{p.email}</span>
-                <span className="mt-3 block text-[13px] font-semibold text-acc">Talk to {p.agent} →</span>
+              <button key={p.id} onClick={() => start(p.id)} className="group flex items-center justify-between gap-4 rounded-2xl border border-fg/12 bg-fg/[0.03] px-5 py-4 text-left transition hover:-translate-y-0.5 hover:border-sun/70 hover:bg-fg/[0.06]">
+                <span className="min-w-0">
+                  <span className="block text-[16px] font-bold">{p.label}</span>
+                  <span className="mt-0.5 block select-all truncate font-mono text-[12px] text-muted2">{p.email}</span>
+                </span>
+                <span className="shrink-0 whitespace-nowrap text-[13.5px] font-semibold text-acc transition group-hover:translate-x-0.5">Talk to {p.agent} →</span>
               </button>
             ))}
           </div>
         </div>
 
-        <div className="relative grid min-h-[480px] place-items-center lg:self-start">
+        <div className="relative grid place-items-center">
           {!open ? (
             <button onClick={() => start()} className="group grid place-items-center gap-6 text-center" aria-label="Start a conversation with Sahaya">
               <div className="transition duration-500 group-hover:scale-105"><Orb talking={false} /></div>
