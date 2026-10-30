@@ -164,12 +164,12 @@ export const services: Service[] = [
 
 /** Industries — flip cards. */
 export const industries = [
-  { title: 'E-Commerce & D2C', icon: 'cart', desc: 'WISMO resolution, returns verification, catalog moderation, and festive surge scaling.', kpi: '<4 hrs', kpiLbl: 'Return Turnaround' },
-  { title: 'Fintech & Banking', icon: 'shield', desc: 'Video KYC verification, fraud alert triaging, merchant onboarding, and dispute handling.', kpi: '99.2%', kpiLbl: 'KYC Pass Rate' },
-  { title: 'HealthTech & Insurance', icon: 'pulse', desc: 'Patient appointment coordination, cashless claims document parsing, and doctor credentialing.', kpi: '100%', kpiLbl: 'HIPAA Compliance' },
-  { title: 'EdTech & Media', icon: 'cap', desc: 'Learner doubt resolution, live exam proctoring support, and multilingual course moderation.', kpi: '4.8 / 5', kpiLbl: 'CSAT Score' },
-  { title: 'Logistics & Supply Chain', icon: 'truck', desc: 'Last-mile driver dispatch, shipment tracking exception escalation, and POD audits.', kpi: '99.7%', kpiLbl: 'Delivery SLA' },
-  { title: 'AI & Autonomous Tech', icon: 'chip', desc: 'High-precision 3D LiDAR labeling, computer vision bounding boxes, and RLHF evaluations.', kpi: '99.9%', kpiLbl: 'Quality Metric' },
+  { title: 'E-Commerce & D2C', icon: 'cart', desc: 'WISMO resolution, returns verification, catalog moderation, and festive surge scaling.', kpi: '<4 hrs', kpiLbl: 'Return Turnaround', back: ['WISMO resolution', 'Returns verification', 'Catalogue moderation', 'Festive surge scaling'] },
+  { title: 'Fintech & Banking', icon: 'shield', desc: 'Video KYC verification, fraud alert triaging, merchant onboarding, and dispute handling.', kpi: '99.2%', kpiLbl: 'KYC Pass Rate', back: ['Video KYC verification', 'Fraud alert triage', 'Merchant onboarding', 'Dispute handling'] },
+  { title: 'HealthTech & Insurance', icon: 'pulse', desc: 'Patient appointment coordination, cashless claims document parsing, and doctor credentialing.', kpi: '100%', kpiLbl: 'HIPAA Compliance', back: ['Appointment coordination', 'Cashless claims parsing', 'Doctor credentialing', 'Revenue cycle support'] },
+  { title: 'EdTech & Media', icon: 'cap', desc: 'Learner doubt resolution, live exam proctoring support, and multilingual course moderation.', kpi: '4.8 / 5', kpiLbl: 'CSAT Score', back: ['Learner doubt resolution', 'Live exam proctoring', 'Multilingual moderation', 'Subscription support'] },
+  { title: 'Logistics & Supply Chain', icon: 'truck', desc: 'Last-mile driver dispatch, shipment tracking exception escalation, and POD audits.', kpi: '99.7%', kpiLbl: 'Delivery SLA', back: ['Last-mile driver dispatch', 'NDR follow-up', 'Exception escalation', 'POD audits'] },
+  { title: 'AI & Autonomous Tech', icon: 'chip', desc: 'High-precision 3D LiDAR labeling, computer vision bounding boxes, and RLHF evaluations.', kpi: '99.9%', kpiLbl: 'Quality Metric', back: ['3D LiDAR labelling', 'Computer-vision boxes', 'RLHF evaluations', 'Red teaming'] },
 ];
 
 /** Delivery philosophy — bubbles. */

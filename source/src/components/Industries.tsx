@@ -20,7 +20,7 @@ export default function Industries() {
 
         <div className="mt-9 grid gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((d, i) => (
-            <div key={d.title} className={`flip h-[262px] ${flipped === i ? 'is-flipped' : ''}`}>
+            <div key={d.title} className={`flip h-[272px] ${flipped === i ? 'is-flipped' : ''}`}>
               <button className="flip-inner block w-full text-left" onClick={() => setFlipped(flipped === i ? null : i)} aria-label={`${d.title}: flip card`}>
                 {/* front — as in the reference design */}
                 <div className="flip-face flex flex-col justify-between rounded-2xl border-[1.5px] border-fg/10 bg-surface p-6">
@@ -39,12 +39,11 @@ export default function Industries() {
                 {/* back */}
                 <div className="flip-face flip-back theme-dark flex flex-col justify-between overflow-hidden rounded-2xl bg-surface p-6 text-fg">
                   <div className="pointer-events-none absolute -right-14 -top-14 h-48 w-48 rounded-full bg-sun/90" />
-                  <span className="relative grid h-14 w-14 place-items-center rounded-[14px] bg-ink text-sun">
-                    <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">{icons[d.icon]}</svg>
-                  </span>
                   <div className="relative">
                     <h3 className="text-[19px] font-extrabold">{d.title}</h3>
-                    <p className="mt-2 text-[13.5px] leading-[1.55] text-muted">Specialized workflows tailored to compliance, speed, and unit economics.</p>
+                    <ul className="mt-3 grid gap-1.5">
+                      {d.back.map((x) => <li key={x} className="flex items-center gap-2.5 text-[13.5px] text-muted"><i className="h-1.5 w-1.5 shrink-0 rotate-45 bg-sun" />{x}</li>)}
+                    </ul>
                   </div>
                   <span role="link" onClick={(e) => { e.stopPropagation(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }} className="relative inline-flex w-fit cursor-pointer items-center gap-2 rounded-full bg-sun px-4 py-2 text-[13px] font-bold text-ink">Talk to our team →</span>
                 </div>
