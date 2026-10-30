@@ -3,7 +3,7 @@ import { badges } from '../data/badges';
 /** One-line ticker of certification and partner badges — the strip from the reference design. */
 export default function LogoStrip() {
   return (
-    <div className="mt-14 overflow-hidden border-y border-fg/10 bg-surface py-4" aria-label="Partner and certification recognition strip"
+    <div className="theme-light overflow-hidden border-b border-fg/10 bg-surface py-4" aria-label="Partner and certification recognition strip"
       style={{ maskImage: 'linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)', WebkitMaskImage: 'linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)' }}>
       <div className="ticker flex w-max items-center gap-4" style={{ animationDuration: '32s' }}>
         {[...badges, ...badges].map((b, i) => (

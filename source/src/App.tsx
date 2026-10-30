@@ -1,6 +1,7 @@
 import Nav, { Logo } from './components/Nav';
 import Hero from './components/Hero';
 import About from './components/About';
+import LogoStrip from './components/LogoStrip';
 import Services from './components/Services';
 import Industries from './components/Industries';
 import Philosophy from './components/Philosophy';
@@ -17,6 +18,7 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
+        <LogoStrip />
         <About />
         <Services />
         <Industries />
