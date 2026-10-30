@@ -26,7 +26,7 @@ function MetricCard({ active, onPick }: { active: number; onPick: (i: number) =>
   const m = metrics[active];
   return (
     <div className="w-full max-w-[460px] overflow-hidden rounded-[22px] border border-fg/15 bg-surface/75 shadow-[0_30px_80px_rgba(0,0,0,.45)] backdrop-blur-xl">
-      <div key={m.id} className="flex items-center gap-5 border-b border-fg/10 p-5" style={{ animation: 'cardIn .45s ease' }}>
+      <div key={m.id} className="flex items-center gap-4 border-b border-fg/10 p-4 sm:gap-5 sm:p-5" style={{ animation: 'cardIn .45s ease' }}>
         <div className="relative grid h-[76px] w-[76px] shrink-0 place-items-center rounded-2xl" style={{ background: `radial-gradient(circle at 30% 25%, #fff8, ${m.color} 55%, ${m.color}99)`, boxShadow: `0 12px 30px ${m.color}55` }}>
           <span className="absolute inset-0 rounded-2xl border border-white/40" />
           <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#0C1526" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">{iconPaths[m.id]}</svg>
@@ -34,12 +34,12 @@ function MetricCard({ active, onPick }: { active: number; onPick: (i: number) =>
         <div className="min-w-0">
           <BigNumber value={m.value} suffix={m.suffix} color={m.color} />
           <p className="mt-1 text-[16px] font-semibold text-fg">{m.label}</p>
-          <p className="mt-1 text-[13px] leading-snug text-muted">{m.detail}</p>
+          <p className="mt-1 hidden text-[13px] leading-snug text-muted sm:block">{m.detail}</p>
         </div>
       </div>
       <div className="grid grid-cols-3">
         {metrics.map((x, i) => i === active ? null : (
-          <button key={x.id} onClick={() => onPick(i)} className="group min-w-0 border-r border-fg/10 px-4 py-3.5 text-left transition last:border-r-0 hover:bg-fg/[0.05]">
+          <button key={x.id} onClick={() => onPick(i)} className="group min-w-0 border-r border-fg/10 px-3 py-3 sm:px-4 sm:py-3.5 text-left transition last:border-r-0 hover:bg-fg/[0.05]">
             <span className="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={x.color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">{iconPaths[x.id]}</svg><b className="text-[16px] tabular-nums text-fg">{x.value}{x.suffix}</b></span>
             <span className="mt-0.5 block truncate text-[12px] text-muted2 group-hover:text-fg">{x.label}</span>
           </button>
@@ -88,12 +88,13 @@ export default function Hero() {
         </div>
 
         <div className="relative min-w-0">
-          <div ref={ref} className="relative h-[380px] sm:h-[480px] lg:h-[540px]">
+          <div ref={ref} className="relative h-[330px] sm:h-[480px] lg:h-[540px]">
             <Suspense fallback={<div className="absolute inset-0 grid place-items-center"><div className="h-48 w-48 rounded-full bg-sun/80 blur-[2px]" /></div>}>
               <HeroScene metrics={metrics} active={active} onSelect={pick} onHover={onHover} running={inView} />
             </Suspense>
+          </div>
             {/* details card — only while an icon is hovered or selected */}
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[40] flex justify-center lg:justify-end">
+            <div className={`pointer-events-none z-[40] flex justify-center transition-all duration-300 max-lg:relative max-lg:-mt-2 max-lg:overflow-hidden lg:absolute lg:inset-x-0 lg:bottom-0 lg:justify-end ${visible ? 'max-lg:max-h-[300px]' : 'max-lg:max-h-0'}`}>
               <div
                 onMouseEnter={() => { clearTimeout(timer.current); setOverCard(true); }}
                 onMouseLeave={() => { setOverCard(false); onHover(null); }}
@@ -101,7 +102,6 @@ export default function Hero() {
                 <MetricCard active={last.current} onPick={(i) => { setActive(i); setHovered(i); }} />
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>
