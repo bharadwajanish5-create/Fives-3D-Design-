@@ -26,7 +26,7 @@
   --surface2: 241 244 248; /* #F1F4F8 */
   --surface3: 230 236 244; /* #E6ECF4 */
   --acc: 184 132 0;        /* #B88400 — readable gold on white */
-  --hl-bg: linear-gradient(120deg, rgba(250,204,44,.55), rgba(250,204,44,.18));
+  --hl-bg: linear-gradient(120deg, rgba(250,204,44,.4) 0%, rgba(250,204,44,.1) 100%);
   --hl-fg: 15 27 45;
   color: rgb(var(--fg));
 }
@@ -34,7 +34,7 @@
 html { scroll-behavior: smooth; }
 body { background: #0F1B2D; color: #fff; font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: #0F1B2D; }
-.accent { font-style: italic; color: rgb(var(--hl-fg)); background: var(--hl-bg); padding: 0 .08em; border-radius: .08em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.accent { font-style: normal; color: rgb(var(--hl-fg)); background: var(--hl-bg); padding: 0 6px; border-radius: 4px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 h1, h2, h3 { text-wrap: balance; }
 ::selection { background: #FACC2C; color: #0F1B2D; }
 :focus-visible { outline: 2px solid var(--sun); outline-offset: 3px; border-radius: 6px; }
@@ -42,7 +42,10 @@ h1, h2, h3 { text-wrap: balance; }
 @layer components {
   .wrap { @apply mx-auto w-full max-w-[1240px]; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
   @media (min-width: 768px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
-  .eyebrow { @apply font-sans text-[12px] font-bold uppercase tracking-[0.14em] text-acc; }
+  .eyebrow { @apply font-sans text-[12px] font-extrabold uppercase tracking-[0.1em] text-acc; }
+  .sec-title { @apply mt-2 font-display text-[28px] font-normal leading-[1.2] tracking-[-0.015em] sm:text-[36px] sm:whitespace-nowrap; }
+  .sec-desc { @apply mt-3.5 max-w-[680px] text-[15.5px] leading-[1.6] text-muted; }
+  .sec-desc-line { @apply lg:max-w-none lg:whitespace-nowrap; }
   .h-display { @apply font-display font-normal leading-[1.08] tracking-[-0.02em]; }
   .chip { @apply inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-[13px] font-semibold transition; }
   .btn-sun { @apply inline-flex items-center justify-center gap-2 rounded-full bg-sun px-6 py-3.5 text-[15px] font-bold text-ink transition hover:-translate-y-0.5 hover:bg-sun-deep; }

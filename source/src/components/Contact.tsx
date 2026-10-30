@@ -111,7 +111,7 @@ export default function Contact() {
     <section id="contact" className="theme-dark relative overflow-hidden py-24 md:py-32" style={{ background: 'linear-gradient(135deg, #0A1322 0%, #0F1B2D 55%, #16253B 100%)' }}>
       <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(700px 500px at 20% 40%, rgba(250,204,44,.14), transparent 65%)' }} />
       <div className="wrap relative grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <h2 className="h-display text-[40px] sm:whitespace-nowrap sm:text-[clamp(34px,4.2vw,54px)] lg:col-span-2 lg:-mb-4">Start Your Transformation With <em className="accent">FiveS</em></h2>
+        <h2 className="sec-title lg:col-span-2 lg:-mb-4">Start Your Transformation With <em className="accent">FiveS</em></h2>
         <div className="min-w-0 lg:self-start">
           <p className="mt-0 max-w-[460px] text-[16px] leading-relaxed text-muted">Choose your pathway below to connect directly with the appropriate leadership team.</p>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">

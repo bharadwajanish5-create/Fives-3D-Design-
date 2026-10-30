@@ -49,7 +49,7 @@ function Stat({ value, suffix, label, kind }: (typeof outcomes)[number]) {
 
 export default function Outcomes() {
   return (
-    <section className="theme-dark relative overflow-hidden border-y border-sun/25 py-14" style={{ background: 'linear-gradient(135deg, #0A1322 0%, #16253B 100%)' }} aria-label="Client outcomes">
+    <section className="theme-dark relative overflow-hidden border-y border-sun/25 py-9" style={{ background: 'linear-gradient(135deg, #0A1322 0%, #16253B 100%)' }} aria-label="Client outcomes">
       <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(600px 200px at 50% 0%, rgba(250,204,44,.10), transparent 70%)' }} />
       <div className="wrap relative grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         {outcomes.map((o) => <Stat key={o.label} {...o} />)}

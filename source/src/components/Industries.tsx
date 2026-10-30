@@ -13,52 +13,40 @@ const icons: Record<string, JSX.Element> = {
 export default function Industries() {
   const [flipped, setFlipped] = useState<number | null>(null);
   return (
-    <section id="industries" className="theme-light relative bg-surface py-24 md:py-32">
+    <section id="industries" className="theme-light relative border-b border-fg/10 bg-surface2 py-[65px]">
       <div className="wrap">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <p className="eyebrow">Industry Practices</p>
-            <h2 className="h-display mt-5 text-[40px] sm:whitespace-nowrap sm:text-[clamp(34px,4.2vw,54px)]">Domain Expertise Across <em className="accent">Verticals</em></h2>
-          </div>
-        </div>
+        <p className="eyebrow">Industry Practices</p>
+        <h2 className="sec-title">Domain Expertise Across <em className="accent">Verticals</em></h2>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-9 grid gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((d, i) => (
-            <div key={d.title} className={`flip h-[340px] ${flipped === i ? 'is-flipped' : ''}`}>
-              <button className="flip-inner block w-full text-left" onClick={() => setFlipped(flipped === i ? null : i)} aria-label={`${d.title}: show services`}>
-                {/* front */}
-                <div className="flip-face flex flex-col justify-between rounded-[26px] border border-fg/10 bg-surface2 p-7">
-                  <div className="flex items-start justify-between">
-                    <span className="grid h-14 w-14 place-items-center rounded-2xl bg-ink text-sun">
+            <div key={d.title} className={`flip h-[262px] ${flipped === i ? 'is-flipped' : ''}`}>
+              <button className="flip-inner block w-full text-left" onClick={() => setFlipped(flipped === i ? null : i)} aria-label={`${d.title}: flip card`}>
+                {/* front — as in the reference design */}
+                <div className="flip-face flex flex-col justify-between rounded-2xl border-[1.5px] border-fg/10 bg-surface p-6">
+                  <div>
+                    <span className="mb-4 grid h-14 w-14 place-items-center rounded-[14px] bg-ink text-sun shadow-[inset_0_1px_1px_rgba(255,255,255,.2)]">
                       <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">{icons[d.icon]}</svg>
                     </span>
-                    <span className="font-mono text-[11px] text-[#7A8599]">0{i + 1} / 06</span>
+                    <h3 className="mb-2 text-[17.5px] font-extrabold text-fg">{d.title}</h3>
+                    <p className="text-[13.5px] leading-[1.55] text-muted">{d.desc}</p>
                   </div>
-                  <div>
-                    <h3 className="h-display text-[29px] leading-[1.02]">{d.title}</h3>
-                    <p className="mt-2 text-[15px] text-[#4A566B]">{d.front}</p>
-                  </div>
-                  <div className="flex items-center justify-between border-t border-[#E3E8EF] pt-4">
-                    <span className="text-[12px] font-semibold uppercase tracking-[0.08em] text-[#7A8599]">{d.kpiLbl}</span>
-                    <span className="font-mono text-[20px] font-bold">{d.kpi}</span>
+                  <div className="flex items-center justify-between border-t border-fg/10 pt-3.5">
+                    <span className="text-[12px] font-semibold text-muted2">{d.kpiLbl}</span>
+                    <span className="rounded-full border border-sun/40 bg-sun/20 px-3 py-1 text-[15px] font-black text-fg">{d.kpi}</span>
                   </div>
                 </div>
                 {/* back */}
-                <div className="flip-face flip-back theme-dark flex flex-col justify-between overflow-hidden rounded-[26px] bg-surface p-7 text-fg">
-                  <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-sun/90 blur-[1px]" />
+                <div className="flip-face flip-back theme-dark flex flex-col justify-between overflow-hidden rounded-2xl bg-surface p-6 text-fg">
+                  <div className="pointer-events-none absolute -right-14 -top-14 h-48 w-48 rounded-full bg-sun/90" />
+                  <span className="relative grid h-14 w-14 place-items-center rounded-[14px] bg-ink text-sun">
+                    <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">{icons[d.icon]}</svg>
+                  </span>
                   <div className="relative">
-                    <p className="eyebrow">What we run</p>
-                    <h3 className="h-display mt-3 text-[25px] leading-[1.02]">{d.title}</h3>
+                    <h3 className="text-[19px] font-extrabold">{d.title}</h3>
+                    <p className="mt-2 text-[13.5px] leading-[1.55] text-muted">Specialized workflows tailored to compliance, speed, and unit economics.</p>
                   </div>
-                  <ul className="relative grid gap-2.5">
-                    {d.back.map((b) => (
-                      <li key={b} className="flex items-center gap-3 text-[15px]"><i className="h-1.5 w-1.5 rotate-45 bg-sun" />{b}</li>
-                    ))}
-                  </ul>
-                  <div className="relative flex items-center justify-between border-t border-fg/10 pt-4">
-                    <span className="text-[12px] font-semibold uppercase tracking-[0.1em] text-muted2">{d.back.length} services</span>
-                    <span className="inline-flex items-center gap-2 rounded-full bg-sun px-4 py-2 text-[13px] font-bold text-ink">Explore industry →</span>
-                  </div>
+                  <span role="link" onClick={(e) => { e.stopPropagation(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }} className="relative inline-flex w-fit cursor-pointer items-center gap-2 rounded-full bg-sun px-4 py-2 text-[13px] font-bold text-ink">Talk to our team →</span>
                 </div>
               </button>
             </div>

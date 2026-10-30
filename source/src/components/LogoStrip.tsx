@@ -1,19 +1,16 @@
-import { awardLogos, partnerLogos } from '../data/site';
+import { badges } from '../data/badges';
 
-const files = import.meta.glob('../assets/logos/*.webp', { eager: true, import: 'default' }) as Record<string, string>;
-const src = (f: string) => files[`../assets/logos/${f}`];
-
-/** One-line ticker of award, certification and partner logos. */
+/** One-line ticker of certification and partner badges — the strip from the reference design. */
 export default function LogoStrip() {
-  const items = [...awardLogos, ...partnerLogos];
   return (
-    <div className="mt-16 overflow-hidden border-y border-fg/10 bg-surface2 py-5" aria-label="Awards, certifications and partners"
-      style={{ maskImage: 'linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)', WebkitMaskImage: 'linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)' }}>
-      <div className="ticker flex w-max items-center gap-4" style={{ animationDuration: '110s' }}>
-        {[...items, ...items].map((l, i) => (
-          <div key={i} title={l.name} className="flex h-[64px] shrink-0 items-center justify-center rounded-2xl border border-fg/10 bg-white px-5 transition hover:-translate-y-0.5 hover:border-sun">
-            <img src={src(l.file)} alt={i < items.length ? l.name : ''} aria-hidden={i >= items.length} className="max-h-[40px] w-auto max-w-[150px] object-contain" />
-          </div>
+    <div className="mt-14 overflow-hidden border-y border-fg/10 bg-surface py-4" aria-label="Partner and certification recognition strip"
+      style={{ maskImage: 'linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)', WebkitMaskImage: 'linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)' }}>
+      <div className="ticker flex w-max items-center gap-4" style={{ animationDuration: '32s' }}>
+        {[...badges, ...badges].map((b, i) => (
+          <span key={i} aria-hidden={i >= badges.length} className="flex h-[42px] shrink-0 items-center gap-2.5 whitespace-nowrap rounded-[10px] border-[1.5px] border-fg/10 bg-white px-[18px] text-[13px] font-bold text-fg transition hover:-translate-y-px hover:border-sun hover:bg-[#FFFDF5]">
+            <span className="flex shrink-0 items-center" dangerouslySetInnerHTML={{ __html: b.svg }} />
+            <span><strong>{b.strong}</strong> {b.rest}</span>
+          </span>
         ))}
       </div>
     </div>

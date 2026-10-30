@@ -56,13 +56,13 @@ export default function Footprint() {
   };
 
   return (
-    <section id="footprint" className="theme-light relative overflow-hidden bg-surface py-24 md:py-32">
+    <section id="footprint" className="theme-light relative overflow-hidden border-b border-fg/10 bg-surface2 py-[70px]">
       <div className="wrap">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-[640px]">
+          <div>
             <p className="eyebrow">Global Infrastructure</p>
-            <h2 className="h-display mt-5 text-[40px] sm:whitespace-nowrap sm:text-[clamp(34px,4.2vw,54px)]">Delivery <em className="accent">Footprint</em></h2>
-            <p className="mt-4 text-[15.5px] leading-relaxed text-muted">Connected global delivery hubs serving Tier-1 clients across India, Europe, USA, and the Middle East.</p>
+            <h2 className="sec-title">Delivery <em className="accent">Footprint</em></h2>
+            <p className="sec-desc sec-desc-line">Connected global delivery hubs serving Tier-1 clients across India, Europe, USA, and the Middle East.</p>
           </div>
           <div className="flex gap-2 rounded-full border border-fg/15 p-1">
             {(['world', 'india'] as const).map((v) => (
@@ -71,8 +71,8 @@ export default function Footprint() {
           </div>
         </div>
 
-        <div className="-mx-4 mt-12 overflow-x-auto px-4 pb-2 sm:mx-0 sm:overflow-visible sm:px-0">
-          <div className="relative min-w-[720px] overflow-hidden rounded-[28px] border border-fg/10 bg-surface2 sm:min-w-0" style={{ boxShadow: '0 30px 70px rgba(15,27,45,.10)' }}>
+        <div className="-mx-4 mt-9 overflow-x-auto px-4 pb-2 sm:mx-0 sm:overflow-visible sm:px-0">
+          <div className="relative min-w-[720px] overflow-hidden rounded-[20px] border border-fg/10 bg-surface sm:min-w-0" style={{ boxShadow: '0 30px 70px rgba(15,27,45,.10)' }}>
             <div className="relative w-full" style={{ aspectRatio: `${W} / ${H}` }}>
               <svg viewBox={`${vb.x} ${vb.y} ${vb.w} ${vb.h}`} className="absolute inset-0 h-full w-full" role="img" aria-label="Map of FiveS delivery locations">
                 <defs>

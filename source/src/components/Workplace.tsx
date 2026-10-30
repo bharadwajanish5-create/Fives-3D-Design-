@@ -22,16 +22,17 @@ export default function Workplace() {
   const { ref, inView } = useInView<HTMLDivElement>();
   const e = elements[active];
   return (
-    <section id="people" className="theme-light relative overflow-hidden bg-surface2 py-24 md:py-28">
+    <section id="people" className="theme-light relative overflow-hidden border-b border-fg/10 bg-surface py-[70px]">
       <div className="wrap">
         <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-end">
           <div>
             <p className="eyebrow">Our Workplace</p>
-            <h2 className="h-display mt-5 text-[40px] sm:whitespace-nowrap sm:text-[clamp(34px,4.2vw,54px)]">Inclusion driven <em className="accent">People approach</em></h2>
+            <h2 className="sec-title">Inclusion driven <em className="accent">People approach</em></h2>
+            <p className="sec-desc">Five Elements of Life</p>
           </div>
         </div>
 
-        <div className="mt-12 grid overflow-hidden rounded-[28px] border border-fg/10 bg-surface shadow-[0_24px_60px_rgba(15,27,45,.08)] lg:grid-cols-[1fr_1.05fr]">
+        <div className="mt-9 grid overflow-hidden rounded-[20px] border border-fg/10 bg-surface shadow-[0_24px_60px_rgba(15,27,45,.08)] lg:grid-cols-[1fr_1.05fr]">
           {/* photo — changes with the element */}
           <div className="relative min-h-[300px] overflow-hidden lg:min-h-[520px]">
             {elements.map((x, i) => (

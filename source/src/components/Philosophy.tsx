@@ -33,13 +33,13 @@ export default function Philosophy() {
   const size = Math.round(196 * k), R = Math.round(150 * k);
 
   return (
-    <section id="philosophy" className="theme-dark relative overflow-hidden bg-surface py-24 md:py-32">
-      <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(700px 420px at 30% 60%, rgba(250,204,44,.10), transparent 70%), radial-gradient(600px 400px at 80% 30%, rgba(124,198,255,.08), transparent 70%)' }} />
+    <section id="philosophy" className="theme-light relative overflow-hidden border-b border-fg/10 bg-surface py-[65px]">
+      <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(700px 420px at 30% 60%, rgba(250,204,44,.12), transparent 70%)' }} />
       <div className="wrap relative">
-        <div className="max-w-[720px]">
+        <div>
           <p className="eyebrow">Delivery Philosophy</p>
-          <h2 className="h-display mt-5 text-[40px] sm:whitespace-nowrap sm:text-[clamp(34px,4.2vw,54px)]">Human <em className="accent">Intelligence</em></h2>
-          <p className="mt-4 max-w-[560px] text-[16px] leading-relaxed text-muted">Engineered for operational rigor, cost resilience, and continuous service enhancement.</p>
+          <h2 className="sec-title">Human <em className="accent">Intelligence</em></h2>
+          <p className="sec-desc sec-desc-line">Engineered for operational rigor, cost resilience, and continuous service enhancement.</p>
         </div>
 
         <div className="relative mt-10 grid items-center gap-10 lg:grid-cols-[1.15fr_1fr]">
@@ -67,13 +67,12 @@ export default function Philosophy() {
                     <button
                       onClick={() => setActive(on ? null : i)}
                       aria-pressed={on}
-                      className={`bubble ${on ? 'active text-ink' : 'text-fg'} grid place-items-center rounded-full p-6 text-center transition-[transform,filter] duration-500 hover:scale-[1.05] ${active !== null && !on ? 'opacity-75 saturate-50' : ''}`}
+                      className={`bubble theme-dark ${on ? 'active text-ink' : 'text-fg'} grid place-items-center rounded-full p-6 text-center transition-[transform,filter] duration-500 hover:scale-[1.05] ${active !== null && !on ? 'opacity-75 saturate-50' : ''}`}
                       style={{ width: size, height: size }}
                     >
                       <span>
                         <span className="block text-[30px] font-bold tabular-nums" style={{ fontSize: Math.max(22, 30 * k) }}>{b.metric}</span>
                         <span className="h-display mt-1 block leading-[1.08]" style={{ fontSize: Math.max(16, 21 * k) }}>{b.title}</span>
-                        <span className={`mt-2 block text-[10px] font-bold uppercase tracking-[0.12em] ${on ? 'text-ink/70' : 'text-muted2'}`}>{on ? 'Open' : 'Tap to open'}</span>
                       </span>
                     </button>
                   </div>

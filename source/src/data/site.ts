@@ -14,7 +14,7 @@ export type Metric = {
   suffix: string;
   label: string;
   detail: string;
-  shape: 'wave' | 'bubble' | 'gem' | 'coin' | 'parcel' | 'loop';
+  shape: 'wave' | 'bubble' | 'gem' | 'coin' | 'parcel' | 'loop' | 'headset' | 'shield' | 'return';
   color: string;
   /** shown in the hero orbit (keep to 4) */
   featured?: boolean;
@@ -22,12 +22,12 @@ export type Metric = {
 
 /** Hero — live operations counters (rendered as 3D objects orbiting the core). */
 export const heroMetrics: Metric[] = [
-  { featured: true, id: 'voice', value: 15, suffix: ' Mn', label: 'Voice conversations', detail: 'Inbound and outbound calls handled across 13+ Indian languages.', shape: 'wave', color: '#FACC2C' },
+  { featured: true, id: 'voice', value: 15, suffix: ' Mn', label: 'Voice conversations', detail: 'Inbound and outbound calls handled across 13+ Indian languages.', shape: 'headset', color: '#FACC2C' },
   { featured: true, id: 'chats', value: 20, suffix: ' Mn', label: 'Active chats', detail: 'Chat, email and social threads resolved by AI-assisted specialists.', shape: 'bubble', color: '#7CC6FF' },
-  { featured: true, id: 'quality', value: 95, suffix: '%', label: 'Quality score', detail: 'Audited interaction quality across every live programme.', shape: 'gem', color: '#3DDC97' },
+  { featured: true, id: 'quality', value: 95, suffix: '%', label: 'Quality score', detail: 'Audited interaction quality across every live programme.', shape: 'shield', color: '#3DDC97' },
   { id: 'loans', value: 1, suffix: ' Mn', label: 'Personal-loan leads handled', detail: 'Lead qualification and follow-up for lending partners.', shape: 'coin', color: '#FFD76A' },
   { id: 'ndr', value: 50, suffix: 'K', label: 'NDR completions', detail: 'Non-delivery reports closed out with customers for logistics brands.', shape: 'parcel', color: '#FF9A5C' },
-  { featured: true, id: 'returns', value: 1, suffix: ' Mn', label: 'Shopping-cart returns', detail: 'Return requests verified and processed for e-commerce clients.', shape: 'loop', color: '#C3A6FF' },
+  { featured: true, id: 'returns', value: 1, suffix: ' Mn', label: 'Shopping-cart returns', detail: 'Return requests verified and processed for e-commerce clients.', shape: 'return', color: '#C3A6FF' },
 ];
 
 export const heroFeatured = () => heroMetrics.filter((m) => m.featured).slice(0, 4);
@@ -85,6 +85,7 @@ export type Service = {
   id: string;
   title: string;
   kicker: string;
+  badge: string;
   desc: string;
   metrics: { num: string; lbl: string }[];
   agent: { name: string; role: string; hue: string; mode: 'call' | 'chat'; action: string; hint: string; opener: string[]; replies: { q: string; a: string[] }[] };
@@ -95,8 +96,9 @@ export const services: Service[] = [
     id: 'voice',
     title: 'Customer Service Voice',
     kicker: 'Inbound & outbound',
-    desc: 'Multilingual specialists backed by real-time speech analytics and sentiment monitoring, working from Tier-2 and Tier-3 language hubs.',
-    metrics: [{ num: '94%', lbl: 'First-contact resolution' }, { num: '13+', lbl: 'Indian languages' }, { num: '<30s', lbl: 'Average speed of answer' }],
+    badge: 'Inbound & Outbound Operations',
+    desc: 'Scale your frontline with multilingual specialists delivering human empathy backed by real-time speech analytics, sentiment monitoring, and high first-contact resolution across Tier-2/3 language hubs.',
+    metrics: [{ num: '94%', lbl: 'First-Contact Resolution' }, { num: '13+', lbl: 'Indian Dialects' }, { num: '<30s', lbl: 'Average Speed of Answer' }],
     agent: {
       name: 'Vani', role: 'Voice CX agent', hue: '#FACC2C', mode: 'call', action: 'Call Vani', hint: 'Double-click to call',
       opener: ['Namaste! You’re through to Vani, FiveS voice support.', 'Ask me anything about how our voice programmes run.'],
@@ -109,10 +111,11 @@ export const services: Service[] = [
   },
   {
     id: 'nonvoice',
-    title: 'Customer Service Non-Voice',
+    title: 'Customer Service Non Voice',
     kicker: 'Chat · email · social',
-    desc: 'Asynchronous speed with conversational precision. AI triages intent, specialists resolve with context intact.',
-    metrics: [{ num: '<45s', lbl: 'First response time' }, { num: '98.8%', lbl: 'SLA adherence' }, { num: '4.8/5', lbl: 'Digital CSAT' }],
+    badge: 'Digital First Omnichannel',
+    desc: 'Deliver asynchronous speed and conversational precision across digital touchpoints, seamlessly triaging customer intent with AI assistance and human-led resolution.',
+    metrics: [{ num: '<45s', lbl: 'First Response Time' }, { num: '98.8%', lbl: 'SLA Adherence' }, { num: '4.8/5', lbl: 'Digital CSAT' }],
     agent: {
       name: 'Kavya', role: 'Chat & email agent', hue: '#7CC6FF', mode: 'chat', action: 'Chat with Kavya', hint: 'Double-click to chat',
       opener: ['Hi, I’m Kavya. I run chat, email and social queues.', 'Ask me anything about digital support.'],
@@ -127,8 +130,9 @@ export const services: Service[] = [
     id: 'genai',
     title: 'Gen AI Model Training',
     kicker: 'RLHF · red teaming',
-    desc: 'Domain-specific RLHF, red teaming, hallucination audits and cultural-alignment datasets for foundation models.',
-    metrics: [{ num: '99.8%', lbl: 'RLHF consensus score' }, { num: '500+', lbl: 'Domain experts' }, { num: '100%', lbl: 'Clean-room delivery' }],
+    badge: 'AI Model Fine-Tuning',
+    desc: 'Accelerate your foundation model deployments with domain-specific RLHF (Reinforcement Learning from Human Feedback), red teaming, hallucination auditing, and cultural alignment datasets.',
+    metrics: [{ num: '99.8%', lbl: 'RLHF Consensus Score' }, { num: '500+', lbl: 'Domain Subject Experts' }, { num: '100%', lbl: 'Strict Data Cleanroom' }],
     agent: {
       name: 'Atlas', role: 'Model-training lead', hue: '#3DDC97', mode: 'chat', action: 'Ask Atlas about RLHF', hint: 'Double-click to ask',
       opener: ['I’m Atlas. I coordinate RLHF and evaluation teams.', 'Curious how human feedback shapes a model?'],
@@ -143,8 +147,9 @@ export const services: Service[] = [
     id: 'annotation',
     title: 'Annotation Services',
     kicker: 'Vision · NLP · audio',
-    desc: 'Pixel-level segmentation, 3D LiDAR point-cloud labelling, audio tagging and multi-tier QA for AI pipelines.',
-    metrics: [{ num: '99.9%', lbl: 'Bounding-box precision' }, { num: '10M+', lbl: 'Labels per month' }, { num: 'Zero', lbl: 'Data leakage' }],
+    badge: 'Human-Led Data Operations',
+    desc: 'Empower computer vision, NLP, and multimodal AI pipelines with pixel-level semantic segmentation, 3D LiDAR point cloud labeling, audio phoneme tagging, and strict multi-tier QA.',
+    metrics: [{ num: '99.9%', lbl: 'Bounding Box Precision' }, { num: '10M+', lbl: 'Monthly Labeled Attributes' }, { num: 'Zero', lbl: 'Customer Data Leakage' }],
     agent: {
       name: 'Lumi', role: 'Annotation QA lead', hue: '#C3A6FF', mode: 'chat', action: 'Ask Lumi about labelling', hint: 'Double-click to ask',
       opener: ['Hey, I’m Lumi. I check every label before it ships.', 'Pick a topic and I’ll walk you through it.'],
@@ -159,12 +164,12 @@ export const services: Service[] = [
 
 /** Industries — flip cards. */
 export const industries = [
-  { title: 'E-Commerce & D2C', icon: 'cart', front: 'WISMO, returns and festive surges.', kpi: '<4 hrs', kpiLbl: 'Return turnaround', back: ['WISMO resolution', 'Returns verification', 'Catalogue moderation', 'Festive surge scaling'] },
-  { title: 'Fintech & Banking', icon: 'shield', front: 'KYC, fraud and disputes.', kpi: '99.2%', kpiLbl: 'KYC pass rate', back: ['Video KYC verification', 'Fraud alert triage', 'Merchant onboarding', 'Dispute handling'] },
-  { title: 'HealthTech & Insurance', icon: 'pulse', front: 'Patients, claims and providers.', kpi: '100%', kpiLbl: 'Compliance audits passed', back: ['Appointment coordination', 'Cashless claims parsing', 'Doctor credentialing', 'Revenue cycle support'] },
-  { title: 'EdTech & Media', icon: 'cap', front: 'Learners, exams and content.', kpi: '4.8/5', kpiLbl: 'CSAT score', back: ['Learner doubt resolution', 'Live exam proctoring', 'Multilingual moderation', 'Subscription support'] },
-  { title: 'Logistics & Supply Chain', icon: 'truck', front: 'Last mile, NDR and POD.', kpi: '99.7%', kpiLbl: 'Delivery SLA', back: ['Last-mile driver dispatch', 'NDR follow-up', 'Exception escalation', 'POD audits'] },
-  { title: 'AI & Autonomous Tech', icon: 'chip', front: 'Data that trains models.', kpi: '99.9%', kpiLbl: 'Label quality', back: ['3D LiDAR labelling', 'Computer-vision boxes', 'RLHF evaluations', 'Red teaming'] },
+  { title: 'E-Commerce & D2C', icon: 'cart', desc: 'WISMO resolution, returns verification, catalog moderation, and festive surge scaling.', kpi: '<4 hrs', kpiLbl: 'Return Turnaround' },
+  { title: 'Fintech & Banking', icon: 'shield', desc: 'Video KYC verification, fraud alert triaging, merchant onboarding, and dispute handling.', kpi: '99.2%', kpiLbl: 'KYC Pass Rate' },
+  { title: 'HealthTech & Insurance', icon: 'pulse', desc: 'Patient appointment coordination, cashless claims document parsing, and doctor credentialing.', kpi: '100%', kpiLbl: 'HIPAA Compliance' },
+  { title: 'EdTech & Media', icon: 'cap', desc: 'Learner doubt resolution, live exam proctoring support, and multilingual course moderation.', kpi: '4.8 / 5', kpiLbl: 'CSAT Score' },
+  { title: 'Logistics & Supply Chain', icon: 'truck', desc: 'Last-mile driver dispatch, shipment tracking exception escalation, and POD audits.', kpi: '99.7%', kpiLbl: 'Delivery SLA' },
+  { title: 'AI & Autonomous Tech', icon: 'chip', desc: 'High-precision 3D LiDAR labeling, computer vision bounding boxes, and RLHF evaluations.', kpi: '99.9%', kpiLbl: 'Quality Metric' },
 ];
 
 /** Delivery philosophy — bubbles. */

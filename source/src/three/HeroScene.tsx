@@ -4,7 +4,7 @@ import { useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
 import type { Metric } from '../data/site';
 
-type Props = { metrics: Metric[]; active: number | null; onSelect: (i: number | null) => void; running: boolean };
+type Props = { metrics: Metric[]; active: number | null; onSelect: (i: number | null) => void; onHover: (i: number | null) => void; running: boolean };
 
 const R = 3.0;
 
@@ -49,9 +49,58 @@ function Core() {
   );
 }
 
+function ShieldIcon({ color }: { color: string }) {
+  const geo = useMemo(() => {
+    const sh = new THREE.Shape();
+    sh.moveTo(0, 0.52); sh.lineTo(0.4, 0.37); sh.lineTo(0.4, -0.02);
+    sh.bezierCurveTo(0.4, -0.3, 0.2, -0.45, 0, -0.56);
+    sh.bezierCurveTo(-0.2, -0.45, -0.4, -0.3, -0.4, -0.02);
+    sh.lineTo(-0.4, 0.37); sh.closePath();
+    const g = new THREE.ExtrudeGeometry(sh, { depth: 0.12, bevelEnabled: true, bevelThickness: 0.05, bevelSize: 0.04, bevelSegments: 6, curveSegments: 24 });
+    g.center();
+    return g;
+  }, []);
+  return (
+    <group>
+      <mesh geometry={geo}><meshPhysicalMaterial color={color} metalness={0.3} roughness={0.2} clearcoat={1} clearcoatRoughness={0.15} /></mesh>
+      <group position={[0, 0.02, 0.17]}>
+        <mesh position={[-0.1, -0.05, 0]} rotation={[0, 0, 0.78]}><boxGeometry args={[0.1, 0.2, 0.06]} /><meshStandardMaterial color="#0C1526" /></mesh>
+        <mesh position={[0.07, 0.03, 0]} rotation={[0, 0, -0.78]}><boxGeometry args={[0.1, 0.4, 0.06]} /><meshStandardMaterial color="#0C1526" /></mesh>
+      </group>
+    </group>
+  );
+}
+
 function Shape({ m }: { m: Metric }) {
   const mat = <meshPhysicalMaterial color={m.color} metalness={0.3} roughness={0.25} clearcoat={1} clearcoatRoughness={0.2} />;
   switch (m.shape) {
+    case 'headset':
+      return (
+        <group scale={1.05}>
+          <mesh position={[0, -0.04, 0]}><torusGeometry args={[0.4, 0.05, 20, 56, Math.PI]} />{mat}</mesh>
+          {[-0.4, 0.4].map((x) => (
+            <mesh key={x} position={[x, -0.04, 0]} rotation={[0, 0, Math.PI / 2]}><cylinderGeometry args={[0.14, 0.14, 0.17, 32]} />{mat}</mesh>
+          ))}
+          {[-0.4, 0.4].map((x) => (
+            <mesh key={'p' + x} position={[x * 1.17, -0.04, 0]} rotation={[0, 0, Math.PI / 2]}><cylinderGeometry args={[0.09, 0.09, 0.05, 24]} /><meshStandardMaterial color="#0C1526" metalness={0.5} roughness={0.35} /></mesh>
+          ))}
+          <mesh position={[0.36, -0.28, 0.1]} rotation={[0.5, 0, -0.5]}><cylinderGeometry args={[0.018, 0.018, 0.34, 12]} /><meshStandardMaterial color="#0C1526" /></mesh>
+          <mesh position={[0.24, -0.43, 0.2]}><sphereGeometry args={[0.055, 16, 16]} /><meshStandardMaterial color="#0C1526" /></mesh>
+        </group>
+      );
+    case 'shield':
+      return <ShieldIcon color={m.color} />;
+    case 'return':
+      return (
+        <group>
+          <RoundedBox args={[0.58, 0.58, 0.58]} radius={0.05} smoothness={4}><meshPhysicalMaterial color={m.color} roughness={0.5} clearcoat={0.3} /></RoundedBox>
+          <mesh><boxGeometry args={[0.6, 0.12, 0.6]} /><meshStandardMaterial color="#F3E3C8" roughness={0.7} /></mesh>
+          <group position={[0, 0, 0.34]}>
+            <mesh><torusGeometry args={[0.2, 0.045, 16, 40, Math.PI * 1.45]} /><meshStandardMaterial color="#0C1526" metalness={0.4} roughness={0.35} /></mesh>
+            <mesh position={[Math.cos(Math.PI * 1.45) * 0.2, Math.sin(Math.PI * 1.45) * 0.2, 0]} rotation={[0, 0, Math.PI * 1.45]}><coneGeometry args={[0.1, 0.17, 20]} /><meshStandardMaterial color="#0C1526" metalness={0.4} roughness={0.35} /></mesh>
+          </group>
+        </group>
+      );
     case 'wave':
       return (
         <group>
@@ -99,11 +148,13 @@ function Orbiter({ m, i, n, active, hovered, setHovered, onSelect }: { m: Metric
   useFrame(({ clock }, dt) => {
     const g = ref.current;
     if (!g) return;
-    const target = isActive ? 1.18 : hovered === i ? 1.18 : dim ? 0.82 : 1;
+    const target = (isActive ? 1.18 : hovered === i ? 1.18 : dim ? 0.82 : 1) * 1.4;
     const s = THREE.MathUtils.damp(g.scale.x, target, 6, dt);
     g.scale.setScalar(s);
-    g.rotation.y += dt * (isActive ? 1.1 : 0.45);
-    g.rotation.x = Math.sin(clock.getElapsedTime() * 0.6 + i) * 0.25;
+    const t = clock.getElapsedTime();
+    // face the viewer, with a gentle sway so each icon stays readable
+    g.rotation.y = Math.sin(t * 0.8 + i * 1.7) * (isActive ? 0.7 : 0.5);
+    g.rotation.x = Math.sin(t * 0.6 + i) * 0.14;
   });
   return (
     <group position={[Math.cos(a) * R, 0, Math.sin(a) * R]}>
@@ -128,9 +179,10 @@ function Orbiter({ m, i, n, active, hovered, setHovered, onSelect }: { m: Metric
   );
 }
 
-function Rig({ metrics, active, onSelect }: Omit<Props, 'running'>) {
+function Rig({ metrics, active, onSelect, onHover }: Omit<Props, 'running'>) {
   const ring = useRef<THREE.Group>(null);
-  const [hovered, setHovered] = useState<number | null>(null);
+  const [hovered, setHoveredState] = useState<number | null>(null);
+  const setHovered = (i: number | null) => { setHoveredState(i); onHover(i); };
   const { viewport } = useThree();
   const k = Math.min(1.12, viewport.width / 7.4);
   useFrame((state, dt) => {
@@ -169,14 +221,14 @@ function Rig({ metrics, active, onSelect }: Omit<Props, 'running'>) {
   );
 }
 
-export default function HeroScene({ metrics, active, onSelect, running }: Props) {
+export default function HeroScene({ metrics, active, onSelect, onHover, running }: Props) {
   return (
     <Canvas
       camera={{ position: [0, 0.9, 8.2], fov: 38 }}
       dpr={[1, 1.75]}
       gl={{ antialias: true, alpha: true }}
       frameloop={running ? 'always' : 'never'}
-      onPointerMissed={() => onSelect(null)}
+      onPointerMissed={() => { onSelect(null); }}
       aria-label="Interactive 3D model of FiveS operations metrics"
     >
       <ambientLight intensity={0.35} />
@@ -188,7 +240,7 @@ export default function HeroScene({ metrics, active, onSelect, running }: Props)
         <Lightformer form="ring" intensity={2} color="#FACC2C" position={[5, 1, -2]} scale={3} />
         <Lightformer form="rect" intensity={0.8} position={[0, -4, 2]} scale={[8, 1, 1]} />
       </Environment>
-      <Rig metrics={metrics} active={active} onSelect={onSelect} />
+      <Rig metrics={metrics} active={active} onSelect={onSelect} onHover={onHover} />
     </Canvas>
   );
 }
