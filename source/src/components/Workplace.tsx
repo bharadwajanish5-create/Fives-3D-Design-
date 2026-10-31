@@ -1,81 +1,59 @@
-import { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { elements } from '../data/site';
 import { useInView } from '../lib/hooks';
-import earth from '../assets/elements/earth.jpg';
-import water from '../assets/elements/water.jpg';
-import air from '../assets/elements/air.jpg';
-import fire from '../assets/elements/fire.jpg';
-import space from '../assets/elements/space.jpg';
 
 const ElementsScene = lazy(() => import('../three/ElementsScene'));
-/** Photos from fivesdigital.com/life-at-fives, one per element. */
-const photos: Record<string, { src: string; alt: string; caption: string }> = {
-  earth: { src: earth, alt: 'Bright FiveS office floor with yellow walls', caption: 'A workplace that truly cares' },
-  water: { src: water, alt: 'Team at work, including a colleague in a wheelchair', caption: 'Inclusion you can see every day' },
-  air: { src: air, alt: 'Women colleagues standing arm in arm', caption: 'Diversity on the floor and in leadership' },
-  fire: { src: fire, alt: 'Rising arrow and a lightbulb', caption: 'Growth you can measure' },
-  space: { src: space, alt: 'Hands joined together in a circle', caption: 'Values we live by' },
-};
 
 export default function Workplace() {
   const [active, setActive] = useState(1);
+  const [touched, setTouched] = useState(false);
   const { ref, inView } = useInView<HTMLDivElement>();
   const e = elements[active];
+  const pick = (i: number) => { setTouched(true); setActive(i); };
+
+  // gentle auto-tour until the visitor takes over
+  useEffect(() => {
+    if (touched || !inView) return;
+    const t = window.setInterval(() => setActive((a) => (a + 1) % elements.length), 6000);
+    return () => clearInterval(t);
+  }, [touched, inView]);
+
   return (
     <section id="people" className="theme-light relative overflow-hidden border-b border-fg/10 bg-surface py-[70px]">
       <div className="wrap">
-        <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-end">
-          <div>
-            <p className="eyebrow">Our Workplace</p>
-            <h2 className="sec-title">Inclusion driven <em className="accent">People approach</em></h2>
-            <p className="sec-desc">Five Elements of Life</p>
-          </div>
-        </div>
+        <p className="eyebrow">Our Workplace</p>
+        <h2 className="sec-title">Inclusion driven <em className="accent">People approach</em></h2>
+        <p className="sec-desc">Five Elements of Life</p>
 
-        <div className="mt-9 grid overflow-hidden rounded-[20px] border border-fg/10 bg-surface shadow-[0_24px_60px_rgba(15,27,45,.08)] lg:grid-cols-[1fr_1.05fr]">
-          {/* photo — changes with the element */}
-          <div className="relative min-h-[300px] overflow-hidden lg:min-h-[520px]">
-            {elements.map((x, i) => (
-              <img key={x.id} src={photos[x.id].src} alt={photos[x.id].alt} aria-hidden={i !== active}
-                className="absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-out"
-                style={{ opacity: i === active ? 1 : 0, transform: i === active ? 'scale(1)' : 'scale(1.06)' }} />
-            ))}
-            <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, transparent 45%, rgba(15,27,45,.9)), linear-gradient(120deg, ${e.color}40, transparent 55%)` }} />
-            <div className="theme-dark absolute bottom-5 left-5 right-5">
-              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-acc">{e.name}</p>
-              <p className="mt-1 text-[15px] font-semibold text-fg">{photos[e.id].caption}</p>
-            </div>
+        <div className="theme-dark mt-9 grid overflow-hidden rounded-[24px] border border-white/10 lg:grid-cols-[0.82fr_1.18fr]"
+          style={{ background: `radial-gradient(ellipse at 68% 55%, ${e.color}38 0%, transparent 58%), linear-gradient(160deg,#16253B,#0B1626)`, boxShadow: '0 30px 70px rgba(15,27,45,.28)', transition: 'background .8s' }}>
+          <div ref={ref} className="relative order-first h-[420px] sm:h-[500px] lg:order-last">
+            <Suspense fallback={null}><ElementsScene active={active} onSelect={pick} running={inView} /></Suspense>
           </div>
 
-          <div className="min-w-0 p-6 sm:p-9">
-            {/* five 3D element icons */}
-            <div className="rounded-2xl border border-fg/10 bg-surface2 px-2 pt-2">
-              <div ref={ref} className="h-[96px] sm:h-[110px]">
-                <Suspense fallback={null}><ElementsScene active={active} onSelect={setActive} running={inView} /></Suspense>
+          <div className="flex min-w-0 flex-col justify-center p-6 sm:p-10">
+            <div key={e.id} style={{ animation: 'elIn .5s ease' }}>
+              <p className="flex items-center gap-3 text-[12px] font-extrabold uppercase tracking-[0.16em]" style={{ color: e.color }}>
+                <span className="h-[2px] w-8" style={{ background: e.color }} />{e.name}
+                <span className="font-mono font-medium text-white/40">0{active + 1} / 05</span>
+              </p>
+              <h3 className="h-display mt-4 text-[32px] leading-[1.08] text-white sm:text-[38px]">{e.value}</h3>
+              <div className="mt-6 flex items-center gap-4">
+                <span className="h-display shrink-0 text-[50px] leading-none" style={{ color: e.color }}>{e.stat}</span>
+                <span className="text-[14px] leading-snug text-white/70">{e.statLbl}</span>
               </div>
-              <div className="grid grid-cols-5 pb-2" role="tablist" aria-label="Five elements">
-                {elements.map((x, i) => (
-                  <button key={x.id} role="tab" aria-selected={active === i} onClick={() => setActive(i)}
-                    className={`mx-auto rounded-full px-2.5 py-1 text-[12px] font-bold transition sm:text-[13px] ${active === i ? 'text-ink' : 'text-muted hover:text-fg'}`}
-                    style={{ background: active === i ? x.color : 'transparent' }}>{x.name}</button>
-                ))}
-              </div>
+              <p className="mt-5 max-w-[44ch] text-[14.5px] leading-relaxed text-white/60">{e.body}</p>
             </div>
-
-            {/* details for the selected element */}
-            <div key={e.id} className="mt-7" style={{ animation: 'elIn .45s ease' }}>
-              <h3 className="h-display text-[30px] leading-[1.08] sm:text-[34px]">{e.value}</h3>
-              <div className="mt-5 flex items-center gap-4 rounded-2xl border border-fg/10 p-4">
-                <span className="h-display shrink-0 text-[42px] leading-none text-fg">{e.stat}</span>
-                <span className="h-10 w-[3px] shrink-0 rounded-full" style={{ background: e.color }} />
-                <span className="text-[14px] leading-snug text-muted">{e.statLbl}</span>
-              </div>
-              <p className="mt-5 text-[16px] leading-relaxed text-muted">{e.body}</p>
+            <div className="mt-8 flex items-center gap-2.5" role="tablist" aria-label="Five elements">
+              {elements.map((x, i) => (
+                <button key={x.id} role="tab" aria-selected={active === i} aria-label={x.name} onClick={() => pick(i)}
+                  className="h-2.5 rounded-full transition-all duration-500" style={{ width: active === i ? 38 : 10, background: active === i ? x.color : 'rgba(255,255,255,.25)' }} />
+              ))}
             </div>
-            <style>{'@keyframes elIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}'}</style>
           </div>
         </div>
       </div>
+      <style>{'@keyframes elIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}'}</style>
     </section>
   );
 }

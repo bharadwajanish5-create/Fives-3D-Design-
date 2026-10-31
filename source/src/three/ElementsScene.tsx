@@ -1,5 +1,5 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Environment, Lightformer, MeshDistortMaterial, Sparkles, Float } from '@react-three/drei';
+import { Environment, Lightformer, MeshDistortMaterial, Sparkles, Float, Line, Html } from '@react-three/drei';
 import { useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { elements } from '../data/site';
@@ -54,51 +54,84 @@ function Space() {
 }
 const Shapes = [Earth, Water, Air, Fire, Space];
 
+const N = elements.length;
+const RING = 2.05;
+const ang = (i: number) => (i * 2 * Math.PI) / N;
+
 function Item({ i, active, onSelect }: { i: number; active: number; onSelect: (i: number) => void }) {
   const g = useRef<THREE.Group>(null);
   const [hover, setHover] = useState(false);
-  const { viewport } = useThree();
-  const n = elements.length;
-  // evenly spaced columns so HTML labels below the canvas line up (grid-cols-5)
-  const col = viewport.width / n;
-  const x = (i - (n - 1) / 2) * col;
   const isA = active === i;
+  const el = elements[i];
+  const Shape = Shapes[i];
   useFrame((_, dt) => {
     if (!g.current) return;
-    const s = THREE.MathUtils.damp(g.current.scale.x, isA ? 1.2 : hover ? 1.08 : 0.82, 6, dt);
-    g.current.scale.setScalar(s);
-    g.current.position.y = THREE.MathUtils.damp(g.current.position.y, isA ? 0.12 : 0, 5, dt);
-    g.current.rotation.y += dt * (isA ? 0.8 : 0.3);
+    g.current.scale.setScalar(THREE.MathUtils.damp(g.current.scale.x, isA ? 1.22 : hover ? 0.95 : 0.74, 6, dt));
+    g.current.rotation.y += dt * (isA ? 0.9 : 0.35);
   });
-  const Shape = Shapes[i];
-  const el = elements[i];
-  const k = Math.min(viewport.height / 2.2, col / 1.7);
   return (
-    <group position={[x, 0, 0]}>
-      <Float speed={1.4} floatIntensity={0.15} rotationIntensity={0.2}>
-        <group ref={g} scale={k}
+    <group position={[Math.sin(ang(i)) * RING, 0, Math.cos(ang(i)) * RING]}>
+      <Float speed={1.5} floatIntensity={0.35} rotationIntensity={0.1}>
+        <group ref={g}
           onPointerOver={(e) => { e.stopPropagation(); setHover(true); document.body.style.cursor = 'pointer'; }}
           onPointerOut={() => { setHover(false); document.body.style.cursor = ''; }}
           onClick={(e) => { e.stopPropagation(); onSelect(i); }}>
           <Shape />
-          <mesh visible={false}><sphereGeometry args={[0.85, 8, 8]} /></mesh>
+          <mesh visible={false}><sphereGeometry args={[0.9, 8, 8]} /></mesh>
         </group>
       </Float>
+      {/* soft coloured pool of light under each element */}
+      <mesh position={[0, -0.95, 0]} rotation={[-Math.PI / 2, 0, 0]}><circleGeometry args={[isA ? 0.8 : 0.5, 40]} /><meshBasicMaterial color={el.color} transparent opacity={isA ? 0.28 : 0.12} depthWrite={false} /></mesh>
+      <Html position={[0, -1.25, 0]} center zIndexRange={[10, 0]}>
+        <button onClick={() => onSelect(i)} className="whitespace-nowrap rounded-full border px-3.5 py-1 text-[12.5px] font-extrabold tracking-wide transition"
+          style={{ background: isA ? el.color : 'rgba(15,27,45,.55)', color: isA ? '#0F1B2D' : '#E6ECF4', borderColor: isA ? el.color : 'rgba(255,255,255,.22)', backdropFilter: 'blur(6px)' }}>{el.name}</button>
+      </Html>
+    </group>
+  );
+}
+
+function Ring({ active, onSelect }: { active: number; onSelect: (i: number) => void }) {
+  const g = useRef<THREE.Group>(null);
+  const core = useRef<THREE.Mesh>(null);
+  const phi = useRef(-ang(active));
+  const { viewport } = useThree();
+  const pent = useMemo(() => Array.from({ length: N + 1 }, (_, i) => { const j = (i * 2) % N; return new THREE.Vector3(Math.sin(ang(j)) * RING, -0.2, Math.cos(ang(j)) * RING); }), []);
+  const circle = useMemo(() => Array.from({ length: 97 }, (_, i) => new THREE.Vector3(Math.sin((i / 96) * Math.PI * 2) * RING, -0.2, Math.cos((i / 96) * Math.PI * 2) * RING)), []);
+  useFrame(({ clock }, dt) => {
+    const target = -ang(active);
+    let d = target - phi.current;
+    d = ((((d + Math.PI) % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI)) - Math.PI;
+    phi.current += d * Math.min(1, dt * 3);
+    if (g.current) g.current.rotation.y = phi.current;
+    if (core.current) { core.current.rotation.y = clock.getElapsedTime() * 0.6; core.current.scale.setScalar(0.34 + Math.sin(clock.getElapsedTime() * 2) * 0.02); }
+  });
+  const s = Math.min(1, viewport.width / 6.8);
+  return (
+    <group scale={s}>
+      <group ref={g}>
+        <Line points={circle} color="#FACC2C" lineWidth={1} transparent opacity={0.35} />
+        <Line points={pent} color="#FACC2C" lineWidth={1} transparent opacity={0.22} />
+        {elements.map((_, i) => <Item key={i} i={i} active={active} onSelect={onSelect} />)}
+      </group>
+      {/* the FiveS core every element connects to */}
+      <mesh ref={core} position={[0, -0.2, 0]}><icosahedronGeometry args={[1, 1]} /><meshStandardMaterial color="#FACC2C" emissive="#FACC2C" emissiveIntensity={1.1} roughness={0.3} flatShading /></mesh>
+      <mesh position={[0, -0.2, 0]}><sphereGeometry args={[0.62, 32, 32]} /><meshBasicMaterial color="#FACC2C" transparent opacity={0.1} depthWrite={false} /></mesh>
+      <Sparkles count={60} scale={[5.5, 3, 5.5]} size={2.2} speed={0.4} color="#FFE08A" opacity={0.7} />
     </group>
   );
 }
 
 export default function ElementsScene({ active, onSelect, running }: Props) {
   return (
-    <Canvas camera={{ position: [0, 0, 6], fov: 26 }} dpr={[1, 1.75]} gl={{ alpha: true, antialias: true }} frameloop={running ? 'always' : 'never'} aria-label="The five elements: Earth, Water, Air, Fire, Space">
-      <ambientLight intensity={0.45} />
-      <directionalLight position={[3, 5, 4]} intensity={1.6} />
-      <pointLight position={[0, -2, 3]} intensity={20} color="#FACC2C" />
+    <Canvas camera={{ position: [0, 3.3, 8], fov: 34 }} onCreated={({ camera }) => camera.lookAt(0, -0.25, 0)} dpr={[1, 1.75]} gl={{ alpha: true, antialias: true }} frameloop={running ? 'always' : 'never'} aria-label="The five elements, Earth, Water, Air, Fire and Space, arranged around the FiveS core">
+      <ambientLight intensity={0.55} />
+      <directionalLight position={[3, 5, 4]} intensity={1.7} />
+      <pointLight position={[0, 0.5, 0]} intensity={14} color="#FACC2C" />
       <Environment resolution={128} frames={1}>
         <Lightformer form="rect" intensity={3} position={[0, 4, 3]} scale={[8, 2, 1]} />
         <Lightformer form="rect" intensity={1.2} color="#7CC6FF" position={[-5, 0, 2]} scale={[2, 6, 1]} />
       </Environment>
-      {elements.map((_, i) => <Item key={i} i={i} active={active} onSelect={onSelect} />)}
+      <Ring active={active} onSelect={onSelect} />
     </Canvas>
   );
 }
