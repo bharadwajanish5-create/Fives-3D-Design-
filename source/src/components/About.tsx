@@ -1,8 +1,13 @@
 import { lazy, Suspense, useEffect, useRef } from 'react';
 import { useCountUp, useInView } from '../lib/hooks';
 
-const MergeScene = lazy(() => import('../three/MergeScene'));
+const GrowthScene = lazy(() => import('../three/GrowthScene'));
 
+const milestones = [
+  { y: '2009', t: 'Udaipur', d: 'Where FiveS began, with a 12-member team' },
+  { y: '2023', t: 'Navi Mumbai', d: 'India’s first diverse & inclusive BPM centre' },
+  { y: 'Today', t: 'Scale with purpose', d: 'Where scale meets social impact' },
+];
 const stats = [
   { v: 16, s: '', l: 'Years of impact' },
   { v: 100, s: '+', l: 'Global brands' },
@@ -20,7 +25,7 @@ function Stat({ v, s, l }: { v: number; s: string; l: string }) {
   );
 }
 
-/** Who we are — technology + human intelligence merge into one purpose as you scroll. */
+/** Who we are — a skyline that builds itself floor by floor: 2009 → 2023 → today. */
 export default function About() {
   const { ref, inView } = useInView<HTMLDivElement>();
   const p = useRef(0);
@@ -38,30 +43,25 @@ export default function About() {
   return (
     <section id="about" className="theme-light relative overflow-hidden border-b border-fg/10 bg-surface py-[68px]">
       <div className="wrap">
-        <div className="grid items-end gap-6 lg:grid-cols-[1fr_auto]">
+        <div>
           <div>
             <p className="eyebrow">Who we are</p>
             <h2 className="sec-title">Purpose-Led <em className="accent">BPM</em></h2>
           </div>
-          <div className="inline-flex items-center gap-3 self-end rounded-full border border-fg/12 bg-surface2 py-2 pl-3 pr-5">
-            <span className="relative flex h-3 w-3"><i className="absolute inset-0 animate-ping rounded-full bg-sun/70" /><i className="relative h-3 w-3 rounded-full bg-sun" /></span>
-            <span className="text-[13.5px] font-bold text-fg">India’s first diverse &amp; inclusive BPM centre <span className="font-medium text-muted">· Navi Mumbai</span></span>
-          </div>
         </div>
 
-        <div ref={ref} className="relative mt-8 h-[340px] overflow-hidden rounded-[26px] border border-fg/10 sm:h-[420px]"
-          style={{ background: 'radial-gradient(ellipse at 50% 55%, #FFFFFF 0%, #F1F4F8 55%, #E6ECF4 100%)' }}>
-          <Suspense fallback={null}><MergeScene p={p} running={inView} /></Suspense>
-          {/* captions: the two ingredients fade out as they merge, the purpose caption fades in */}
-          <div className="pointer-events-none absolute bottom-5 left-[28%] -translate-x-1/2 text-center" style={{ opacity: 'calc(1 - var(--p, 0) * 1.7)' }}>
-            <p className="text-[13px] font-extrabold uppercase tracking-[0.14em] text-fg sm:text-[14px]">Technology</p>
+        <div className="mt-8 overflow-hidden rounded-[26px] border border-fg/10" style={{ background: 'linear-gradient(180deg, #F7F9FC 0%, #EDF1F7 100%)' }}>
+          <div ref={ref} className="relative h-[310px] sm:h-[380px]">
+            <Suspense fallback={null}><GrowthScene p={p} running={inView} /></Suspense>
           </div>
-          <div className="pointer-events-none absolute bottom-5 left-[72%] -translate-x-1/2 text-center" style={{ opacity: 'calc(1 - var(--p, 0) * 1.7)' }}>
-            <p className="text-[13px] font-extrabold uppercase tracking-[0.14em] text-fg sm:text-[14px]">Human intelligence</p>
-          </div>
-          <div className="pointer-events-none absolute inset-x-0 bottom-5 text-center" style={{ opacity: 'calc((var(--p, 0) - 0.55) * 2.6)' }}>
-            <p className="text-[14px] font-extrabold uppercase tracking-[0.16em] text-fg">One purpose</p>
-            <p className="mt-0.5 text-[13px] text-muted">Where scale meets social impact</p>
+          <div className="grid grid-cols-3 border-t border-fg/10 bg-surface/70">
+            {milestones.map((m, i) => (
+              <div key={m.y} className={`px-3 py-5 text-center sm:px-6 ${i ? 'border-l border-fg/10' : ''}`}>
+                <p className="text-[12px] font-extrabold uppercase tracking-[0.16em] text-[#B88400]">{m.y}</p>
+                <p className="mt-1 text-[15px] font-extrabold text-fg sm:text-[18px]">{m.t}</p>
+                <p className="mt-1 text-[12px] leading-snug text-muted sm:text-[13.5px]">{m.d}</p>
+              </div>
+            ))}
           </div>
         </div>
 
