@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce &amp; D2C CX and AI Data Services | FiveS Digital</title>
+  <meta name="description" content="Modernize enterprise customer operations with FiveS Digital's AI in CX suite. Powered by CXFirst.ai: CommX, AssistX, InsightX, CrmX, and SmartX.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Three.js for 3D Neural Engine Canvas -->
+  <style>
+    /* EXACT BRAND TOKENS MATCHING FIVES 3D HOMEPAGE */
+    :root {
+      --navy: #0F1B2D;
+      --navy-dark: #0A1322;
+      --navy-mid: #16253B;
+      --navy-card: #1B2D47;
+      --navy-border: rgba(255, 255, 255, 0.12);
+      --yellow: #FACC2C;
+      --yellow-dark: #FFB300;
+      --yellow-light: #FFE27A;
+      --yellow-soft: #FFF8E3;
+      --white: #ffffff;
+      --off-white: #F8F9FA;
+      --gray-50: #F1F4F8;
+      --gray-100: #EEF2F7;
+      --gray-200: #E6ECF4;
+      --gray-300: #CBD3DE;
+      --gray-400: #B9C4D2;
+      --gray-500: #7A8594;
+      --gray-700: #55606E;
+      --green: #1F9D6B;
+      --green-light: #dcfce7;
+      --blue: #7CC6FF;
+      --blue-soft: #E4F4FF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; color-scheme: dark; }
+    body {
+      margin: 0;
+      font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #FFFFFF;
+      background: var(--navy-dark);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    ::selection {
+      background: var(--yellow);
+      color: var(--navy-dark);
+    }
+
+    /* CONTAINER EXACT MATCH TO HOMEPAGE */
+    .in {
+      max-width: 1248px;
+      margin: 0 auto;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4 {
+      font-family: "PT Serif", Georgia, serif;
+      font-weight: 400;
+      letter-spacing: -0.015em;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--yellow);
+    }
+
+    .h-sec {
+      margin-top: 10px;
+      font-size: clamp(30px, 3.4vw, 44px);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+    }
+
+    .p-sec {
+      margin-top: 10px;
+      font-size: 15.5px;
+      line-height: 1.6;
+      color: var(--gray-300);
+      max-width: 680px;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14.5px;
+      box-sizing: border-box;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      border: none;
+      gap: 8px;
+      white-space: nowrap;
+    }
+    .btn.by {
+      background: var(--yellow);
+      color: var(--navy-dark);
+      box-shadow: 0 6px 20px rgba(250, 204, 44, 0.28);
+    }
+    .btn.by:hover {
+      background: var(--yellow-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(250, 204, 44, 0.42);
+    }
+    .btn.outline {
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .btn.outline:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.35);
+      transform: translateY(-2px);
+    }
+
+    /* STICKY HEADER */
+    .site-header-sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 19, 34, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--navy-border);
+      transition: all 0.3s ease;
+      padding: 12px 0;
+    }
+    .site-header-sticky .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .site-header-sticky .wm {
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+    }
+    .site-header-sticky .wm b {
+      font-size: 20px;
+      font-family: "PT Serif", Georgia, serif;
+      letter-spacing: -0.02em;
+    }
+    .site-header-sticky .wm b i {
+      color: var(--yellow);
+      font-style: normal;
+    }
+    .site-header-sticky .wm span {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+    .nav-menu-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .nav-menu-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.85);
+      transition: color 0.2s;
+    }
+    .nav-menu-links a:hover, .nav-menu-links a.active {
+      color: var(--yellow);
+    }
+    .nav-menu-links a.active {
+      font-weight: 700;
+    }
+
+    .btn-pdf-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .btn-pdf-download:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: var(--yellow);
+      color: var(--yellow);
+    }
+
+    .nav-menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    /* 1. HERO SECTION WITH 3D NEURAL CORE & FLOATING 3D GLASS WIDGETS */
+    .hero {
+      position: relative;
+      padding-top: 136px;
+      padding-bottom: 72px;
+      overflow: hidden;
+      background: radial-gradient(circle at 75% 30%, rgba(250, 204, 44, 0.12) 0%, rgba(124, 198, 255, 0.05) 35%, transparent 70%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 4.2vw, 56px);
+      line-height: 1.12;
+      margin-top: 14px;
+      margin-bottom: 16px;
+    }
+
+    .hero-lead {
+      font-size: 16.5px;
+      line-height: 1.6;
+      color: var(--gray-300);
+      margin-bottom: 28px;
+      max-width: 530px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .hero-metric-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      padding-top: 22px;
+      border-top: 1px solid var(--navy-border);
+    }
+
+    .metric-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metric-num {
+      font-family: "PT Serif", Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--yellow);
+      line-height: 1.1;
+      margin-bottom: 3px;
+    }
+
+    .metric-lbl {
+      font-size: 11.5px;
+      color: var(--gray-400);
+      line-height: 1.35;
+      font-weight: 500;
+    }
+
+    /* 3D HERO CANVAS STAGE WITH FLOATING WIDGETS */
+    .hero-3d-stage {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #three-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    /* FLOATING GLASSMORPHIC WIDGETS */
+    .hero-float-card {
+      position: absolute;
+      z-index: 2;
+      background: rgba(22, 37, 59, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 14px;
+      padding: 12px 16px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+      animation: floatWidget 5s ease-in-out infinite;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .hero-float-card:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: var(--yellow);
+    }
+
+    @keyframes floatWidget {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* CARD 1: Voice recognition with live equalizer */
+    .fc-voice {
+      top: 18px;
+      left: -12px;
+      width: 220px;
+      animation-delay: 0s;
+    }
+    .fc-voice-num {
+      font-family: "PT Serif", Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--yellow);
+      line-height: 1.1;
+    }
+    .fc-voice-lbl {
+      font-size: 11px;
+      color: var(--gray-300);
+      margin-bottom: 6px;
+    }
+    .live-wave-row {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 16px;
+    }
+    .live-wave-bar {
+      width: 3.5px;
+      background: var(--yellow);
+      border-radius: 2px;
+      animation: wavePulse 1.2s ease-in-out infinite alternate;
+    }
+    .lw-1 { height: 6px; animation-delay: 0.1s; }
+    .lw-2 { height: 14px; animation-delay: 0.3s; }
+    .lw-3 { height: 9px; animation-delay: 0.2s; }
+    .lw-4 { height: 16px; animation-delay: 0.4s; }
+    .lw-5 { height: 11px; animation-delay: 0.15s; }
+    .lw-6 { height: 15px; animation-delay: 0.35s; }
+    .lw-7 { height: 7px; animation-delay: 0.25s; }
+
+    @keyframes wavePulse {
+      0% { transform: scaleY(0.4); opacity: 0.6; }
+      100% { transform: scaleY(1.3); opacity: 1; }
+    }
+
+    /* CARD 2: Active AI Copilot */
+    .fc-copilot {
+      top: 28px;
+      right: -8px;
+      width: 204px;
+      animation-delay: 1.4s;
+    }
+    .fc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .dot-pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 10px var(--green);
+      animation: pulseDot 2s infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    /* CARD 3: Deflection Rate (FiveS Yellow card) */
+    .fc-deflection {
+      bottom: 24px;
+      left: 10px;
+      width: 200px;
+      background: var(--yellow);
+      border-color: transparent;
+      color: var(--navy-dark);
+      animation-delay: 2.2s;
+    }
+    .fc-deflection-num {
+      font-family: "PT Serif", Georgia, serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--navy-dark);
+      line-height: 1.1;
+    }
+    .fc-deflection-lbl {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: rgba(15, 27, 45, 0.85);
+    }
+
+    /* CARD 4: Live Conversational AI Chat Dialog Mockup */
+    .fc-chat {
+      bottom: 16px;
+      right: -20px;
+      width: 240px;
+      animation-delay: 0.8s;
+      padding: 14px;
+    }
+    .chat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gray-400);
+      margin-bottom: 8px;
+    }
+    .chat-bub {
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+    .cb-user {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border-radius: 8px 8px 0 8px;
+      margin-left: 14px;
+    }
+    .cb-ai {
+      background: rgba(250, 204, 44, 0.18);
+      color: var(--yellow-light);
+      border-radius: 8px 8px 8px 0;
+      border: 1px solid rgba(250, 204, 44, 0.3);
+    }
+
+    /* 2. RECOGNITION & PARTNER CERTIFICATION MARQUEE STRIP (EXACT HOMEPAGE MATCH) */
+    .mq-ticker-wrap {
+      overflow: hidden;
+      padding: 16px 0;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      border-top: 1px solid var(--navy-border);
+      border-bottom: 1px solid var(--navy-border);
+      background: rgba(15, 27, 45, 0.65);
+      position: relative;
+      z-index: 10;
+    }
+
+    .mq-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: mqScroll 32s linear infinite;
+    }
+
+    .mq-track:hover {
+      animation-play-state: paused;
+    }
+
+    .mq-badge {
+      flex: none;
+      height: 42px;
+      border: 1px solid var(--navy-border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #FFFFFF;
+      background: var(--navy-mid);
+      padding: 0 18px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .mq-badge:hover {
+      border-color: var(--yellow);
+      background: var(--navy-card);
+      transform: translateY(-1px);
+    }
+
+    .mq-badge strong {
+      color: var(--yellow);
+    }
+
+    @keyframes mqScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* SECTION SPACING */
+    .section-spacing {
+      padding: 88px 0;
+      position: relative;
+    }
+
+    .sec-header-center {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px auto;
+    }
+
+    /* 3. BENTO GRID OF CXFIRST PRODUCTS */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .bento-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bento-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(250, 204, 44, 0.45);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+    }
+
+    .bento-card.span-2 {
+      grid-column: span 2;
+    }
+
+    .bento-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .bento-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(250, 204, 44, 0.1);
+      border: 1px solid rgba(250, 204, 44, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--yellow);
+    }
+
+    .bento-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--yellow);
+      background: rgba(250, 204, 44, 0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .bento-title {
+      font-size: 25px;
+      color: #fff;
+      margin-bottom: 4px;
+      letter-spacing: -0.015em;
+    }
+
+    .bento-tagline {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .bento-quote {
+      font-size: 12.5px;
+      font-style: italic;
+      color: var(--yellow-light);
+      margin-bottom: 16px;
+      line-height: 1.45;
+      background: rgba(250, 204, 44, 0.05);
+      border-left: 2px solid var(--yellow);
+      padding: 7px 12px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* CARD INTERNAL VISUAL WIDGETS */
+    .card-preview-widget {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      font-size: 12px;
+      color: var(--gray-300);
+    }
+
+    /* TELEMETRY MICRO-WIDGET */
+    .micro-widget {
+      background: rgba(10, 19, 34, 0.6);
+      border: 1px solid var(--navy-border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      font-size: 12px;
+      color: var(--gray-300);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* CHIP TAGS (Pills replacing bullet lists) */
+    .pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .pill-chip {
+      font-size: 11.5px;
+      font-weight: 500;
+      color: var(--gray-300);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .bento-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--navy-border);
+      margin-top: auto;
+    }
+
+    .bento-metric {
+      font-size: 12px;
+      color: var(--gray-400);
+    }
+    .bento-metric b {
+      color: var(--yellow);
+      font-size: 13.5px;
+    }
+
+    .btn-know-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--yellow);
+      text-decoration: none;
+      padding: 7px 16px;
+      border-radius: 999px;
+      background: rgba(250, 204, 44, 0.1);
+      border: 1px solid rgba(250, 204, 44, 0.28);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-know-more:hover {
+      background: var(--yellow);
+      color: var(--navy-dark);
+      transform: translateX(2px);
+      box-shadow: 0 4px 12px rgba(250, 204, 44, 0.3);
+    }
+
+    /* 4. INTERACTIVE CAPABILITIES STAGE (HOMEPAGE ARCHITECTURE) */
+    .cap-tabs-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .cap-tab-btn {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-border);
+      color: var(--gray-400);
+      font-family: inherit;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .cap-tab-btn.active {
+      background: var(--yellow);
+      color: var(--navy-dark);
+      font-weight: 700;
+      border-color: var(--yellow);
+      box-shadow: 0 4px 14px rgba(250, 204, 44, 0.25);
+    }
+    .cap-tab-btn:hover:not(.active) {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .cap-stage-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-border);
+      border-radius: 24px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      overflow: hidden;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
+    }
+
+    .stage-content {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stage-badge {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 8px;
+    }
+
+    .stage-title {
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .stage-desc {
+      font-size: 14.5px;
+      color: var(--gray-300);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .stage-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      padding-top: 20px;
+      border-top: 1px solid var(--navy-border);
+    }
+
+    .sm-card {
+      display: flex;
+      flex-direction: column;
+    }
+    .sm-num {
+      font-family: "PT Serif", Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--yellow);
+      margin-bottom: 2px;
+    }
+    .sm-lbl {
+      font-size: 11px;
+      color: var(--gray-400);
+      line-height: 1.35;
+    }
+
+    .stage-img-wrapper {
+      position: relative;
+      background: var(--navy-card);
+      overflow: hidden;
+      min-height: 340px;
+    }
+    .stage-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s ease;
+    }
+    .stage-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(10, 19, 34, 0.9) 100%);
+      padding: 24px 20px 14px 20px;
+      font-size: 12px;
+      color: var(--gray-300);
+      font-weight: 500;
+    }
+
+    /* 5. HYBRID ADVANTAGE (3 PILLARS) */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .pillar-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-border);
+      border-radius: 20px;
+      padding: 32px 26px;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .pillar-card:hover {
+      border-color: var(--yellow);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+    }
+    .pillar-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--yellow), transparent);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .pillar-card:hover::before {
+      opacity: 1;
+    }
+
+    .pillar-badge {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--yellow);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .pillar-title {
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .pillar-desc {
+      font-size: 14px;
+      color: var(--gray-300);
+      line-height: 1.6;
+    }
+
+    /* 6. ROI CALCULATOR */
+    .calculator-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-border);
+      border-radius: 24px;
+      padding: 40px 36px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: 0 20px 48px rgba(0,0,0,0.3);
+    }
+
+    .slider-group {
+      margin-bottom: 24px;
+    }
+
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .slider-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .slider-value {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--yellow);
+      font-family: monospace;
+    }
+
+    .styled-range {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      outline: none;
+      -webkit-appearance: none;
+      accent-color: var(--yellow);
+    }
+
+    .calc-metrics-box {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: 20px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .calc-stat-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gray-400);
+      margin-bottom: 4px;
+    }
+
+    .calc-stat-big {
+      font-family: "PT Serif", Georgia, serif;
+      font-size: 38px;
+      color: var(--yellow);
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+
+    .calc-substats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      padding-top: 16px;
+      border-top: 1px solid var(--navy-border);
+      text-align: left;
+    }
+
+    /* 7. CASE STUDIES COMPACT */
+    .case-studies-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .cs-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+    .cs-card:hover {
+      border-color: rgba(250, 204, 44, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    }
+
+    .cs-big-stat {
+      font-family: "PT Serif", Georgia, serif;
+      font-size: 28px;
+      color: var(--yellow);
+      margin-bottom: 6px;
+    }
+
+    .cs-title {
+      font-size: 17px;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .cs-summary {
+      font-size: 13.5px;
+      color: var(--gray-400);
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    .cs-link {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--yellow);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: transform 0.2s;
+    }
+    .cs-link:hover {
+      transform: translateX(3px);
+    }
+
+    /* 8. CLOSING CTA BANNER */
+    .cta-banner {
+      background: radial-gradient(circle at 50% 50%, rgba(250, 204, 44, 0.12) 0%, rgba(15, 27, 45, 0.85) 70%);
+      border: 1px solid var(--navy-border);
+      border-radius: 28px;
+      padding: 64px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* GLOBAL FOOTER */
+    footer {
+      border-top: 1px solid var(--navy-border);
+      padding: 36px 0;
+      font-size: 13px;
+      color: var(--gray-400);
+      background: var(--navy-dark);
+    }
+    .footer-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a:hover {
+      color: var(--yellow);
+    }
+
+    /* DEMO MODAL */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--yellow);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 480px;
+      padding: 32px;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: transparent;
+      border: none;
+      color: var(--gray-400);
+      font-size: 22px;
+      cursor: pointer;
+    }
+    .form-group { margin-bottom: 14px; text-align: left; }
+    .form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--gray-300); margin-bottom: 5px; }
+    .form-input, .form-select {
+      width: 100%;
+      background: var(--navy-dark);
+      border: 1px solid var(--navy-border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 13.5px;
+      outline: none;
+    }
+    .form-input:focus, .form-select:focus { border-color: var(--yellow); }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-lead { margin: 0 auto 28px auto; }
+      .hero-buttons { justify-content: center; }
+      .hero-metric-strip { grid-template-columns: repeat(2, 1fr); }
+      .hero-3d-stage { height: 420px; }
+      .fc-chat { display: none; }
+      .bento-grid { grid-template-columns: 1fr; }
+      .bento-card.span-2 { grid-column: span 1; }
+      .cap-stage-card { grid-template-columns: 1fr; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .calculator-card { grid-template-columns: 1fr; }
+      .case-studies-grid { grid-template-columns: 1fr; }
+      .nav-menu-links { display: none; }
+      .nav-menu-toggle { display: block; }
+    }
+  </style>
+<link rel="stylesheet" href="fives-shared.css">
+<style>
+.ih{position:relative;padding:150px 0 90px;background:radial-gradient(900px 500px at 80% 10%,rgba(250,204,44,.10),transparent),var(--navy-dark);overflow:hidden}
+.ih .g{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.ih h1{font-size:clamp(38px,5vw,62px);line-height:1.08;margin:14px 0 18px}
+.ih p.lead{font-size:17px;color:var(--gray-300);max-width:560px}
+.ih .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.ih .stats{display:grid;grid-template-columns:repeat(4,auto);gap:28px;margin-top:40px;padding-top:26px;border-top:1px solid var(--navy-border);justify-content:start}
+.ih .stats b{display:block;font:400 32px "PT Serif",serif;color:var(--yellow);line-height:1}
+.ih .stats span{font-size:12px;color:var(--gray-400);text-transform:uppercase;letter-spacing:.06em}
+.stack3d{position:relative;height:430px;perspective:1200px}
+.stack3d .pl{position:absolute;left:50%;top:50%;width:300px;border-radius:20px;padding:20px 22px;background:linear-gradient(160deg,#1B2D47,#16253B);border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 60px rgba(0,0,0,.45);transform:translate(-50%,-50%) rotateX(58deg) rotateZ(-32deg) translateZ(var(--z));animation:flt 6s ease-in-out infinite;animation-delay:var(--d)}
+.stack3d .pl small{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow);font-weight:700}
+.stack3d .pl b{display:block;font:400 20px "PT Serif",serif;margin:4px 0 2px}
+.stack3d .pl span{font-size:12.5px;color:var(--gray-300)}
+.stack3d .pl.y{background:linear-gradient(145deg,#FFE27A,#FACC2C 60%,#E0A800);color:var(--navy);border:0}
+.stack3d .pl.y small,.stack3d .pl.y span{color:var(--navy)}
+@keyframes flt{0%,100%{transform:translate(-50%,-50%) rotateX(58deg) rotateZ(-32deg) translateZ(var(--z))}50%{transform:translate(-50%,-50%) rotateX(58deg) rotateZ(-32deg) translateZ(calc(var(--z) + 22px))}}
+.gridc{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.gridc.four{grid-template-columns:repeat(4,1fr)}
+.card{position:relative;border-radius:20px;padding:26px 24px;background:var(--navy-mid);border:1px solid var(--navy-border)}
+.card h3{font-size:20px;margin:14px 0 8px;color:#fff;transform:translateZ(20px)}
+.card p{font-size:14px;color:var(--gray-300);line-height:1.6}
+.card .no{font:400 30px "PT Serif",serif;color:var(--yellow)}
+.band-light .card{background:#fff;border-color:rgba(15,27,45,.1);box-shadow:0 10px 30px rgba(15,27,45,.06)}
+.band-light .card h3{color:var(--navy)}.band-light .card p{color:#55606E}.band-light .card .no{color:#B88400}
+.band-light .tilt:hover{box-shadow:0 24px 50px rgba(15,27,45,.16),0 0 0 1px var(--yellow)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
+.metrics div{background:var(--navy);color:#fff;border-radius:16px;padding:20px;text-align:center}
+.metrics b{display:block;font:400 32px "PT Serif",serif;color:var(--yellow)}.metrics span{font-size:12.5px;color:var(--gray-300)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.steps{list-style:none;display:grid;gap:16px;margin-top:22px}
+.steps li{display:flex;gap:16px;align-items:flex-start}
+.steps i{flex:none;width:36px;height:36px;border-radius:12px;display:grid;place-items:center;font:700 14px Inter;font-style:normal;color:var(--navy);background:linear-gradient(145deg,#FFE27A,#FACC2C);box-shadow:0 3px 0 #B88400}
+.steps b{display:block;font-size:16px;color:#fff}.steps span{font-size:14px;color:var(--gray-300)}
+.trust{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+.trust span{padding:8px 16px;border-radius:999px;border:1px solid var(--navy-border);font-size:13px;font-weight:600;color:#fff}
+.tabs-ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#FFE27A,#FACC2C 55%,#E0A800);color:var(--navy);box-shadow:0 3px 0 #B88400,0 10px 20px rgba(250,204,44,.25);font-size:20px;transform:translateZ(36px)}
+@media(max-width:960px){.ih .g,.split{grid-template-columns:1fr}.gridc,.gridc.four,.metrics{grid-template-columns:1fr 1fr}.ih .stats{grid-template-columns:1fr 1fr}.stack3d{height:300px;transform:scale(.75)}.ih{padding-top:120px}}
+@media(max-width:560px){.gridc,.gridc.four{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+  <!-- STICKY HEADER -->
+  <header class="site-header-sticky" id="mainHeader">
+    <div class="in">
+      <div class="nav">
+        <a class="wm" href="index.html#home">
+          <b>FiveS <i>Digital</i></b>
+          <span>Delivering impact sustainably</span>
+        </a>
+
+        <div class="nav-menu-links" id="primary-navigation"><div class="nd"><a href="index.html#about">About Us<svg class="chev" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></a><div class="nd-panel"><div><a href="https://fivesdigital.com/legacy/" target="_blank" rel="noreferrer">Legacy</a><a href="https://fivesdigital.com/partnerships/" target="_blank" rel="noreferrer">Partnerships</a><a href="https://fivesdigital.com/awards/" target="_blank" rel="noreferrer">Awards &amp; Certifications</a><a href="https://fivesdigital.com/value-proposition/" target="_blank" rel="noreferrer">Value Proposition</a><a href="https://fivesdigital.com/infrastructure/" target="_blank" rel="noreferrer">Infrastructure</a></div></div></div><div class="nd"><a href="index.html#cx">CX<svg class="chev" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></a><div class="nd-panel"><div><a href="https://fivesdigital.com/cx/offerings/customer-engagement/" target="_blank" rel="noreferrer">Customer Engagement</a><a href="https://fivesdigital.com/cx/offerings/revenue-cycle-management/" target="_blank" rel="noreferrer">Revenue Cycle Management</a><a href="https://fivesdigital.com/cx/offerings/bpm-services/" target="_blank" rel="noreferrer">BPM Services</a><a href="https://fivesdigital.com/cx/offerings/enterprise-technology/" target="_blank" rel="noreferrer">Enterprise Technology</a><a href="https://fivesdigital.com/case-study/" target="_blank" rel="noreferrer">Case Studies</a></div></div></div><div class="nd"><a href="ai-in-cx.html">AI in CX<svg class="chev" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></a><div class="nd-panel"><div><a href="https://fivesdigital.com/ai-in-cx/offerings/voice-ai/" target="_blank" rel="noreferrer">Voice AI</a><a href="https://fivesdigital.com/ai-in-cx/offerings/chat-ai/" target="_blank" rel="noreferrer">Chat AI</a><a href="https://fivesdigital.com/ai-in-cx/offerings/analytics-and-insights/" target="_blank" rel="noreferrer">Analytics &amp; Insights</a><a href="https://fivesdigital.com/ai-in-cx/offerings/ai-assist/" target="_blank" rel="noreferrer">AI-Assist</a></div></div></div><div class="nd"><a href="index.html#data-services">AI &amp; Data Services<svg class="chev" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></a><div class="nd-panel"><div><a href="https://fivesdigital.com/ai-data-services/offerings/gen-ai-model-training/" target="_blank" rel="noreferrer">Gen AI Model Training</a><a href="https://fivesdigital.com/ai-data-services/offerings/llm-fine-tuning/" target="_blank" rel="noreferrer">LLM Fine Tuning</a><a href="https://fivesdigital.com/ai-data-services/offerings/ai-alignment/" target="_blank" rel="noreferrer">AI Alignment</a><a href="https://fivesdigital.com/ai-data-services/offerings/annotation-services/" target="_blank" rel="noreferrer">Annotation Services</a><a href="https://fivesdigital.com/ai-data-services/offerings/nlp-for-transcription/" target="_blank" rel="noreferrer">NLP for Transcription</a><a href="https://fivesdigital.com/ai-data-services/offerings/content-moderation-services/" target="_blank" rel="noreferrer">Content Moderation</a></div></div></div><div class="nd"><a href="index.html#industries" class="active">Industries<svg class="chev" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></a><div class="nd-panel"><div><a href="industry-ecommerce.html">E-Commerce &amp; D2C</a><a href="https://fivesdigital.com/cx/industries/healthcare/" target="_blank" rel="noreferrer">Healthcare</a><a href="https://fivesdigital.com/cx/industries/bfsi/" target="_blank" rel="noreferrer">BFSI</a><a href="https://fivesdigital.com/cx/industries/fast-growth-startups/" target="_blank" rel="noreferrer">New Age Startups</a><a href="https://fivesdigital.com/cx/industries/travel-tech/" target="_blank" rel="noreferrer">Travel, Logistics &amp; Hospitality</a><a href="https://fivesdigital.com/cx/industries/utilities-environmental-services/" target="_blank" rel="noreferrer">Utilities &amp; Environment</a></div></div></div><div class="nd"><a href="index.html#our-people">Our People<svg class="chev" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></a><div class="nd-panel"><div><a href="https://fivesdigital.com/leaderships/" target="_blank" rel="noreferrer">Leadership</a><a href="https://fivesdigital.com/careers/" target="_blank" rel="noreferrer">Career</a><a href="https://fivesdigital.com/life-at-fives/" target="_blank" rel="noreferrer">Life at FiveS</a><a href="https://fivesdigital.com/events/" target="_blank" rel="noreferrer">Events</a><a href="https://fivesdigital.com/coffee-chat/" target="_blank" rel="noreferrer">Coffee Chat</a></div></div></div><a href="index.html#contact">Contact Us</a></div>
+
+        <button type="button" class="nav-menu-toggle" aria-expanded="false" onclick="toggleMobileNav()">Menu</button>
+
+        <div style="display:flex;align-items:center;gap:10px;">
+          <a class="btn-pdf-download" href="FiveS_Digital_Homepage_V2.pdf" download="FiveS_Digital_Homepage_V2.pdf" title="Download Presentation PDF">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download PDF</span>
+          </a>
+          <a class="btn by" href="index.html#contact" style="min-height: 38px; padding: 0 16px; font-size: 13px;">Talk to us</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+<section class="ih"><div class="in"><div class="g"><div>
+<span class="kicker">INDUSTRIES // E-COMMERCE &amp; D2C</span>
+<h1>Support and data that scale with <span class="hl">every order.</span></h1>
+<p class="lead">FiveS runs customer experience and AI data operations for online retail and direct-to-consumer brands, from the first product question to the last return, with an inclusive team built to flex around your peaks.</p>
+<div class="cta"><a class="btn by" href="index.html#contact">Talk to our retail team</a><a class="btn outline" href="ai-in-cx.html">See AI in CX</a></div>
+<div class="stats"><div><b>75–80%</b><span>First-contact resolution</span></div><div><b>85–90%</b><span>CSAT</span></div><div><b>15+</b><span>Languages</span></div><div><b>2–3x</b><span>Scale in 7–10 days</span></div></div>
+</div><div class="stack3d" aria-hidden="true">
+<div class="pl" style="--z:0px;--d:0s"><small>Step 04</small><b>Delivered</b><span>Feedback captured, CSAT recorded</span></div>
+<div class="pl" style="--z:90px;--d:.4s"><small>Step 03</small><b>Out for delivery</b><span>Proactive WhatsApp update sent</span></div>
+<div class="pl" style="--z:180px;--d:.8s"><small>Step 02</small><b>Packed &amp; shipped</b><span>Catalogue and images verified</span></div>
+<div class="pl y" style="--z:270px;--d:1.2s"><small>Step 01</small><b>Order placed</b><span>Support agent ready in 30 s</span></div>
+</div></div></div></section>
+
+<section class="section-spacing band-light"><div class="in">
+<div class="sec-header-center"><span class="kicker">CX FOR ONLINE RETAIL</span><h2 class="h-sec">Every touchpoint, <span class="hl">covered</span></h2><p class="p-sec" style="margin:8px auto 0">Six services that keep shoppers loyal between the click and the doorstep.</p></div>
+<div class="gridc"><div class="card tilt"><div class="tabs-ic">☎</div><h3>Pre-sales &amp; order support</h3><p>Product questions, order status, changes and cancellations across voice, chat, email and social, answered in the customer’s language.</p></div><div class="card tilt"><div class="tabs-ic">↺</div><h3>Returns &amp; refunds</h3><p>Eligibility checks, pickups and refund status handled end to end, so a return stays a good experience.</p></div><div class="card tilt"><div class="tabs-ic">✦</div><h3>Omnichannel in one thread</h3><p>Phone, chat, email and messaging share one history. Response targets: phone under 60 seconds, chat under 30 seconds, email within 4 hours.</p></div><div class="card tilt"><div class="tabs-ic">◎</div><h3>Multilingual by design</h3><p>15+ languages, including regional dialects, so every shopper hears their own language.</p></div><div class="card tilt"><div class="tabs-ic">⚡</div><h3>Peak-season surge</h3><p>Scale 2–3x in 7–10 days for sale events and festive spikes without lowering quality.</p></div><div class="card tilt"><div class="tabs-ic">▣</div><h3>Back-office automation</h3><p>Order-desk, catalogue operations and reconciliation handled through RPA and process teams.</p></div></div></div></section>
+
+<section class="section-spacing band-navy"><div class="in"><div class="split"><div>
+<span class="kicker">PEAK-SEASON PLAYBOOK</span>
+<h2 class="h-sec">Sale day without the <span class="hl">scramble</span></h2>
+<ul class="steps">
+<li><i>1</i><div><b>Pilot in 1–2 weeks</b><span>Start with one channel and one use case, measure, then widen.</span></div></li>
+<li><i>2</i><div><b>AI takes the routine</b><span>Order status and return requests resolve automatically, humans take the rest.</span></div></li>
+<li><i>3</i><div><b>Ramp the team</b><span>Add trained agents in 7–10 days as volumes climb, then scale back down.</span></div></li>
+</ul></div>
+<div class="chat-demo" data-chat="shop" style="transform:none;margin:0"><header><span class="av" style="background:#FACC2C">M</span><div><div class="nm">Maya &middot; D2C support agent</div><div class="st">online</div></div></header><div class="chat-log" aria-live="polite" style="height:260px"></div><div class="chat-chips"></div></div>
+</div></div></section>
+
+<section class="section-spacing band-light"><div class="in">
+<div class="sec-header-center"><span class="kicker">AI DATA SERVICES FOR COMMERCE</span><h2 class="h-sec">Cleaner catalogues, <span class="hl">smarter search</span></h2><p class="p-sec" style="margin:8px auto 0">Human-in-the-loop annotation that trains the models behind discovery, recommendations and quality control.</p></div>
+<div class="gridc"><div class="card tilt"><div class="no">01</div><h3>Product catalogue tagging</h3><p>Attributes, categories and taxonomy applied consistently across thousands of SKUs.</p></div><div class="card tilt"><div class="no">02</div><h3>Fashion &amp; apparel</h3><p>Style, fit, colour and pattern labelling for recommendation and search models.</p></div><div class="card tilt"><div class="no">03</div><h3>Visual search datasets</h3><p>Image annotation that powers “shop the look” and similarity search.</p></div><div class="card tilt"><div class="no">04</div><h3>User-generated content</h3><p>Review and image moderation that keeps brand channels safe.</p></div><div class="card tilt"><div class="no">05</div><h3>Product image quality</h3><p>Checks for compliance, background, resolution and listing standards.</p></div><div class="card tilt"><div class="no">06</div><h3>Inventory &amp; quality control</h3><p>Visual inspection datasets that catch defects before they ship.</p></div></div>
+<div class="metrics"><div><b>24–48h</b><span>New arrivals tagged</span></div><div><b>40–60%</b><span>Cost reduction</span></div><div><b>10 → 250+</b><span>Annotators scaled</span></div><div><b>50K+</b><span>Products / month per client</span></div></div>
+</div></section>
+
+<section class="section-spacing band-navy"><div class="in"><div class="sec-header-center" style="margin-bottom:0"><span class="kicker">SECURE BY DEFAULT</span><h2 class="h-sec">Customer data, <span class="hl">protected</span></h2><p class="p-sec" style="margin:8px auto 0">10M+ customer interactions a year, with zero data breaches in 16 years.</p></div>
+<div class="trust"><span>ISO 27001</span><span>GDPR</span><span>PCI-DSS</span><span>HIPAA</span><span>16 years of delivery</span><span>Inclusive workforce</span></div></div></section>
+
+<section class="section-spacing" style="padding-bottom:110px;background:#0A1322"><div class="in"><div class="cta-banner"><span class="kicker">TAKE THE NEXT STEP</span><h2 class="h-sec" style="margin:8px 0 12px">Ready to scale <span class="hl">your storefront?</span></h2><p class="p-sec" style="margin:0 auto 28px">Tell us your channels, peak volumes and languages, and we will propose a pilot you can start in one to two weeks.</p><div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap"><a class="btn by" href="index.html#contact">Request a pilot</a><a class="btn outline" href="ai-in-cx.html">Explore AI in CX</a></div></div></div></section>
+</main>
+<footer class="fs-footer"><div class="in"><div class="cols">
+<div class="brand"><b>FiveS <i>Digital</i></b><p>Delivering impact sustainably. Customer experience, AI data services and AI in CX, delivered by an inclusive, purpose-led workforce.</p></div>
+<div><h4>Company</h4><a href="index.html#about">About Us</a><a href="index.html#our-people">Our People</a><a href="https://fivesdigital.com/careers/" target="_blank" rel="noreferrer">Careers</a><a href="index.html#contact">Contact</a></div>
+<div><h4>Solutions</h4><a href="index.html#cx">CX Services</a><a href="ai-in-cx.html">AI in CX</a><a href="index.html#data-services">AI &amp; Data Services</a></div>
+<div><h4>Industries</h4><a href="industry-ecommerce.html">E-Commerce &amp; D2C</a><a href="https://fivesdigital.com/cx/industries/healthcare/" target="_blank" rel="noreferrer">Healthcare</a><a href="https://fivesdigital.com/cx/industries/bfsi/" target="_blank" rel="noreferrer">BFSI</a></div>
+</div><div class="legal">&copy; 2026 FiveS Digital. Delivering impact sustainably. All rights reserved.</div></div></footer>
+<script>function toggleMobileNav(){var n=document.getElementById('primary-navigation');if(n.style.display==='flex'){n.style.display='none'}else{n.style.cssText='display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy-dark);padding:24px;border-bottom:1px solid var(--navy-border)'}}</script>
+<script src="fives-shared.js"></script>
+</body></html>

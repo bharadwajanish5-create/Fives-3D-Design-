@@ -232,7 +232,7 @@ export const nav: NavItem[] = [
     { label: 'AI Alignment', href: 'https://fivesdigital.com/ai-data-services/offerings/ai-alignment/' }, { label: 'Annotation Services', href: 'https://fivesdigital.com/ai-data-services/offerings/annotation-services/' },
     { label: 'NLP for Transcription', href: 'https://fivesdigital.com/ai-data-services/offerings/nlp-for-transcription/' }, { label: 'Content Moderation', href: 'https://fivesdigital.com/ai-data-services/offerings/content-moderation-services/' } ] },
   { label: 'Industries', href: '#industries', children: [
-    { label: 'E-Commerce & Retail', href: 'https://fivesdigital.com/cx/industries/e-commerce-retail/' }, { label: 'Healthcare', href: 'https://fivesdigital.com/cx/industries/healthcare/' },
+    { label: 'E-Commerce & D2C', href: 'industry-ecommerce.html' }, { label: 'Healthcare', href: 'https://fivesdigital.com/cx/industries/healthcare/' },
     { label: 'BFSI', href: 'https://fivesdigital.com/cx/industries/bfsi/' }, { label: 'New Age Startups', href: 'https://fivesdigital.com/cx/industries/fast-growth-startups/' },
     { label: 'Travel, Logistics & Hospitality', href: 'https://fivesdigital.com/cx/industries/travel-tech/' }, { label: 'Utilities & Environment', href: 'https://fivesdigital.com/cx/industries/utilities-environmental-services/' } ] },
   { label: 'Our People', href: '#people', children: [

@@ -45,7 +45,7 @@ export default function Industries() {
                       {d.back.map((x) => <li key={x} className="flex items-center gap-2.5 text-[13.5px] text-muted"><i className="h-1.5 w-1.5 shrink-0 rotate-45 bg-sun" />{x}</li>)}
                     </ul>
                   </div>
-                  <span role="link" onClick={(e) => { e.stopPropagation(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }} className="relative inline-flex w-fit cursor-pointer items-center gap-2 rounded-full bg-sun px-4 py-2 text-[13px] font-bold text-ink">Talk to our team →</span>
+                  <span role="link" onClick={(e) => { e.stopPropagation(); if (d.title.startsWith('E-Commerce')) { window.location.href = 'industry-ecommerce.html'; return; } document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }} className="relative inline-flex w-fit cursor-pointer items-center gap-2 rounded-full bg-sun px-4 py-2 text-[13px] font-bold text-ink">{d.title.startsWith('E-Commerce') ? 'View E-Commerce page →' : 'Talk to our team →'}</span>
                 </div>
               </button>
             </div>
