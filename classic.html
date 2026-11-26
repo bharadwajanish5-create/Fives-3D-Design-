@@ -1,0 +1,18467 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+<html lang="en">
+
+
+
+
+
+
+
+<head>
+
+
+
+
+
+
+
+  <meta charset="UTF-8">
+
+
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+
+
+
+  <title>FiveS Digital | Enterprise Customer Experience & BPM Solutions</title>
+
+
+
+
+
+
+
+  <meta name="description" content="FiveS Digital delivers best-in-class BPM, CX, AI in CX, and data annotation services across India, Europe, the USA, and the Middle East. Home to India's first diverse and inclusive BPM center in Navi Mumbai.">
+
+
+
+
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+
+
+
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
+
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
+  <style>
+
+
+
+
+
+
+
+    :root {
+
+
+
+
+
+
+
+      --navy: #0F1B2D;
+
+
+
+
+
+
+
+      --navy-dark: #0A1322;
+
+
+
+
+
+
+
+      --navy-mid: #16253B;
+
+
+
+
+
+
+
+      --navy-card: #1B2D47;
+
+
+
+
+
+
+
+      --navy-border: rgba(255, 255, 255, 0.12);
+
+
+
+
+
+
+
+      --yellow: #FACC2C;
+
+
+
+
+
+
+
+      --yellow-dark: #FFB300;
+
+
+
+
+
+
+
+      --yellow-light: #FFE27A;
+
+
+
+
+
+
+
+      --yellow-soft: #FFF8E3;
+
+
+
+
+
+
+
+      --white: #ffffff;
+
+
+
+
+
+
+
+      --off-white: #F8F9FA;
+
+
+
+
+
+
+
+      --gray-50: #F1F4F8;
+
+
+
+
+
+
+
+      --gray-100: #EEF2F7;
+
+
+
+
+
+
+
+      --gray-200: #E6ECF4;
+
+
+
+
+
+
+
+      --gray-300: #CBD3DE;
+
+
+
+
+
+
+
+      --gray-400: #B9C4D2;
+
+
+
+
+
+
+
+      --gray-500: #7A8594;
+
+
+
+
+
+
+
+      --gray-700: #55606E;
+
+
+
+
+
+
+
+      --green: #1F9D6B;
+
+
+
+
+
+
+
+      --green-light: #dcfce7;
+
+
+
+
+
+
+
+      --blue: #7CC6FF;
+
+
+
+
+
+
+
+      --blue-soft: #E4F4FF;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+
+
+
+
+
+    html { scroll-behavior: smooth; }
+
+
+
+
+
+
+
+    body {
+
+
+
+
+
+
+
+      margin: 0;
+
+
+
+
+
+
+
+      font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+
+
+
+
+
+
+      color: #14202F;
+
+
+
+
+
+
+
+      background: #fff;
+
+
+
+
+
+
+
+      -webkit-font-smoothing: antialiased;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    a { color: inherit; }
+
+
+
+
+
+
+
+    .in {
+
+
+
+
+
+
+
+      max-width: 1248px;
+
+
+
+
+
+
+
+      margin: 0 auto;
+
+
+
+
+
+
+
+      padding: 0 24px;
+
+
+
+
+
+
+
+      box-sizing: border-box;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    h1, h2, h3, h4, p { margin: 0; }
+
+
+
+
+
+
+
+    h1, h2, h3, h4 {
+
+
+
+
+
+
+
+      font-family: "PT Serif", Georgia, serif;
+
+
+
+
+
+
+
+      font-weight: 400;
+
+
+
+
+
+
+
+      letter-spacing: -0.015em;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    /* BUTTONS FROM EARLIER DESIGN */
+
+
+
+
+
+
+
+    .btn {
+
+
+
+
+
+
+
+      display: inline-flex;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+      justify-content: center;
+
+
+
+
+
+
+
+      min-height: 54px;
+
+
+
+
+
+
+
+      padding: 0 30px;
+
+
+
+
+
+
+
+      border-radius: 999px;
+
+
+
+
+
+
+
+      font-weight: 700;
+
+
+
+
+
+
+
+      font-size: 16px;
+
+
+
+
+
+
+
+      text-decoration: none;
+
+
+
+
+
+
+
+      box-sizing: border-box;
+
+
+
+
+
+
+
+      transition: all 0.25s ease;
+
+
+
+
+
+
+
+      cursor: pointer;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .by { background: #FACC2C; color: #0F1B2D; }
+
+
+
+
+
+
+
+    .by:hover { background: #FFB300; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(250, 204, 44, 0.35); }
+
+
+
+
+
+
+
+    .bo { border: 2px solid rgba(255,255,255,.55); color: #fff; background: transparent; }
+
+
+
+
+
+
+
+    .bo:hover { border-color: #fff; background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+
+
+
+
+
+
+
+    .bk { background: #0F1B2D; color: #fff; }
+
+
+
+
+
+
+
+    .bd { border: 2px solid #0F1B2D; color: #0F1B2D; }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+
+
+
+
+       HERO BANNER FROM EARLIER DESIGN (EXACT VISUALS, ORB, PILL, DOTS, CARDS)
+
+
+
+
+
+
+
+       ========================================================================== */
+
+
+
+
+
+
+
+    .hero {
+
+
+
+
+
+
+
+      position: relative;
+
+
+
+
+
+
+
+      background: radial-gradient(900px 560px at 82% 18%, rgba(250,204,44,.26), transparent 62%),
+
+
+
+
+
+
+
+                  radial-gradient(700px 500px at 0% 100%, rgba(124,198,255,.14), transparent 60%),
+
+
+
+
+
+
+
+                  linear-gradient(165deg, #1B2D47 0%, #0F1B2D 62%, #0A1322 100%);
+
+
+
+
+
+
+
+      color: #fff;
+
+
+
+
+
+
+
+      overflow: hidden;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .dots {
+
+
+
+
+
+
+
+      position: absolute;
+
+
+
+
+
+
+
+      inset: 0;
+
+
+
+
+
+
+
+      background-image: radial-gradient(rgba(255,255,255,.16) 1.2px, transparent 1.5px);
+
+
+
+
+
+
+
+      background-size: 28px 28px;
+
+
+
+
+
+
+
+      -webkit-mask-image: linear-gradient(100deg, transparent 40%, #000 95%);
+
+
+
+
+
+
+
+      mask-image: linear-gradient(100deg, transparent 40%, #000 95%);
+
+
+
+
+
+
+
+      pointer-events: none;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+        /* ==========================================================================
+
+
+
+       SECTION 2: PURPOSE-LED BPM (REFINED EXECUTIVE EDITORIAL LAYOUT)
+
+
+
+       ========================================================================== */
+
+
+
+    .purpose-section {
+
+
+
+      background: #FFFFFF;
+
+
+
+      padding: 72px 0 68px;
+
+
+
+      border-bottom: 1px solid var(--gray-200);
+
+
+
+      position: relative;
+
+
+
+    }
+
+
+
+    .purpose-wrap {
+
+
+
+      max-width: 1200px;
+
+
+
+      margin: 0 auto;
+
+
+
+      padding: 0 24px;
+
+
+
+    }
+
+
+
+    .purpose-header {
+
+
+
+      margin-bottom: 32px;
+
+
+
+    }
+
+
+
+    .purpose-heading {
+
+
+
+      font-family: 'PT Serif', Georgia, serif;
+
+
+
+      font-size: 40px;
+
+
+
+      line-height: 1.18;
+
+
+
+      color: var(--navy);
+
+
+
+      margin: 8px 0 0;
+
+
+
+      letter-spacing: -0.015em;
+
+
+
+      font-weight: 400;
+
+
+
+    }
+
+
+
+    .purpose-grid {
+
+
+
+      display: grid;
+
+
+
+      grid-template-columns: 1.15fr 1fr;
+
+
+
+      gap: 56px;
+
+
+
+      align-items: center;
+
+
+
+    }
+
+
+
+    .purpose-lead-box {
+
+
+
+      border-left: 3.5px solid var(--yellow);
+
+
+
+      padding-left: 24px;
+
+
+
+    }
+
+
+
+    .purpose-lead-text {
+
+
+
+      font-size: 21px;
+
+
+
+      line-height: 1.55;
+
+
+
+      color: var(--navy);
+
+
+
+      font-weight: 600;
+
+
+
+      letter-spacing: -0.01em;
+
+
+
+      margin: 0;
+
+
+
+    }
+
+
+
+    .purpose-body-box {
+
+
+
+      display: flex;
+
+
+
+      flex-direction: column;
+
+
+
+      gap: 16px;
+
+
+
+    }
+
+
+
+    .purpose-body-text {
+
+
+
+      font-size: 16.5px;
+
+
+
+      line-height: 1.7;
+
+
+
+      color: var(--gray-700);
+
+
+
+      margin: 0;
+
+
+
+    }
+
+
+
+    .purpose-highlight-tag {
+
+
+
+      display: inline-flex;
+
+
+
+      align-items: center;
+
+
+
+      gap: 9px;
+
+
+
+      background: rgba(250, 204, 44, 0.12);
+
+
+
+      border: 1px solid rgba(250, 204, 44, 0.45);
+
+
+
+      color: var(--navy);
+
+
+
+      padding: 7px 15px;
+
+
+
+      border-radius: 999px;
+
+
+
+      font-size: 13px;
+
+
+
+      font-weight: 700;
+
+
+
+      width: fit-content;
+
+
+
+    }
+
+
+
+    .purpose-highlight-tag .tag-dot {
+
+
+
+      width: 7px;
+
+
+
+      height: 7px;
+
+
+
+      border-radius: 50%;
+
+
+
+      background: var(--navy);
+
+
+
+    }
+
+
+
+    @media (max-width: 900px) {
+
+
+
+      .purpose-section { padding: 50px 0; }
+
+
+
+      .purpose-heading { font-size: 32px; }
+
+
+
+      .purpose-grid { grid-template-columns: 1fr; gap: 24px; }
+
+
+
+      .purpose-lead-box { padding-left: 18px; }
+
+
+
+      .purpose-lead-text { font-size: 18px; }
+
+
+
+    }
+
+
+
+
+
+
+
+    /* HERO OVERLAPPING STATS + TRUST + LOGO TICKER (SCREENSHOT 1) */
+
+
+
+
+
+
+
+    .hero-stats-trust-wrap {
+
+
+
+
+
+
+
+      position: relative;
+
+
+
+
+
+
+
+      z-index: 10;
+
+
+
+
+
+
+
+      max-width: 1240px;
+
+
+
+
+
+
+
+      margin: 0 auto;
+
+
+
+
+
+
+
+      padding: 0 24px;
+
+
+
+
+
+
+
+      box-sizing: border-box;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .sc {
+
+
+
+
+
+
+
+      position: relative;
+
+
+
+
+
+
+
+      margin-top: -65px;
+
+
+
+
+
+
+
+      background: #fff;
+
+
+
+
+
+
+
+      border-radius: 28px;
+
+
+
+
+
+
+
+      box-shadow: 0 24px 60px rgba(15,27,45,.14);
+
+
+
+
+
+
+
+      display: grid;
+
+
+
+
+
+
+
+      grid-template-columns: repeat(4, 1fr);
+
+
+
+
+
+
+
+      z-index: 2;
+
+
+
+
+
+
+
+      border: 1px solid #E7EBF1;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .sc div {
+
+
+
+
+
+
+
+      padding: 34px 30px;
+
+
+
+
+
+
+
+      border-right: 1px solid #E7EBF1;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .sc div:last-child { border-right: 0; }
+
+
+
+
+
+
+
+    .sc b {
+
+
+
+
+
+
+
+      display: block;
+
+
+
+
+
+
+
+      font-family: "PT Serif", Georgia, serif;
+
+
+
+
+
+
+
+      font-weight: 400;
+
+
+
+
+
+
+
+      font-size: 52px;
+
+
+
+
+
+
+
+      line-height: 1;
+
+
+
+
+
+
+
+      color: #0F1B2D;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .sc span {
+
+
+
+
+
+
+
+      display: block;
+
+
+
+
+
+
+
+      margin-top: 10px;
+
+
+
+
+
+
+
+      font-size: 15px;
+
+
+
+
+
+
+
+      color: #55606E;
+
+
+
+
+
+
+
+      font-weight: 500;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .tr {
+
+
+
+
+
+
+
+      display: grid;
+
+
+
+
+
+
+
+      grid-template-columns: repeat(3, 1fr);
+
+
+
+
+
+
+
+      gap: 36px;
+
+
+
+
+
+
+
+      padding-top: 48px;
+
+
+
+
+
+
+
+      padding-bottom: 24px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .tr h4 {
+
+
+
+
+
+
+
+      font-family: "DM Sans", sans-serif;
+
+
+
+
+
+
+
+      font-size: 12px;
+
+
+
+
+
+
+
+      letter-spacing: .08em;
+
+
+
+
+
+
+
+      text-transform: uppercase;
+
+
+
+
+
+
+
+      color: #55606E;
+
+
+
+
+
+
+
+      margin-bottom: 14px;
+
+
+
+
+
+
+
+      font-weight: 700;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .lg {
+
+
+
+
+
+
+
+      display: grid;
+
+
+
+
+
+
+
+      grid-template-columns: repeat(3, 1fr);
+
+
+
+
+
+
+
+      gap: 10px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .trust-badge {
+
+
+
+
+
+
+
+      aspect-ratio: 16/9;
+
+
+
+
+
+
+
+      border: 1.5px dashed #CBD3DE;
+
+
+
+
+
+
+
+      border-radius: 12px;
+
+
+
+
+
+
+
+      display: flex;
+
+
+
+
+
+
+
+      flex-direction: column;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+      justify-content: center;
+
+
+
+
+
+
+
+      padding: 8px 6px;
+
+
+
+
+
+
+
+      text-align: center;
+
+
+
+
+
+
+
+      background: #F8FAFC;
+
+
+
+
+
+
+
+      transition: all 0.2s ease;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .trust-badge b {
+
+
+
+
+
+
+
+      font-size: 12.5px;
+
+
+
+
+
+
+
+      color: #0F1B2D;
+
+
+
+
+
+
+
+      font-weight: 700;
+
+
+
+
+
+
+
+      line-height: 1.2;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .trust-badge small {
+
+
+
+
+
+
+
+      font-size: 10px;
+
+
+
+
+
+
+
+      color: #64748B;
+
+
+
+
+
+
+
+      margin-top: 3px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .trust-badge:hover {
+
+
+
+
+
+
+
+      border-color: #FACC2C;
+
+
+
+
+
+
+
+      background: #FFFDF5;
+
+
+
+
+
+
+
+      transform: translateY(-2px);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .mq {
+
+
+
+
+
+
+
+      overflow: hidden;
+
+
+
+
+
+
+
+      padding: 20px 0 32px;
+
+
+
+
+
+
+
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+
+
+
+
+
+
+
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+
+
+
+
+
+
+
+      border-bottom: 1px solid #E2E8F0;
+
+
+
+
+
+
+
+      background: #fff;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .mq div {
+
+
+
+
+
+
+
+      display: flex;
+
+
+
+
+
+
+
+      gap: 14px;
+
+
+
+
+
+
+
+      width: max-content;
+
+
+
+
+
+
+
+      animation: mqs 36s linear infinite;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .mq div:hover {
+
+
+
+
+
+
+
+      animation-play-state: paused;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .mq .mq-item {
+
+
+
+
+
+
+
+      flex: none;
+
+
+
+
+
+
+
+      min-width: 170px;
+
+
+
+
+
+
+
+      height: 48px;
+
+
+
+
+
+
+
+      border: 1.5px dashed #CBD3DE;
+
+
+
+
+
+
+
+      border-radius: 12px;
+
+
+
+
+
+
+
+      display: flex;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+      justify-content: center;
+
+
+
+
+
+
+
+      font-size: 13px;
+
+
+
+
+
+
+
+      font-weight: 600;
+
+
+
+
+
+
+
+      color: #475569;
+
+
+
+
+
+
+
+      background: #F8FAFC;
+
+
+
+
+
+
+
+      padding: 0 20px;
+
+
+
+
+
+
+
+      transition: all 0.2s ease;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .mq .mq-item:hover {
+
+
+
+
+
+
+
+      border-color: #FACC2C;
+
+
+
+
+
+
+
+      color: #0F1B2D;
+
+
+
+
+
+
+
+      background: #FFFDF5;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    @keyframes mqs {
+
+
+
+
+
+
+
+      to { transform: translateX(-50%); }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    @media (max-width: 900px) {
+
+
+
+
+
+
+
+      .sc { grid-template-columns: repeat(2, 1fr); margin-top: -30px; }
+
+
+
+
+
+
+
+      .sc div:nth-child(2) { border-right: none; }
+
+
+
+
+
+
+
+      .sc div:nth-child(3), .sc div:nth-child(4) { border-top: 1px solid #E7EBF1; }
+
+
+
+
+
+
+
+      .tr { grid-template-columns: 1fr; gap: 24px; }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    @keyframes pulseDot {
+
+
+
+
+
+
+
+      0%, 100% { opacity: 1; transform: scale(1); }
+
+
+
+
+
+
+
+      50% { opacity: 0.4; transform: scale(1.3); }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    /* HEADER MENU BAR (EXACT NAVIGATION MAPPING) */
+
+
+
+
+
+
+
+    .nav {
+
+
+
+
+
+
+
+      position: relative;
+
+
+
+
+
+
+
+      display: flex;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+      justify-content: space-between;
+
+
+
+
+
+
+
+      gap: 28px;
+
+
+
+
+
+
+
+      padding-top: 20px;
+
+
+
+
+
+
+
+      padding-bottom: 20px;
+
+
+
+
+
+
+
+      z-index: 10;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .wm {
+
+
+
+
+
+
+
+      display: flex;
+
+
+
+
+
+
+
+      flex-direction: column;
+
+
+
+
+
+
+
+      gap: 5px;
+
+
+
+
+
+
+
+      text-decoration: none;
+
+
+
+
+
+
+
+      flex-shrink: 0;
+
+
+
+
+
+
+
+      margin-right: 8px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .wm b {
+
+
+
+
+
+
+
+      font-size: 32px;
+
+
+
+
+
+
+
+      line-height: 1;
+
+
+
+
+
+
+
+      font-weight: 300;
+
+
+
+
+
+
+
+      color: #fff;
+
+
+
+
+
+
+
+      letter-spacing: -0.01em;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .wm b i {
+
+
+
+
+
+
+
+      font-style: normal;
+
+
+
+
+
+
+
+      color: #FACC2C;
+
+
+
+
+
+
+
+      font-weight: 700;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .wm span {
+
+
+
+
+
+
+
+      background: #FACC2C;
+
+
+
+
+
+
+
+      color: #0F1B2D;
+
+
+
+
+
+
+
+      font-size: 10px;
+
+
+
+
+
+
+
+      font-weight: 700;
+
+
+
+
+
+
+
+      letter-spacing: 0.02em;
+
+
+
+
+
+
+
+      text-transform: uppercase;
+
+
+
+
+
+
+
+      padding: 3px 7px;
+
+
+
+
+
+
+
+      width: max-content;
+
+
+
+
+
+
+
+      border-radius: 3px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .nav-menu-links {
+
+
+
+
+
+
+
+      display: flex;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+      gap: 20px;
+
+
+
+
+
+
+
+      font-size: 14px;
+
+
+
+
+
+
+
+      font-weight: 500;
+
+
+
+
+
+
+
+      color: #E6ECF4;
+
+
+
+
+
+
+
+      flex-shrink: 0;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .nav-menu-links a {
+
+
+
+
+
+
+
+      text-decoration: none;
+
+
+
+
+
+
+
+      white-space: nowrap;
+
+
+
+
+
+
+
+      transition: color 0.2s ease;
+
+
+
+
+
+
+
+      position: relative;
+
+
+
+
+
+
+
+      padding: 6px 0;
+
+
+
+
+
+
+
+      color: rgba(255, 255, 255, 0.85);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .nav-menu-links a:hover {
+
+
+
+
+
+
+
+      color: #FACC2C;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .nav .btn.by {
+
+
+
+
+
+
+
+      min-height: 46px;
+
+
+
+
+
+
+
+      padding: 0 22px;
+
+
+
+
+
+
+
+      font-size: 14.5px;
+
+
+
+
+
+
+
+      font-weight: 700;
+
+
+
+
+
+
+
+      white-space: nowrap;
+
+
+
+
+
+
+
+      flex-shrink: 0;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .nav-menu-toggle {
+
+
+
+
+
+
+
+      display: none;
+
+
+
+
+
+
+
+      border: 1px solid rgba(255,255,255,.35);
+
+
+
+
+
+
+
+      border-radius: 8px;
+
+
+
+
+
+
+
+      background: transparent;
+
+
+
+
+
+
+
+      color: #fff;
+
+
+
+
+
+
+
+      padding: 10px 13px;
+
+
+
+
+
+
+
+      font: inherit;
+
+
+
+
+
+
+
+      font-size: 14px;
+
+
+
+
+
+
+
+      font-weight: 700;
+
+
+
+
+
+
+
+      cursor: pointer;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    /* HERO GRID */
+
+
+
+
+
+
+
+    .heroG {
+
+
+
+
+
+
+
+      position: relative;
+
+
+
+
+
+
+
+      display: grid;
+
+
+
+
+
+
+
+      grid-template-columns: 1fr 560px;
+
+
+
+
+
+
+
+      gap: 56px;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+      padding-top: 40px;
+
+
+
+
+
+
+
+      padding-bottom: 90px;
+
+
+
+
+
+
+
+      z-index: 5;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .pill {
+
+
+
+
+
+
+
+      display: inline-flex;
+
+
+
+
+
+
+
+      gap: 10px;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+      border: 1px solid rgba(250,204,44,.55);
+
+
+
+
+
+
+
+      border-radius: 999px;
+
+
+
+
+
+
+
+      padding: 9px 18px 9px 12px;
+
+
+
+
+
+
+
+      font-size: 13.5px;
+
+
+
+
+
+
+
+      color: #E6ECF4;
+
+
+
+
+
+
+
+      margin-bottom: 28px;
+
+
+
+
+
+
+
+      background: rgba(15, 27, 45, 0.4);
+
+
+
+
+
+
+
+      backdrop-filter: blur(8px);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .pill i {
+
+
+
+
+
+
+
+      width: 8px;
+
+
+
+
+
+
+
+      height: 8px;
+
+
+
+
+
+
+
+      border-radius: 50%;
+
+
+
+
+
+
+
+      background: #FACC2C;
+
+
+
+
+
+
+
+      display: inline-block;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .hero h1 {
+
+
+
+
+
+
+
+      font-size: 58px;
+
+
+
+
+
+
+
+      line-height: 1.08;
+
+
+
+
+
+
+
+      color: #fff;
+
+
+
+
+
+
+
+      font-family: "PT Serif", Georgia, serif;
+
+
+
+
+
+
+
+      font-weight: 400;
+
+
+
+
+
+
+
+      letter-spacing: -0.02em;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .hero .sub {
+
+
+
+
+
+
+
+      font-family: "DM Sans", sans-serif;
+
+
+
+
+
+
+
+      font-size: 16.5px;
+
+
+
+
+
+
+
+      line-height: 1.68;
+
+
+
+
+
+
+
+      color: #CBD5E1;
+
+
+
+
+
+
+
+      margin-top: 24px;
+
+
+
+
+
+
+
+      max-width: 600px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cta {
+
+
+
+
+
+
+
+      display: flex;
+
+
+
+
+
+
+
+      gap: 16px;
+
+
+
+
+
+
+
+      margin-top: 36px;
+
+
+
+
+
+
+
+      flex-wrap: wrap;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    /* THE ICONIC ORB GRAPHIC FROM EARLIER DESIGN */
+
+
+
+
+
+
+
+    .orb {
+
+
+
+
+
+
+
+      position: relative;
+
+
+
+
+
+
+
+      width: 560px;
+
+
+
+
+
+
+
+      height: 560px;
+
+
+
+
+
+
+
+      margin-left: auto;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .orb svg {
+
+
+
+
+
+
+
+      display: block;
+
+
+
+
+
+
+
+      overflow: visible;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+    /* UNIFORM ORB FLOATING CARDS (USER FEEDBACK 1) */
+
+    .card {
+
+      position: absolute;
+
+      background: #FFFFFF;
+
+      color: #14202F;
+
+      border-radius: 14px !important;
+
+      border: 1px solid rgba(255, 255, 255, 0.4);
+
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+
+      z-index: 3;
+
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+
+    .card:hover {
+
+      transform: translateY(-4px);
+
+      box-shadow: 0 20px 42px rgba(0, 0, 0, 0.28);
+
+    }
+
+    .orb-stat-card {
+
+      padding: 14px 18px !important;
+
+      min-width: 175px;
+
+      box-sizing: border-box;
+
+    }
+
+    .osc-num {
+
+      font-family: "PT Serif", Georgia, serif;
+
+      font-size: 30px;
+
+      font-weight: 700;
+
+      line-height: 1.1;
+
+      color: var(--navy);
+
+    }
+
+    .osc-lbl {
+
+      font-size: 12.5px;
+
+      color: #55606E;
+
+      font-weight: 500;
+
+      margin-top: 3px;
+
+      line-height: 1.3;
+
+    }
+
+
+
+    .card_old {
+
+
+
+
+
+
+
+      position: absolute;
+
+
+
+
+
+
+
+      background: #fff;
+
+
+
+
+
+
+
+      color: #14202F;
+
+
+
+
+
+
+
+      border-radius: 20px;
+
+
+
+
+
+
+
+      box-shadow: 0 24px 50px rgba(0,0,0,.35);
+
+
+
+
+
+
+
+      z-index: 3;
+
+
+
+
+
+
+
+      transition: transform 0.3s ease;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .card:hover {
+
+
+
+
+
+
+
+      transform: translateY(-3px);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .chip {
+
+
+
+
+
+
+
+      padding: 14px 18px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .chip b {
+
+
+
+
+
+
+
+      display: block;
+
+
+
+
+
+
+
+      font-family: "PT Serif", Georgia, serif;
+
+
+
+
+
+
+
+      font-weight: 400;
+
+
+
+
+
+
+
+      font-size: 34px;
+
+
+
+
+
+
+
+      line-height: 1;
+
+
+
+
+
+
+
+      color: var(--navy);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .chip span {
+
+
+
+
+
+
+
+      font-size: 13px;
+
+
+
+
+
+
+
+      color: #55606E;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .bub {
+
+
+
+
+
+
+
+      font-size: 13px;
+
+
+
+
+
+
+
+      line-height: 1.4;
+
+
+
+
+
+
+
+      padding: 9px 13px;
+
+
+
+
+
+
+
+      border-radius: 15px;
+
+
+
+
+
+
+
+      max-width: 240px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .bi {
+
+
+
+
+
+
+
+      background: #EEF2F7;
+
+
+
+
+
+
+
+      border-bottom-left-radius: 4px;
+
+
+
+
+
+
+
+      color: #0F1B2D;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .bu {
+
+
+
+
+
+
+
+      background: #FACC2C;
+
+
+
+
+
+
+
+      justify-self: end;
+
+
+
+
+
+
+
+      border-bottom-right-radius: 4px;
+
+
+
+
+
+
+
+      color: #0F1B2D;
+
+
+
+
+
+
+
+      font-weight: 600;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    /* Equalizer Bar Micro-Animations */
+
+
+
+
+
+
+
+    .wave-bar {
+
+
+
+
+
+
+
+      transform-origin: center;
+
+
+
+
+
+
+
+      animation: wavePulse 2.4s ease-in-out infinite;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .wb-1 { animation-delay: 0.1s; }
+
+
+
+
+
+
+
+    .wb-2 { animation-delay: 0.3s; }
+
+
+
+
+
+
+
+    .wb-3 { animation-delay: 0.5s; }
+
+
+
+
+
+
+
+    .wb-4 { animation-delay: 0.2s; }
+
+
+
+
+
+
+
+    .wb-5 { animation-delay: 0.6s; }
+
+
+
+
+
+
+
+    .wb-6 { animation-delay: 0.4s; }
+
+
+
+
+
+
+
+    .wb-7 { animation-delay: 0.7s; }
+
+
+
+
+
+
+
+    .wb-8 { animation-delay: 0.3s; }
+
+
+
+
+
+
+
+    .wb-9 { animation-delay: 0.5s; }
+
+
+
+
+
+
+
+    @keyframes wavePulse {
+
+
+
+
+
+
+
+      0%, 100% { transform: scaleY(1); opacity: 0.95; }
+
+
+
+
+
+
+
+      50% { transform: scaleY(1.18); opacity: 1; }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .orbit-ring {
+
+
+
+
+
+
+
+      transform-origin: 280px 280px;
+
+
+
+
+
+
+
+      animation: rotateRing 45s linear infinite;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    @keyframes rotateRing {
+
+
+
+
+
+
+
+      from { transform: rotate(0deg); }
+
+
+
+
+
+
+
+      to { transform: rotate(360deg); }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+
+
+
+
+       SECTION BASE STYLING
+
+
+
+
+
+
+
+       ========================================================================== */
+
+
+
+
+
+
+
+    .section {
+
+
+
+
+
+
+
+      padding: 70px 0;
+
+
+
+
+
+
+
+      position: relative;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .section-wrap {
+
+
+
+
+
+
+
+      max-width: 1248px;
+
+
+
+
+
+
+
+      margin: 0 auto;
+
+
+
+
+
+
+
+      padding: 0 24px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .section-kicker {
+
+
+
+
+
+
+
+      font-size: 12px;
+
+
+
+
+
+
+
+      font-weight: 800;
+
+
+
+
+
+
+
+      text-transform: uppercase;
+
+
+
+
+
+
+
+      letter-spacing: 1.2px;
+
+
+
+
+
+
+
+      color: #b88400;
+
+
+
+
+
+
+
+      margin-bottom: 8px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .section-title {
+
+
+
+
+
+
+
+      font-size: 36px;
+
+
+
+
+
+
+
+      color: var(--navy);
+
+
+
+
+
+
+
+      margin-bottom: 14px;
+
+
+
+
+
+
+
+      line-height: 1.2;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .section-desc {
+
+
+
+
+
+
+
+      font-size: 15.5px;
+
+
+
+
+
+
+
+      color: var(--gray-700);
+
+
+
+
+
+
+
+      max-width: 680px;
+
+
+
+
+
+
+
+      line-height: 1.6;
+
+
+
+
+
+
+
+      margin-bottom: 38px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .hl {
+
+
+
+
+
+
+
+      color: var(--navy);
+
+
+
+
+
+
+
+      background: linear-gradient(120deg, rgba(250, 204, 44, 0.4) 0%, rgba(250, 204, 44, 0.1) 100%);
+
+
+
+
+
+
+
+      padding: 0 6px;
+
+
+
+
+
+
+
+      border-radius: 4px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+
+
+
+
+       CORE CAPABILITIES: COMPREHENSIVE BPM SERVICES
+
+
+
+
+
+
+
+       ========================================================================== */
+
+
+
+
+
+
+
+    .capabilities-section {
+
+
+
+
+
+
+
+      background: white;
+
+
+
+
+
+
+
+      border-bottom: 1px solid var(--gray-200);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cap-tabs-bar {
+
+
+
+
+
+
+
+      display: grid;
+
+
+
+
+
+
+
+      grid-template-columns: repeat(4, 1fr);
+
+
+
+
+
+
+
+      gap: 12px;
+
+
+
+
+
+
+
+      margin-bottom: 28px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cap-tab-btn {
+
+
+
+
+
+
+
+      background: var(--gray-50);
+
+
+
+
+
+
+
+      border: 1.5px solid var(--gray-200);
+
+
+
+
+
+
+
+      border-radius: 12px;
+
+
+
+
+
+
+
+      padding: 14px 16px;
+
+
+
+
+
+
+
+      text-align: left;
+
+
+
+
+
+
+
+      cursor: pointer;
+
+
+
+
+
+
+
+      transition: all 0.25s ease;
+
+
+
+
+
+
+
+      font-family: inherit;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cap-tab-btn:hover {
+
+
+
+
+
+
+
+      border-color: var(--yellow);
+
+
+
+
+
+
+
+      background: #FFFDF5;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cap-tab-btn.active {
+
+
+
+
+
+
+
+      background: var(--navy);
+
+
+
+
+
+
+
+      border-color: var(--navy);
+
+
+
+
+
+
+
+      color: white;
+
+
+
+
+
+
+
+      box-shadow: 0 6px 18px rgba(15, 27, 45, 0.15);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cap-tab-btn .tab-kicker {
+
+
+
+
+
+
+
+      font-size: 11px;
+
+
+
+
+
+
+
+      font-weight: 800;
+
+
+
+
+
+
+
+      text-transform: uppercase;
+
+
+
+
+
+
+
+      letter-spacing: 0.6px;
+
+
+
+
+
+
+
+      color: #b88400;
+
+
+
+
+
+
+
+      margin-bottom: 4px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cap-tab-btn.active .tab-kicker {
+
+
+
+
+
+
+
+      color: var(--yellow);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cap-tab-btn .tab-title {
+
+
+
+
+
+
+
+      font-size: 14px;
+
+
+
+
+
+
+
+      font-weight: 800;
+
+
+
+
+
+
+
+      color: var(--navy);
+
+
+
+
+
+
+
+      line-height: 1.3;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cap-tab-btn.active .tab-title {
+
+
+
+
+
+
+
+      color: white;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    /* Interactive Showcase Card */
+
+
+
+
+
+
+
+    .cap-stage-card {
+
+
+
+
+
+
+
+      background: var(--gray-50);
+
+
+
+
+
+
+
+      border: 1.5px solid var(--gray-200);
+
+
+
+
+
+
+
+      border-radius: 20px;
+
+
+
+
+
+
+
+      padding: 38px 40px;
+
+
+
+
+
+
+
+      display: grid;
+
+
+
+
+
+
+
+      grid-template-columns: 1.2fr 0.8fr;
+
+
+
+
+
+
+
+      gap: 40px;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .stage-content {
+
+
+
+
+
+
+
+      display: flex;
+
+
+
+
+
+
+
+      flex-direction: column;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .stage-badge {
+
+
+
+
+
+
+
+      display: inline-flex;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+      gap: 8px;
+
+
+
+
+
+
+
+      background: rgba(250, 204, 44, 0.2);
+
+
+
+
+
+
+
+      color: #946900;
+
+
+
+
+
+
+
+      font-size: 12px;
+
+
+
+
+
+
+
+      font-weight: 800;
+
+
+
+
+
+
+
+      padding: 4px 12px;
+
+
+
+
+
+
+
+      border-radius: 6px;
+
+
+
+
+
+
+
+      margin-bottom: 12px;
+
+
+
+
+
+
+
+      align-self: flex-start;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .stage-title {
+
+
+
+
+
+
+
+      font-size: 26px;
+
+
+
+
+
+
+
+      font-weight: 800;
+
+
+
+
+
+
+
+      color: var(--navy);
+
+
+
+
+
+
+
+      line-height: 1.3;
+
+
+
+
+
+
+
+      margin-bottom: 8px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .stage-tagline { display: none !important; 
+
+
+
+
+
+
+
+      font-size: 15px;
+
+
+
+
+
+
+
+      font-weight: 700;
+
+
+
+
+
+
+
+      color: #b88400;
+
+
+
+
+
+
+
+      margin-bottom: 14px;
+
+
+
+
+
+
+
+      line-height: 1.4;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .stage-desc {
+
+
+
+
+
+
+
+      font-size: 14.5px;
+
+
+
+
+
+
+
+      color: var(--gray-700);
+
+
+
+
+
+
+
+      line-height: 1.65;
+
+
+
+
+
+
+
+      margin-bottom: 24px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .stage-metrics-grid {
+
+
+
+
+
+
+
+      display: grid;
+
+
+
+
+
+
+
+      grid-template-columns: repeat(3, 1fr);
+
+
+
+
+
+
+
+      gap: 12px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .sm-card {
+
+
+
+
+
+
+
+      background: white;
+
+
+
+
+
+
+
+      border: 1px solid var(--gray-200);
+
+
+
+
+
+
+
+      border-radius: 10px;
+
+
+
+
+
+
+
+      padding: 12px 14px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .sm-num {
+
+
+
+
+
+
+
+      font-size: 22px;
+
+
+
+
+
+
+
+      font-weight: 900;
+
+
+
+
+
+
+
+      color: #b88400;
+
+
+
+
+
+
+
+      line-height: 1.1;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .sm-lbl {
+
+
+
+
+
+
+
+      font-size: 11.5px;
+
+
+
+
+
+
+
+      color: var(--gray-500);
+
+
+
+
+
+
+
+      font-weight: 600;
+
+
+
+
+
+
+
+      margin-top: 3px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .stage-img-wrapper {
+
+
+
+
+
+
+
+      position: relative;
+
+
+
+
+
+
+
+      border-radius: 16px;
+
+
+
+
+
+
+
+      overflow: hidden;
+
+
+
+
+
+
+
+      border: 1px solid var(--gray-200);
+
+
+
+
+
+
+
+      box-shadow: 0 12px 28px rgba(15, 27, 45, 0.08);
+
+
+
+
+
+
+
+      height: 310px;
+
+
+
+
+
+
+
+      background: var(--navy-dark);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .stage-img-wrapper img {
+
+
+
+
+
+
+
+      width: 100%;
+
+
+
+
+
+
+
+      height: 100%;
+
+
+
+
+
+
+
+      object-fit: cover;
+
+
+
+
+
+
+
+      display: block;
+
+
+
+
+
+
+
+      transition: opacity 0.25s ease;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .stage-img-caption { display: none; }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+
+
+
+
+       INDUSTRY PRACTICES: PROPER ICONS, ACCENT COLORS, TIGHTENED PADDING
+
+
+
+
+
+
+
+       ========================================================================== */
+
+
+
+
+
+
+
+    .industries-section {
+
+
+
+
+
+
+
+      background: var(--gray-50);
+
+
+
+
+
+
+
+      border-bottom: 1px solid var(--gray-200);
+
+
+
+
+
+
+
+      padding: 65px 0;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .ind-grid-6 {
+
+
+
+
+
+
+
+      display: grid;
+
+
+
+
+
+
+
+      grid-template-columns: repeat(3, 1fr);
+
+
+
+
+
+
+
+      gap: 18px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .ind-card {
+
+
+
+      background: white;
+
+
+
+      border: 1.5px solid var(--gray-200);
+
+
+
+      border-radius: 16px;
+
+
+
+      padding: 24px;
+
+
+
+      cursor: pointer;
+
+
+
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+
+
+      display: flex;
+
+
+
+      flex-direction: column;
+
+
+
+      justify-content: space-between;
+
+
+
+      position: relative;
+
+
+
+      overflow: hidden;
+
+
+
+    }
+
+
+
+    .ind-card::before {
+
+
+
+      content: "";
+
+
+
+      position: absolute;
+
+
+
+      top: 0; left: 0; right: 0;
+
+
+
+      height: 3px;
+
+
+
+      background: transparent;
+
+
+
+      transition: background 0.3s ease;
+
+
+
+    }
+
+
+
+    .ind-card:hover {
+
+
+
+      transform: translateY(-4px);
+
+
+
+      box-shadow: 0 16px 36px rgba(15, 27, 45, 0.09);
+
+
+
+      border-color: var(--yellow);
+
+
+
+    }
+
+
+
+    .ind-card:hover::before {
+
+
+
+      background: var(--yellow);
+
+
+
+    }
+
+
+
+    .ind-card-top { margin-bottom: 14px; }
+
+
+
+    .ind-icon-wrap {
+
+
+
+      width: 48px; height: 48px;
+
+
+
+      border-radius: 12px;
+
+
+
+      display: flex; align-items: center; justify-content: center;
+
+
+
+      margin-bottom: 16px;
+
+
+
+      background: rgba(250, 204, 44, 0.16);
+
+
+
+      color: var(--navy);
+
+
+
+      border: 1px solid rgba(250, 204, 44, 0.4);
+
+
+
+      transition: all 0.25s ease;
+
+
+
+    }
+
+
+
+    .ind-card:hover .ind-icon-wrap {
+
+
+
+      transform: scale(1.08);
+
+
+
+      background: var(--yellow);
+
+
+
+      box-shadow: 0 4px 14px rgba(250, 204, 44, 0.4);
+
+
+
+    }
+
+
+
+    .ind-card-title {
+
+
+
+      font-size: 17.5px;
+
+
+
+      font-weight: 800;
+
+
+
+      color: var(--navy);
+
+
+
+      margin-bottom: 8px;
+
+
+
+    }
+
+
+
+    .ind-card-desc {
+
+
+
+      font-size: 13.5px;
+
+
+
+      color: var(--gray-700);
+
+
+
+      line-height: 1.55;
+
+
+
+    }
+
+
+
+    .ind-card-kpi {
+
+
+
+      border-top: 1px solid var(--gray-200);
+
+
+
+      padding-top: 14px;
+
+
+
+      display: flex;
+
+
+
+      align-items: center;
+
+
+
+      justify-content: space-between;
+
+
+
+    }
+
+
+
+    .ind-kpi-val {
+
+
+
+      font-size: 15px;
+
+
+
+      font-weight: 900;
+
+
+
+      padding: 4px 12px;
+
+
+
+      border-radius: 999px;
+
+
+
+      color: var(--navy);
+
+
+
+      background: rgba(250, 204, 44, 0.18);
+
+
+
+      border: 1px solid rgba(250, 204, 44, 0.35);
+
+
+
+    }
+
+
+
+    .ind-card:hover .ind-kpi-val {
+
+
+
+      background: var(--yellow);
+
+
+
+    }
+
+
+
+    .ind-kpi-lbl { font-size: 12px; color: var(--gray-500); font-weight: 600; }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+
+
+
+
+       HIGH-IMPACT EXECUTIVE MESSAGE BAR
+
+
+
+
+
+
+
+       ========================================================================== */
+
+
+
+
+
+
+
+    .message-bar-wrap {
+
+
+
+
+
+
+
+      background: linear-gradient(135deg, var(--navy-dark), #16253B);
+
+
+
+
+
+
+
+      color: white;
+
+
+
+
+
+
+
+      padding: 30px 0;
+
+
+
+
+
+
+
+      border-top: 1px solid rgba(250, 204, 44, 0.25);
+
+
+
+
+
+
+
+      border-bottom: 1px solid rgba(250, 204, 44, 0.25);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .message-bar-container {
+
+
+
+
+
+
+
+      max-width: 1248px;
+
+
+
+
+
+
+
+      margin: 0 auto;
+
+
+
+
+
+
+
+      padding: 0 24px;
+
+
+
+
+
+
+
+      display: grid;
+
+
+
+
+
+
+
+      grid-template-columns: 1.3fr 0.9fr;
+
+
+
+
+
+
+
+      gap: 36px;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .mb-left {
+
+
+
+
+
+
+
+      font-family: 'DM Sans', sans-serif;
+
+
+
+
+
+
+
+      font-size: 21px;
+
+
+
+
+
+
+
+      font-weight: 800;
+
+
+
+
+
+
+
+      line-height: 1.4;
+
+
+
+
+
+
+
+      color: white;
+
+
+
+
+
+
+
+      display: flex;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+      gap: 16px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .mb-left .stat-callout {
+
+
+
+
+
+
+
+      color: var(--yellow);
+
+
+
+
+
+
+
+      font-size: 34px;
+
+
+
+
+
+
+
+      font-weight: 900;
+
+
+
+
+
+
+
+      line-height: 1;
+
+
+
+
+
+
+
+      display: inline-block;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .mb-right {
+
+
+
+
+
+
+
+      display: flex;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+      justify-content: flex-end;
+
+
+
+
+
+
+
+      gap: 24px;
+
+
+
+
+
+
+
+      border-left: 1px solid rgba(255,255,255,0.15);
+
+
+
+
+
+
+
+      padding-left: 32px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .mbr-stat {
+
+
+
+
+
+
+
+      text-align: right;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .mbr-stat .val {
+
+
+
+
+
+
+
+      font-size: 26px;
+
+
+
+
+
+
+
+      font-weight: 900;
+
+
+
+
+
+
+
+      color: var(--yellow);
+
+
+
+
+
+
+
+      line-height: 1.1;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .mbr-stat .lbl {
+
+
+
+
+
+
+
+      font-size: 12px;
+
+
+
+
+
+
+
+      color: rgba(255,255,255,0.7);
+
+
+
+
+
+
+
+      margin-top: 2px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+
+
+
+
+       DELIVERY PHILOSOPHY: TIGHTENED SPACE MANAGEMENT
+
+
+
+
+
+
+
+       ========================================================================== */
+
+
+
+
+
+
+
+    .philosophy-section {
+
+
+
+
+
+
+
+      background: white;
+
+
+
+
+
+
+
+      border-bottom: 1px solid var(--gray-200);
+
+
+
+
+
+
+
+      padding: 48px 0;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .phil-grid-3 {
+
+
+
+
+
+
+
+      display: grid;
+
+
+
+
+
+
+
+      grid-template-columns: repeat(3, 1fr);
+
+
+
+
+
+
+
+      gap: 16px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .phil-card {
+
+
+
+
+
+
+
+      background: var(--gray-50);
+
+
+
+
+
+
+
+      border: 1.5px solid var(--gray-200);
+
+
+
+
+
+
+
+      border-radius: 16px;
+
+
+
+
+
+
+
+      padding: 20px;
+
+
+
+
+
+
+
+      transition: all 0.25s;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .phil-card:hover {
+
+
+
+
+
+
+
+      border-color: var(--yellow);
+
+
+
+
+
+
+
+      background: #FFFDF5;
+
+
+
+
+
+
+
+      transform: translateY(-2px);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .phil-pillar-num {
+
+
+
+
+
+
+
+      font-size: 12px;
+
+
+
+
+
+
+
+      font-weight: 800;
+
+
+
+
+
+
+
+      color: #b88400;
+
+
+
+
+
+
+
+      letter-spacing: 1px;
+
+
+
+
+
+
+
+      margin-bottom: 8px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .phil-title {
+
+
+
+
+
+
+
+      font-size: 20px;
+
+
+
+
+
+
+
+      font-weight: 800;
+
+
+
+
+
+
+
+      color: var(--navy);
+
+
+
+
+
+
+
+      margin-bottom: 8px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .phil-desc {
+
+
+
+
+
+
+
+      font-size: 13.5px;
+
+
+
+
+
+
+
+      color: var(--gray-700);
+
+
+
+
+
+
+
+      line-height: 1.6;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+
+
+
+
+       INCLUSIVE DRIVEN PEOPLE APPROACH (FORMERLY NASSCOM SECTION)
+
+
+
+
+
+
+
+       ========================================================================== */
+
+
+
+
+
+
+
+    .people-section {
+
+
+
+
+
+
+
+      background: white;
+
+
+
+
+
+
+
+      border-bottom: 1px solid var(--gray-200);
+
+
+
+
+
+
+
+      padding: 70px 0;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .people-grid {
+
+
+
+
+
+
+
+      display: grid;
+
+
+
+
+
+
+
+      grid-template-columns: 1fr 1fr;
+
+
+
+
+
+
+
+      gap: 48px;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .people-photo-frame {
+
+
+
+
+
+
+
+      border-radius: 16px;
+
+
+
+
+
+
+
+      overflow: hidden;
+
+
+
+
+
+
+
+      border: 1px solid var(--gray-200);
+
+
+
+
+
+
+
+      box-shadow: 0 14px 32px rgba(15, 27, 45, 0.08);
+
+
+
+
+
+
+
+      background: var(--navy-dark);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .people-photo-frame img {
+
+
+
+
+
+
+
+      width: 100%;
+
+
+
+
+
+
+
+      height: 350px;
+
+
+
+
+
+
+
+      object-fit: cover;
+
+
+
+
+
+
+
+      display: block;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .people-photo-caption {
+
+
+
+
+
+
+
+      padding: 14px 18px;
+
+
+
+
+
+
+
+      background: var(--navy);
+
+
+
+
+
+
+
+      color: white;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .ppc-title { font-size: 14px; font-weight: 800; color: var(--yellow); margin-bottom: 2px; }
+
+
+
+
+
+
+
+    .ppc-sub { font-size: 12px; color: rgba(255,255,255,0.75); }
+
+
+
+
+
+
+
+    .people-data-col { display: flex; flex-direction: column; }
+
+
+
+
+
+
+
+    .people-partner-tag {
+
+
+
+
+
+
+
+      font-size: 11.5px;
+
+
+
+
+
+
+
+      font-weight: 800;
+
+
+
+
+
+
+
+      letter-spacing: 0.8px;
+
+
+
+
+
+
+
+      text-transform: uppercase;
+
+
+
+
+
+
+
+      color: #b88400;
+
+
+
+
+
+
+
+      background: rgba(250, 204, 44, 0.16);
+
+
+
+
+
+
+
+      padding: 4px 12px;
+
+
+
+
+
+
+
+      border-radius: 6px;
+
+
+
+
+
+
+
+      margin-bottom: 12px;
+
+
+
+
+
+
+
+      align-self: flex-start;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .people-title {
+
+
+
+
+
+
+
+      font-size: 32px;
+
+
+
+
+
+
+
+      font-weight: 800;
+
+
+
+
+
+
+
+      color: var(--navy);
+
+
+
+
+
+
+
+      line-height: 1.22;
+
+
+
+
+
+
+
+      margin-bottom: 12px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .people-desc {
+
+
+
+
+
+
+
+      font-size: 14.5px;
+
+
+
+
+
+
+
+      color: var(--gray-700);
+
+
+
+
+
+
+
+      line-height: 1.6;
+
+
+
+
+
+
+
+      margin-bottom: 24px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    /* 3 EXACT DATA POINTS (MEANINGFUL HEADINGS + METRIC BADGES) */
+
+
+
+    .people-stat-cards {
+
+
+
+      display: flex;
+
+
+
+      flex-direction: column;
+
+
+
+      gap: 14px;
+
+
+
+    }
+
+
+
+    .psc-item {
+
+
+
+      background: #FFFFFF;
+
+
+
+      border: 1.5px solid var(--gray-200);
+
+
+
+      border-radius: 14px;
+
+
+
+      padding: 16px 20px;
+
+
+
+      display: flex;
+
+
+
+      align-items: flex-start;
+
+
+
+      gap: 16px;
+
+
+
+      transition: all 0.25s ease;
+
+
+
+      box-shadow: 0 4px 12px rgba(15, 27, 45, 0.03);
+
+
+
+    }
+
+
+
+    .psc-item:hover {
+
+
+
+      border-color: var(--yellow);
+
+
+
+      background: #FFFDF5;
+
+
+
+      transform: translateY(-2px);
+
+
+
+      box-shadow: 0 10px 24px rgba(15, 27, 45, 0.08);
+
+
+
+    }
+
+
+
+    .psc-icon-box {
+
+
+
+      width: 44px; height: 44px;
+
+
+
+      border-radius: 12px;
+
+
+
+      background: rgba(250, 204, 44, 0.18);
+
+
+
+      color: var(--navy);
+
+
+
+      display: flex; align-items: center; justify-content: center;
+
+
+
+      flex-shrink: 0;
+
+
+
+      margin-top: 2px;
+
+
+
+      border: 1px solid rgba(250, 204, 44, 0.4);
+
+
+
+    }
+
+
+
+    .psc-content {
+
+
+
+      display: flex;
+
+
+
+      flex-direction: column;
+
+
+
+      gap: 5px;
+
+
+
+      flex: 1;
+
+
+
+    }
+
+
+
+    .psc-head-row {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 12px !important;
+      flex-wrap: nowrap !important;
+    }
+
+
+
+    .psc-title {
+
+
+
+      font-size: 16px;
+
+
+
+      font-weight: 800;
+
+
+
+      color: var(--navy);
+
+
+
+      margin: 0;
+
+
+
+    }
+
+
+
+    .psc-badge {
+      font-size: 11px !important;
+      font-weight: 800 !important;
+      color: #926900 !important;
+      background: rgba(250, 204, 44, 0.22) !important;
+      border: 1px solid rgba(250, 204, 44, 0.55) !important;
+      padding: 3px 9px !important;
+      border-radius: 999px !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      margin-left: auto !important;
+    }
+
+
+
+    .psc-lbl {
+
+
+
+      font-size: 13.5px;
+
+
+
+      color: var(--gray-700);
+
+
+
+      line-height: 1.5;
+
+
+
+      margin: 0;
+
+
+
+      font-weight: 500;
+
+
+
+    }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+
+
+
+
+       DELIVERY FOOTPRINT: GLOBAL MAP + GOOGLE LOCATION PINS
+
+
+
+
+
+
+
+       ========================================================================== */
+
+
+
+
+
+
+
+    .footprint-section {
+
+
+
+
+
+
+
+      background: var(--gray-50);
+
+
+
+
+
+
+
+      border-bottom: 1px solid var(--gray-200);
+
+
+
+
+
+
+
+      padding: 70px 0;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .footprint-grid {
+
+
+
+
+
+
+
+      display: grid;
+
+
+
+
+
+
+
+      grid-template-columns: 1.2fr 0.8fr;
+
+
+
+
+
+
+
+      gap: 40px;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .world-map-box {
+
+
+
+
+
+
+
+      background: white;
+
+
+
+
+
+
+
+      border: 1.5px solid var(--gray-200);
+
+
+
+
+
+
+
+      border-radius: 18px;
+
+
+
+
+
+
+
+      padding: 24px;
+
+
+
+
+
+
+
+      box-shadow: 0 10px 24px rgba(15, 27, 45, 0.05);
+
+
+
+
+
+
+
+      position: relative;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .world-map-box svg {
+
+
+
+
+
+
+
+      width: 100%;
+
+
+
+
+
+
+
+      height: auto;
+
+
+
+
+
+
+
+      max-height: 420px;
+
+
+
+
+
+
+
+      display: block;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .footprint-regions-list {
+
+
+
+
+
+
+
+      display: flex;
+
+
+
+
+
+
+
+      flex-direction: column;
+
+
+
+
+
+
+
+      gap: 10px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .fp-tile {
+
+
+
+
+
+
+
+      background: white;
+
+
+
+
+
+
+
+      border: 1.5px solid var(--gray-200);
+
+
+
+
+
+
+
+      border-radius: 12px;
+
+
+
+
+
+
+
+      padding: 14px 18px;
+
+
+
+
+
+
+
+      display: flex;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+      justify-content: space-between;
+
+
+
+
+
+
+
+      transition: all 0.2s;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .fp-tile:hover {
+
+
+
+
+
+
+
+      border-color: var(--yellow);
+
+
+
+
+
+
+
+      background: #FFFDF5;
+
+
+
+
+
+
+
+      transform: translateX(4px);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .fp-title { font-size: 15px; font-weight: 800; color: var(--navy); }
+
+
+
+
+
+
+
+    .fp-desc { font-size: 12.5px; color: var(--gray-500); margin-top: 2px; }
+
+
+
+
+
+
+
+    .fp-tag {
+
+
+
+
+
+
+
+      font-size: 12px; font-weight: 700;
+
+
+
+
+
+
+
+      color: #b88400; background: rgba(250, 204, 44, 0.15);
+
+
+
+
+
+
+
+      padding: 4px 10px; border-radius: 6px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+
+
+
+
+       WHY CHOOSE US / STRATEGIC DIFFERENTIATION
+
+
+
+
+
+
+
+       ========================================================================== */
+
+
+
+
+
+
+
+    .diff-section {
+
+
+
+
+
+
+
+      background: white;
+
+
+
+
+
+
+
+      border-bottom: 1px solid var(--gray-200);
+
+
+
+
+
+
+
+      padding: 70px 0;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .diff-grid-4 {
+
+
+
+
+
+
+
+      display: grid;
+
+
+
+
+
+
+
+      grid-template-columns: repeat(4, 1fr);
+
+
+
+
+
+
+
+      gap: 20px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .diff-card {
+
+
+
+
+
+
+
+      background: var(--gray-50);
+
+
+
+
+
+
+
+      border: 1.5px solid var(--gray-200);
+
+
+
+
+
+
+
+      border-radius: 16px;
+
+
+
+
+
+
+
+      padding: 24px 20px;
+
+
+
+
+
+
+
+      transition: all 0.25s;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .diff-card:hover {
+
+
+
+
+
+
+
+      border-color: var(--yellow);
+
+
+
+
+
+
+
+      background: #FFFDF5;
+
+
+
+
+
+
+
+      transform: translateY(-3px);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .diff-num {
+
+
+
+
+
+
+
+      font-size: 28px;
+
+
+
+
+
+
+
+      font-weight: 900;
+
+
+
+
+
+
+
+      color: #b88400;
+
+
+
+
+
+
+
+      line-height: 1;
+
+
+
+
+
+
+
+      margin-bottom: 10px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .diff-title {
+
+
+
+
+
+
+
+      font-size: 17px;
+
+
+
+
+
+
+
+      font-weight: 800;
+
+
+
+
+
+
+
+      color: var(--navy);
+
+
+
+
+
+
+
+      margin-bottom: 8px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .diff-desc {
+
+
+
+
+
+
+
+      font-size: 13px;
+
+
+
+
+
+
+
+      color: var(--gray-700);
+
+
+
+
+
+
+
+      line-height: 1.55;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+
+
+
+
+       MULTI-TRACK CTA: SALES / RECRUITMENT / PARTNERSHIPS
+
+
+
+
+
+
+
+       ========================================================================== */
+
+
+
+
+
+
+
+    .cta-section {
+
+
+
+
+
+
+
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+
+
+
+
+
+
+
+      color: white;
+
+
+
+
+
+
+
+      padding: 75px 0;
+
+
+
+
+
+
+
+      border-top: 1px solid rgba(250, 204, 44, 0.25);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cta-header { text-align: center; max-width: 860px; margin: 0 auto 40px; }
+
+
+
+
+
+
+
+    .cta-header h2 {
+
+
+
+
+
+
+
+      font-size: 36px;
+
+
+
+
+
+
+
+      font-weight: 800;
+
+
+
+
+
+
+
+      margin-bottom: 12px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cta-header h2 span { color: var(--yellow); }
+
+
+
+
+
+
+
+    .cta-header p {
+
+
+
+
+
+
+
+      font-size: 15px;
+
+
+
+
+
+
+
+      color: rgba(255,255,255,0.75);
+
+
+
+
+
+
+
+      line-height: 1.6;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cta-cards-3 {
+
+
+
+
+
+
+
+      display: grid;
+
+
+
+
+
+
+
+      grid-template-columns: repeat(3, 1fr);
+
+
+
+
+
+
+
+      gap: 24px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cta-pathway-card {
+
+
+
+
+
+
+
+      background: rgba(255,255,255,0.05);
+
+
+
+
+
+
+
+      border: 1.5px solid rgba(255,255,255,0.12);
+
+
+
+
+
+
+
+      border-radius: 16px;
+
+
+
+
+
+
+
+      padding: 28px 24px;
+
+
+
+
+
+
+
+      display: flex;
+
+
+
+
+
+
+
+      flex-direction: column;
+
+
+
+
+
+
+
+      justify-content: space-between;
+
+
+
+
+
+
+
+      transition: all 0.25s;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cta-pathway-card:hover {
+
+
+
+
+
+
+
+      background: rgba(255,255,255,0.08);
+
+
+
+
+
+
+
+      border-color: var(--yellow);
+
+
+
+
+
+
+
+      transform: translateY(-4px);
+
+
+
+
+
+
+
+      box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cpc-tag {
+
+
+
+
+
+
+
+      font-size: 11px;
+
+
+
+
+
+
+
+      font-weight: 800;
+
+
+
+
+
+
+
+      letter-spacing: 0.8px;
+
+
+
+
+
+
+
+      text-transform: uppercase;
+
+
+
+
+
+
+
+      color: var(--yellow);
+
+
+
+
+
+
+
+      margin-bottom: 8px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cpc-title {
+
+
+
+
+
+
+
+      font-size: 20px;
+
+
+
+
+
+
+
+      font-weight: 800;
+
+
+
+
+
+
+
+      color: white;
+
+
+
+
+
+
+
+      margin-bottom: 10px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .cpc-desc {
+
+
+
+
+
+
+
+      font-size: 13.5px;
+
+
+
+
+
+
+
+      color: rgba(255,255,255,0.75);
+
+
+
+
+
+
+
+      line-height: 1.55;
+
+
+
+
+
+
+
+      margin-bottom: 24px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .btn-cpc {
+
+
+
+
+
+
+
+      background: var(--yellow);
+
+
+
+
+
+
+
+      color: var(--navy);
+
+
+
+
+
+
+
+      padding: 12px 20px;
+
+
+
+
+
+
+
+      border-radius: 8px;
+
+
+
+
+
+
+
+      font-weight: 700;
+
+
+
+
+
+
+
+      font-size: 13.5px;
+
+
+
+
+
+
+
+      text-decoration: none;
+
+
+
+
+
+
+
+      display: inline-flex;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+      justify-content: center;
+
+
+
+
+
+
+
+      gap: 6px;
+
+
+
+
+
+
+
+      transition: all 0.2s;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .btn-cpc:hover {
+
+
+
+
+
+
+
+      background: var(--yellow-dark);
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    /* FOOTER */
+
+
+
+
+
+
+
+    footer {
+
+
+
+
+
+
+
+      background: #080E1A;
+
+
+
+
+
+
+
+      color: rgba(255,255,255,0.65);
+
+
+
+
+
+
+
+      padding: 40px 0;
+
+
+
+
+
+
+
+      border-top: 1px solid rgba(255,255,255,0.08);
+
+
+
+
+
+
+
+      font-size: 13px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .footer-wrap {
+
+
+
+
+
+
+
+      max-width: 1248px;
+
+
+
+
+
+
+
+      margin: 0 auto;
+
+
+
+
+
+
+
+      padding: 0 24px;
+
+
+
+
+
+
+
+      display: flex;
+
+
+
+
+
+
+
+      justify-content: space-between;
+
+
+
+
+
+
+
+      align-items: center;
+
+
+
+
+
+
+
+      flex-wrap: wrap;
+
+
+
+
+
+
+
+      gap: 20px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    .footer-links { display: flex; gap: 20px; }
+
+
+
+
+
+
+
+    .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+
+
+
+
+
+
+
+    .footer-links a:hover { color: var(--yellow); }
+
+
+
+
+
+
+
+    /* RESPONSIVE */
+
+
+
+
+
+
+
+    @media (max-width: 1200px) {
+
+
+
+
+
+
+
+      .heroG {
+
+
+
+
+
+
+
+        grid-template-columns: 1fr;
+
+
+
+
+
+
+
+        padding-bottom: 40px;
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+      .orb {
+
+
+
+
+
+
+
+        margin: 40px auto 0;
+
+
+
+
+
+
+
+        width: 100%;
+
+
+
+
+
+
+
+        max-width: 480px;
+
+
+
+
+
+
+
+        height: auto;
+
+
+
+
+
+
+
+        aspect-ratio: 1/1;
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+      .orb svg {
+
+
+
+
+
+
+
+        width: 100%;
+
+
+
+
+
+
+
+        height: 100%;
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+      .nav-menu-toggle { display: inline-flex; }
+
+
+
+
+
+
+
+      .nav-menu-links {
+
+
+
+
+
+
+
+        display: none;
+
+
+
+
+
+
+
+        position: absolute;
+
+
+
+
+
+
+
+        top: 100%;
+
+
+
+
+
+
+
+        left: 0;
+
+
+
+
+
+
+
+        right: 0;
+
+
+
+
+
+
+
+        z-index: 20;
+
+
+
+
+
+
+
+        padding: 8px 24px 16px;
+
+
+
+
+
+
+
+        background: var(--navy-dark);
+
+
+
+
+
+
+
+        border: 1px solid rgba(255,255,255,.12);
+
+
+
+
+
+
+
+        border-radius: 0 0 12px 12px;
+
+
+
+
+
+
+
+        flex-direction: column;
+
+
+
+
+
+
+
+        gap: 0;
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+      .nav.nav-open .nav-menu-links { display: flex; }
+
+
+
+
+
+
+
+      .nav-menu-links a { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+
+
+
+
+
+
+
+      .nav-menu-links a:last-child { border-bottom: 0; }
+
+
+
+
+
+
+
+      .cap-tabs-bar, .ind-grid-6, .diff-grid-4, .phil-grid-3, .cta-cards-3 {
+
+
+
+
+
+
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+      .people-grid, .footprint-grid, .message-bar-container, .cap-stage-card {
+
+
+
+
+
+
+
+        grid-template-columns: 1fr;
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+      .hero h1 { font-size: 40px; }
+
+
+
+
+
+
+
+      .mb-right { justify-content: flex-start; border-left: 0; padding-left: 0; }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    @media (max-width: 640px) {
+
+
+
+
+
+
+
+      .cap-tabs-bar, .ind-grid-6, .diff-grid-4, .phil-grid-3, .cta-cards-3 {
+
+
+
+
+
+
+
+        grid-template-columns: 1fr;
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+      .wm b { font-size: 30px; }
+
+
+
+
+
+
+
+      .nav { gap: 10px; }
+
+
+
+
+
+
+
+      .nav .btn.by { min-height: 44px; padding: 0 14px; font-size: 13px; }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+  
+
+
+
+    /* ==========================================================================
+
+
+
+       EXECUTIVE MESSAGE BAR: EQUAL DISTANCE & CENTER ALIGNED (FEEDBACK 5)
+
+
+
+       ========================================================================== */
+
+
+
+    .message-bar-wrap {
+
+
+
+      background: linear-gradient(135deg, #0A1322 0%, #16253B 100%) !important;
+
+
+
+      color: white !important;
+
+
+
+      padding: 36px 0 !important;
+
+
+
+      border-top: 1px solid rgba(250, 204, 44, 0.25) !important;
+
+
+
+      border-bottom: 1px solid rgba(250, 204, 44, 0.25) !important;
+
+
+
+      width: 100% !important;
+
+
+
+    }
+
+
+
+    .message-bar-container {
+
+
+
+      max-width: 1100px !important;
+
+
+
+      margin: 0 auto !important;
+
+
+
+      padding: 0 24px !important;
+
+
+
+      display: flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      justify-content: center !important;
+
+
+
+      gap: 48px !important;
+
+
+
+      text-align: center !important;
+
+
+
+      box-sizing: border-box !important;
+
+
+
+    }
+
+
+
+    .mb-stat-item {
+
+
+
+      display: flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      gap: 16px !important;
+
+
+
+      text-align: left !important;
+
+
+
+    }
+
+
+
+    .mb-val {
+
+
+
+      color: #FACC2C !important;
+
+
+
+      font-size: 38px !important;
+
+
+
+      font-weight: 900 !important;
+
+
+
+      line-height: 1 !important;
+
+
+
+      flex-shrink: 0 !important;
+
+
+
+      font-family: 'DM Sans', sans-serif !important;
+
+
+
+    }
+
+
+
+    .mb-lbl {
+
+
+
+      font-size: 14.5px !important;
+
+
+
+      font-weight: 700 !important;
+
+
+
+      color: rgba(255, 255, 255, 0.95) !important;
+
+
+
+      line-height: 1.35 !important;
+
+
+
+      max-width: 210px !important;
+
+
+
+    }
+
+
+
+    .mb-sep {
+
+
+
+      width: 1px !important;
+
+
+
+      height: 42px !important;
+
+
+
+      background: rgba(255, 255, 255, 0.25) !important;
+
+
+
+      flex-shrink: 0 !important;
+
+
+
+    }
+
+
+
+    @media (max-width: 900px) {
+
+
+
+      .message-bar-container {
+
+
+
+        flex-direction: column !important;
+
+
+
+        gap: 20px !important;
+
+
+
+      }
+
+
+
+      .mb-sep { display: none !important; }
+
+
+
+      .mb-stat-item {
+
+
+
+        text-align: center !important;
+
+
+
+        flex-direction: column !important;
+
+
+
+        gap: 6px !important;
+
+
+
+      }
+
+
+
+      .mb-lbl { max-width: none !important; }
+
+
+
+    }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+       DELIVERY PHILOSOPHY: MODERN INTERACTIVE ACCORDION (FEEDBACK 3)
+
+
+
+       ========================================================================== */
+
+
+
+    .philosophy-section {
+
+
+
+      background: white !important;
+
+
+
+      border-bottom: 1px solid #E2E8F0 !important;
+
+
+
+      padding: 65px 0 !important;
+
+
+
+    }
+
+
+
+    .phil-accordion {
+
+
+
+      display: flex !important;
+
+
+
+      flex-direction: column !important;
+
+
+
+      gap: 16px !important;
+
+
+
+      max-width: 1050px !important;
+
+
+
+      margin: 36px auto 0 !important;
+
+
+
+      width: 100% !important;
+
+
+
+      box-sizing: border-box !important;
+
+
+
+    }
+
+
+
+    .phil-acc-item {
+
+
+
+      background: #F8FAFC !important;
+
+
+
+      border: 1.5px solid #E2E8F0 !important;
+
+
+
+      border-radius: 18px !important;
+
+
+
+      overflow: hidden !important;
+
+
+
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+
+
+
+    }
+
+
+
+    .phil-acc-item.active {
+
+
+
+      background: white !important;
+
+
+
+      border-color: #FACC2C !important;
+
+
+
+      box-shadow: 0 16px 36px rgba(15, 27, 45, 0.08) !important;
+
+
+
+    }
+
+
+
+    .phil-acc-header {
+
+
+
+      width: 100% !important;
+
+
+
+      background: transparent !important;
+
+
+
+      border: none !important;
+
+
+
+      outline: none !important;
+
+
+
+      padding: 22px 28px !important;
+
+
+
+      display: flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      justify-content: space-between !important;
+
+
+
+      cursor: pointer !important;
+
+
+
+      text-align: left !important;
+
+
+
+      font-family: inherit !important;
+
+
+
+      transition: background 0.2s !important;
+
+
+
+      box-sizing: border-box !important;
+
+
+
+    }
+
+
+
+    .phil-acc-item:not(.active) .phil-acc-header:hover {
+
+
+
+      background: #F1F5F9 !important;
+
+
+
+    }
+
+
+
+    .pah-left {
+
+
+
+      display: flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      gap: 20px !important;
+
+
+
+    }
+
+
+
+    .pah-num {
+
+
+
+      width: 44px !important;
+
+
+
+      height: 44px !important;
+
+
+
+      border-radius: 12px !important;
+
+
+
+      background: rgba(250, 204, 44, 0.16) !important;
+
+
+
+      color: #0F1B2D !important;
+
+
+
+      display: flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      justify-content: center !important;
+
+
+
+      font-weight: 900 !important;
+
+
+
+      font-size: 16px !important;
+
+
+
+      border: 1px solid rgba(250, 204, 44, 0.4) !important;
+
+
+
+      flex-shrink: 0 !important;
+
+
+
+      transition: all 0.25s !important;
+
+
+
+    }
+
+
+
+    .phil-acc-item.active .pah-num {
+
+
+
+      background: #FACC2C !important;
+
+
+
+      box-shadow: 0 4px 12px rgba(250, 204, 44, 0.4) !important;
+
+
+
+    }
+
+
+
+    .pah-title-wrap {
+
+
+
+      display: flex !important;
+
+
+
+      flex-direction: column !important;
+
+
+
+      gap: 4px !important;
+
+
+
+    }
+
+
+
+    .pah-title {
+
+
+
+      font-size: 20px !important;
+
+
+
+      font-weight: 800 !important;
+
+
+
+      color: #0F1B2D !important;
+
+
+
+      letter-spacing: -0.3px !important;
+
+
+
+    }
+
+
+
+    .pah-tag {
+
+
+
+      font-size: 11.5px !important;
+
+
+
+      font-weight: 700 !important;
+
+
+
+      color: #64748B !important;
+
+
+
+      text-transform: uppercase !important;
+
+
+
+      letter-spacing: 0.6px !important;
+
+
+
+    }
+
+
+
+    .pah-right {
+
+
+
+      display: flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      gap: 16px !important;
+
+
+
+    }
+
+
+
+    .pah-metric {
+
+
+
+      font-size: 13px !important;
+
+
+
+      font-weight: 800 !important;
+
+
+
+      color: #0F1B2D !important;
+
+
+
+      background: rgba(250, 204, 44, 0.18) !important;
+
+
+
+      border: 1px solid rgba(250, 204, 44, 0.4) !important;
+
+
+
+      padding: 6px 16px !important;
+
+
+
+      border-radius: 999px !important;
+
+
+
+    }
+
+
+
+    .pah-arrow {
+
+
+
+      width: 36px !important;
+
+
+
+      height: 36px !important;
+
+
+
+      border-radius: 50% !important;
+
+
+
+      background: white !important;
+
+
+
+      border: 1px solid #CBD5E1 !important;
+
+
+
+      display: flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      justify-content: center !important;
+
+
+
+      color: #0F1B2D !important;
+
+
+
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s, color 0.2s !important;
+
+
+
+      flex-shrink: 0 !important;
+
+
+
+    }
+
+
+
+    .phil-acc-item.active .pah-arrow {
+
+
+
+      transform: rotate(180deg) !important;
+
+
+
+      background: #0F1B2D !important;
+
+
+
+      color: white !important;
+
+
+
+      border-color: #0F1B2D !important;
+
+
+
+    }
+
+
+
+    .phil-acc-content {
+
+
+
+      max-height: 0 !important;
+
+
+
+      overflow: hidden !important;
+
+
+
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+
+
+
+    }
+
+
+
+    .phil-acc-item.active .phil-acc-content {
+
+
+
+      max-height: 300px !important;
+
+
+
+    }
+
+
+
+    .pac-inner {
+
+
+
+      padding: 0 28px 24px 92px !important;
+
+
+
+      box-sizing: border-box !important;
+
+
+
+    }
+
+
+
+    .pac-desc {
+
+
+
+      font-size: 15px !important;
+
+
+
+      color: #334155 !important;
+
+
+
+      line-height: 1.65 !important;
+
+
+
+      margin-bottom: 16px !important;
+
+
+
+    }
+
+
+
+    .pac-features {
+
+
+
+      display: flex !important;
+
+
+
+      flex-wrap: wrap !important;
+
+
+
+      gap: 12px !important;
+
+
+
+    }
+
+
+
+    .pac-feat {
+
+
+
+      display: inline-flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      gap: 8px !important;
+
+
+
+      font-size: 13px !important;
+
+
+
+      font-weight: 700 !important;
+
+
+
+      color: #0F1B2D !important;
+
+
+
+      background: #F1F5F9 !important;
+
+
+
+      padding: 6px 14px !important;
+
+
+
+      border-radius: 8px !important;
+
+
+
+      border: 1px solid #E2E8F0 !important;
+
+
+
+    }
+
+
+
+    .pac-check {
+
+
+
+      color: #0F1B2D !important;
+
+
+
+      font-weight: 900 !important;
+
+
+
+      background: #FACC2C !important;
+
+
+
+      width: 18px !important;
+
+
+
+      height: 18px !important;
+
+
+
+      border-radius: 50% !important;
+
+
+
+      display: inline-flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      justify-content: center !important;
+
+
+
+      font-size: 11px !important;
+
+
+
+    }
+
+
+
+    @media (max-width: 768px) {
+
+
+
+      .pah-metric { display: none !important; }
+
+
+
+      .pac-inner { padding: 0 20px 20px !important; }
+
+
+
+      .pah-left { gap: 12px !important; }
+
+
+
+      .phil-acc-header { padding: 18px 20px !important; }
+
+
+
+    }
+
+
+
+
+
+
+
+  /* INJECTED SECTION 7 & 8 STYLES */
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+       SECTION 6: MEANINGFUL HEADINGS & METRICS FOR PEOPLE SECTION
+
+
+
+       ========================================================================== */
+
+
+
+    .people-stat-cards {
+
+
+
+      display: flex !important;
+
+
+
+      flex-direction: column !important;
+
+
+
+      gap: 14px !important;
+
+
+
+    }
+
+
+
+    .psc-item {
+
+
+
+      background: #FFFFFF !important;
+
+
+
+      border: 1.5px solid var(--gray-200) !important;
+
+
+
+      border-radius: 14px !important;
+
+
+
+      padding: 16px 20px !important;
+
+
+
+      display: flex !important;
+
+
+
+      align-items: flex-start !important;
+
+
+
+      gap: 16px !important;
+
+
+
+      transition: all 0.25s ease !important;
+
+
+
+      box-shadow: 0 4px 12px rgba(15, 27, 45, 0.03) !important;
+
+
+
+    }
+
+
+
+    .psc-item:hover {
+
+
+
+      border-color: var(--yellow) !important;
+
+
+
+      background: #FFFDF5 !important;
+
+
+
+      transform: translateY(-2px) !important;
+
+
+
+      box-shadow: 0 10px 24px rgba(15, 27, 45, 0.08) !important;
+
+
+
+    }
+
+
+
+    .psc-icon-box {
+
+
+
+      width: 44px !important;
+
+
+
+      height: 44px !important;
+
+
+
+      border-radius: 12px !important;
+
+
+
+      background: rgba(250, 204, 44, 0.18) !important;
+
+
+
+      color: var(--navy) !important;
+
+
+
+      display: flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      justify-content: center !important;
+
+
+
+      flex-shrink: 0 !important;
+
+
+
+      margin-top: 2px !important;
+
+
+
+      border: 1px solid rgba(250, 204, 44, 0.4) !important;
+
+
+
+    }
+
+
+
+    .psc-content {
+
+
+
+      display: flex !important;
+
+
+
+      flex-direction: column !important;
+
+
+
+      gap: 5px !important;
+
+
+
+      flex: 1 !important;
+
+
+
+    }
+
+
+
+    .psc-head-row {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 12px !important;
+      flex-wrap: nowrap !important;
+    }
+
+
+
+    .psc-title {
+
+
+
+      font-size: 16px !important;
+
+
+
+      font-weight: 800 !important;
+
+
+
+      color: var(--navy) !important;
+
+
+
+      margin: 0 !important;
+
+
+
+    }
+
+
+
+    .psc-badge {
+      font-size: 11px !important;
+      font-weight: 800 !important;
+      color: #926900 !important;
+      background: rgba(250, 204, 44, 0.22) !important;
+      border: 1px solid rgba(250, 204, 44, 0.55) !important;
+      padding: 3px 9px !important;
+      border-radius: 999px !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      margin-left: auto !important;
+    }
+
+
+
+    .psc-lbl {
+
+
+
+      font-size: 13.5px !important;
+
+
+
+      color: var(--gray-700) !important;
+
+
+
+      line-height: 1.5 !important;
+
+
+
+      margin: 0 !important;
+
+
+
+      font-weight: 500 !important;
+
+
+
+    }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+       SECTION 7: DELIVERY FOOTPRINT (REAL WORLD MAP + MODERN LIST + SINGLE LINE SUBTITLE)
+
+
+
+       ========================================================================== */
+
+
+
+    .footprint-section {
+
+
+
+      background: var(--gray-50) !important;
+
+
+
+      border-bottom: 1px solid var(--gray-200) !important;
+
+
+
+      padding: 76px 0 !important;
+
+
+
+    }
+
+
+
+    .fp-sub-oneline {
+
+
+
+      max-width: 100% !important;
+
+
+
+      white-space: nowrap !important;
+
+
+
+    }
+
+
+
+    .footprint-grid {
+
+
+
+      display: grid !important;
+
+
+
+      grid-template-columns: 1.25fr 0.95fr !important;
+
+
+
+      gap: 36px !important;
+
+
+
+      align-items: center !important;
+
+
+
+      margin-top: 36px !important;
+
+
+
+    }
+
+
+
+    .world-map-box {
+
+
+
+      background: #FFFFFF !important;
+
+
+
+      border: 1.5px solid var(--gray-200) !important;
+
+
+
+      border-radius: 20px !important;
+
+
+
+      padding: 12px !important;
+
+
+
+      box-shadow: 0 12px 32px rgba(15, 27, 45, 0.06) !important;
+
+
+
+      position: relative !important;
+
+
+
+      overflow: hidden !important;
+
+
+
+    }
+
+
+
+    .map-frame {
+
+
+
+      position: relative !important;
+
+
+
+      width: 100% !important;
+
+
+
+      border-radius: 14px !important;
+
+
+
+      overflow: hidden !important;
+
+
+
+    }
+
+
+
+    .real-world-map-img {
+
+
+
+      width: 100% !important;
+
+
+
+      height: auto !important;
+
+
+
+      display: block !important;
+
+
+
+      border-radius: 12px !important;
+
+
+
+      object-fit: cover !important;
+
+
+
+    }
+
+
+
+    .map-status-pill {
+
+
+
+      position: absolute !important;
+
+
+
+      bottom: 14px !important;
+
+
+
+      left: 14px !important;
+
+
+
+      background: rgba(15, 27, 45, 0.88) !important;
+
+
+
+      backdrop-filter: blur(8px) !important;
+
+
+
+      -webkit-backdrop-filter: blur(8px) !important;
+
+
+
+      color: white !important;
+
+
+
+      font-size: 12px !important;
+
+
+
+      font-weight: 700 !important;
+
+
+
+      padding: 6px 14px !important;
+
+
+
+      border-radius: 999px !important;
+
+
+
+      display: inline-flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      gap: 8px !important;
+
+
+
+      border: 1px solid rgba(250, 204, 44, 0.4) !important;
+
+
+
+    }
+
+
+
+    .map-status-pill .status-dot {
+
+
+
+      width: 7px !important;
+
+
+
+      height: 7px !important;
+
+
+
+      border-radius: 50% !important;
+
+
+
+      background: var(--yellow) !important;
+
+
+
+      box-shadow: 0 0 8px var(--yellow) !important;
+
+
+
+    }
+
+
+
+    .footprint-list-col {
+
+
+
+      display: flex !important;
+
+
+
+      flex-direction: column !important;
+
+
+
+    }
+
+
+
+    .footprint-modern-list {
+
+
+
+      list-style: none !important;
+
+
+
+      margin: 0 !important;
+
+
+
+      padding: 0 !important;
+
+
+
+      display: flex !important;
+
+
+
+      flex-direction: column !important;
+
+
+
+      gap: 12px !important;
+
+
+
+    }
+
+
+
+    .fp-list-item {
+
+
+
+      background: #FFFFFF !important;
+
+
+
+      border: 1.5px solid var(--gray-200) !important;
+
+
+
+      border-radius: 14px !important;
+
+
+
+      padding: 16px 20px !important;
+
+
+
+      display: flex !important;
+
+
+
+      align-items: flex-start !important;
+
+
+
+      gap: 14px !important;
+
+
+
+      transition: all 0.25s ease !important;
+
+
+
+      box-shadow: 0 4px 12px rgba(15, 27, 45, 0.03) !important;
+
+
+
+    }
+
+
+
+    .fp-list-item:hover {
+
+
+
+      border-color: var(--yellow) !important;
+
+
+
+      background: #FFFDF5 !important;
+
+
+
+      transform: translateX(4px) !important;
+
+
+
+      box-shadow: 0 8px 20px rgba(15, 27, 45, 0.08) !important;
+
+
+
+    }
+
+
+
+    .fp-item-icon {
+
+
+
+      padding-top: 5px !important;
+
+
+
+      flex-shrink: 0 !important;
+
+
+
+    }
+
+
+
+    .fp-dot {
+
+
+
+      display: block !important;
+
+
+
+      width: 10px !important;
+
+
+
+      height: 10px !important;
+
+
+
+      border-radius: 50% !important;
+
+
+
+      background: var(--navy) !important;
+
+
+
+      box-shadow: 0 0 0 3px rgba(15, 27, 45, 0.15) !important;
+
+
+
+    }
+
+
+
+    .fp-dot.primary {
+
+
+
+      background: var(--yellow) !important;
+
+
+
+      box-shadow: 0 0 0 4px rgba(250, 204, 44, 0.3) !important;
+
+
+
+    }
+
+
+
+    .fp-item-body {
+
+
+
+      display: flex !important;
+
+
+
+      flex-direction: column !important;
+
+
+
+      gap: 4px !important;
+
+
+
+      flex: 1 !important;
+
+
+
+    }
+
+
+
+    .fp-item-header {
+
+
+
+      display: flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      justify-content: space-between !important;
+
+
+
+      gap: 12px !important;
+
+
+
+      flex-wrap: wrap !important;
+
+
+
+    }
+
+
+
+    .fp-location-name {
+
+
+
+      font-size: 15.5px !important;
+
+
+
+      font-weight: 800 !important;
+
+
+
+      color: var(--navy) !important;
+
+
+
+    }
+
+
+
+    .fp-chip {
+
+
+
+      font-size: 11.5px !important;
+
+
+
+      font-weight: 800 !important;
+
+
+
+      color: var(--navy) !important;
+
+
+
+      background: var(--gray-100) !important;
+
+
+
+      border: 1px solid var(--gray-200) !important;
+
+
+
+      padding: 3px 9px !important;
+
+
+
+      border-radius: 6px !important;
+
+
+
+      white-space: nowrap !important;
+
+
+
+    }
+
+
+
+    .fp-chip.primary {
+
+
+
+      background: rgba(250, 204, 44, 0.22) !important;
+
+
+
+      border-color: rgba(250, 204, 44, 0.6) !important;
+
+
+
+      color: #8C6400 !important;
+
+
+
+    }
+
+
+
+    .fp-location-desc {
+
+
+
+      font-size: 13px !important;
+
+
+
+      color: var(--gray-600) !important;
+
+
+
+      line-height: 1.5 !important;
+
+
+
+    }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+       SECTION 8: WHY CHOOSE US (SINGLE LINE SUBTITLE + MODERN SLIDER & ACCORDION)
+
+
+
+       ========================================================================== */
+
+
+
+    .diff-section {
+
+
+
+      background: white !important;
+
+
+
+      border-bottom: 1px solid var(--gray-200) !important;
+
+
+
+      padding: 76px 0 !important;
+
+
+
+    }
+
+
+
+    .diff-sub-oneline {
+
+
+
+      max-width: 100% !important;
+
+
+
+      white-space: nowrap !important;
+
+
+
+    }
+
+
+
+    .diff-slider-wrapper {
+
+
+
+      margin-top: 36px !important;
+
+
+
+      display: flex !important;
+
+
+
+      flex-direction: column !important;
+
+
+
+      gap: 24px !important;
+
+
+
+    }
+
+
+
+    .diff-accordion-slider {
+
+
+
+      display: flex !important;
+
+
+
+      gap: 16px !important;
+
+
+
+      min-height: 320px !important;
+
+
+
+      width: 100% !important;
+
+
+
+    }
+
+
+
+    .diff-slide {
+
+
+
+      background: var(--gray-50) !important;
+
+
+
+      border: 1.5px solid var(--gray-200) !important;
+
+
+
+      border-radius: 20px !important;
+
+
+
+      cursor: pointer !important;
+
+
+
+      position: relative !important;
+
+
+
+      overflow: hidden !important;
+
+
+
+      flex: 1 !important;
+
+
+
+      display: flex !important;
+
+
+
+      transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+
+
+
+      box-shadow: 0 4px 14px rgba(15, 27, 45, 0.03) !important;
+
+
+
+    }
+
+
+
+    .diff-slide:hover {
+
+
+
+      border-color: rgba(250, 204, 44, 0.7) !important;
+
+
+
+    }
+
+
+
+    .diff-slide.active {
+
+
+
+      flex: 3.4 !important;
+
+
+
+      background: #FFFFFF !important;
+
+
+
+      border-color: var(--yellow) !important;
+
+
+
+      box-shadow: 0 16px 36px rgba(15, 27, 45, 0.09) !important;
+
+
+
+      cursor: default !important;
+
+
+
+    }
+
+
+
+    .diff-slide.active::before {
+
+
+
+      content: "" !important;
+
+
+
+      position: absolute !important;
+
+
+
+      top: 0 !important; left: 0 !important; right: 0 !important;
+
+
+
+      height: 4px !important;
+
+
+
+      background: linear-gradient(90deg, var(--yellow), #FFB300) !important;
+
+
+
+    }
+
+
+
+    
+
+
+
+    /* Collapsed View */
+
+
+
+    .diff-slide-collapsed {
+
+
+
+      width: 100% !important;
+
+
+
+      height: 100% !important;
+
+
+
+      padding: 24px 16px !important;
+
+
+
+      display: flex !important;
+
+
+
+      flex-direction: column !important;
+
+
+
+      align-items: center !important;
+
+
+
+      justify-content: space-between !important;
+
+
+
+      box-sizing: border-box !important;
+
+
+
+      transition: opacity 0.25s ease !important;
+
+
+
+    }
+
+
+
+    .diff-slide.active .diff-slide-collapsed {
+
+
+
+      display: none !important;
+
+
+
+    }
+
+
+
+    .diff-slide-num {
+
+
+
+      font-size: 26px !important;
+
+
+
+      font-weight: 900 !important;
+
+
+
+      color: #926900 !important;
+
+
+
+      font-family: 'DM Sans', sans-serif !important;
+
+
+
+    }
+
+
+
+    .diff-vert-title {
+
+
+
+      font-size: 16px !important;
+
+
+
+      font-weight: 800 !important;
+
+
+
+      color: var(--navy) !important;
+
+
+
+      writing-mode: vertical-rl !important;
+
+
+
+      transform: rotate(180deg) !important;
+
+
+
+      letter-spacing: 0.02em !important;
+
+
+
+      white-space: nowrap !important;
+
+
+
+      margin: 16px 0 !important;
+
+
+
+    }
+
+
+
+    .diff-slide-arrow {
+
+
+
+      width: 32px !important;
+
+
+
+      height: 32px !important;
+
+
+
+      border-radius: 50 !important;
+
+
+
+      background: white !important;
+
+
+
+      border: 1px solid var(--gray-200) !important;
+
+
+
+      display: flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      justify-content: center !important;
+
+
+
+      font-size: 15px !important;
+
+
+
+      color: var(--navy) !important;
+
+
+
+      font-weight: 700 !important;
+
+
+
+      transition: all 0.2s !important;
+
+
+
+    }
+
+
+
+    .diff-slide:hover .diff-slide-arrow {
+
+
+
+      background: var(--yellow) !important;
+
+
+
+      border-color: var(--yellow) !important;
+
+
+
+    }
+
+
+
+
+
+
+
+    /* Expanded View */
+
+
+
+    .diff-slide-expanded {
+
+
+
+      display: none !important;
+
+
+
+      width: 100% !important;
+
+
+
+      padding: 34px 36px !important;
+
+
+
+      box-sizing: border-box !important;
+
+
+
+      flex-direction: column !important;
+
+
+
+      justify-content: space-between !important;
+
+
+
+      animation: fadeInSlide 0.35s ease forwards !important;
+
+
+
+    }
+
+
+
+    .diff-slide.active .diff-slide-expanded {
+
+
+
+      display: flex !important;
+
+
+
+    }
+
+
+
+    @keyframes fadeInSlide {
+
+
+
+      from { opacity: 0; transform: translateY(6px); }
+
+
+
+      to { opacity: 1; transform: translateY(0); }
+
+
+
+    }
+
+
+
+    .diff-exp-header {
+
+
+
+      display: flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      justify-content: space-between !important;
+
+
+
+      margin-bottom: 12px !important;
+
+
+
+    }
+
+
+
+    .diff-exp-num {
+
+
+
+      font-size: 44px !important;
+
+
+
+      font-weight: 900 !important;
+
+
+
+      color: #8C6400 !important;
+
+
+
+      line-height: 1 !important;
+
+
+
+      font-family: 'DM Sans', sans-serif !important;
+
+
+
+    }
+
+
+
+    .diff-exp-badge {
+
+
+
+      font-size: 12px !important;
+
+
+
+      font-weight: 800 !important;
+
+
+
+      color: var(--navy) !important;
+
+
+
+      background: rgba(250, 204, 44, 0.2) !important;
+
+
+
+      border: 1px solid rgba(250, 204, 44, 0.5) !important;
+
+
+
+      padding: 5px 12px !important;
+
+
+
+      border-radius: 999px !important;
+
+
+
+      text-transform: uppercase !important;
+
+
+
+      letter-spacing: 0.04em !important;
+
+
+
+    }
+
+
+
+    .diff-exp-title {
+
+
+
+      font-size: 24px !important;
+
+
+
+      font-weight: 800 !important;
+
+
+
+      color: var(--navy) !important;
+
+
+
+      margin: 8px 0 12px !important;
+
+
+
+      line-height: 1.25 !important;
+
+
+
+    }
+
+
+
+    .diff-exp-desc {
+
+
+
+      font-size: 15.5px !important;
+
+
+
+      color: var(--gray-700) !important;
+
+
+
+      line-height: 1.65 !important;
+
+
+
+      margin: 0 0 20px !important;
+
+
+
+      max-width: 520px !important;
+
+
+
+    }
+
+
+
+    .diff-exp-meta {
+
+
+
+      display: flex !important;
+
+
+
+      flex-wrap: wrap !important;
+
+
+
+      gap: 10px !important;
+
+
+
+      padding-top: 16px !important;
+
+
+
+      border-top: 1px solid var(--gray-200) !important;
+
+
+
+    }
+
+
+
+    .diff-meta-tag {
+
+
+
+      font-size: 12.5px !important;
+
+
+
+      font-weight: 700 !important;
+
+
+
+      color: var(--navy) !important;
+
+
+
+      background: var(--gray-100) !important;
+
+
+
+      border: 1px solid var(--gray-200) !important;
+
+
+
+      padding: 5px 12px !important;
+
+
+
+      border-radius: 8px !important;
+
+
+
+    }
+
+
+
+
+
+
+
+    /* Slider Controls & Navigation */
+
+
+
+    .diff-slider-controls {
+
+
+
+      display: flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      justify-content: space-between !important;
+
+
+
+      padding-top: 6px !important;
+
+
+
+    }
+
+
+
+    .diff-dots-group {
+
+
+
+      display: flex !important;
+
+
+
+      gap: 10px !important;
+
+
+
+      align-items: center !important;
+
+
+
+    }
+
+
+
+    .diff-dot {
+
+
+
+      width: 28px !important;
+
+
+
+      height: 8px !important;
+
+
+
+      border-radius: 999px !important;
+
+
+
+      background: var(--gray-200) !important;
+
+
+
+      border: none !important;
+
+
+
+      cursor: pointer !important;
+
+
+
+      padding: 0 !important;
+
+
+
+      transition: all 0.3s ease !important;
+
+
+
+    }
+
+
+
+    .diff-dot.active {
+
+
+
+      width: 44px !important;
+
+
+
+      background: var(--yellow) !important;
+
+
+
+    }
+
+
+
+    .diff-nav-arrows {
+
+
+
+      display: flex !important;
+
+
+
+      gap: 10px !important;
+
+
+
+    }
+
+
+
+    .diff-arrow-btn {
+
+
+
+      width: 42px !important;
+
+
+
+      height: 42px !important;
+
+
+
+      border-radius: 50% !important;
+
+
+
+      background: #FFFFFF !important;
+
+
+
+      border: 1.5px solid var(--gray-200) !important;
+
+
+
+      color: var(--navy) !important;
+
+
+
+      display: flex !important;
+
+
+
+      align-items: center !important;
+
+
+
+      justify-content: center !important;
+
+
+
+      cursor: pointer !important;
+
+
+
+      transition: all 0.2s ease !important;
+
+
+
+    }
+
+
+
+    .diff-arrow-btn:hover {
+
+
+
+      background: var(--yellow) !important;
+
+
+
+      border-color: var(--yellow) !important;
+
+
+
+      transform: scale(1.06) !important;
+
+
+
+    }
+
+
+
+
+
+
+
+    @media (max-width: 900px) {
+
+
+
+      .fp-sub-oneline, .diff-sub-oneline {
+
+
+
+        white-space: normal !important;
+
+
+
+      }
+
+
+
+      .footprint-grid {
+
+
+
+        grid-template-columns: 1fr !important;
+
+
+
+        gap: 24px !important;
+
+
+
+      }
+
+
+
+      .diff-accordion-slider {
+
+
+
+        flex-direction: column !important;
+
+
+
+        min-height: auto !important;
+
+
+
+      }
+
+
+
+      .diff-slide {
+
+
+
+        min-height: 64px !important;
+
+
+
+      }
+
+
+
+      .diff-slide.active {
+
+
+
+        flex: none !important;
+
+
+
+      }
+
+
+
+      .diff-slide-collapsed {
+
+
+
+        flex-direction: row !important;
+
+
+
+        padding: 16px 20px !important;
+
+
+
+      }
+
+
+
+      .diff-vert-title {
+
+
+
+        writing-mode: horizontal-tb !important;
+
+
+
+        transform: none !important;
+
+
+
+        margin: 0 !important;
+
+
+
+      }
+
+
+
+      .diff-slide-expanded {
+
+
+
+        padding: 24px !important;
+
+
+
+      }
+
+
+
+    }
+
+
+
+
+
+
+
+    
+
+
+
+    /* ==========================================================================
+
+
+
+       STICKY GLASSMORPHIC HEADER STYLING
+
+
+
+       ========================================================================== */
+
+
+
+    .site-header-sticky {
+
+
+
+      width: 100%;
+
+
+
+      z-index: 1000;
+
+
+
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+
+
+    }
+
+
+
+    .site-header-sticky .in {
+
+
+
+      max-width: 1440px;
+
+
+
+      padding: 0 32px;
+
+
+
+    }
+
+
+
+    .site-header-sticky.is-scrolled {
+
+
+
+      position: fixed;
+
+
+
+      top: 0;
+
+
+
+      left: 0;
+
+
+
+      right: 0;
+
+
+
+      background: rgba(15, 27, 45, 0.94);
+
+
+
+      backdrop-filter: blur(16px);
+
+
+
+      -webkit-backdrop-filter: blur(16px);
+
+
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+
+
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+
+
+
+      animation: headerSlideDown 0.3s ease;
+
+
+
+    }
+
+
+
+    .site-header-sticky.is-scrolled .nav {
+
+
+
+      padding-top: 12px;
+
+
+
+      padding-bottom: 12px;
+
+
+
+    }
+
+
+
+    .site-header-sticky.is-scrolled .wm b {
+
+
+
+      font-size: 28px;
+
+
+
+    }
+
+
+
+    .site-header-sticky.is-scrolled .wm span {
+
+
+
+      display: none;
+
+
+
+    }
+
+
+
+    .site-header-sticky.is-scrolled .btn.by {
+
+
+
+      min-height: 42px;
+
+
+
+      padding: 0 20px;
+
+
+
+      font-size: 14.5px;
+
+
+
+    }
+
+
+
+    @keyframes headerSlideDown {
+
+
+
+      from { transform: translateY(-100%); }
+
+
+
+      to { transform: translateY(0); }
+
+
+
+    }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+       CASE STUDY SPOTLIGHT STYLING
+
+
+
+       ========================================================================== */
+
+
+
+    .case-spotlight-section {
+
+
+
+      background: #FFFFFF;
+
+
+
+      padding: 76px 0;
+
+
+
+      border-bottom: 1px solid var(--gray-200);
+
+
+
+    }
+
+
+
+    .case-sub-oneline {
+
+
+
+      max-width: 100% !important;
+
+
+
+      white-space: nowrap !important;
+
+
+
+    }
+
+
+
+    .case-grid-2 {
+
+
+
+      display: grid;
+
+
+
+      grid-template-columns: 1fr 1fr;
+
+
+
+      gap: 28px;
+
+
+
+      margin-top: 36px;
+
+
+
+    }
+
+
+
+    .case-card {
+
+
+
+      background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+
+
+
+      border: 1.5px solid var(--gray-200);
+
+
+
+      border-radius: 20px;
+
+
+
+      padding: 32px 30px;
+
+
+
+      display: flex;
+
+
+
+      flex-direction: column;
+
+
+
+      justify-content: space-between;
+
+
+
+      transition: all 0.28s ease;
+
+
+
+      box-shadow: 0 6px 18px rgba(15, 27, 45, 0.04);
+
+
+
+      position: relative;
+
+
+
+    }
+
+
+
+    .case-card:hover {
+
+
+
+      border-color: var(--yellow);
+
+
+
+      transform: translateY(-4px);
+
+
+
+      box-shadow: 0 16px 36px rgba(15, 27, 45, 0.09);
+
+
+
+    }
+
+
+
+    .case-card-header {
+
+
+
+      display: flex;
+
+
+
+      align-items: center;
+
+
+
+      justify-content: space-between;
+
+
+
+      gap: 12px;
+
+
+
+      margin-bottom: 18px;
+
+
+
+    }
+
+
+
+    .case-industry-tag {
+
+
+
+      font-size: 12px;
+
+
+
+      font-weight: 800;
+
+
+
+      letter-spacing: 0.05em;
+
+
+
+      text-transform: uppercase;
+
+
+
+      color: var(--navy);
+
+
+
+      background: rgba(250, 204, 44, 0.2);
+
+
+
+      border: 1px solid rgba(250, 204, 44, 0.5);
+
+
+
+      padding: 4px 10px;
+
+
+
+      border-radius: 6px;
+
+
+
+    }
+
+
+
+    .case-kpi-badge {
+
+
+
+      font-size: 13px;
+
+
+
+      font-weight: 900;
+
+
+
+      color: #8C6400;
+
+
+
+      background: #FFFDF5;
+
+
+
+      border: 1px solid rgba(250, 204, 44, 0.6);
+
+
+
+      padding: 4px 12px;
+
+
+
+      border-radius: 999px;
+
+
+
+    }
+
+
+
+    .case-quote {
+
+
+
+      font-family: 'PT Serif', Georgia, serif;
+
+
+
+      font-size: 19px;
+
+
+
+      line-height: 1.55;
+
+
+
+      color: var(--navy);
+
+
+
+      font-style: italic;
+
+
+
+      margin: 0 0 20px;
+
+
+
+      position: relative;
+
+
+
+    }
+
+
+
+    .case-author {
+
+
+
+      display: flex;
+
+
+
+      align-items: center;
+
+
+
+      gap: 14px;
+
+
+
+      margin-bottom: 20px;
+
+
+
+    }
+
+
+
+    .case-avatar {
+
+
+
+      width: 44px;
+
+
+
+      height: 44px;
+
+
+
+      border-radius: 50%;
+
+
+
+      background: var(--navy);
+
+
+
+      color: var(--yellow);
+
+
+
+      font-size: 14px;
+
+
+
+      font-weight: 900;
+
+
+
+      display: flex;
+
+
+
+      align-items: center;
+
+
+
+      justify-content: center;
+
+
+
+      border: 2px solid var(--yellow);
+
+
+
+      flex-shrink: 0;
+
+
+
+    }
+
+
+
+    .case-author-name {
+
+
+
+      font-size: 14.5px;
+
+
+
+      font-weight: 800;
+
+
+
+      color: var(--navy);
+
+
+
+    }
+
+
+
+    .case-author-org {
+
+
+
+      font-size: 12.5px;
+
+
+
+      color: var(--gray-600);
+
+
+
+      margin-top: 2px;
+
+
+
+    }
+
+
+
+    .case-tags {
+
+
+
+      display: flex;
+
+
+
+      flex-wrap: wrap;
+
+
+
+      gap: 8px;
+
+
+
+      padding-top: 16px;
+
+
+
+      border-top: 1px solid var(--gray-200);
+
+
+
+    }
+
+
+
+    .case-tag-item {
+
+
+
+      font-size: 12px;
+
+
+
+      font-weight: 700;
+
+
+
+      color: var(--navy);
+
+
+
+      background: var(--gray-100);
+
+
+
+      border: 1px solid var(--gray-200);
+
+
+
+      padding: 4px 10px;
+
+
+
+      border-radius: 6px;
+
+
+
+    }
+
+
+
+
+
+
+
+    /* ==========================================================================
+
+
+
+       FORM TRUST REASSURANCE STYLING
+
+
+
+       ========================================================================== */
+
+
+
+    .form-trust-guarantee {
+
+
+
+      display: flex;
+
+
+
+      align-items: center;
+
+
+
+      justify-content: center;
+
+
+
+      gap: 14px;
+
+
+
+      margin-top: 18px;
+
+
+
+      flex-wrap: wrap;
+
+
+
+      font-size: 12.5px;
+
+
+
+      color: #A0AEC0;
+
+
+
+    }
+
+
+
+    .ftg-item {
+
+
+
+      display: inline-flex;
+
+
+
+      align-items: center;
+
+
+
+      gap: 6px;
+
+
+
+    }
+
+
+
+    .ftg-dot {
+
+
+
+      color: rgba(255, 255, 255, 0.3);
+
+
+
+    }
+
+
+
+
+
+
+
+    @media (max-width: 900px) {
+
+
+
+      .case-sub-oneline { white-space: normal !important; }
+
+
+
+      .case-grid-2 { grid-template-columns: 1fr; gap: 20px; }
+
+
+
+      .case-card { padding: 24px 20px; }
+
+
+
+      .case-quote { font-size: 17px; }
+
+
+
+      .form-trust-guarantee { flex-direction: column; gap: 6px; }
+
+
+
+      .ftg-dot { display: none; }
+
+
+
+    }
+
+
+
+
+
+
+
+    /* END INJECTED */
+
+
+
+  
+    /* ==========================================================================
+       MODERN TECH BENTO ICONS FOR INDUSTRIES (STRIPE / LINEAR STYLE)
+       ========================================================================== */
+    .ind-icon-wrap {
+      width: 56px !important;
+      height: 56px !important;
+      border-radius: 14px !important;
+      background: linear-gradient(145deg, #0F1B2D 0%, #1A2738 100%) !important;
+      border: 1.5px solid rgba(250, 204, 44, 0.3) !important;
+      box-shadow: 0 6px 16px rgba(15, 27, 45, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.12) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin-bottom: 20px !important;
+      color: #FFFFFF !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      flex-shrink: 0 !important;
+    }
+
+    .ind-card:hover .ind-icon-wrap {
+      transform: translateY(-3px) scale(1.06) !important;
+      border-color: var(--yellow) !important;
+      box-shadow: 0 10px 24px rgba(250, 204, 44, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.25) !important;
+    }
+
+    .ind-icon-wrap svg {
+      width: 30px !important;
+      height: 30px !important;
+      display: block !important;
+      transition: transform 0.3s ease !important;
+    }
+
+    .ind-card:hover .ind-icon-wrap svg {
+      transform: scale(1.05) !important;
+    }
+
+    /* ==========================================================================
+       FOOTPRINT PLACES CARD (INDIA & INTERNATIONAL - AS PER EARLIER DESIGN)
+       ========================================================================== */
+    .footprint-places-card {
+      background: white;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 18px;
+      padding: 24px 26px;
+      box-shadow: 0 10px 24px rgba(15, 27, 45, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .fp-group-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fp-group-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1.5px solid rgba(15, 27, 45, 0.06);
+    }
+
+    .fp-group-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .fp-group-badge {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+
+    .fp-group-meta {
+      font-size: 11px;
+      font-weight: 700;
+      color: #B88400;
+      background: rgba(250, 204, 44, 0.16);
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .fp-group-meta.intl {
+      color: #0284C7;
+      background: rgba(14, 165, 233, 0.12);
+    }
+
+    .fp-places-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px 14px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .fp-place-chip {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 11px;
+      border-radius: 8px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      transition: all 0.2s ease;
+    }
+
+    .fp-place-chip:hover {
+      background: #FFFDF5;
+      border-color: var(--yellow);
+      transform: translateX(2px);
+    }
+
+    .fp-place-chip.fp-chip-flagship {
+      grid-column: 1 / -1;
+      background: #FFFDF0;
+      border: 1.5px solid rgba(250, 204, 44, 0.7);
+      box-shadow: 0 2px 8px rgba(250, 204, 44, 0.12);
+      justify-content: space-between;
+      padding: 8px 14px;
+    }
+
+    .fp-chip-pin {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #FACC2C;
+      box-shadow: 0 0 6px rgba(250, 204, 44, 0.8);
+      flex-shrink: 0;
+    }
+
+    .fp-chip-pin.flagship {
+      background: #FACC2C;
+      box-shadow: 0 0 8px #FACC2C;
+    }
+
+    .fp-chip-pin.intl {
+      background: #38BDF8;
+      box-shadow: 0 0 6px rgba(56, 189, 248, 0.8);
+    }
+
+    .fp-chip-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .fp-hq-tag {
+      font-size: 9.5px;
+      font-weight: 800;
+      color: #0F1B2D;
+      background: var(--yellow);
+      padding: 1px 5px;
+      border-radius: 4px;
+      margin-left: 4px;
+    }
+
+    .fp-divider {
+      height: 1px;
+      background: var(--gray-200);
+      margin: 16px 0;
+    }
+
+  
+    /* UNIFORM SIZING FOR ALL 3 HERO FLOATING CARDS AS REQUESTED */
+    .orb-stat-card {
+      width: 216px !important;
+      min-width: 216px !important;
+      max-width: 216px !important;
+      height: 76px !important;
+      min-height: 76px !important;
+      max-height: 76px !important;
+      padding: 12px 18px !important;
+      box-sizing: border-box !important;
+      border-radius: 14px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      box-shadow: 0 12px 28px rgba(15, 27, 45, 0.16) !important;
+    }
+
+  
+    /* SINGLE TICKER IN HERO AS REQUESTED BY CLIENT */
+    .mq-ticker-wrap {
+      overflow: hidden;
+      padding: 16px 0;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+      background: #FFFFFF;
+      position: relative;
+      z-index: 10;
+    }
+
+    .mq-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: mqScroll 32s linear infinite;
+    }
+
+    .mq-track:hover {
+      animation-play-state: paused;
+    }
+
+    .mq-badge {
+      flex: none;
+      height: 42px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      background: var(--gray-50);
+      padding: 0 18px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .mq-badge:hover {
+      border-color: var(--yellow);
+      background: #FFFDF5;
+      transform: translateY(-1px);
+    }
+
+    .mq-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--yellow);
+      flex-shrink: 0;
+    }
+
+    @keyframes mqScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+  
+    /* ==========================================================================
+       PRINT & PDF EXPORT STYLESHEET
+       ========================================================================== */
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 10mm 8mm;
+      }
+      body {
+        background: #0F1B2D !important;
+        -webkit-print-color-adjust: exact !important;
+      }
+      header, .header, nav {
+        position: static !important;
+      }
+      .btn-pdf-download {
+        display: none !important;
+      }
+      .card, .ind-card, .psc-item, .footprint-places-card, .world-map-box, 
+      .cta-pathway-card, .diff-accordion-slider, .core-cap-card, .diff-slide, .hero-graphic-wrap {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .mq-track {
+        animation: none !important;
+      }
+      a {
+        text-decoration: none !important;
+      }
+    }
+
+    .btn-pdf-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #FFFFFF;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-pdf-download:hover {
+      background: rgba(250, 204, 44, 0.2);
+      border-color: var(--yellow);
+      color: var(--yellow);
+      transform: translateY(-1px);
+    }
+
+  
+    .mq-logo-svg { flex-shrink: 0; display: block; }
+    .mq-badge { background: #FFFFFF !important; gap: 10px !important; }
+    .mq-badge span strong { color: var(--navy); }
+
+</style>
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body>
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+
+
+
+
+
+
+
+       HERO BANNER: EXACT STRUCTURE, GRAPHIC, FLOATING CARDS FROM EARLIER DESIGN
+
+
+
+
+
+
+
+       ========================================================================== -->
+
+
+
+
+
+
+
+  <section class="hero" id="home">
+
+
+
+
+
+
+
+    <div class="dots"></div>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    <!-- Scrolling Ticker Bar -->
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    <!-- Navigation Header Bar -->
+
+
+
+
+
+
+
+    <!-- Sticky Glassmorphic Navigation Header -->
+
+
+
+  <header class="site-header-sticky" id="mainHeader">
+
+
+
+    <div class="in">
+
+
+
+      <div class="nav">
+
+
+
+        <a class="wm" href="#home">
+
+
+
+          <b>FiveS <i>Digital</i></b>
+
+
+
+          <span>Delivering impact sustainably</span>
+
+
+
+        </a>
+
+
+
+        <div class="nav-menu-links" id="primary-navigation">
+
+
+
+          <a href="#about">About Us</a>
+
+
+
+          <a href="#cx">CX</a>
+
+
+
+          <a href="ai-in-cx.html">AI in CX</a>
+
+
+
+          <a href="#data-services">AI &amp; Data Services</a>
+
+
+
+          <a href="#industries">Industries</a>
+
+
+
+          <a href="#our-people">Our People</a>
+
+
+
+          <a href="#contact">Contact Us</a>
+
+
+
+        </div>
+
+
+
+        <button type="button" class="nav-menu-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+
+
+
+        <div style="display:flex;align-items:center;gap:10px;">
+          <a class="btn-pdf-download" href="FiveS_Digital_Homepage_V2.pdf" download="FiveS_Digital_Homepage_V2.pdf" title="Download Official Presentation PDF">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download PDF</span>
+          </a>
+          <a class="btn by" href="#contact">Talk to us</a>
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </header>
+
+
+
+
+
+
+
+  <div class="in">
+
+
+
+    <!-- Hero Grid -->
+
+
+
+
+
+
+
+      <div class="heroG">
+
+
+
+
+
+
+
+        <div>
+
+
+
+
+
+
+
+          
+
+
+
+
+
+
+
+                    <h1>Scalable CX solutions that grow with your business.</h1>
+
+
+
+          
+
+
+
+          <p class="sub" style="font-size:18px;color:#C9D4E2;margin-top:16px;line-height:1.55;max-width:540px;">
+
+
+
+            Human-led, AI-backed customer experience and digital operations delivered across global markets with measurable speed and social impact.
+
+
+
+          </p>
+
+
+
+          
+
+
+
+          <div class="cta" style="margin-top:28px;">
+
+
+
+
+
+
+
+            <a class="btn by" href="#contact">Talk to our team</a>
+
+
+
+
+
+
+
+            <a class="btn bo" href="#cx">See our work</a>
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- The Signature Banner Graphic from Earlier Design -->
+
+
+
+
+
+
+
+        <div class="orb">
+
+
+
+
+
+
+
+          <svg viewBox="0 0 560 560" width="560" height="560" role="img" aria-label="A voice waveform turning into pixels inside a yellow circle">
+
+
+
+
+
+
+
+            <defs>
+
+
+
+
+
+
+
+              <radialGradient id="og" cx="38%" cy="32%" r="78%">
+
+
+
+
+
+
+
+                <stop offset="0" stop-color="#FFE27A"></stop>
+
+
+
+
+
+
+
+                <stop offset=".55" stop-color="#FACC2C"></stop>
+
+
+
+
+
+
+
+                <stop offset="1" stop-color="#FFB300"></stop>
+
+
+
+
+
+
+
+              </radialGradient>
+
+
+
+
+
+
+
+            </defs>
+
+
+
+
+
+
+
+            <circle cx="280" cy="280" r="274" fill="none" stroke="#fff" stroke-opacity=".12"></circle>
+
+
+
+
+
+
+
+            <circle cx="280" cy="280" r="240" fill="none" stroke="#fff" stroke-opacity=".24" stroke-dasharray="3 9" class="orbit-ring"></circle>
+
+
+
+
+
+
+
+            <circle cx="280" cy="280" r="204" fill="url(#og)"></circle>
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+            <!-- Voice Equalizer Bars -->
+
+
+
+
+
+
+
+            <g fill="#0F1B2D">
+
+
+
+
+
+
+
+              <rect class="wave-bar wb-1" x="136" y="258" width="7" height="44" rx="3.5"></rect>
+
+
+
+
+
+
+
+              <rect class="wave-bar wb-2" x="152" y="236" width="7" height="88" rx="3.5"></rect>
+
+
+
+
+
+
+
+              <rect class="wave-bar wb-3" x="168" y="204" width="7" height="152" rx="3.5"></rect>
+
+
+
+
+
+
+
+              <rect class="wave-bar wb-4" x="184" y="226" width="7" height="108" rx="3.5"></rect>
+
+
+
+
+
+
+
+              <rect class="wave-bar wb-5" x="200" y="182" width="7" height="196" rx="3.5"></rect>
+
+
+
+
+
+
+
+              <rect class="wave-bar wb-6" x="216" y="214" width="7" height="132" rx="3.5"></rect>
+
+
+
+
+
+
+
+              <rect class="wave-bar wb-7" x="232" y="168" width="7" height="224" rx="3.5"></rect>
+
+
+
+
+
+
+
+              <rect class="wave-bar wb-8" x="248" y="204" width="7" height="152" rx="3.5"></rect>
+
+
+
+
+
+
+
+              <rect class="wave-bar wb-9" x="264" y="192" width="7" height="176" rx="3.5"></rect>
+
+
+
+
+
+
+
+            </g>
+
+
+
+
+
+
+
+            <!-- Digital Pixel Matrix -->
+
+
+
+
+
+
+
+            <g fill="#0F1B2D">
+
+
+
+
+
+
+
+              <rect x="286" y="224" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="286" y="244" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="286" y="264" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="286" y="284" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="286" y="304" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="306" y="204" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="306" y="244" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="306" y="284" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="306" y="324" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="326" y="224" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="326" y="264" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="326" y="304" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="346" y="244" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="346" y="284" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="366" y="264" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="366" y="304" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="386" y="284" width="12" height="12"></rect>
+
+
+
+
+
+
+
+            </g>
+
+
+
+
+
+
+
+            <g fill="#FFF8E3">
+
+
+
+
+
+
+
+              <rect x="306" y="224" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="306" y="264" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="326" y="244" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="326" y="284" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="346" y="264" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="366" y="284" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="286" y="324" width="12" height="12"></rect>
+
+
+
+
+
+
+
+              <rect x="326" y="204" width="12" height="12"></rect>
+
+
+
+
+
+
+
+            </g>
+
+
+
+
+
+
+
+          </svg>
+
+
+
+
+
+
+
+                                        <!-- Floating Card 1: CSAT Performance Metric -->
+          <div class="card chip orb-stat-card" style="position:absolute;left:-34px;top:72px;background:#FFFFFF;width:224px !important;min-width:224px !important;max-width:224px !important;height:76px !important;min-height:76px !important;max-height:76px !important;padding:12px 18px !important;box-sizing:border-box !important;border-radius:14px !important;display:flex !important;flex-direction:column !important;justify-content:center !important;box-shadow:0 12px 28px rgba(15,27,45,0.16) !important;">
+            <div class="osc-num">98.5%</div>
+            <div class="osc-lbl">CSAT Satisfaction Rate</div>
+          </div>
+
+          <!-- Floating Card 2: AI Co-Pilot & Human Governance -->
+          <div class="card chip orb-stat-card" style="position:absolute;right:-10px;top:40px;background:#FFFFFF;width:224px !important;min-width:224px !important;max-width:224px !important;height:76px !important;min-height:76px !important;max-height:76px !important;padding:12px 18px !important;box-sizing:border-box !important;border-radius:14px !important;display:flex !important;flex-direction:column !important;justify-content:center !important;box-shadow:0 12px 28px rgba(15,27,45,0.16) !important;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <i style="width:9px;height:9px;border-radius:50%;background:#1F9D6B;display:inline-block;box-shadow:0 0 8px rgba(31,157,107,0.6);flex-shrink:0;"></i>
+              <span style="font-size:13.5px;font-weight:800;color:var(--navy);letter-spacing:-0.01em;">Active AI Co-Pilot</span>
+            </div>
+            <div class="osc-lbl" style="margin-top:4px;">Human Review &bull; Zero Error</div>
+          </div>
+
+          <!-- Floating Card 3: Real-Time First Response Time -->
+          <div class="card chip orb-stat-card" style="position:absolute;left:10px;bottom:10px;background:#FACC2C;border-color:transparent;width:224px !important;min-width:224px !important;max-width:224px !important;height:76px !important;min-height:76px !important;max-height:76px !important;padding:12px 18px !important;box-sizing:border-box !important;border-radius:14px !important;display:flex !important;flex-direction:column !important;justify-content:center !important;box-shadow:0 12px 28px rgba(15,27,45,0.16) !important;">
+            <div class="osc-num" style="color:#0F1B2D;">&lt; 45s</div>
+            <div class="osc-lbl" style="color:#0F1B2D;font-weight:600;">Average First-Response Time</div>
+          </div>
+
+          <!-- Floating Card 3: Sample Conversation (Interactive CX) -->
+
+
+
+
+
+
+
+          <div class="card" style="right:-30px;bottom:34px;width:300px;padding:16px;display:grid;gap:8px">
+
+
+
+
+
+
+
+            <span style="font-size:12px;font-weight:700;color:#55606E">Sample conversation</span>
+
+
+
+
+
+
+
+            <div class="bub bi">Namaste! How can I help you today?</div>
+
+
+
+
+
+
+
+            <div class="bub bu">Can you check my claim status?</div>
+
+
+
+
+
+
+
+            <div class="bub bi">Yes. Your claim was approved this morning.</div>
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+  </section>
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+
+
+
+
+
+
+
+       HERO OVERLAPPING STATS + TRUST LOGOS + SCROLLING MARQUEE (FROM SCREENSHOT 1)
+
+
+
+
+
+
+
+       ========================================================================== -->
+
+
+
+
+
+
+
+    <!-- SINGLE ANIMATED RECOGNITION & PARTNER TICKER AS REQUESTED -->
+  <div class="mq-ticker-wrap" aria-label="Partner and certification recognition strip">
+    <div class="mq-track">
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 20H8.5L12 12.5L15.5 20H22L12 2Z" fill="#0F3876"/>
+          <path d="M12 8.5L9.5 13.5H14.5L12 8.5Z" fill="#FACC2C"/>
+        </svg>
+        <span><strong>Everest Group</strong> PEAK Matrix</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="#0F1B2D" stroke-width="1.8" fill="#F8FAFC"/>
+          <path d="M8 12L10.5 14.5L16 9" stroke="#1F9D6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="12" cy="12" r="7.5" stroke="#0F1B2D" stroke-dasharray="1.5 2" stroke-width="0.8"/>
+        </svg>
+        <span><strong>ISO 27001</strong> InfoSec Certified</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="20" height="22" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 2L3 5.5V11.5C3 16.8 6.5 21.7 11 22.8C15.5 21.7 19 16.8 19 11.5V5.5L11 2Z" fill="#0F1B2D"/>
+          <path d="M8 11.5L10 13.5L14 9.5" stroke="#FACC2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span><strong>SOC 2 Type II</strong> Audited</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="20" height="22" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 2L3 5.5V11.5C3 16.8 6.5 21.7 11 22.8C15.5 21.7 19 16.8 19 11.5V5.5L11 2Z" fill="#0284C7"/>
+          <path d="M11 7V16M6.5 11.5H15.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+        <span><strong>HIPAA</strong> Healthcare Security</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="28" height="20" viewBox="0 0 48 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.5 12.5C12.5 12.5 11 13.5 11 15.5C11 17.5 12.5 18.5 14.5 18.5C16.5 18.5 18 17.5 18 15.5V12.5H14.5ZM20.5 11V18.5H18V17.2C17.2 18.2 15.8 19 14 19C10.5 19 8 16.8 8 14.2C8 11.5 10.5 9.5 14 9.5C15.8 9.5 17.2 10.2 18 11.2V11H20.5Z" fill="#232F3E"/>
+          <path d="M23 11H25.5L27.5 18.5L29.5 11H32L34 18.5L36 11H38.5L35.5 20.5H33L31 13.5L29 20.5H26.5L23 11Z" fill="#232F3E"/>
+          <path d="M8 23.5C16 27.5 28 27.5 37 23.5" stroke="#FF9900" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M35.5 21.5L39 23.8L35.8 26" fill="#FF9900"/>
+        </svg>
+        <span><strong>AWS</strong> Partner Network</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="10" height="10" fill="#F25022"/>
+          <rect x="12" y="0" width="10" height="10" fill="#7FBA00"/>
+          <rect x="0" y="12" width="10" height="10" fill="#00A4EF"/>
+          <rect x="12" y="12" width="10" height="10" fill="#FFB900"/>
+        </svg>
+        <span><strong>Microsoft</strong> Solutions Partner</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="24" height="20" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 16H8C5.5 16 3.5 14 3.5 11.5C3.5 9.2 5.1 7.3 7.3 7.1C8.2 4 11 1.7 14.3 1.7C18.1 1.7 21.2 4.5 21.6 8.3C23.5 8.6 25 10.3 25 12.3C25 14.3 23.4 16 21 16Z" fill="#4285F4"/>
+          <path d="M14.3 1.7C12.1 1.7 10.1 2.8 8.8 4.6L11.2 8.4C12.1 7.6 13.1 7.1 14.3 7.1C17.2 7.1 19.6 9.5 19.6 12.4H21.4C21.4 8.5 18.2 5.3 14.3 1.7Z" fill="#EA4335"/>
+          <path d="M21 12.3C21 10.3 19.6 8.6 17.7 8.3L16.1 11.5H21Z" fill="#FBBC05"/>
+          <path d="M8 16H14.3L12.1 12.4H8C6.1 12.4 4.5 14 4.5 16H8Z" fill="#34A853"/>
+        </svg>
+        <span><strong>Google Cloud</strong> Partner</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="22" height="20" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="3" width="20" height="16" rx="3.5" fill="#0F1B2D"/>
+          <path d="M6 8H10C11.3 8 12.3 9 12.3 10.3C12.3 11.6 11.3 12.6 10 12.6H7.5V15H6V8ZM7.5 11.2H10C10.5 11.2 10.8 10.8 10.8 10.3C10.8 9.8 10.5 9.4 10 9.4H7.5V11.2Z" fill="#FACC2C"/>
+          <path d="M14 8H16V15H14V8Z" fill="#FFFFFF"/>
+          <circle cx="18.5" cy="11.5" r="1.5" fill="#1F9D6B"/>
+        </svg>
+        <span><strong>PCI-DSS</strong> Level 1 Compliant</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" fill="#1E293B"/>
+          <path d="M7.5 12C7.5 9.5 9.5 7.5 12 7.5C13.7 7.5 15.1 8.4 15.9 9.8L14.2 10.8C13.7 10.2 12.9 9.8 12 9.8C10.7 9.8 9.8 10.7 9.8 12C9.8 13.3 10.7 14.2 12 14.2C12.9 14.2 13.7 13.8 14.2 13.2L15.9 14.2C15.1 15.6 13.7 16.5 12 16.5C9.5 16.5 7.5 14.5 7.5 12Z" fill="#FACC2C"/>
+          <rect x="17" y="7.5" width="2" height="9" rx="1" fill="#38BDF8"/>
+        </svg>
+        <span><strong>CMMI Level 3</strong> Framework</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="20" height="22" rx="3" fill="#DA291C"/>
+          <path d="M4 5H16M4 9H13M4 13H16M4 17H11" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span><strong>Great Place to Work</strong> Certified</span>
+      </span>
+      <!-- Seamless loop duplicate -->
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 20H8.5L12 12.5L15.5 20H22L12 2Z" fill="#0F3876"/>
+          <path d="M12 8.5L9.5 13.5H14.5L12 8.5Z" fill="#FACC2C"/>
+        </svg>
+        <span><strong>Everest Group</strong> PEAK Matrix</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="#0F1B2D" stroke-width="1.8" fill="#F8FAFC"/>
+          <path d="M8 12L10.5 14.5L16 9" stroke="#1F9D6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="12" cy="12" r="7.5" stroke="#0F1B2D" stroke-dasharray="1.5 2" stroke-width="0.8"/>
+        </svg>
+        <span><strong>ISO 27001</strong> InfoSec Certified</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="20" height="22" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 2L3 5.5V11.5C3 16.8 6.5 21.7 11 22.8C15.5 21.7 19 16.8 19 11.5V5.5L11 2Z" fill="#0F1B2D"/>
+          <path d="M8 11.5L10 13.5L14 9.5" stroke="#FACC2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span><strong>SOC 2 Type II</strong> Audited</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="20" height="22" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 2L3 5.5V11.5C3 16.8 6.5 21.7 11 22.8C15.5 21.7 19 16.8 19 11.5V5.5L11 2Z" fill="#0284C7"/>
+          <path d="M11 7V16M6.5 11.5H15.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+        <span><strong>HIPAA</strong> Healthcare Security</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="28" height="20" viewBox="0 0 48 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.5 12.5C12.5 12.5 11 13.5 11 15.5C11 17.5 12.5 18.5 14.5 18.5C16.5 18.5 18 17.5 18 15.5V12.5H14.5ZM20.5 11V18.5H18V17.2C17.2 18.2 15.8 19 14 19C10.5 19 8 16.8 8 14.2C8 11.5 10.5 9.5 14 9.5C15.8 9.5 17.2 10.2 18 11.2V11H20.5Z" fill="#232F3E"/>
+          <path d="M23 11H25.5L27.5 18.5L29.5 11H32L34 18.5L36 11H38.5L35.5 20.5H33L31 13.5L29 20.5H26.5L23 11Z" fill="#232F3E"/>
+          <path d="M8 23.5C16 27.5 28 27.5 37 23.5" stroke="#FF9900" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M35.5 21.5L39 23.8L35.8 26" fill="#FF9900"/>
+        </svg>
+        <span><strong>AWS</strong> Partner Network</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="10" height="10" fill="#F25022"/>
+          <rect x="12" y="0" width="10" height="10" fill="#7FBA00"/>
+          <rect x="0" y="12" width="10" height="10" fill="#00A4EF"/>
+          <rect x="12" y="12" width="10" height="10" fill="#FFB900"/>
+        </svg>
+        <span><strong>Microsoft</strong> Solutions Partner</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="24" height="20" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 16H8C5.5 16 3.5 14 3.5 11.5C3.5 9.2 5.1 7.3 7.3 7.1C8.2 4 11 1.7 14.3 1.7C18.1 1.7 21.2 4.5 21.6 8.3C23.5 8.6 25 10.3 25 12.3C25 14.3 23.4 16 21 16Z" fill="#4285F4"/>
+          <path d="M14.3 1.7C12.1 1.7 10.1 2.8 8.8 4.6L11.2 8.4C12.1 7.6 13.1 7.1 14.3 7.1C17.2 7.1 19.6 9.5 19.6 12.4H21.4C21.4 8.5 18.2 5.3 14.3 1.7Z" fill="#EA4335"/>
+          <path d="M21 12.3C21 10.3 19.6 8.6 17.7 8.3L16.1 11.5H21Z" fill="#FBBC05"/>
+          <path d="M8 16H14.3L12.1 12.4H8C6.1 12.4 4.5 14 4.5 16H8Z" fill="#34A853"/>
+        </svg>
+        <span><strong>Google Cloud</strong> Partner</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="22" height="20" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="3" width="20" height="16" rx="3.5" fill="#0F1B2D"/>
+          <path d="M6 8H10C11.3 8 12.3 9 12.3 10.3C12.3 11.6 11.3 12.6 10 12.6H7.5V15H6V8ZM7.5 11.2H10C10.5 11.2 10.8 10.8 10.8 10.3C10.8 9.8 10.5 9.4 10 9.4H7.5V11.2Z" fill="#FACC2C"/>
+          <path d="M14 8H16V15H14V8Z" fill="#FFFFFF"/>
+          <circle cx="18.5" cy="11.5" r="1.5" fill="#1F9D6B"/>
+        </svg>
+        <span><strong>PCI-DSS</strong> Level 1 Compliant</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" fill="#1E293B"/>
+          <path d="M7.5 12C7.5 9.5 9.5 7.5 12 7.5C13.7 7.5 15.1 8.4 15.9 9.8L14.2 10.8C13.7 10.2 12.9 9.8 12 9.8C10.7 9.8 9.8 10.7 9.8 12C9.8 13.3 10.7 14.2 12 14.2C12.9 14.2 13.7 13.8 14.2 13.2L15.9 14.2C15.1 15.6 13.7 16.5 12 16.5C9.5 16.5 7.5 14.5 7.5 12Z" fill="#FACC2C"/>
+          <rect x="17" y="7.5" width="2" height="9" rx="1" fill="#38BDF8"/>
+        </svg>
+        <span><strong>CMMI Level 3</strong> Framework</span>
+      </span>
+      <span class="mq-badge">
+        <svg class="mq-logo-svg" width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="20" height="22" rx="3" fill="#DA291C"/>
+          <path d="M4 5H16M4 9H13M4 13H16M4 17H11" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span><strong>Great Place to Work</strong> Certified</span>
+      </span>
+    </div>
+  </div>
+
+  </div>
+
+
+
+
+
+
+
+  
+
+
+
+  <!-- ==========================================================================
+
+
+
+       SECTION 2: CORPORATE PURPOSE & IDENTITY (MOVED FROM HERO WITH BETTER HEADING)
+
+
+
+       ========================================================================== -->
+
+
+
+  <section class="section purpose-section" id="about">
+
+
+
+    <div class="purpose-wrap">
+
+
+
+      <div class="purpose-header">
+
+
+
+        <div class="section-kicker">Who We Are</div>
+
+
+
+        <h2 class="purpose-heading">Purpose-Led <span class="hl">BPM</span></h2>
+
+
+
+      </div>
+
+
+
+      <div class="purpose-grid">
+
+
+
+        <div class="purpose-lead-box">
+
+
+
+          <p class="purpose-lead-text">
+
+
+
+            At FiveS Digital, we blend technology and human intelligence to deliver best-in-class BPM solutions. For over 16 years, we’ve powered AI-backed customer experience and data management services.
+
+
+
+          </p>
+
+
+
+        </div>
+
+
+
+        <div class="purpose-body-box">
+
+
+
+          <p class="purpose-body-text">
+
+
+
+            Helping global brands across India, Europe, the USA, and the Middle East transform the way they operate. We’re proud to lead with purpose, home to India’s first diverse and inclusive BPM centre in Navi Mumbai, where scale meets social impact.
+
+
+
+          </p>
+
+
+
+          
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </section>
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+
+
+
+
+
+
+
+       SECTION 2: CORE CAPABILITIES: COMPREHENSIVE BPM SERVICES
+
+
+
+
+
+
+
+       ========================================================================== -->
+
+
+
+
+
+
+
+  <section class="section capabilities-section" id="cx">
+
+
+
+
+
+
+
+    <div class="section-wrap">
+
+
+
+
+
+
+
+      <div class="section-kicker">Core Capabilities</div>
+
+
+
+
+
+
+
+      <h2 class="section-title">Comprehensive <span class="hl">BPM Services</span></h2>
+
+
+
+
+
+
+
+      <p class="section-desc">
+
+
+
+
+
+
+
+        Delivering end-to-end customer experience, voice, non-voice digital triage, and human-led data annotation workflows.
+
+
+
+
+
+
+
+      </p>
+
+
+
+
+
+
+
+      <!-- 4 Capability Tabs -->
+
+
+
+
+
+
+
+      <div class="cap-tabs-bar">
+
+
+
+
+
+
+
+        <button class="cap-tab-btn active" onclick="switchCap(0)">
+
+
+
+
+
+
+
+          <div class="tab-title">Customer Service Voice</div>
+
+
+
+
+
+
+
+        </button>
+
+
+
+
+
+
+
+        <button class="cap-tab-btn" onclick="switchCap(1)">
+
+
+
+
+
+
+
+          <div class="tab-title">Customer Service Non Voice</div>
+
+
+
+
+
+
+
+        </button>
+
+
+
+
+
+
+
+        <button class="cap-tab-btn" id="ai-in-cx" onclick="switchCap(2)">
+
+
+
+
+
+
+
+          <div class="tab-title">Gen AI Model Training</div>
+
+
+
+
+
+
+
+        </button>
+
+
+
+
+
+
+
+        <button class="cap-tab-btn" id="data-services" onclick="switchCap(3)">
+
+
+
+
+
+
+
+          <div class="tab-title">Annotation Services</div>
+
+
+
+
+
+
+
+        </button>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <!-- Capability Stage Card -->
+
+
+
+
+
+
+
+      <div class="cap-stage-card">
+
+
+
+
+
+
+
+        <div class="stage-content">
+
+
+
+
+
+
+
+          <div class="stage-badge" id="cap-badge">Inbound &amp; Outbound Operations</div>
+
+
+
+
+
+
+
+          <h3 class="stage-title" id="cap-title">Customer Service Voice</h3>
+
+
+
+
+
+
+
+          <p class="stage-desc" id="cap-desc">
+
+
+
+
+
+
+
+            Scale your frontline with multilingual specialists delivering human empathy backed by real-time speech analytics, sentiment monitoring, and high first-contact resolution across Tier-2/3 language hubs.
+
+
+
+
+
+
+
+          </p>
+
+
+
+
+
+
+
+          <div class="stage-metrics-grid">
+
+
+
+
+
+
+
+            <div class="sm-card">
+
+
+
+
+
+
+
+              <div class="sm-num" id="sm-1">94%</div>
+
+
+
+
+
+
+
+              <div class="sm-lbl" id="sl-1">First-Contact Resolution</div>
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="sm-card">
+
+
+
+
+
+
+
+              <div class="sm-num" id="sm-2">13+</div>
+
+
+
+
+
+
+
+              <div class="sm-lbl" id="sl-2">Indian Dialects</div>
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="sm-card">
+
+
+
+
+
+
+
+              <div class="sm-num" id="sm-3">&lt;30s</div>
+
+
+
+
+
+
+
+              <div class="sm-lbl" id="sl-3">Average Speed of Answer</div>
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="stage-img-wrapper">
+
+
+
+
+
+
+
+          <img id="stage-img" src="voice_cx.jpg" alt="FiveS Digital Customer Service Voice Operations" />
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+  </section>
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+
+
+
+
+
+
+
+       SECTION 3: INDUSTRY PRACTICES: TIGHTENED LAYOUT WITH CLEAN ICONS
+
+
+
+
+
+
+
+       ========================================================================== -->
+
+
+
+
+
+
+
+  <section class="industries-section" id="insights">
+
+
+
+
+
+
+
+    <div class="section-wrap">
+
+
+
+
+
+
+
+      <div class="section-kicker">Industry Practices</div>
+
+
+
+
+
+
+
+      <h2 class="section-title">Domain Expertise Across <span class="hl">Verticals</span></h2>
+
+
+
+
+
+
+
+      <p class="section-desc">
+
+
+
+
+
+
+
+        Specialized workflows tailored to compliance, speed, and unit economics.
+
+
+
+
+
+
+
+      </p>
+
+
+
+
+
+
+
+                        <div class="ind-grid-6">
+        <!-- Card 1: E-Commerce & D2C -->
+        <div class="ind-card">
+          <div class="ind-card-top">
+            <div class="ind-icon-wrap" title="Omnichannel Commerce Engine">
+              <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 10L10 4H22L25 10V25C25 26.6569 23.6569 28 22 28H10C8.34315 28 7 26.6569 7 25V10Z" fill="rgba(250, 204, 44, 0.12)" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M6 10H26" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M12 14C12 16.2091 13.7909 18 16 18C18.2091 18 20 16.2091 20 14" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M22 2L18 8H23L19 14" stroke="#FACC2C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="#FACC2C" fill-opacity="0.3"/>
+                <circle cx="16" cy="23" r="1.5" fill="#FACC2C"/>
+              </svg>
+            </div>
+            <div class="ind-card-title">E-Commerce &amp; D2C</div>
+            <p class="ind-card-desc">WISMO resolution, returns verification, catalog moderation, and festive surge scaling.</p>
+          </div>
+          <div class="ind-card-kpi">
+            <span class="ind-kpi-lbl">Return Turnaround</span>
+            <span class="ind-kpi-val">&lt;4 hrs</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Fintech & Banking -->
+        <div class="ind-card">
+          <div class="ind-card-top">
+            <div class="ind-icon-wrap" title="Biometric Security & Digital Ledger">
+              <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 3L6 7V15C6 22 10.5 27.5 16 29C21.5 27.5 26 22 26 15V7L16 3Z" fill="rgba(250, 204, 44, 0.12)" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"/>
+                <rect x="11" y="11" width="10" height="9" rx="2" stroke="#FACC2C" stroke-width="1.8" fill="rgba(250, 204, 44, 0.2)"/>
+                <path d="M11 15.5H21M16 11V20" stroke="#FACC2C" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M13 23.5L15 25.5L19 21.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="ind-card-title">Fintech &amp; Banking</div>
+            <p class="ind-card-desc">Video KYC verification, fraud alert triaging, merchant onboarding, and dispute handling.</p>
+          </div>
+          <div class="ind-card-kpi">
+            <span class="ind-kpi-lbl">KYC Pass Rate</span>
+            <span class="ind-kpi-val">99.2%</span>
+          </div>
+        </div>
+
+        <!-- Card 3: HealthTech & Insurance -->
+        <div class="ind-card">
+          <div class="ind-card-top">
+            <div class="ind-icon-wrap" title="Telemetry Health & Clinical Care">
+              <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 5C13 4.44772 13.4477 4 14 4H18C18.5523 4 19 4.44772 19 5V11H25C25.5523 11 26 11.4477 26 12V16C26 16.5523 25.5523 17 25 17H19V23C19 23.5523 18.5523 24 18 24H14C13.4477 24 13 23.5523 13 23V17H7C6.44772 17 6 16.5523 6 16V12C6 11.4477 6.44772 11 7 11H13V5Z" fill="rgba(250, 204, 44, 0.12)" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M4 14H9L11.5 8L15 20L18.5 11L21 15H28" stroke="#FACC2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="21" cy="15" r="1.5" fill="#FFFFFF"/>
+              </svg>
+            </div>
+            <div class="ind-card-title">HealthTech &amp; Insurance</div>
+            <p class="ind-card-desc">Patient appointment coordination, cashless claims document parsing, and doctor credentialing.</p>
+          </div>
+          <div class="ind-card-kpi">
+            <span class="ind-kpi-lbl">HIPAA Compliance</span>
+            <span class="ind-kpi-val">100%</span>
+          </div>
+        </div>
+
+        <!-- Card 4: EdTech & Media -->
+        <div class="ind-card">
+          <div class="ind-card-top">
+            <div class="ind-icon-wrap" title="Digital Learning & Streaming Media">
+              <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="5" y="8" width="22" height="18" rx="3" stroke="#FFFFFF" stroke-width="1.8" fill="rgba(250, 204, 44, 0.1)"/>
+                <path d="M16 4L4 10L16 16L28 10L16 4Z" fill="rgba(250, 204, 44, 0.22)" stroke="#FACC2C" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M25 11.5V17.5" stroke="#FACC2C" stroke-width="1.8" stroke-linecap="round"/>
+                <circle cx="25" cy="18.5" r="1.5" fill="#FACC2C"/>
+                <path d="M11 20H13M15 18V22M17 19V21M20 20H21" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="ind-card-title">EdTech &amp; Media</div>
+            <p class="ind-card-desc">Learner doubt resolution, live exam proctoring support, and multilingual course moderation.</p>
+          </div>
+          <div class="ind-card-kpi">
+            <span class="ind-kpi-lbl">CSAT Score</span>
+            <span class="ind-kpi-val">4.8 / 5</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Logistics & Supply Chain -->
+        <div class="ind-card">
+          <div class="ind-card-top">
+            <div class="ind-icon-wrap" title="Autonomous Routing & Real-Time Tracking">
+              <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 8H19V22H4V8Z" fill="rgba(250, 204, 44, 0.12)" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M19 12H24.5L28 16.5V22H19V12Z" fill="rgba(250, 204, 44, 0.12)" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"/>
+                <circle cx="9" cy="24" r="2.5" stroke="#FFFFFF" stroke-width="1.8" fill="#0F1B2D"/>
+                <circle cx="24" cy="24" r="2.5" stroke="#FFFFFF" stroke-width="1.8" fill="#0F1B2D"/>
+                <path d="M11.5 4C13.5 2.5 16.5 2.5 18.5 4" stroke="#FACC2C" stroke-width="1.8" stroke-linecap="round"/>
+                <circle cx="15" cy="5.5" r="1.5" fill="#FACC2C"/>
+                <path d="M1 12H3M1 16H3" stroke="#FACC2C" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="ind-card-title">Logistics &amp; Supply Chain</div>
+            <p class="ind-card-desc">Last-mile driver dispatch, shipment tracking exception escalation, and POD audits.</p>
+          </div>
+          <div class="ind-card-kpi">
+            <span class="ind-kpi-lbl">Delivery SLA</span>
+            <span class="ind-kpi-val">99.7%</span>
+          </div>
+        </div>
+
+        <!-- Card 6: AI & Autonomous Tech -->
+        <div class="ind-card">
+          <div class="ind-card-top">
+            <div class="ind-icon-wrap" title="Neural Compute & Deep Learning Core">
+              <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="12" height="12" rx="3" fill="rgba(250, 204, 44, 0.22)" stroke="#FACC2C" stroke-width="1.8"/>
+                <path d="M13 5V10M19 5V10M13 22V27M19 22V27M5 13H10M5 19H10M22 13H27M22 19H27" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+                <circle cx="16" cy="16" r="2.5" fill="#FACC2C"/>
+                <circle cx="8" cy="8" r="1.5" fill="#FFFFFF"/>
+                <circle cx="24" cy="8" r="1.5" fill="#FFFFFF"/>
+                <circle cx="8" cy="24" r="1.5" fill="#FFFFFF"/>
+                <circle cx="24" cy="24" r="1.5" fill="#FFFFFF"/>
+                <path d="M9.5 9.5L12 12M22.5 9.5L20 12M9.5 22.5L12 20M22.5 22.5L20 20" stroke="#FACC2C" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="ind-card-title">AI &amp; Autonomous Tech</div>
+            <p class="ind-card-desc">High-precision 3D LiDAR labeling, computer vision bounding boxes, and RLHF evaluations.</p>
+          </div>
+          <div class="ind-card-kpi">
+            <span class="ind-kpi-lbl">Quality Metric</span>
+            <span class="ind-kpi-val">99.9%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+
+
+
+
+
+
+
+       SECTION 4: HIGH-IMPACT EXECUTIVE MESSAGE BAR
+
+
+
+
+
+
+
+       ========================================================================== -->
+
+
+
+
+
+
+
+  <div class="message-bar-wrap">
+
+
+
+    <div class="message-bar-container">
+
+
+
+      <div class="mb-stat-item">
+
+
+
+        <span class="mb-val">60%</span>
+
+
+
+        <span class="mb-lbl">Enterprise clients expand scope within 12 months</span>
+
+
+
+      </div>
+
+
+
+      <div class="mb-sep" aria-hidden="true"></div>
+
+
+
+      <div class="mb-stat-item">
+
+
+
+        <span class="mb-val">84%</span>
+
+
+
+        <span class="mb-lbl">Annual Client Retention</span>
+
+
+
+      </div>
+
+
+
+      <div class="mb-sep" aria-hidden="true"></div>
+
+
+
+      <div class="mb-stat-item">
+
+
+
+        <span class="mb-val">3.8X</span>
+
+
+
+        <span class="mb-lbl">First Year Client ROI</span>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+
+
+
+
+
+
+
+       SECTION 5: DELIVERY PHILOSOPHY
+
+
+
+
+
+
+
+       ========================================================================== -->
+
+
+
+
+
+
+
+    <!-- ==========================================================================
+
+
+
+       SECTION 5.5: VERIFIED ENTERPRISE CASE STUDY SPOTLIGHT
+
+
+
+       ========================================================================== -->
+
+
+
+  <section class="section case-spotlight-section" id="case-studies">
+
+
+
+    <div class="section-wrap">
+
+
+
+      <div class="section-kicker">Verified Enterprise Impact</div>
+
+
+
+      <h2 class="section-title">Real Outcomes for <span class="hl">Global Brands</span></h2>
+
+
+
+      <p class="section-desc case-sub-oneline">
+
+
+
+        Tangible operational turnarounds delivered for high-growth unicorns and Fortune 500 enterprises.
+
+
+
+      </p>
+
+
+
+
+
+
+
+      <div class="case-grid-2">
+
+
+
+        <!-- Case 1: D2C E-Commerce -->
+
+
+
+        <div class="case-card">
+
+
+
+          <div class="case-card-header">
+
+
+
+            <span class="case-industry-tag">E-Commerce &amp; D2C</span>
+
+
+
+            <span class="case-kpi-badge">-58% WISMO &bull; 4.8/5 CSAT</span>
+
+
+
+          </div>
+
+
+
+          <blockquote class="case-quote">
+
+
+
+            &ldquo;FiveS Digital scaled our peak festive support by 450+ specialists in under 5 days, cutting average response time to under 45 seconds while protecting CSAT.&rdquo;
+
+
+
+          </blockquote>
+
+
+
+          <div class="case-author">
+
+
+
+            <div class="case-avatar">VP</div>
+
+
+
+            <div>
+
+
+
+              <div class="case-author-name">VP of Customer Operations</div>
+
+
+
+              <div class="case-author-org">Leading Indian D2C Retail Brand</div>
+
+
+
+            </div>
+
+
+
+          </div>
+
+
+
+          <div class="case-tags">
+
+
+
+            <span class="case-tag-item">72-Hour Rapid Onboarding</span>
+
+
+
+            <span class="case-tag-item">Omnichannel Voice &amp; Chat</span>
+
+
+
+            <span class="case-tag-item">Zero SLA Breach</span>
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- Case 2: FinTech & Banking -->
+
+
+
+        <div class="case-card">
+
+
+
+          <div class="case-card-header">
+
+
+
+            <span class="case-industry-tag">Fintech &amp; Banking</span>
+
+
+
+            <span class="case-kpi-badge">+65% Throughput &bull; 99.8% Pass</span>
+
+
+
+          </div>
+
+
+
+          <blockquote class="case-quote">
+
+
+
+            &ldquo;Deploying FiveS Digital&rsquo;s multilingual Video-KYC and merchant fraud review reduced our customer onboarding backlog from 48 hours to under 3 hours.&rdquo;
+
+
+
+          </blockquote>
+
+
+
+          <div class="case-author">
+
+
+
+            <div class="case-avatar">RC</div>
+
+
+
+            <div>
+
+
+
+              <div class="case-author-name">Head of Risk &amp; Compliance</div>
+
+
+
+              <div class="case-author-org">Global Neo-Banking Platform</div>
+
+
+
+            </div>
+
+
+
+          </div>
+
+
+
+          <div class="case-tags">
+
+
+
+            <span class="case-tag-item">24/7 Video KYC Pods</span>
+
+
+
+            <span class="case-tag-item">ISO 27001 Clean Rooms</span>
+
+
+
+            <span class="case-tag-item">Fraud Alert Triaging</span>
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </section>
+
+
+
+
+
+
+
+<section class="philosophy-section" id="delivery-philosophy">
+
+
+
+
+
+
+
+    <div class="section-wrap">
+
+
+
+
+
+
+
+      <div class="section-kicker">Delivery Philosophy</div>
+
+
+
+
+
+
+
+      <h2 class="section-title">Human <span class="hl">Intelligence</span></h2>
+
+
+
+
+
+
+
+      <p class="section-desc">
+
+
+
+
+
+
+
+        Engineered for operational rigor, cost resilience, and continuous service enhancement.
+
+
+
+
+
+
+
+      </p>
+
+
+
+
+
+
+
+      <div class="phil-accordion" id="philAccordion">
+
+
+
+        <!-- Accordion Item 1: Intelligent Process Automation -->
+
+
+
+        <div class="phil-acc-item active" data-pillar="1">
+
+
+
+          <button class="phil-acc-header" onclick="togglePhil(0)" aria-expanded="true">
+
+
+
+            <div class="pah-left">
+
+
+
+              <span class="pah-num">01</span>
+
+
+
+              <div class="pah-title-wrap">
+
+
+
+                <span class="pah-title">Intelligent Automation &amp; RPA</span>
+
+
+
+                <span class="pah-tag">Conversational AI &amp; Bots</span>
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+            <div class="pah-right">
+
+
+
+              <span class="pah-metric">60% Routine Query Automation</span>
+
+
+
+              <span class="pah-arrow">
+
+
+
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+
+
+
+              </span>
+
+
+
+            </div>
+
+
+
+          </button>
+
+
+
+          <div class="phil-acc-content">
+
+
+
+            <div class="pac-inner">
+
+
+
+              <p class="pac-desc">
+
+
+
+                Deploying conversational Voice AI, automated digital triage, and robotic process automation (RPA) to resolve high-frequency customer inquiries instantly without human intervention.
+
+
+
+              </p>
+
+
+
+              <div class="pac-features">
+
+
+
+                <div class="pac-feat"><span class="pac-check">&#10003;</span> Conversational Voice AI &amp; Smart Chatbots</div>
+
+
+
+                <div class="pac-feat"><span class="pac-check">&#10003;</span> Automated Intent Detection &amp; Sentiment Triage</div>
+
+
+
+                <div class="pac-feat"><span class="pac-check">&#10003;</span> Zero-Latency CRM Synchronization</div>
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- Accordion Item 2: Human-in-the-Loop Empathy -->
+
+
+
+        <div class="phil-acc-item" data-pillar="2">
+
+
+
+          <button class="phil-acc-header" onclick="togglePhil(1)" aria-expanded="false">
+
+
+
+            <div class="pah-left">
+
+
+
+              <span class="pah-num">02</span>
+
+
+
+              <div class="pah-title-wrap">
+
+
+
+                <span class="pah-title">Human-in-the-Loop Empathy</span>
+
+
+
+                <span class="pah-tag">Nuanced Problem Resolution</span>
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+            <div class="pah-right">
+
+
+
+              <span class="pah-metric">88% First-Contact Resolution</span>
+
+
+
+              <span class="pah-arrow">
+
+
+
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+
+
+
+              </span>
+
+
+
+            </div>
+
+
+
+          </button>
+
+
+
+          <div class="phil-acc-content">
+
+
+
+            <div class="pac-inner">
+
+
+
+              <p class="pac-desc">
+
+
+
+                When customer interactions involve emotional friction, delicate financial disputes, or multi-step escalations, certified human specialists take over with warm context and cultural fluency.
+
+
+
+              </p>
+
+
+
+              <div class="pac-features">
+
+
+
+                <div class="pac-feat"><span class="pac-check">&#10003;</span> Context-Preserving Warm Bot-to-Human Handover</div>
+
+
+
+                <div class="pac-feat"><span class="pac-check">&#10003;</span> Native Dialect Mastery Across 15+ Languages</div>
+
+
+
+                <div class="pac-feat"><span class="pac-check">&#10003;</span> High-Touch Dispute &amp; Escalation Management</div>
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- Accordion Item 3: Operational Rigor & Governance (RiSE & LEAP) -->
+
+
+
+        <div class="phil-acc-item" data-pillar="3">
+
+
+
+          <button class="phil-acc-header" onclick="togglePhil(2)" aria-expanded="false">
+
+
+
+            <div class="pah-left">
+
+
+
+              <span class="pah-num">03</span>
+
+
+
+              <div class="pah-title-wrap">
+
+
+
+                <span class="pah-title">Continuous Upskilling &amp; Governance</span>
+
+
+
+                <span class="pah-tag">LEAP &amp; RiSE Learning Framework</span>
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+            <div class="pah-right">
+
+
+
+              <span class="pah-metric">99.4% Quality Accuracy SLA</span>
+
+
+
+              <span class="pah-arrow">
+
+
+
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+
+
+
+              </span>
+
+
+
+            </div>
+
+
+
+          </button>
+
+
+
+          <div class="phil-acc-content">
+
+
+
+            <div class="pac-inner">
+
+
+
+              <p class="pac-desc">
+
+
+
+                Our proprietary workforce development academies (LEAP and RiSE) paired with automated speech analytics ensure continuous quality sampling, strict SLA adherence, and ongoing domain upskilling.
+
+
+
+              </p>
+
+
+
+              <div class="pac-features">
+
+
+
+                <div class="pac-feat"><span class="pac-check">&#10003;</span> 100% Automated Interaction Auditing &amp; Scoring</div>
+
+
+
+                <div class="pac-feat"><span class="pac-check">&#10003;</span> Structured Agent Mentorship &amp; Continuous Training</div>
+
+
+
+                <div class="pac-feat"><span class="pac-check">&#10003;</span> ISO 27001 &amp; SOC 2 Certified Process Rigor</div>
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </section>
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+
+
+
+
+
+
+
+       SECTION 6: INCLUSION DRIVEN PEOPLE APPROACH (NASSCOM SECTION)
+
+
+
+
+
+
+
+       ========================================================================== -->
+
+
+
+
+
+
+
+    <section class="people-section" id="our-people">
+
+    <div class="section-wrap">
+
+      <!-- Title correctly placed at the top of the section (like all other sections) -->
+
+      <div class="section-kicker">Our Workplace</div>
+
+      <h2 class="section-title">Inclusion driven <span class="hl">People approach</span></h2>
+
+      <p class="section-desc">
+
+        We believe that scalable enterprise execution and progressive social impact are mutually reinforcing. Our workforce model proves that expanding access creates higher operational retention and unmatched dedication.
+
+      </p>
+
+
+
+      <div class="people-grid" style="margin-top: 36px;">
+
+        <div class="people-photo-frame">
+
+          <img src="inclusive_workplace.jpg" alt="Inclusion driven People approach at FiveS" />
+
+          <div class="people-photo-caption">
+
+            <div class="ppc-title">Navi Mumbai Impact BPM Hub</div>
+
+            <div class="ppc-sub">India’s Flagship Inclusive Center</div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="people-data-col">
+
+          <!-- 3 EXACT DATA POINTS AS REQUESTED BY USER (NO NASSCOM) -->
+
+          <div class="people-stat-cards">
+
+            <div class="psc-item">
+
+              <div class="psc-icon-box">
+
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+
+              </div>
+
+              <div class="psc-content">
+
+                <div class="psc-head-row">
+
+                  <h4 class="psc-title">Tier-2 Sourcing &amp; Regional Talent</h4>
+
+                  <span class="psc-badge">35% Workforce</span>
+
+                </div>
+
+                <p class="psc-lbl">People from Tier 2 contributing to 35% of our workforce, unlocking high-affinity talent corridors with exceptional dedication and retention.</p>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="psc-item">
+
+              <div class="psc-icon-box">
+
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+
+              </div>
+
+              <div class="psc-content">
+
+                <div class="psc-head-row">
+
+                  <h4 class="psc-title">Persons with Disabilities (PwD) Inclusion</h4>
+
+                  <span class="psc-badge">5% PwD Workforce</span>
+
+                </div>
+
+                <p class="psc-lbl">5% of the workforce comprises Persons with Disabilities (PwD), supported by adaptive workstations, accessible software, and equal career avenues.</p>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="psc-item">
+
+              <div class="psc-icon-box">
+
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+
+              </div>
+
+              <div class="psc-content">
+
+                <div class="psc-head-row">
+
+                  <h4 class="psc-title">Workforce Diversity &amp; Leadership</h4>
+                  <span class="psc-badge">50% Diversity &bull; 40% Leadership</span>
+
+                </div>
+
+                <p class="psc-lbl">50% workforce diversity with 40% representation in leadership, fostering an equitable workplace and progressive operational culture.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+
+
+
+
+
+
+
+       SECTION 7: DELIVERY FOOTPRINT (GLOBAL MAP + GOOGLE LOCATION PINS)
+
+
+
+
+
+
+
+       ========================================================================== -->
+
+
+
+
+
+
+
+    <section class="footprint-section" id="delivery-footprint">
+
+    <div class="section-wrap">
+
+      <div class="section-kicker">Global Infrastructure</div>
+
+      <h2 class="section-title">Delivery <span class="hl">Footprint</span></h2>
+
+      <p class="section-desc fp-sub-oneline">
+
+        Connected global delivery hubs serving Tier-1 clients across India, Europe, USA, and the Middle East.
+
+      </p>
+
+
+
+      <div class="footprint-grid">
+
+        <!-- Real World Map Infographic on Left -->
+
+        <div class="world-map-box">
+
+          <div class="map-frame">
+
+            <img src="global_delivery_map.jpg" alt="FiveS Digital Global Delivery Footprint Map" class="real-world-map-img" />
+
+            <div class="map-status-pill">
+
+              <span class="status-dot"></span> 9+ Delivery Centers &bull; 24/7 Global Ops
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+                <!-- Places Listing (INDIA & INTERNATIONAL - AS PER EARLIER DESIGN) -->
+        <div class="footprint-places-card">
+          <!-- India Group -->
+          <div class="fp-group-block">
+            <div class="fp-group-head">
+              <div class="fp-group-title-row">
+                <span class="fp-group-badge">India Hubs</span>
+                <span class="fp-group-meta">7 Delivery Centers</span>
+              </div>
+            </div>
+            <div class="fp-places-grid">
+              <div class="fp-place-chip fp-chip-flagship">
+                <div style="display:flex; align-items:center; gap:9px;">
+                  <span class="fp-chip-pin flagship"></span>
+                  <span class="fp-chip-text"><strong>Udaipur</strong> &bull; Central Enterprise Hub</span>
+                </div>
+              </div>
+              <div class="fp-place-chip">
+                <span class="fp-chip-pin"></span>
+                <span class="fp-chip-text">Navi Mumbai</span>
+              </div>
+              <div class="fp-place-chip">
+                <span class="fp-chip-pin"></span>
+                <span class="fp-chip-text">Noida</span>
+              </div>
+              <div class="fp-place-chip">
+                <span class="fp-chip-pin"></span>
+                <span class="fp-chip-text">Hubballi</span>
+              </div>
+              <div class="fp-place-chip">
+                <span class="fp-chip-pin"></span>
+                <span class="fp-chip-text">Jamshedpur</span>
+              </div>
+              <div class="fp-place-chip">
+                <span class="fp-chip-pin"></span>
+                <span class="fp-chip-text">Hyderabad</span>
+              </div>
+              <div class="fp-place-chip">
+                <span class="fp-chip-pin"></span>
+                <span class="fp-chip-text">Bengaluru</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="fp-divider"></div>
+
+          <!-- International Group -->
+          <div class="fp-group-block">
+            <div class="fp-group-head">
+              <div class="fp-group-title-row">
+                <span class="fp-group-badge intl">International</span>
+                <span class="fp-group-meta intl">6 Global Desks</span>
+              </div>
+            </div>
+            <div class="fp-places-grid">
+              <div class="fp-place-chip">
+                <span class="fp-chip-pin intl"></span>
+                <span class="fp-chip-text">New Jersey, USA</span>
+              </div>
+              <div class="fp-place-chip">
+                <span class="fp-chip-pin intl"></span>
+                <span class="fp-chip-text">Malta</span>
+              </div>
+              <div class="fp-place-chip">
+                <span class="fp-chip-pin intl"></span>
+                <span class="fp-chip-text">Brussels, Belgium</span>
+              </div>
+              <div class="fp-place-chip">
+                <span class="fp-chip-pin intl"></span>
+                <span class="fp-chip-text">Ghana, West Africa</span>
+              </div>
+              <div class="fp-place-chip">
+                <span class="fp-chip-pin intl"></span>
+                <span class="fp-chip-text">Kenya</span>
+              </div>
+              <div class="fp-place-chip">
+                <span class="fp-chip-pin intl"></span>
+                <span class="fp-chip-text">Philippines</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+
+
+
+
+
+
+
+       SECTION 8: WHY CHOOSE US / STRATEGIC DIFFERENTIATION
+
+
+
+
+
+
+
+       ========================================================================== -->
+
+
+
+
+
+
+
+  <section class="diff-section">
+
+
+
+    <div class="section-wrap">
+
+
+
+      <div class="section-kicker">Competitive Edge</div>
+
+
+
+      <h2 class="section-title">Why Global Enterprises <span class="hl">Choose FiveS</span></h2>
+
+
+
+      <p class="section-desc diff-sub-oneline">
+
+
+
+        Four structural differentiators outperforming traditional BPOs and pure-play tech consultancies.
+
+
+
+      </p>
+
+
+
+
+
+
+
+      <div class="diff-slider-wrapper">
+
+
+
+        <div class="diff-accordion-slider" id="diffSlider">
+
+
+
+          <!-- Slide 01: Omnichannel CRM & Enterprise Tech Ecosystem -->
+
+
+
+          <div class="diff-slide active" onclick="setDiffSlide(0)">
+
+
+
+            <div class="diff-slide-collapsed">
+
+
+
+              <span class="diff-slide-num">01</span>
+
+
+
+              <span class="diff-vert-title">Omnichannel CRM Ecosystem</span>
+
+
+
+              <div class="diff-slide-arrow">&#8599;</div>
+
+
+
+            </div>
+
+
+
+            <div class="diff-slide-expanded">
+
+
+
+              <div class="diff-exp-header">
+
+
+
+                <div class="diff-exp-num">01</div>
+
+
+
+                <span class="diff-exp-badge">Tech Integration</span>
+
+
+
+              </div>
+
+
+
+              <h3 class="diff-exp-title">Omnichannel CRM &amp; Tech Ecosystem</h3>
+
+
+
+              <p class="diff-exp-desc">Plug-and-play bi-directional integrations across Salesforce, Zendesk, Freshdesk, Zoho, and bespoke enterprise ERPs with real-time analytics and zero migration downtime.</p>
+
+
+
+              <div class="diff-exp-meta">
+
+
+
+                <span class="diff-meta-tag">Salesforce &amp; Zendesk Native</span>
+
+
+
+                <span class="diff-meta-tag">API-First Middleware</span>
+
+
+
+                <span class="diff-meta-tag">Custom Workspaces</span>
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+          </div>
+
+
+
+
+
+
+
+          <!-- Slide 02: Full-Stack AI Data & RLHF Operations -->
+
+
+
+          <div class="diff-slide" onclick="setDiffSlide(1)">
+
+
+
+            <div class="diff-slide-collapsed">
+
+
+
+              <span class="diff-slide-num">02</span>
+
+
+
+              <span class="diff-vert-title">AI Data &amp; RLHF Services</span>
+
+
+
+              <div class="diff-slide-arrow">&#8599;</div>
+
+
+
+            </div>
+
+
+
+            <div class="diff-slide-expanded">
+
+
+
+              <div class="diff-exp-header">
+
+
+
+                <div class="diff-exp-num">02</div>
+
+
+
+                <span class="diff-exp-badge">AI Foundations</span>
+
+
+
+              </div>
+
+
+
+              <h3 class="diff-exp-title">Enterprise AI Data &amp; RLHF Workflows</h3>
+
+
+
+              <p class="diff-exp-desc">Powering next-generation AI systems through certified human-in-the-loop operations: multi-modal data annotation, computer vision bounding, and RLHF model fine-tuning.</p>
+
+
+
+              <div class="diff-exp-meta">
+
+
+
+                <span class="diff-meta-tag">RLHF &amp; Model Tuning</span>
+
+
+
+                <span class="diff-meta-tag">Computer Vision / LiDAR</span>
+
+
+
+                <span class="diff-meta-tag">High-Precision QA</span>
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+          </div>
+
+
+
+
+
+
+
+          <!-- Slide 03: 72-Hour Rapid Burst Capacity -->
+
+
+
+          <div class="diff-slide" onclick="setDiffSlide(2)">
+
+
+
+            <div class="diff-slide-collapsed">
+
+
+
+              <span class="diff-slide-num">03</span>
+
+
+
+              <span class="diff-vert-title">72-Hour Rapid Burst</span>
+
+
+
+              <div class="diff-slide-arrow">&#8599;</div>
+
+
+
+            </div>
+
+
+
+            <div class="diff-slide-expanded">
+
+
+
+              <div class="diff-exp-header">
+
+
+
+                <div class="diff-exp-num">03</div>
+
+
+
+                <span class="diff-exp-badge">Agile Scaling</span>
+
+
+
+              </div>
+
+
+
+              <h3 class="diff-exp-title">72-Hour Rapid Burst Capacity</h3>
+
+
+
+              <p class="diff-exp-desc">Pre-vetted talent reserves enable enterprise clients to scale up by 500+ specialists within 72 hours for festive e-commerce peaks, product rollouts, or sudden surge volumes.</p>
+
+
+
+              <div class="diff-exp-meta">
+
+
+
+                <span class="diff-meta-tag">&lt; 72h Deployment</span>
+
+
+
+                <span class="diff-meta-tag">500+ Surge Specialists</span>
+
+
+
+                <span class="diff-meta-tag">Zero SLA Dilution</span>
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+          </div>
+
+
+
+
+
+
+
+          <!-- Slide 04: Bank-Grade Security & Governance -->
+
+
+
+          <div class="diff-slide" onclick="setDiffSlide(3)">
+
+
+
+            <div class="diff-slide-collapsed">
+
+
+
+              <span class="diff-slide-num">04</span>
+
+
+
+              <span class="diff-vert-title">Bank-Grade Compliance</span>
+
+
+
+              <div class="diff-slide-arrow">&#8599;</div>
+
+
+
+            </div>
+
+
+
+            <div class="diff-slide-expanded">
+
+
+
+              <div class="diff-exp-header">
+
+
+
+                <div class="diff-exp-num">04</div>
+
+
+
+                <span class="diff-exp-badge">Data Governance</span>
+
+
+
+              </div>
+
+
+
+              <h3 class="diff-exp-title">Bank-Grade Compliance &amp; Data Security</h3>
+
+
+
+              <p class="diff-exp-desc">Enterprise defense posture certified under ISO 27001, SOC 2 Type II, HIPAA, and GDPR standards, featuring biometric clean-room hubs and strict data isolation protocols.</p>
+
+
+
+              <div class="diff-exp-meta">
+
+
+
+                <span class="diff-meta-tag">ISO 27001 &amp; SOC 2</span>
+
+
+
+                <span class="diff-meta-tag">HIPAA Certified</span>
+
+
+
+                <span class="diff-meta-tag">PCI-DSS Compliant</span>
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+        <!-- Slider Controls & Dots Bar -->
+
+
+
+        <div class="diff-slider-controls">
+
+
+
+          <div class="diff-dots-group">
+
+
+
+            <button type="button" class="diff-dot active" aria-label="Slide 1" onclick="setDiffSlide(0)"></button>
+
+
+
+            <button type="button" class="diff-dot" aria-label="Slide 2" onclick="setDiffSlide(1)"></button>
+
+
+
+            <button type="button" class="diff-dot" aria-label="Slide 3" onclick="setDiffSlide(2)"></button>
+
+
+
+            <button type="button" class="diff-dot" aria-label="Slide 4" onclick="setDiffSlide(3)"></button>
+
+
+
+          </div>
+
+
+
+          <div class="diff-nav-arrows">
+
+
+
+            <button type="button" class="diff-arrow-btn" aria-label="Previous Slide" onclick="prevDiffSlide()">
+
+
+
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+
+
+
+            </button>
+
+
+
+            <button type="button" class="diff-arrow-btn" aria-label="Next Slide" onclick="nextDiffSlide()">
+
+
+
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+
+
+
+            </button>
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </section>
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+
+
+
+
+
+
+
+       SECTION 9: MULTI-TRACK CALL TO ACTION (SALES / RECRUITMENT / PARTNERSHIPS)
+
+
+
+
+
+
+
+       ========================================================================== -->
+
+
+
+
+
+
+
+  <section class="cta-section" id="contact">
+
+
+
+
+
+
+
+    <div class="section-wrap">
+
+
+
+
+
+
+
+      <div class="cta-header">
+
+
+
+
+
+
+
+        <h2>Start Your Transformation With <span>FiveS</span></h2>
+
+
+
+
+
+
+
+        <p>Choose your pathway below to connect directly with the appropriate leadership team.</p>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <div class="cta-cards-3">
+
+
+
+
+
+
+
+        <!-- Track 1: Sales -->
+
+
+
+
+
+
+
+        <div class="cta-pathway-card">
+
+
+
+
+
+
+
+          <div>
+
+
+
+
+
+
+
+            <div class="cpc-tag">Enterprise Clients</div>
+
+
+
+
+
+
+
+            <div class="cpc-title">Sales &amp; Solutions</div>
+
+
+
+
+
+
+
+            <p class="cpc-desc">
+
+
+
+
+
+
+
+              Explore custom CX outsourcing, data annotation pipelines, or request an operational diagnostic and ROI projection.
+
+
+
+
+
+
+
+            </p>
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+          <a href="mailto:sales@fivesdigital.com?subject=Enterprise%20Inquiry" class="btn-cpc">
+
+
+
+
+
+
+
+            <span>Speak with Solutions Team</span>
+
+
+
+
+
+
+
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+
+
+
+
+
+
+
+          </a>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- Track 2: Recruitment -->
+
+
+
+
+
+
+
+        <div class="cta-pathway-card">
+
+
+
+
+
+
+
+          <div>
+
+
+
+
+
+
+
+            <div class="cpc-tag">Talent &amp; Inclusion</div>
+
+
+
+
+
+
+
+            <div class="cpc-title">Careers &amp; Recruitment</div>
+
+
+
+
+
+
+
+            <p class="cpc-desc">
+
+
+
+
+
+
+
+              Join India's pioneer inclusive BPM organization across Tier-2 hubs, Navi Mumbai HQ, or our specialized PwD tracks.
+
+
+
+
+
+
+
+            </p>
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+          <a href="mailto:careers@fivesdigital.com?subject=Job%20Application" class="btn-cpc">
+
+
+
+
+
+
+
+            <span>Explore Open Roles</span>
+
+
+
+
+
+
+
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+
+
+
+
+
+
+
+          </a>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- Track 3: Partnerships -->
+
+
+
+
+
+
+
+        <div class="cta-pathway-card">
+
+
+
+
+
+
+
+          <div>
+
+
+
+
+
+
+
+            <div class="cpc-tag">Alliances &amp; ESG</div>
+
+
+
+
+
+
+
+            <div class="cpc-title">Strategic Partnerships</div>
+
+
+
+
+
+
+
+            <p class="cpc-desc">
+
+
+
+
+
+
+
+              Collaborate on AI training data alliances, NASSCOM impact initiatives, or technology integrations.
+
+
+
+
+
+
+
+            </p>
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+          <a href="mailto:partnerships@fivesdigital.com?subject=Partnership%20Proposal" class="btn-cpc">
+
+
+
+
+
+
+
+            <span>Partner With FiveS</span>
+
+
+
+
+
+
+
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+
+
+
+
+
+
+
+          </a>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+  </section>
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+
+
+
+
+
+
+
+       FOOTER
+
+
+
+
+
+
+
+       ========================================================================== -->
+
+
+
+
+
+
+
+  <footer>
+
+
+
+
+
+
+
+    <div class="footer-wrap">
+
+
+
+
+
+
+
+      <div>&copy; 2026 FiveS Digital. Delivering impact sustainably. All rights reserved.</div>
+
+
+
+
+
+
+
+      <div class="footer-links">
+
+
+
+
+
+
+
+        <a href="#about">About Us</a>
+
+
+
+
+
+
+
+        <a href="#cx">CX</a>
+
+
+
+
+
+
+
+        <a href="ai-in-cx.html">AI in CX</a>
+
+
+
+
+
+
+
+        <a href="#our-people">Our People</a>
+
+
+
+
+
+
+
+        <a href="#contact">Contact</a>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+  </footer>
+
+
+
+
+
+
+
+  <!-- INTERACTIVITY SCRIPT -->
+
+
+
+
+
+
+
+  <script>
+
+
+
+
+
+
+
+    const primaryNav = document.querySelector('.nav');
+
+
+
+
+
+
+
+    const primaryNavToggle = document.querySelector('.nav-menu-toggle');
+
+
+
+
+
+
+
+    primaryNavToggle.addEventListener('click', () => {
+
+
+
+
+
+
+
+      const isOpen = primaryNav.classList.toggle('nav-open');
+
+
+
+
+
+
+
+      primaryNavToggle.setAttribute('aria-expanded', String(isOpen));
+
+
+
+
+
+
+
+    });
+
+
+
+
+
+
+
+    primaryNav.querySelectorAll('.nav-menu-links a').forEach(link => {
+
+
+
+
+
+
+
+      link.addEventListener('click', () => {
+
+
+
+
+
+
+
+        primaryNav.classList.remove('nav-open');
+
+
+
+
+
+
+
+        primaryNavToggle.setAttribute('aria-expanded', 'false');
+
+
+
+
+
+
+
+      });
+
+
+
+
+
+
+
+    });
+
+
+
+
+
+
+
+    document.querySelectorAll('a[href="#ai-in-cx"], a[href="#data-services"]').forEach(link => {
+
+
+
+
+
+
+
+      link.addEventListener('click', () => {
+
+
+
+
+
+
+
+        switchCap(link.hash === '#ai-in-cx' ? 2 : 3);
+
+
+
+
+
+
+
+      });
+
+
+
+
+
+
+
+    });
+
+
+
+
+
+
+
+    const capabilitiesData = [
+
+
+
+
+
+
+
+      {
+
+
+
+
+
+
+
+        badge: "Inbound & Outbound Operations",
+
+
+
+
+
+
+
+        title: "Customer Service Voice",
+
+
+
+
+
+
+
+        tagline: "Your Customers Deserve to Be Heard—In Their Language, On Their Terms",
+
+
+
+
+
+
+
+        desc: "Scale your frontline with multilingual specialists delivering human empathy backed by real-time speech analytics, sentiment monitoring, and high first-contact resolution across Tier-2/3 language hubs.",
+
+
+
+
+
+
+
+        metrics: [
+
+
+
+
+
+
+
+          { num: "94%", lbl: "First-Contact Resolution" },
+
+
+
+
+
+
+
+          { num: "13+", lbl: "Indian Dialects" },
+
+
+
+
+
+
+
+          { num: "<30s", lbl: "Average Speed of Answer" }
+
+
+
+
+
+
+
+        ],
+
+
+
+
+
+
+
+        img: "voice_cx.jpg",
+
+
+
+
+
+
+
+        caption: "Live Multilingual Support Floor • Tier-2 Regional Hub"
+
+
+
+
+
+
+
+      },
+
+
+
+
+
+
+
+      {
+
+
+
+
+
+
+
+        badge: "Digital First Omnichannel",
+
+
+
+
+
+
+
+        title: "Customer Service Non Voice",
+
+
+
+
+
+
+
+        tagline: "Meet Your Customers Where They Are—In Real-Time, Across Every Digital Touchpoint",
+
+
+
+
+
+
+
+        desc: "Deliver asynchronous speed and conversational precision across digital touchpoints, seamlessly triaging customer intent with AI assistance and human-led resolution.",
+
+
+
+
+
+
+
+        metrics: [
+
+
+
+
+
+
+
+          { num: "<45s", lbl: "First Response Time" },
+
+
+
+
+
+
+
+          { num: "98.8%", lbl: "SLA Adherence" },
+
+
+
+
+
+
+
+          { num: "4.8/5", lbl: "Digital CSAT" }
+
+
+
+
+
+
+
+        ],
+
+
+
+
+
+
+
+        img: "ecommerce_ops.jpg",
+
+
+
+
+
+
+
+        caption: "Digital Omnichannel Command Center • Chat & Email"
+
+
+
+
+
+
+
+      },
+
+
+
+
+
+
+
+      {
+
+
+
+
+
+
+
+        badge: "AI Model Fine-Tuning",
+
+
+
+
+
+
+
+        title: "Gen AI Model Training",
+
+
+
+
+
+
+
+        tagline: "Avoid building AI Models on Inadequate Training Data",
+
+
+
+
+
+
+
+        desc: "Accelerate your foundation model deployments with domain-specific RLHF (Reinforcement Learning from Human Feedback), red teaming, hallucination auditing, and cultural alignment datasets.",
+
+
+
+
+
+
+
+        metrics: [
+
+
+
+
+
+
+
+          { num: "99.8%", lbl: "RLHF Consensus Score" },
+
+
+
+
+
+
+
+          { num: "500+", lbl: "Domain Subject Experts" },
+
+
+
+
+
+
+
+          { num: "100%", lbl: "Strict Data Cleanroom" }
+
+
+
+
+
+
+
+        ],
+
+
+
+
+
+
+
+        img: "banking_ops.jpg",
+
+
+
+
+
+
+
+        caption: "RLHF Engineering Lab • Secure Data Cleanroom"
+
+
+
+
+
+
+
+      },
+
+
+
+
+
+
+
+      {
+
+
+
+
+
+
+
+        badge: "Human-Led Data Operations",
+
+
+
+
+
+
+
+        title: "Annotation Services",
+
+
+
+
+
+
+
+        tagline: "Scalable, Human Led data annotation services to improve model performance",
+
+
+
+
+
+
+
+        desc: "Empower computer vision, NLP, and multimodal AI pipelines with pixel-level semantic segmentation, 3D LiDAR point cloud labeling, audio phoneme tagging, and strict multi-tier QA.",
+
+
+
+
+
+
+
+        metrics: [
+
+
+
+
+
+
+
+          { num: "99.9%", lbl: "Bounding Box Precision" },
+
+
+
+
+
+
+
+          { num: "10M+", lbl: "Monthly Labeled Attributes" },
+
+
+
+
+
+
+
+          { num: "Zero", lbl: "Customer Data Leakage" }
+
+
+
+
+
+
+
+        ],
+
+
+
+
+
+
+
+        img: "autonomous_lidar.jpg",
+
+
+
+
+
+
+
+        caption: "Computer Vision & 3D LiDAR Annotation Suite"
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+    ];
+
+
+
+
+
+
+
+    
+
+
+
+    function togglePhil(idx) {
+
+
+
+      const items = document.querySelectorAll('.phil-acc-item');
+
+
+
+      items.forEach((item, i) => {
+
+
+
+        if (i === idx) {
+
+
+
+          const isActive = item.classList.contains('active');
+
+
+
+          if (isActive) {
+
+
+
+            item.classList.remove('active');
+
+
+
+            item.querySelector('.phil-acc-header').setAttribute('aria-expanded', 'false');
+
+
+
+          } else {
+
+
+
+            item.classList.add('active');
+
+
+
+            item.querySelector('.phil-acc-header').setAttribute('aria-expanded', 'true');
+
+
+
+          }
+
+
+
+        } else {
+
+
+
+          item.classList.remove('active');
+
+
+
+          item.querySelector('.phil-acc-header').setAttribute('aria-expanded', 'false');
+
+
+
+        }
+
+
+
+      });
+
+
+
+    }
+
+
+
+
+
+
+
+    function switchCap(idx) {
+
+
+
+
+
+
+
+      const data = capabilitiesData[idx];
+
+
+
+
+
+
+
+      const tabs = document.querySelectorAll('.cap-tab-btn');
+
+
+
+
+
+
+
+      tabs.forEach((t, i) => {
+
+
+
+
+
+
+
+        if(i === idx) t.classList.add('active');
+
+
+
+
+
+
+
+        else t.classList.remove('active');
+
+
+
+
+
+
+
+      });
+
+
+
+
+
+
+
+      document.getElementById('cap-badge').textContent = data.badge;
+
+
+
+
+
+
+
+      document.getElementById('cap-title').textContent = data.title;
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      document.getElementById('cap-desc').textContent = data.desc;
+
+
+
+
+
+
+
+      document.getElementById('sm-1').textContent = data.metrics[0].num;
+
+
+
+
+
+
+
+      document.getElementById('sl-1').textContent = data.metrics[0].lbl;
+
+
+
+
+
+
+
+      document.getElementById('sm-2').textContent = data.metrics[1].num;
+
+
+
+
+
+
+
+      document.getElementById('sl-2').textContent = data.metrics[1].lbl;
+
+
+
+
+
+
+
+      document.getElementById('sm-3').textContent = data.metrics[2].num;
+
+
+
+
+
+
+
+      document.getElementById('sl-3').textContent = data.metrics[2].lbl;
+
+
+
+
+
+
+
+      const img = document.getElementById('stage-img');
+
+
+
+
+
+
+
+      img.style.opacity = '0.3';
+
+
+
+
+
+
+
+      setTimeout(() => {
+
+
+
+
+
+
+
+        img.src = data.img;
+
+
+
+
+
+
+
+        img.alt = data.title;
+
+
+
+
+
+
+
+        img.style.opacity = '1';
+
+
+
+
+
+
+
+      }, 150);
+
+
+
+
+
+
+
+      document.getElementById('stage-caption-text').textContent = data.caption;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+  
+
+
+
+    /* DIFF ACCORDION SLIDER CONTROLLER */
+
+
+
+    let currentDiffIndex = 0;
+
+
+
+    function setDiffSlide(idx) {
+
+
+
+      currentDiffIndex = idx;
+
+
+
+      const slides = document.querySelectorAll('.diff-slide');
+
+
+
+      const dots = document.querySelectorAll('.diff-dot');
+
+
+
+      slides.forEach((slide, i) => {
+
+
+
+        if (i === idx) {
+
+
+
+          slide.classList.add('active');
+
+
+
+        } else {
+
+
+
+          slide.classList.remove('active');
+
+
+
+        }
+
+
+
+      });
+
+
+
+      dots.forEach((dot, i) => {
+
+
+
+        if (i === idx) {
+
+
+
+          dot.classList.add('active');
+
+
+
+        } else {
+
+
+
+          dot.classList.remove('active');
+
+
+
+        }
+
+
+
+      });
+
+
+
+    }
+
+
+
+    function prevDiffSlide() {
+
+
+
+      let next = currentDiffIndex - 1;
+
+
+
+      if (next < 0) next = 3;
+
+
+
+      setDiffSlide(next);
+
+
+
+    }
+
+
+
+    function nextDiffSlide() {
+
+
+
+      let next = (currentDiffIndex + 1) % 4;
+
+
+
+      setDiffSlide(next);
+
+
+
+    }
+
+
+
+
+
+
+
+  
+
+
+
+    /* STICKY HEADER SCROLL LISTENER */
+
+
+
+    window.addEventListener('scroll', () => {
+
+
+
+      const header = document.getElementById('mainHeader');
+
+
+
+      if (!header) return;
+
+
+
+      if (window.scrollY > 120) {
+
+
+
+        header.classList.add('is-scrolled');
+
+
+
+      } else {
+
+
+
+        header.classList.remove('is-scrolled');
+
+
+
+      }
+
+
+
+    }, { passive: true });
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
+
