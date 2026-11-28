@@ -113,3 +113,7 @@ h1, h2, h3, h4 { font-family: "PT Serif", Georgia, serif; }
 .btn.outline:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.6); }
 .hl { padding: 0 6px; border-radius: 4px; }
 .band-light .hl { background: linear-gradient(120deg, rgba(250,204,44,.4), rgba(250,204,44,.1)); }
+
+/* ---- headings: every word capitalised ---- */
+h1, h2, h3, .h-sec { text-transform: capitalize; }
+.fs-footer h4 { text-transform: uppercase; }
