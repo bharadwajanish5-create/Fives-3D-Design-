@@ -101,3 +101,15 @@ h1, h2, h3, h4 { font-family: "PT Serif", Georgia, serif; }
 .nav-menu-links a { white-space: nowrap; }
 .band-light .sec-header-center { max-width: 880px; }
 @media (max-width: 1360px) { .btn-pdf-download { display: none !important; } }
+
+/* ---- match homepage type scale & components ---- */
+.kicker { font-size: 12px; font-weight: 800; letter-spacing: .1em; gap: 0; }
+.kicker::before { display: none; }
+.h-sec { font-size: 28px; line-height: 1.2; letter-spacing: -.015em; font-weight: 400; margin-top: 8px; }
+@media (min-width: 640px) { .h-sec { font-size: 36px; } }
+.p-sec { font-size: 15.5px; line-height: 1.6; margin-top: 14px; max-width: 680px; }
+.btn { font-size: 15px; min-height: 50px; padding: 0 24px; }
+.btn.outline { background: transparent; border: 1px solid rgba(255,255,255,.3); }
+.btn.outline:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.6); }
+.hl { padding: 0 6px; border-radius: 4px; }
+.band-light .hl { background: linear-gradient(120deg, rgba(250,204,44,.4), rgba(250,204,44,.1)); }
